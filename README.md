@@ -53,7 +53,7 @@
 - run ```npm test``` to run tests
 --------
 
-Link Of Prototype [Here ](https://www.figma.com/file/e8voTNPXV7hLlH2HRuLMtA2X/Unicornz?node-id=0%3A1)
+Link Of Prototype [Here ](https://www.figma.com/proto/e8voTNPXV7hLlH2HRuLMtA2X/Unicornz?node-id=0%3A1&scaling=min-zoom)
 ------
 
 ### Tech stack
