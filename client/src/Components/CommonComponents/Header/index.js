@@ -10,13 +10,12 @@ const HeaderComp = (props)=> {
             <img className = "header-img" src={logo} alt="logo"/>
             <ul className="header-nav">
                 <li onClick={()=>{}}>Login</li>
-                <li onClick={()=>{}}>About Us</li>
+                <li onClick={()=>{}}>About us</li>
                 <li onClick={()=>{}}>Work Experience</li>
                 <li onClick={()=>{}}>Home</li>
             </ul>
         </div>
      );
-
 }
 
 
