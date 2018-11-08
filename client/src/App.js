@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
+import Button from './Components/CommonComponents/Button'
+
 import './App.css';
 import BasicDetails from './Pages/Questionnaire/BasicDetails';
 import PersonalDetails1 from './Pages/Questionnaire/PersonalDetails1';
 
+
 class App extends Component {
+  
 	render() {
 		return (
 			<div className="App">
@@ -13,6 +17,7 @@ class App extends Component {
 			</div>
 		);
 	}
+
 }
 
 export default App;
