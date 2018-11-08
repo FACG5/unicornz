@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
+
 import './style.css'
 import '../style.css'
+
 class BasicDetails extends Component {
+
     state = {
         value : "",
     }
+
     render() { 
+        
         return ( 
             <div>
                 <div className="first-section">
@@ -33,24 +38,24 @@ class BasicDetails extends Component {
                 </div>
                 <div className="second-section">
                     <div className="fourth-card">
-                    <h2>Your “In case of emergency” point of contact for when you take a work experience or insight day</h2>
-                    <p>Name</p>
-                    <input type="text" className ="sec2-input" />
-                    <p>Their relationship to you</p>
-                    <input type="text" className ="sec2-input" />
-                    <p>Their emergency contact number</p>
-                    <input type="number" className ="sec2-input" />
-                    <p>Their email address</p>
-                    <input type="email" className ="sec2-input" />
+                        <h2>Your “In case of emergency” point of contact for when you take a work experience or insight day</h2>
+                        <p>Name</p>
+                        <input type="text" className ="sec2-input" />
+                        <p>Their relationship to you</p>
+                        <input type="text" className ="sec2-input" />
+                        <p>Their emergency contact number</p>
+                        <input type="number" className ="sec2-input" />
+                        <p>Their email address</p>
+                        <input type="email" className ="sec2-input" />
                     </div>
                     <div className="fifth-card">
-                    <h2>If you are signing up to do a work experience,please let us know  more about this</h2>
-                    <p>What month you expect your work experience to take place?</p>
-                    <input type="month" className ="sec2-input" />
-                    <p>Please tell us the date your work experience should begin</p>
-                    <input type="date" className ="sec2-input" />
-                    <p>Please tell us the date your work experience should end</p>
-                    <input type="date" className ="sec2-input" />
+                        <h2>If you are signing up to do a work experience,please let us know  more about this</h2>
+                        <p>What month you expect your work experience to take place?</p>
+                        <input type="month" className ="sec2-input" />
+                        <p>Please tell us the date your work experience should begin</p>
+                        <input type="date" className ="sec2-input" />
+                        <p>Please tell us the date your work experience should end</p>
+                        <input type="date" className ="sec2-input" />
                     </div>
                 </div>
             </div>

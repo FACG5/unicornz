@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import './style.css'
-import '../style.css'
 import Select from 'react-select';
 
+import './style.css'
+import '../style.css'
+
 const options = [
+
     { value: 'Math', label: 'Math' },
     { value: 'Science', label: 'Science' },
     { value: 'English', label: 'English' },
@@ -16,13 +18,16 @@ const options = [
   ];
 
 class PersonalDetails1 extends Component {
+
     state = {
         selectedOption: null, 
     }
 
     handleChange = (selectedOption) => {
+
         this.setState({ selectedOption });
       }
+      
     render() {
         const { selectedOption } = this.state; 
         return ( 
