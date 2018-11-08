@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import HeaderComp from './CommonComponents/Header';
 import FooterComp from './CommonComponents/Footer';
+import HeroSection from './Pages/LandingPage/HeroSection';
 
 class App extends Component {
   render() {
@@ -9,11 +10,10 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
         <HeaderComp />
-          <p>
-            {/* Edit <code>src/App.js</code> and save to reload. */}
-          </p>
+ 
         </header>
-
+        <HeroSection/>
+        
         <FooterComp />
       </div>
     );
