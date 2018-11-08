@@ -4,7 +4,6 @@
   "description": "Unicornz provides company technology work experiences to young schoogirls to empower and inspire them. The Unicor.nz App works by connecting them (and those that live too far away to take advantage of such work experiences) with female Mentors and role models.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
