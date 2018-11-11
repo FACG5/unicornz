@@ -12,7 +12,7 @@ class BasicDetails extends Component {
     render() { 
         
         return ( 
-            <div>
+            <div className="container">
                 <div className="first-section">
                     <h2>Hello Azara,Please fill out these basic details and then we will move on to the interesting stuff</h2>
                     <div className="first-card">
