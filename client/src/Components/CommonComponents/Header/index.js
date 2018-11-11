@@ -1,4 +1,5 @@
 import React from 'react';
+
 import logo from './logo.png'
 
 import './style.css'
@@ -17,5 +18,6 @@ const HeaderComp = (props) => {
         </div>
     );
 }
+
 
 export default HeaderComp;
