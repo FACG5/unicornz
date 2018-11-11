@@ -12,23 +12,23 @@ const CompanyContactComp = (props) => {
         <div className="companyDescription">
             <h3>Para Design</h3>
             <h4>Passion to innovate</h4>
-            <div>
+            <div className="contactItem">
                  <span> <img src={facebook} alt="facebook" /> /paradesign</span>
             </div>
 
-            <div>
+            <div className="contactItem">
                  <span><img src={email} alt="email" /> paradesign@gmail.uk</span>
             </div>
 
-            <div>
+            <div className="contactItem">
                  <span><img src={instagram} alt="instagram" /> paradesign</span>
             </div> 
             
-            <div>
+            <div className="contactItem">
                  <span><img src={website} alt="website" /> www.paradesign.uk</span>
             </div>
 
-            <div>
+            <div className="contactItem">
                  <span><img src={telephone} alt="telephone" /> +44 0000 000</span>
             </div>
         </div>
