@@ -1,0 +1,66 @@
+.mcard{
+    width: 90%;
+    background-color:#E0E0E0;
+    border: solid 1px #FFC6D9;
+    cursor: pointer;
+}
+.card {
+
+    display: flex;
+    padding:2% 2% 1% 2%;
+ 
+}
+
+.card-right{
+    padding:0 3% 0 3%;
+}
+
+.imageCard {
+    width: 230px;
+    height: 230px;
+    margin: 1% 2%;
+    border: solid brown;
+    border-radius: 5%;
+}
+
+.cardDitails {
+    display: flex;
+   justify-content: space-between;
+   flex-direction: row;
+}
+
+.cardLine{
+text-align: start;
+font-size: 22pt;
+}
+
+.cardLine span{
+    font-weight: bold;
+}
+
+.cardLine p{
+    line-height: 10pt;
+}
+
+.cardTitle{
+    font-family: Roboto;
+    font-size: 24pt;
+    font-weight: bold;
+    text-align: start;
+    margin: .5% 0 .5% 0;
+    line-height: 30pt;
+}
+
+h4{
+    font-family: Roboto;
+    font-size: 18pt;
+    text-align: start;
+}
+
+.subjectName{
+    background-color: #70D6FF;
+    align-self: flex-end;
+    padding:2%;
+    margin:0;
+    font-size:22pt;
+}
