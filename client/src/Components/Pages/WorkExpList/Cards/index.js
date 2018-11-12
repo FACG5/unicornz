@@ -4,7 +4,7 @@ import companyLogo from './images/companyLogo.png';
 import './style.css';
 const CardComp = (props) => {
     return (
-        <div className="mcard" onClick={()=>{}}>
+        <div className="mcard" >
         <h3 className="subjectName">Mathmatics</h3>
 
         <div className="card">
@@ -12,7 +12,9 @@ const CardComp = (props) => {
                  <img  className="imageCard" src={companyLogo} alt="company logo" />
             </div>
             <div className="card-right">
+              
                 <h3 className="cardTitle">Quantity Surveying Management Trainee Programme with SES</h3>
+               
                 <div className="cardDitails">
 
                      <div className="cardLine">
@@ -27,7 +29,7 @@ const CardComp = (props) => {
                         <p><span>Salary:</span>  15 / Day</p>
                     </div>
 
-            
+        
                  </div>
             </div>
         </div>
