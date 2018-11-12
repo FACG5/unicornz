@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import Dashboard from './Pages/Dashboard'
+
+
 import './App.css';
 
 class App extends Component {
@@ -6,10 +9,9 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
         </header>
+    <Dashboard />
+
       </div>
     );
   }
