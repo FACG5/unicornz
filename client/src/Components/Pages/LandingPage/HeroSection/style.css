@@ -1,0 +1,35 @@
+.hero{
+background-image: url('/images/hero.png');
+background-size: cover;
+width:100vw;
+height: 100vh;
+display: flex;
+flex-direction: column;
+}
+.mato, .spelling{
+    color:white;
+    font-size: 36pt;
+    align-self: flex-start;
+    margin: 10% 1% 5% 7%;
+    font-weight: bold;  
+    padding: 5%;
+    background: rgba(77, 115, 165, 0.5);
+    position: relative;
+    border-radius: 10px;
+}
+.spelling{
+    margin: 0 7% 0 0;
+    text-align: start;
+    font-size: 22pt;
+    padding: 2% 1% 2% 2%;
+    align-self: flex-end;
+}
+
+
+.spelling ul{
+    list-style: none;   
+}
+
+.spelling img{
+    height:20px;
+}
