@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import PersonalDetails1 from './PersonalDetails1/index';
-import BasicDetails from './BasicDetails/index';
 
+import BasicDetails from './BasicDetails/index';
 
 import './style.css'
 
@@ -12,8 +11,7 @@ class Questionnaier extends Component {
         return (
              <div>
                <BasicDetails />
-               <PersonalDetails1 />
-                
+
             </div>
               
           );

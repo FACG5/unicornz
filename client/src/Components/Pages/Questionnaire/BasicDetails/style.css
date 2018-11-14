@@ -1,0 +1,78 @@
+h2 {
+display: flex;
+align-items: flex-start;
+font-family: 'lato' , 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+font-weight: bold;
+font-size: 24px;
+color: #243151;
+width: 600px;
+}
+.first-section-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+.second-section-cards {
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    justify-content: space-between;
+}
+.first-card {
+    background-color: aquamarine;
+    width: 370px;
+    height: 250px;
+    padding-right: -10px;
+    border: 1px solid darkblue;
+    border-radius: 10px;
+    /* margin-right: 100px; */
+}
+
+.second-card {
+    background-color: burlywood;
+    width: 370px;
+    height: 250px;
+    border: 1px solid darkblue;
+    border-radius: 10px;
+}
+
+.third-card {
+    background-color: lightcoral;
+    width: 370px;
+    height: 250px;
+    border: 1px solid darkblue;
+    border-radius: 10px;
+}
+
+.fourth-card {
+    background-color:lightgreen;
+    width: 500px;
+    height: 300px;
+    border: 1px solid darkblue;
+    border-radius: 10px;
+    padding-right: 40px;
+}
+
+.fifth-card {
+    background-color:rgb(96, 136, 189);
+    width: 500px;
+    height: 300px;
+    border: 1px solid darkblue;
+    border-radius: 10px;
+}
+
+.num {
+
+}
+
+.sec1-input {
+width: 300px;
+height: 37px;
+background: #FFFFFF;
+border: 1px solid #9C27B0;
+box-sizing: border-box;
+border-radius: 10px;
+margin-right: 40px;
+}
