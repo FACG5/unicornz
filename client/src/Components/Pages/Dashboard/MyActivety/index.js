@@ -3,18 +3,16 @@ import './style.css';
 import loading from './images/loading.png';
 import request from './images/request.png';
 
-export default function index (props){
-  const{activites}=props;
+export default ({activites}) =>{
   return(
-  <React.Fragment>
   <div className='my-activity'>
   <h2>My activity</h2>
   {
 activites.map((val,index) => {
      const { done,job}=val;
      if(done) {return (
-    <div className="done" key={index}>
-    <img src={request} alt="news"/>{' '}
+    <div className="done activity" key={index}>
+    <img src={request} alt="news"/>
 <span>{job}</span>
     </div>
 ) }})}
@@ -22,8 +20,8 @@ activites.map((val,index) => {
 {activites.map((val,index) => {
      const { done,job}=val;
      if(!done) {return (
-     <div className="not-done" key={index}>
-       <img src={loading} alt="news"/>{' '}
+     <div className="not-done activity" key={index}>
+       <img src={loading} alt="news"/>
      <span>{job}</span>
      </div>
      )}})
@@ -31,7 +29,6 @@ activites.map((val,index) => {
 
 }
 </div>
-</React.Fragment>
 
 )
 }

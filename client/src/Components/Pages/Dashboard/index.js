@@ -11,8 +11,6 @@ class Dashboard extends Component {
   render() {
     return (
       <div className="grand-div">
-        <header className="App-header">
-        </header>
         <div className="dash-board">
         <div className="sub-div">
         <Girl name={'Marie'} city={'london'} age={18} favouritSubject={'science'} infoCompletion={'75'} email={'gmail.something'} mobile={'059999999'} />

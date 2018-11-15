@@ -9,7 +9,6 @@ import "./style.css";
 export default function index(props){
 const   {name ,city ,age ,favouritSubject,infoCompletion,email,mobile}= props;
 return(
-  <React.Fragment>
   <div className="PersonalInfo">
   <h2>Personal Info</h2>
     <span className="info">Name: {name}</span>
@@ -17,11 +16,13 @@ return(
     <span className="info">City: {city}</span>
     <span className="info">Favourit subject: {favouritSubject}</span>
     <span className="info">Your Profile Complete: {infoCompletion}</span>
+    <div className="progress-outer">
+      <div className="progress-inner" style={{ width: `${ infoCompletion }%` }} />
+    </div>
      <div className="img"><img src={emailImg} alt='email'/> {email}</div>
     <div className="img"><img src={phoneImg} alt='mobile'/> {mobile}</div>
     <div className="img"><img src={docImg} alt='Docs'/> Your Documents</div>
     </div>
-  </React.Fragment>
 )
 }
 
