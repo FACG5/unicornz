@@ -1,14 +1,8 @@
 .done{
   color:green;
-  font-weight: bold;
-  display: flex;
-  margin-top: 5px;
 }
 .not-done{
 color: red;
-font-weight: bold;
-display: flex;
-margin-top: 5px;
 }
 .my-activity{
   display: flex;
@@ -19,10 +13,17 @@ margin-top: 5px;
  border-radius: 10px;
  padding: 25px;
  margin: 25px;
- font-family:Roboto;
  justify-content: flex-start;
  opacity:0.8;
 }
+.activity{
+  font-weight: bold;
+  display: flex;
+  margin-top: 5px;
+}
 h2{
   display: flex;
+}
+img{
+  margin-right: 10px;
 }

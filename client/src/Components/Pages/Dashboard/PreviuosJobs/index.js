@@ -3,11 +3,9 @@ import checked from './images/checked.png'
 
 import "./style.css";
 
-const  index = (props)=>{
-const {prevJobs} = props;
+export default ({prevJobs}) =>{
 return(
-  <React.Fragment>
-  <div className="prevJobs" key={index}>
+  <div className="prevJobs">
   <h2>Previuos jobs</h2>
 {
 prevJobs && prevJobs.map((val,index)=>{
@@ -22,9 +20,7 @@ prevJobs && prevJobs.map((val,index)=>{
 })
 }
 </div>
-  </React.Fragment>
 )
 
 
 }
-export default index

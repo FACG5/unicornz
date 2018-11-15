@@ -4,11 +4,9 @@ import Button from '../../../CommonComponents/Button';
 
 import "./style.css";
 
-export default function index(props){
-  const { action } = props;
+export default  ({action}) => {
 
 return(
-  <React.Fragment>
   <div className='find'>
   <h2>Find Job</h2>
 <Input  type={'text'} label={'Post code'} name={'post-code'} width={'150px'} placeholder={'post code'} />
@@ -22,8 +20,6 @@ return(
 
    <Button className='button' value={'Search'} color={'#5D6A8B'} onClick={action}/>
    </div>
-
-</React.Fragment>
 )
 
 }
