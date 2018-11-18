@@ -4,18 +4,19 @@ import propTypes from 'prop-types';
 import "./style.css";
 
 export default function index(props){
-  const { value, type, label, name, width, placeholder } = props;
+  const { value, type, label, name, width, placeholder, onChange } = props;
   return (
      <React.Fragment>
      <div  className="common-input">
          <label  className="common-label">
-             {label}:
+             {label}
              <input
                  value={ value }
                  type={ type }
                  name={ name }
                  style={ { width: width } }
                  placeholder = {placeholder}
+                 onChange={onChange}
              />
          </label>
          </div>
