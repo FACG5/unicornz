@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Select from 'react-select';
-
+import NextBtn from '../../../CommonComponents/Button'
 import './style.css'
 import '../style.css'
 
@@ -44,49 +44,76 @@ const options = [
 class PersonalDetails1 extends Component {
 
     state = {
-        selectedOption: [], 
+        subjects: null, 
+        favSubjects: null,
+        enjoySchool: '',
+        hobbies: '',
+        futureJob: '',
+        interestedJob: '',
     }
+    handleSubjectChange = (subjects)=> {
+        this.setState({subjects}); 
+      }
 
-    handleChange = (selectedOption) => {
+      handleFavChange = (favSubjects)=> {
+        this.setState({favSubjects});
+      }
 
-        this.setState();
-        
+      onChange = (e) => {
+        const { name, value } = e.target;
+        this.setState({ 
+            [name]: value
+        });
+      };
+    
+      handleSubmit= (event) => {
+        alert('Your favorite flavor is: ' + this.state.subjects);
+        event.preventDefault();
       }
       
     render() {
         return ( 
             <div className="container">
-                <div className="third-section">
+                <div>
                     <h2>Now we've got the boring stuff out of the way, let's get to know more about your school studies</h2>
-                    <div className="six-card">
-                        <p>What subjects are you studying? Tick all that apply</p>
-                        <Select
-                            onChange={this.handleChange}
-                            value={this.selectedOption}
-                            isMulti={true}
-                            options={options}
-                        />
-                        <p>What are your favourite subjects Azara ? Tick up to 3</p>
-                        <Select
-                            onChange={this.handleChange}
-                            value={this.selectedOption}
-                            isMulti={true}
-                            options={options}
-                        />
-                        <p>What else do you enjoy at school? Tell us as much as you can.</p>
-                        <textarea rows="5" cols="40" placeholder="Answer"></textarea>
-                        <p>What are your interests and hobbies outside of school? Tell us everything you enjoy doing.</p>
-                        <textarea rows="5" cols="40" placeholder="Answer"></textarea>
+                    <div className="third-section">  
+                        <div className="six-card">
+                            <span className="num" id="num6">6</span>
+                            <p>What subjects are you studying? Tick all that apply</p>
+                            <Select
+                                className="select-input"
+                                onChange={this.handleSubjectChange}
+                                value={this.subjects}
+                                isMulti={true}
+                                options={options}
+                            />
+                            <p>What are your favourite subjects Azara ? Tick up to 3</p>
+                            <Select 
+                                className="select-input"
+                                onChange={this.handleFavChange}
+                                value={this.favSubjects}
+                                isMulti={true}
+                                options={options}
+                            />
+                            <p>What else do you enjoy at school? Tell us as much as you can.</p>
+                            <textarea rows="5" cols="40" placeholder="Answer" name="enjoySchool" onChange={this.onChange}></textarea>
+                            <p>What are your interests and hobbies outside of school? Tell us everything you enjoy doing.</p>
+                            <textarea rows="5" cols="40" placeholder="Answer" name="hobbies" onChange={this.onChange}></textarea>
+                        </div>
+                        <div className="seventh-card">
+                            <span className="num" id="num7">7</span>
+                            <p>If you have a copy of your CV, please upload it to your dashboard</p>
+                            <input type="file" className="file"/>
+                            <p>Can you imagine your future career? What does it look like?</p>
+                            <textarea rows="5" cols="40" placeholder="Answer" name="futureJob" onChange={this.onChange}></textarea>
+                            <p>What kinds of jobs do you think will interest you?</p>
+                            <textarea rows="5" cols="40" placeholder="Answer" name="interestedJob" onChange={this.onChange}></textarea>
+                            <h1 className="shape">Cool&#9813;</h1>
+                        </div>
                     </div>
-                    <div className="seventh-card">
-                        <p>If you have a copy of your CV, please upload it to your dashboard</p>
-                        <input type="file"/>
-                        <p>Can you imagine your future career? What does it look like?</p>
-                        <textarea rows="5" cols="40" placeholder="Answer"></textarea>
-                        <p>What kinds of jobs do you think will interest you?</p>
-                        <textarea rows="5" cols="40" placeholder="Answer"></textarea>
-                    </div>
+                    <NextBtn className="button" name="next" value="next"/>
                 </div>
+
             </div>
          );
     }

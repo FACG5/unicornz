@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-duplicate-props */
 import React, { Component } from 'react';
 import pic1 from '../pic1.jpg'
 import pic2 from '../pic2.jpeg'
@@ -23,7 +24,7 @@ class CheckboxImage extends Component {
     render() {
         const { src } = this.props;
         const { clicked } = this.state;
-        return <img src = {src} className = {clicked} onClick={this.onclickhandler} alt ="girl"/>
+        return <img src = {src} className = {clicked} id="pic" onClick={this.onclickhandler} alt ="girl"/>
     }
 }
 
@@ -35,31 +36,38 @@ class FinalDetails extends Component {
         
         return ( 
             <div className="container">
-                <p>Great! We're nearly there. Now a couple of questions about tech, and then your profile will be complete and you can press submit :)</p>
+                <h2>Great! We're nearly there. Now a couple of questions about tech, and then your profile will be complete and you can press submit :)</h2>
                 <div className="tenth-card">
                     <p>Which of these pictures do you think looks like a job in technology? Tick as many as you like</p>
-                    <CheckboxImage src = {pic1} />
-                    <CheckboxImage src = {pic2} />
-                    <CheckboxImage src = {pic3} />
-                    <CheckboxImage src = {pic4} />
+                    <div className="pics">
+                        <CheckboxImage src = {pic1} />
+                        <CheckboxImage src = {pic2} />
+                        <CheckboxImage src = {pic3} />
+                        <CheckboxImage src = {pic4} />
+                    </div>
+
                     <p>How likely are you to pursue a career in technology?</p>
-                    <label>1
-                        <input type="radio"/>
-                    </label>
-                    <label>2
-                        <input type="radio"/>
-                    </label>
-                    <label>3
-                        <input type="radio"/>
-                    </label>
-                    <label>4
-                        <input type="radio"/>
-                    </label>
-                    <label>5
-                        <input type="radio"/>
-                    </label>
-                    <p>Who do you know personally that has a career in technology?</p>
-                    <input type="text" placeholder="Enter her/his name"/>
+                    <div>
+                        <label>1
+                            <input type="radio"/>
+                        </label>
+                        <label>2
+                            <input type="radio"/>
+                        </label>
+                        <label>3
+                            <input type="radio"/>
+                        </label>
+                        <label>4
+                            <input type="radio"/>
+                        </label>
+                        <label>5
+                            <input type="radio"/>
+                        </label>
+                    </div>
+                    <div>
+                        <p>Who do you know personally that has a career in technology?</p>
+                        <input type="text" placeholder="Enter her/his name"/>
+                    </div>
                 </div>   
             </div>
          );

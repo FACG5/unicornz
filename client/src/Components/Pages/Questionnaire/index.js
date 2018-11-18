@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
 
-import BasicDetails from './BasicDetails/index';
-
 import './style.css'
+import PersonalDetails2 from './PersonalDetails2';
 
 class Questionnaier extends Component {
     
-
     render() { 
         return (
              <div>
-               <BasicDetails />
-
+               <PersonalDetails2 />
+            
             </div>
               
           );

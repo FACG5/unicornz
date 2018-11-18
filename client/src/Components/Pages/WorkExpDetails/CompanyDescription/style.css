@@ -1,0 +1,31 @@
+.companyDescription{
+    display: flex;
+    border: 1px solid black;
+    align-items:center;
+}
+
+.companyLogo{
+    height: 250px;
+    width: 20%;
+    margin: 3%;
+
+}
+.companyText {
+    width: 78%;
+}
+
+.companyLogo img{
+    height: 200px;
+    width: 200px;
+    top:50%;
+   }
+.companyDescription:hover img {
+    opacity: 0.6;
+  }
+
+
+  p {
+    text-align: justify;
+    font-size: 16pt;
+    margin-right: 2%;
+  }
