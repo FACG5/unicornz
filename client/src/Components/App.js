@@ -1,22 +1,28 @@
 import React, { Component } from 'react';
-import HeaderComp from './CommonComponents/Header';
-import FooterComp from './CommonComponents/Footer';
-import HeroSection from './Pages/LandingPage/HeroSection';
+import { BrowserRouter,Route} from 'react-router-dom';
+import Dashboard from './Pages/Dashboard';
+import Hero from './Pages/LandingPage/HeroSection';
+import Header from './CommonComponents/Header';
+import Footer from './CommonComponents/Footer'
+import Category from './Pages/Category'
 import Questionnaier from './Pages/Questionnaire';
 
 import './App.css';
 
 class App extends Component {
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-        <HeaderComp />
- 
-        </header>
-        <HeroSection/>
-        <Questionnaier />
-        <FooterComp />
+       <Header />
+      <BrowserRouter>
+       <div>
+       <Route exact path="/" component={Hero} />
+       <Route path="/dash" component={Dashboard}/>
+       <Route path="/category" component={Category}/>
+       </div>
+      </BrowserRouter>
+      <Footer />
       </div>
     );
   }
