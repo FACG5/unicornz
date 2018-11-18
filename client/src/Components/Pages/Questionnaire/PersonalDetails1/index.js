@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Select from 'react-select';
-<<<<<<< HEAD
 import NextBtn from '../../../CommonComponents/Button'
 import './style.css'
 import '../style.css'
