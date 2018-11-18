@@ -1,0 +1,50 @@
+.PersonalInfo{
+  display: flex;
+  flex-direction: column;
+  background-color: #E0E0E0;
+ width: 300px;
+ border: 1px solid #011936;
+ border-radius: 10px;
+ padding: 25px;
+ margin: 25px;
+ justify-content: flex-start;
+ opacity:0.8;
+}
+.info{
+  background-color: #E0E0E0;
+border-bottom: 1px solid white;
+  padding: 2px;
+  margin: 2px;
+display: flex;
+}
+
+img{
+  height: 20px;
+  width:20;
+  display: flex;
+}
+.img{
+  display: inline;
+  background-color: #E0E0E0;
+  border-bottom: 1px solid white;
+  padding: 3px;
+  margin: 3px;
+  display: flex;
+}
+.progress-outer{
+  background-color: grey;
+position: relative;
+width: 300Px;
+height: 30Px;
+border-radius: 10px;
+
+
+}
+.progress-inner{
+  background-color: green;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+
+}

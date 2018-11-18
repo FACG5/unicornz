@@ -1,0 +1,19 @@
+.news{
+  display: flex;
+  flex-direction: column;
+  background-color: #E0E0E0;
+ width: 300px;
+ border: 1px solid #011936;
+ border-radius: 10px;
+ padding: 25px;
+ margin: 25px;
+ justify-content: flex-start;
+ opacity:0.8;
+}
+.new-span{
+  display: flex;
+  margin-top: 5px;
+}
+img{
+  margin-right: 10px;
+}

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Select from 'react-select';
+<<<<<<< HEAD
 import NextBtn from '../../../CommonComponents/Button'
 import './style.css'
 import '../style.css'
@@ -39,6 +40,7 @@ const options = [
     { value: 'Statistics', label: 'Statistics' },
     { value: 'Welsh', label: 'Welsh' },
     { value: 'Other', label: 'Other' },
+
   ];
 
 class PersonalDetails1 extends Component {
@@ -51,6 +53,7 @@ class PersonalDetails1 extends Component {
         futureJob: '',
         interestedJob: '',
     }
+    
     handleSubjectChange = (subjects)=> {
         this.setState({subjects}); 
       }
@@ -112,7 +115,6 @@ class PersonalDetails1 extends Component {
                     </div>
                     <NextBtn className="button" name="next" value="next"/>
                 </div>
-
             </div>
          );
     }
