@@ -5,6 +5,7 @@ import Hero from './Pages/LandingPage/HeroSection';
 import Header from './CommonComponents/Header';
 import Footer from './CommonComponents/Footer';
 import Signup from '../Components/Pages/SignUp';
+import Category from '../Components/Pages/Category';
 
 
 import './App.css';
@@ -20,6 +21,8 @@ class App extends Component {
        <Route exact path="/" component={Hero} />
        <Route path="/dash" component={Dashboard}/>
        <Route path="/signup" component={Signup}/>
+       <Route path="/category" component={Category}/>
+
        </div>
       </BrowserRouter>
       <Footer />
