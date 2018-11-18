@@ -24,7 +24,6 @@ class BasicDetails extends Component {
         }
     }
 
-
     handleSubmit = (event) => {
         event.preventDefault();
         const data = this.state
@@ -32,14 +31,18 @@ class BasicDetails extends Component {
         
     }
 
-
-  onChange = (e) => {
+    onChange = (e) => {
     const { name, value } = e.target;
     this.setState({ 
         [name]: value
-    });
-  };
-    
+      });  onChange = (e) => {
+        const { name, value } = e.target;
+        this.setState({ 
+            [name]: value
+        });
+      };
+    };
+ 
     render() {
 
         return (

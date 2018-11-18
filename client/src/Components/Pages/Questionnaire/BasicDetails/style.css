@@ -20,11 +20,13 @@ h2 {
     justify-content: space-evenly;
     grid-gap: 100px 50px;
 }
+
 .second-section-cards {  
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
+
 .first-card {
     background-color: rgb(243, 190, 234);
     width: 400px;
@@ -118,6 +120,7 @@ p {
     color: rgb(15, 42, 63);
     font-size: 18px;
 }
+
 .special-txt {
     font-size: 14px; 
 }
