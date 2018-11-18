@@ -5,7 +5,7 @@ import Hero from './Pages/LandingPage/HeroSection';
 import Header from './CommonComponents/Header';
 import Footer from './CommonComponents/Footer'
 import Category from './Pages/Category'
-
+import workExperienceDetails from './Pages/WorkExpList';
 import './App.css';
 
 class App extends Component {
@@ -19,6 +19,7 @@ class App extends Component {
        <Route exact path="/" component={Hero} />
        <Route path="/dash" component={Dashboard}/>
        <Route path="/category" component={Category}/>
+       <Route path="/workexperiencelist" component={workExperienceDetails}/>
 
        </div>
       </BrowserRouter>
