@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Select from 'react-select';
-<<<<<<< HEAD
+import Dropzone from 'react-dropzone'
 import NextBtn from '../../../CommonComponents/Button'
 import './style.css'
 import '../style.css'
@@ -43,6 +43,8 @@ const options = [
 
   ];
 
+  const fileMaxSize = 100000000  //byte
+
 class PersonalDetails1 extends Component {
 
     state = {
@@ -52,26 +54,54 @@ class PersonalDetails1 extends Component {
         hobbies: '',
         futureJob: '',
         interestedJob: '',
+        files:[],
+        label:"choose files"
     }
     
     handleSubjectChange = (subjects)=> {
         this.setState({subjects}); 
       }
 
-      handleFavChange = (favSubjects)=> {
+    handleFavChange = (favSubjects)=> {
         this.setState({favSubjects});
       }
 
-      onChange = (e) => {
+    onChange = (e) => {
         const { name, value } = e.target;
         this.setState({ 
             [name]: value
         });
       };
     
-      handleSubmit= (event) => {
+    handleSubmit= (event) => {
         event.preventDefault();
+      
+ 
       }
+    
+    handleOnDrop = (files, rejectedFiles) => {
+     console.log(files);
+     
+     
+
+        if (rejectedFiles && rejectedFiles.length > 0) {
+            const currentRejectFile = rejectedFiles[0];
+            const currentRejectFileSize = currentRejectFile.size;
+            
+            
+            if ( currentRejectFileSize > fileMaxSize) {
+                alert('This file is too big..please choose another one')
+            }
+        }
+            const currentFile = files[0];
+            const currentFileSize = currentFile.size;
+            if ( currentFileSize > fileMaxSize) {
+                alert('This file is too big..please choose another one')
+            
+            }else{
+            this.setState({files:files,label:files[0].name})
+        }
+    }
       
     render() {
         return ( 
@@ -105,15 +135,20 @@ class PersonalDetails1 extends Component {
                         <div className="seventh-card">
                             <span className="num" id="num7">7</span>
                             <p>If you have a copy of your CV, please upload it to your dashboard</p>
-                            <input type="file" className="file"/>
+                            <Dropzone
+                                className="drop-zone"
+                                onDrop={this.handleOnDrop}
+                                maxSize= {fileMaxSize}
+                                multiple= {false}
+                            >{this.state.label}</Dropzone>
                             <p>Can you imagine your future career? What does it look like?</p>
                             <textarea rows="5" cols="40" placeholder="Answer" name="futureJob" onChange={this.onChange}></textarea>
                             <p>What kinds of jobs do you think will interest you?</p>
                             <textarea rows="5" cols="40" placeholder="Answer" name="interestedJob" onChange={this.onChange}></textarea>
-                            <h1 className="shape">Cool&#9813;</h1>
+                            {/* <h1 className="shape">Cool&#9813;</h1> */}
                         </div>
                     </div>
-                    <NextBtn className="button" name="next" value="next"/>
+                    <NextBtn className="button" name="next" value="next" />
                 </div>
             </div>
          );

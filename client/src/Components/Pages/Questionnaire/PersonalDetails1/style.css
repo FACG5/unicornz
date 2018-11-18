@@ -108,16 +108,32 @@ textarea {
     border-radius: 10px;
 }
 
-.file {
+.drop-zone {
+
     box-sizing: border-box;
     border: 1px solid #153C59;
+    border-radius: 10px;
     width: 350px;
     height: 42px;
     font-size: 16px;
     padding: 10px;
+    margin-left: 95px;
     color: grey;
     cursor: pointer;
+    text-align: start;
     outline: 0;
-    
+    background-color: #FFFFFF;  
+}
 
+.button {
+    margin-top: 100px;
+    background-color: #153C59;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-family: 'lato', sans-serif;
+    text-align: center;
+    border-radius: 10px;
+    width: 150px;
+    height: 50px;
+    outline-style: none;
 }
