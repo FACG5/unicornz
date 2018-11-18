@@ -1,4 +1,10 @@
-.news{
+.done{
+  color:green;
+}
+.not-done{
+color: red;
+}
+.my-activity{
   display: flex;
   flex-direction: column;
   background-color: #E0E0E0;
@@ -10,9 +16,13 @@
  justify-content: flex-start;
  opacity:0.8;
 }
-.new-span{
+.activity{
+  font-weight: bold;
   display: flex;
   margin-top: 5px;
+}
+h2{
+  display: flex;
 }
 img{
   margin-right: 10px;
