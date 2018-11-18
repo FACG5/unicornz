@@ -8,26 +8,25 @@ import Category from './Pages/Category'
 
 import './App.css';
 
-
 class App extends Component {
 
   render() {
+    return (
+      <div className="App">
+       <Header />
+      <BrowserRouter>
+       <div>
+       <Route exact path="/" component={Hero} />
+       <Route path="/dash" component={Dashboard}/>
+       <Route path="/category" component={Category}/>
 
-		return (
-		<div className="App">
-		<Header />
-		<BrowserRouter>
-		<div>
-		<Route exact path="/" component={Hero} />
-		<Route path="/dash" component={Dashboard}/>
-		<Route path="/category" component={Category}/>
-
-		</div>
-		</BrowserRouter>
-		<Footer />
-		</div>
-		);
-	}
+       </div>
+      </BrowserRouter>
+      <Footer />
+      </div>
+    );
+  }
 }
+
 
 export default App;
