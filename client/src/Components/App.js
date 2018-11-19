@@ -3,9 +3,12 @@ import { BrowserRouter,Route} from 'react-router-dom';
 import Dashboard from './Pages/Dashboard';
 import Hero from './Pages/LandingPage/HeroSection';
 import Header from './CommonComponents/Header';
-import Footer from './CommonComponents/Footer';
+import Footer from './CommonComponents/Footer'
+import workExperienceDetails from './Pages/WorkExpList';
 import Signup from '../Components/Pages/SignUp';
-
+import Login from '../Components/Pages/Login';
+import workExperienceList from '../Components/Pages/WorkExpList';
+import Category from '../Components/Pages/Category';
 
 import './App.css';
 
@@ -17,10 +20,14 @@ class App extends Component {
        <Header />
       <BrowserRouter>
        <div>
-       <Route exact path="/" component={Hero} />
-       <Route path="/dash" component={Dashboard}/>
-       <Route path="/signup" component={Signup}/>
-       <Route path="*" component={Hero} />
+          <Route exact path="/" component={Hero} />
+          <Route path="/dash" component={Dashboard}/>
+          <Route path="/signup" component={Signup}/>
+          <Route path="/login" component={Login}/>
+          <Route path="/workexperiencedetails" component={workExperienceDetails}/>
+          <Route path="/category" component={Category}/>
+          <Route path="/workexperiencelist" component={workExperienceList}/>
+          <Route path="*" component={Hero} />
        </div>
       </BrowserRouter>
       <Footer />

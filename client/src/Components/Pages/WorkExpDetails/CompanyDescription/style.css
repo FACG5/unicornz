@@ -2,9 +2,10 @@
     display: flex;
     border: 1px solid black;
     align-items:center;
+    width: 100%;
 }
 
-.companyLogo{
+.companyLogo {
     height: 250px;
     width: 20%;
     margin: 3%;
@@ -19,7 +20,7 @@
     width: 200px;
     top:50%;
    }
-.companyDescription:hover img {
+.companyDescription img:hover {
     opacity: 0.6;
   }
 
