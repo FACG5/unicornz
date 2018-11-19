@@ -1,11 +1,12 @@
-.companyDescription{
+.companyContact{
     display: flex;
     flex-direction: column;
     border: 1px solid black;
-    width: 20%;
+    width: 30%;
+    margin: 1% 0%;
  }
 
-.companyDescription div {
+.companyContact div {
     padding-top: 15px;
     padding-bottom: 5px;
 }
