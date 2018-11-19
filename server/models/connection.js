@@ -1,5 +1,14 @@
 const Sequelize = require('sequelize');
 require('env2')('config.env');
+const { DB_CONFIG } = require('../../config.js');
+
+const {
+  username,
+  password,
+  dbname,
+  host,
+  dialect,
+} = DB_CONFIG;
 
 module.exports = new Sequelize(process.env.dbname, process.env.username, process.env.password, {
   host: process.env.host,
