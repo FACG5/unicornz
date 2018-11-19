@@ -8,12 +8,12 @@ import './style.css';
  const CategoryComponent = (props) => {
     return (
         <div className="signupCategory">
-             <NavLink to="/signup">
-               <div className="categoryElement">
+            <div className="categoryElement">
+                <NavLink to="/signup">
                    <img src={girl} alt="girl" />
-                   <h3>Girl Student</h3>
-                </div>
-             </NavLink>
+                </NavLink>
+                <h3>Girl Student</h3>
+            </div>
              <div className="categoryElement">
                 <img src={teacher} alt="gteacher" />
                 <h3>Teacher</h3>
