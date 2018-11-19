@@ -35,16 +35,57 @@ export default class SignUpForm extends Component {
         console.log(this.state);
         return (
             <div className="signupComponent">
-                <Input className="inputComponent" name="username" label="Username" type="text" onChange={this.handleChange}/>
-                <Input name="fname" label="First Name" type="text" onChange={this.handleChange}/>
-                <Input name="lname" label="Last Name" type="text" onChange={this.handleChange}/>
-                <Input name="email" label="Email" type="email" onChange={this.handleChange}/>
-                <Input name="school" label="Your School" type="text" onChange={this.handleChange}/>
-                <Input name="birthDate" label="Birth Date" type="date" onChange={this.handleChange}/>
-                <Input name="password" label="Password" type="password" onChange={this.handleChange}/>
-                <Input name="cpassword" label="Re-Enter Password" type="password" onChange={this.handleChange}/>
-                <input name="checkUser" type="checkbox" onChange={this.handleChange} onClick={this.handleClick}/> I'm not Robot
-                <Button value="Submit" />
+
+                <form id="signupform" enctype='multipart/form-data' action="/signup" method="POST">
+                    <section class="containerr">
+                        <div class="clm">
+                            <div class="item">
+                                <label for="name"> First Name</label>
+                                <input type="text" name="name" id="fname" required/>
+                                <p id="fnamerr" class="errorValid"></p>
+                            </div>
+                            <div class="item">
+                                <label for="email">Last Name </label>
+                                <input type="email" name="email" id="email" required/>
+                                <p id="emailerr" class="errorValid"></p>
+                            </div>
+                            <div class="item">
+                                <label for="email">Email </label>
+                                <input type="email" name="email" id="email" required/>
+                                <p id="emailerr" class="errorValid"></p>
+                            </div>
+                            <div class="item">
+                                <label for="email">School </label>
+                                <input type="email" name="email" id="email" required/>
+                                <p id="emailerr" class="errorValid"></p>
+                            </div>
+                            </div>
+                            <div class="clm">
+                            <div class="item">
+                                <label for="email">Birth Date</label>
+                                <input type="email" name="email" id="email" required/>
+                                <p id="emailerr" class="errorValid"></p>
+                            </div>
+                            <div class="item">
+                                <label for="email">Password </label>
+                                <input type="email" name="email" id="email" required/>
+                                <p id="emailerr" class="errorValid"></p>
+                            </div>
+                            <div class="item">
+                                <label for="email">Confirm Password</label>
+                                <input type="email" name="email" id="email" required/>
+                                <p id="emailerr" class="errorValid"></p>
+                            </div>
+                            <div class="item">
+                                <label for="email">I am not a robot</label>
+                                <input type="checkbox" name="robot" id="email" required/>
+                                <p id="emailerr" class="errorValid"></p>
+                            </div>
+                        </div>
+                    </section>
+                    <Button value="Submit" />
+                </form>
+
             </div>
         )
     }
