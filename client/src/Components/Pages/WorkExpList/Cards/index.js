@@ -1,11 +1,11 @@
 import React from 'react';
-import companyLogo from './images/companyLogo.png';
 
 import './style.css';
 const CardComp = (props) => {
+    const {subjectName, companyLogo, expWorkTitle, country, postCode, website, startingDate, endingDate, pocketMoney}= props;
     return (
         <div className="mcard" >
-        <h3 className="subjectName">Mathmatics</h3>
+        <h3 className="subjectName">{subjectName}</h3>
 
         <div className="card">
             <div>
@@ -13,20 +13,20 @@ const CardComp = (props) => {
             </div>
             <div className="card-right">
               
-                <h3 className="cardTitle">Quantity Surveying Management Trainee Programme with SES</h3>
+                <h3 className="cardTitle">{expWorkTitle}</h3>
                
                 <div className="cardDitails">
 
                      <div className="cardLine">
-                        <p><span>Country: </span>  London</p>
-                        <p><span>Post code:</span>  + 44</p>
-                        <p><span>Website:</span>  <a href="www.unicornz.uk">www.unicornz.uk</a></p>
+                        <p><span>Country: </span>  {country}</p>
+                        <p><span>Post code:</span> {postCode}</p>
+                        <p><span>Website:</span>  <a href="www.unicornz.uk">{website}</a></p>
                      </div>
 
                     <div className="cardLine"> 
-                        <p><span>Starting Date:</span>  10/01/2019</p>
-                        <p><span>Ending Date:</span>  20/01/2019</p>
-                        <p><span>Salary:</span>  15 / Day</p>
+                        <p><span>Starting Date:</span>  {startingDate}</p>
+                        <p><span>Ending Date:</span>  {endingDate}</p>
+                        <p><span>Salary:</span> {pocketMoney} Pounds/Day</p>
                     </div>
 
         

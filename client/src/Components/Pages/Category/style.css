@@ -1,0 +1,28 @@
+.signupCategory { 
+    display: flex;
+    flex-direction: row;
+    border: 1px solid black;
+    padding: 1%;
+    width: 60%;
+    flex-wrap:wrap;
+    justify-content:center;
+    background-color: #E0E1E1;
+    margin: 5% auto;
+}
+ .categoryElement {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    margin: 1%;
+}
+ .categoryElement img {
+    width: 150px;
+    height: 150px;
+    padding: 2%;
+}
+
+.categoryElement img:hover {
+   opacity: 0.7;   
+   background-color: darkslategrey;
+}
+
