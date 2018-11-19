@@ -6,6 +6,7 @@ import Header from './CommonComponents/Header';
 import Footer from './CommonComponents/Footer'
 import workExperienceDetails from './Pages/WorkExpList';
 import Signup from '../Components/Pages/SignUp';
+import workExperienceDetails from '../Components/Pages/WorkExpDetails';
 import Category from '../Components/Pages/Category';
 
 import './App.css';
@@ -21,6 +22,7 @@ class App extends Component {
        <Route exact path="/" component={Hero} />
        <Route path="/dash" component={Dashboard}/>
        <Route path="/signup" component={Signup}/>
+       <Route path="/workexperiencedetails" component={workExperienceDetails}/>
        <Route path="/category" component={Category}/>
        <Route path="/workexperiencelist" component={workExperienceDetails}/>
 
