@@ -12,8 +12,8 @@ const dbConfig = (env) => {
     if (env === 'development') {
       return {
         username: process.env.DATABASE_URL,
-        password: process.env.dbPassword,
-        dbname: process.env.dbName,
+        password: process.env.password,
+        dbname: process.env.dbname,
         host: 'localhost',
         dialect: 'postgres',
       };
