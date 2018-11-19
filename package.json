@@ -28,7 +28,15 @@
     "babel-eslint": "9.0.0"
   },
   "dependencies": {
+    "cookie-parser": "^1.4.3",
+    "env2": "^2.2.2",
     "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.2"
-  }
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.4.0",
+    "pg": "^6.0.0",
+    "sequelize": "^4.41.2"
+  },
+  "proxy": "http://localhost:8000"
+
 }
