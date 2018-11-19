@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Unicornz provides company technology work experiences to young schoogirls to empower and inspire them. The Unicor.nz App works by connecting them (and those that live too far away to take advantage of such work experiences) with female Mentors and role models.",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "start": "node ./server/index.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/FACG5/unicornz.git"
@@ -21,7 +23,13 @@
     "babel-eslint": "9.0.0"
   },
   "dependencies": {
+    "cookie-parser": "^1.4.3",
+    "env2": "^2.2.2",
     "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.2"
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.4.0",
+    "pg": "^6.0.0",
+    "sequelize": "^4.41.2"
   }
 }
