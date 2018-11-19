@@ -4,8 +4,10 @@ import Dashboard from './Pages/Dashboard';
 import Hero from './Pages/LandingPage/HeroSection';
 import Header from './CommonComponents/Header';
 import Footer from './CommonComponents/Footer'
-import Category from './Pages/Category'
 import workExperienceDetails from './Pages/WorkExpList';
+import Signup from '../Components/Pages/SignUp';
+import Category from '../Components/Pages/Category';
+
 import './App.css';
 
 class App extends Component {
@@ -18,6 +20,7 @@ class App extends Component {
        <div>
        <Route exact path="/" component={Hero} />
        <Route path="/dash" component={Dashboard}/>
+       <Route path="/signup" component={Signup}/>
        <Route path="/category" component={Category}/>
        <Route path="/workexperiencelist" component={workExperienceDetails}/>
 

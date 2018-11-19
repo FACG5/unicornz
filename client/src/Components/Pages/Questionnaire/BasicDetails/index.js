@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import NextBtn from '../../../CommonComponents/Button'
 
 import './style.css'
 import '../style.css'
 
 class BasicDetails extends Component {
-
+  
     state = {
         value : "",
     }
