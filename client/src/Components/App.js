@@ -6,6 +6,8 @@ import Header from './CommonComponents/Header';
 import Footer from './CommonComponents/Footer';
 import Signup from '../Components/Pages/SignUp';
 import workExperienceDetails from '../Components/Pages/WorkExpDetails';
+import Category from '../Components/Pages/Category';
+
 
 import './App.css';
 
@@ -21,6 +23,7 @@ class App extends Component {
        <Route path="/dash" component={Dashboard}/>
        <Route path="/signup" component={Signup}/>
        <Route path="/workexperiencedetails" component={workExperienceDetails}/>
+       <Route path="/category" component={Category}/>
 
        </div>
       </BrowserRouter>
