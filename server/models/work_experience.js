@@ -37,7 +37,7 @@ module.exports =  sequelize.define('work_experience', {
       allowNull: true
     },
     pocket_money: {
-      type: Sequelize.INTEGER,
+      type: Sequelize.DECIMAL,
       allowNull: true
     },
     title: {

@@ -12,7 +12,7 @@ const createCookie = (user, cb) => {
 const getTokenData = (data, cb) => {
   verify(data, process.env.SECRET, (err, decoded) => {
     if (err) {
-      return cb(new TypeError());
+      return cb("Error verifying the token");
     }
     cb(null, decoded);
     return true;
@@ -27,11 +27,11 @@ const authCheck = (request, cb) => {
   const { data } = request.cookies;
 
   if (!data) {
-    return cb(new TypeError());
+    return cb("No authentication data");
   }
   getTokenData(data, (err, decoded) => {
     if (err) {
-      return cb(new TypeError());
+      return cb(err);
     }
     cb(null, decoded);
     return true;

@@ -31,6 +31,10 @@ module.exports =  sequelize.define('registration', {
     registration_date: {
       type: Sequelize.DATEONLY,
       allowNull: true
+    },
+    response: {
+      type: Sequelize.TEXT,
+      allowNull: true
     }
   }, {
     tableName: 'registration'

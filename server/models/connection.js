@@ -1,10 +1,8 @@
 const Sequelize = require('sequelize');
-// require('env2')('./config.env');
-// const { DB_CONFIG } = require('../../../config.js');
+require('env2')('config.env');
 
-// const { dbname, username, password, host } = DB_CONFIG;
-module.exports = new Sequelize("unicornz", "unicornz", "12345678", {
-  host:"localhost",
+module.exports = new Sequelize(process.env.dbname, process.env.username, process.env.password, {
+  host: process.env.host,
   dialect: 'postgres',
   operatorsAliases: false,
   logging: false,

@@ -32,13 +32,17 @@ module.exports =  sequelize.define('girl', {
         key: 'id'
       }
     },
+    other_school: {
+      type: Sequelize.STRING,
+      allowNull: true
+    },
     birthdate: {
       type: Sequelize.DATEONLY,
       allowNull: true
     },
     password: {
       type: Sequelize.TEXT,
-      allowNull: true
+      allowNull: false
     }
   }, {
     tableName: 'girl'
