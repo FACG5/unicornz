@@ -4,7 +4,7 @@ import Dashboard from './Pages/Dashboard';
 import Hero from './Pages/LandingPage/HeroSection';
 import Header from './CommonComponents/Header';
 import Footer from './CommonComponents/Footer'
-import workExperienceDetails from './Pages/WorkExpList';
+import WorkExperienceList from './Pages/WorkExpList';
 import Signup from '../Components/Pages/SignUp';
 import Login from '../Components/Pages/Login';
 
@@ -12,6 +12,7 @@ import workExperienceDetails from '../Components/Pages/WorkExpDetails';
 import Category from '../Components/Pages/Category';
 
 import './App.css';
+import workExperienceList from './Pages/WorkExpList';
 
 class App extends Component {
 
@@ -25,7 +26,7 @@ class App extends Component {
        <Route path="/dash" component={Dashboard}/>
        <Route path="/signup" component={Signup}/>
        <Route path="/login" component={Login}/>
-       <Route path="/workexperiencedetails" component={workExperienceDetails}/>
+       <Route path="/workexperiencedetails" component={workExperienceList}/>
        <Route path="/category" component={Category}/>
        <Route path="/workexperiencelist" component={workExperienceDetails}/>
        </div>
