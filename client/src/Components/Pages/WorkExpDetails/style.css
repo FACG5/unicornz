@@ -1,0 +1,10 @@
+.detailsPage {
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+}
+.twine {
+    display: flex;
+    justify-content: space-around;
+}
+
