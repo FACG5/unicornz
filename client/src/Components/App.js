@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-import { BrowserRouter,Route} from 'react-router-dom';
+import { BrowserRouter,Route, Switch} from 'react-router-dom';
 import Dashboard from './Pages/Dashboard';
-import Hero from './Pages/LandingPage/HeroSection';
+import LandingPage from './Pages/LandingPage';
 import Header from './CommonComponents/Header';
 import Footer from './CommonComponents/Footer'
 import WorkExperienceList from './Pages/WorkExpList';
 import Signup from '../Components/Pages/SignUp';
 import Login from '../Components/Pages/Login';
-
-import workExperienceDetails from '../Components/Pages/WorkExpDetails';
+import workExperienceList from '../Components/Pages/WorkExpList';
 import Category from '../Components/Pages/Category';
 
 import './App.css';
@@ -22,13 +21,16 @@ class App extends Component {
        <Header />
       <BrowserRouter>
        <div>
-       <Route exact path="/" component={Hero} />
-       <Route path="/dash" component={Dashboard}/>
-       <Route path="/signup" component={Signup}/>
-       <Route path="/login" component={Login}/>
-       <Route path="/workexperiencedetails" component={workExperienceList}/>
-       <Route path="/category" component={Category}/>
-       <Route path="/workexperiencelist" component={workExperienceDetails}/>
+         <Switch>
+            <Route exact path="/" component={LandingPage} />
+            <Route path="/dash" component={Dashboard}/>
+            <Route path="/signup" component={Signup}/>
+            <Route path="/login" component={Login}/>
+            <Route path="/workexperiencedetails" component={workExperienceDetails}/>
+            <Route path="/category" component={Category}/>
+            <Route path="/workexperiencelist" component={workExperienceList}/>
+            <Route path="*"  component={LandingPage} />
+          </Switch>
        </div>
       </BrowserRouter>
       <Footer />
