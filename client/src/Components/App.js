@@ -4,14 +4,14 @@ import Dashboard from './Pages/Dashboard';
 import LandingPage from './Pages/LandingPage';
 import Header from './CommonComponents/Header';
 import Footer from './CommonComponents/Footer'
-import WorkExperienceList from './Pages/WorkExpList';
+import workExperienceDetails from './Pages/WorkExpDetails';
 import Signup from '../Components/Pages/SignUp';
 import Login from '../Components/Pages/Login';
-import workExperienceList from '../Components/Pages/WorkExpList';
+import workExperienceList from './Pages/WorkExpList';
 import Category from '../Components/Pages/Category';
 
 import './App.css';
-import workExperienceList from './Pages/WorkExpList';
+
 
 class App extends Component {
 
