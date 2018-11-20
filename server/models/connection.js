@@ -22,10 +22,12 @@ module.exports = new Sequelize(dbname, username, password, {
     underscored: true,
     timestamps: false,
   },
+  native: true,
   pool: {
     max: 10,
     min: 0,
     acquire: 30000,
     idle: 10000,
+    ssl: false,
   },
 });
