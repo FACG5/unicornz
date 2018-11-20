@@ -1,11 +1,11 @@
 /* eslint-disable jsx-a11y/accessible-emoji */
 import React, { Component } from 'react';
 import Select from 'react-select';
-
+import NextBtn from '../../../CommonComponents/Button'
 import './style.css'
 import '../style.css'
 
-const options = [
+const options1 = [
 
     { value: 'Making money', label: 'Making money' },
     { value: 'Being able to do my favourite subjects and hobbies', label: 'Being able to do my favourite subjects and hobbies' },
@@ -14,22 +14,60 @@ const options = [
  
 ];
 
+const options2 = [
+
+    { value: 'Gain more confidence ', label: 'Gain more confidence' },
+    { value: 'Gain experience of working', label: 'Gain experience of working' },
+    { value: 'See how my favourite subjects work in a career', label: 'See how my favourite subjects work in a career' },
+    
+];
+
 class PersonalDetails2 extends Component {
 
     state = {
-        selectedOption: null,
+        
         famousEntrepreneur: '',
         BeEntrepreneur: '',
         entrepreneursWomen: '',
-        importantInCareer1: null,
+        importantInCareer1: '',
         importantInCareer2: '',
         importantInCareer3: '',
+        importantfactors1: '',
+        importantfactors2: '',
+        importantfactors3: ''
     }
 
     ImpInCareerSelector1 = (importantInCareer1) => {
 
-        this.setState(importantInCareer1);
+        this.setState({importantInCareer1});
+   
+    }
+
+    ImpInCareerSelector2 = (importantInCareer2) => {
+
+        this.setState({importantInCareer2});
         console.log(this.state);
+    }
+
+    ImpInCareerSelector3 = (importantInCareer3) => {
+
+        this.setState({importantInCareer3});
+    }
+
+    Impfactorselector1 = (importantfactor1) => {
+        this.setState({importantfactor1});
+    }
+
+    Impfactorselector2 = (importantfactor2) => {
+        this.setState({importantfactor2});
+    }
+
+    Impfactorselector3 = (importantfactor3) => {
+        this.setState({importantfactor3});
+    }
+
+    handleSubmit = (event) => {
+        event.preventDefault();
     }
 
     onChange = (e) => {
@@ -39,22 +77,6 @@ class PersonalDetails2 extends Component {
         });
     };
 
-    // ImpInCareerSelector = () => {
-    //    return <Select
-    //     onChange={this.handleChange}
-    //     value={this.value}
-    //     options={options}
-    //     />
-    // }
-
-    // ImpFactors = () => {
-    //     return <Select
-    //      onChange={this.handleChange}
-    //      value={this.selectedOption}
-    //      options={options}
-    //      />
-    //  }
-      
     render() {
         return ( 
             <div className="container">
@@ -63,46 +85,69 @@ class PersonalDetails2 extends Component {
                     <div className="fourth-section">
                         <div className="eight-card">
                             <p>What do you think is most important to you in a career? Tick your top 3</p>
+                                <div className="selector">
+                                    <Select
+                                        className="select-input"
+                                        placeholder="priority one"
+                                        name="importantInCareer1"
+                                        onChange={this.ImpInCareerSelector1}
+                                        value={this.state.importantInCareer1}
+                                        options={options1}
+                                    />
+                                </div>
+                                <div className="selector">
+                                    <Select
+                                        className="select-input" 
+                                        placeholder="priority two" 
+                                        name="importantInCareer2"
+                                        onChange={this.ImpInCareerSelector2}
+                                        value={this.state.importantInCareer2}
+                                        options={options1}
+                                    /> 
+                                </div>
+                                <div className="selector">
+                                    <Select 
+                                        className="select-input"
+                                        placeholder="priority three" 
+                                        name="importantInCareer3"
+                                        onChange={this.ImpInCareerSelector3}
+                                        value={this.state.importantInCareer3}
+                                        options={options1}
+                                    />
+                                </div>
+                                
+                            <p>What are the most important factors to you in taking a work experience or insight day with a company</p>
+                            <div className="selector">
                                 <Select
+                                    className="select-input"
                                     placeholder="priority one"
                                     name="importantInCareer1"
-                                    onChange={this.ImpInCareerSelector1}
-                                    value={this.state.importantInCareer1}
-                                    options={options}
-                                />  
-                                {/* <Select 
+                                    onChange={this.Impfactorselector1}
+                                    value={this.state.importantfactor1}
+                                    options={options2}
+                                />
+                            </div>
+                            <div className="selector">
+                                <Select
+                                    className="select-input" 
                                     placeholder="priority two" 
                                     name="importantInCareer2"
-                                    onChange={this.ImpInCareerSelector2}
-                                    value={this.state.importantInCareer2}
-                                    options={options}
+                                    onChange={this.ImpfactorSelector2}
+                                    value={this.state.importantfactor2}
+                                    options={options2}
                                 /> 
-                                <Select 
+                            </div>
+                            <div className="selector">
+                                <Select
+                                    className="select-input" 
                                     placeholder="priority three" 
                                     name="importantInCareer3"
-                                    onChange={this.ImpInCareerSelector3}
-                                    value={this.state.importantInCareer3}
-                                    options={options}
-                                /> */}
-                            <p>What are the most important factors to you in taking a work experience or insight day with a company</p>
-                            {/* <div>
-                                <label>
-                                    <input type="checkbox"/>Gain more confidence
-                                </label>
-                                <this.Selector /> 
-                            </div>importantInCareer1
-                            <div>
-                                <label>
-                                    <input type="checkbox"/>Gain experience of working
-                                </label>
-                                <this.Selector /> 
+                                    onChange={this.ImpfactorSelector3}
+                                    value={this.state.importantfactor3}
+                                    options={options2}
+                                />
                             </div>
-                            <div>
-                                <label>
-                                    <input type="checkbox"/>See how my favourite subjects work in a career
-                                </label>
-                                <this.Selector /> 
-                            </div> */}
+                            
                         </div>
                         <div className="ninth-card">
                             <p>Can you name a famous entrepreneur?<span> (an entrepreneur creates and runs their own business)</span></p>
@@ -114,6 +159,9 @@ class PersonalDetails2 extends Component {
                             <h1 className="shape">&#9925;</h1>
                         </div>
                     </div>
+                </div>
+                <div>
+                    <NextBtn className="button"  value="NEXT" onClick={this.handleSubmit}/>
                 </div>
                 
             </div>

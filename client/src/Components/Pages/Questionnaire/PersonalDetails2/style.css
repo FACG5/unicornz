@@ -87,6 +87,10 @@ p {
     font-size: 18px;
 }
 
+.eight-card p {
+    margin-left: 20px;
+}
+
 .special-txt {
     font-size: 14px; 
 }
@@ -108,4 +112,14 @@ textarea {
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
+}
+
+.selector {
+    display: inline-grid;
+    margin: 20px 84px;
+}
+
+.button {
+    width:150px;
+    height: 50px; 
 }
