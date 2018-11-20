@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import CopmpanyContact from './CompanyContact';
 import CompanyDescription from './CompanyDescription';
 import WorkExpView from './WorkExpView';
-import companyImage from './images/para-design.png'
+import companyImage from './images/comlogo.png'
+import companyImage1 from './images/girlstem.png'
 
 import './style.css';
 
@@ -19,9 +20,11 @@ class workExperienceDetails extends Component {
                            inistagram = {'Paradesign'}
                            website = {'www.paradesign.ps'}
                            phone = {'+ 44 0000 111'} />
-           <WorkExpView className = "workExpView" image1 = {companyImage}
+             <div className="workview">
+              <WorkExpView className = "workExpView" image1 = {companyImage1}
                         text1 = {'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'} />
             </div>
+         </div>
       </div>
     );
   }

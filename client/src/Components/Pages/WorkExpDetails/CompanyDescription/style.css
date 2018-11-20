@@ -1,32 +1,23 @@
 .companyDescription{
-    display: flex;
-    border: 1px solid black;
-    align-items:center;
-    width: 100%;
-}
-
-.companyLogo {
+    display: grid;
+    width: 75%;
+    grid-template-columns: 40% 75%;
+    grid-column-gap: 50px;
+    justify-items: center;
+    align-items: center;
     height: 250px;
-    width: 20%;
-    margin: 3%;
-
-}
-.companyText {
-    width: 78%;
+    padding-right: 50px;
 }
 
-.companyLogo img{
-    height: 200px;
-    width: 200px;
-    top:50%;
-   }
-.companyDescription img:hover {
-    opacity: 0.6;
-  }
+.companyLogo img {
+    width:380px;
+    height: 230px;
+    padding: 3%;
+}
 
-
-  p {
+.companyText p{
+    font-family:  'lato' , 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 18pt;
     text-align: justify;
-    font-size: 16pt;
-    margin-right: 2%;
-  }
+    color: #153C59;
+}

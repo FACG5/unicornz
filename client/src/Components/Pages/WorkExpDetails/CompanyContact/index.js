@@ -16,7 +16,6 @@ const CompanyContactComp = (props) => {
             <div className="contactItem">
                  <span> <img src={face} alt="facebook" /> {facebook}</span>
             </div>
-
             <div className="contactItem">
                  <span><img src={emaill} alt="email" />{email}</span>
             </div>
@@ -24,7 +23,7 @@ const CompanyContactComp = (props) => {
             <div className="contactItem">
                  <span><img src={instagram} alt="instagram" /> {inistagram}</span>
             </div> 
-            
+
             <div className="contactItem">
                  <span><img src={site} alt="website" /> {website}</span>
             </div>
