@@ -1,4 +1,25 @@
-h2 {
+@-webkit-keyframes rotate-vert-center {
+    0% {
+        -webkit-transform: rotateY(0);
+                transform: rotateY(0);
+    }
+    100% {
+        -webkit-transform: rotateY(360deg);
+                transform: rotateY(360deg);
+    }
+    }
+    @keyframes rotate-vert-center {
+    0% {
+        -webkit-transform: rotateY(0);
+                transform: rotateY(0);
+    }
+    100% {
+        -webkit-transform: rotateY(360deg);
+                transform: rotateY(360deg);
+    }
+    }
+
+.personal-details1 h2 {
     font-family: 'lato' , 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: bold;
     font-size: 24px;
@@ -50,37 +71,9 @@ h2 {
     -webkit-animation: rotate-vert-center 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
     animation: rotate-vert-center 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 }
-@-webkit-keyframes rotate-vert-center {
-    0% {
-        -webkit-transform: rotateY(0);
-                transform: rotateY(0);
-    }
-    100% {
-        -webkit-transform: rotateY(360deg);
-                transform: rotateY(360deg);
-    }
-    }
-    @keyframes rotate-vert-center {
-    0% {
-        -webkit-transform: rotateY(0);
-                transform: rotateY(0);
-    }
-    100% {
-        -webkit-transform: rotateY(360deg);
-                transform: rotateY(360deg);
-    }
-    }
-    
-input{
-    width: 350px;
-    height: 42px;
-    background: #FFFFFF;
-    border: 1px solid #153C59;
-    box-sizing: border-box;
-    border-radius: 10px;
-}
 
-p {
+
+.personal-details1 p {
     font-family: 'lato',sans-serif;
     color: rgb(15, 42, 63);
     font-size: 18px;
@@ -89,7 +82,16 @@ p {
     font-size: 14px; 
 }
 
-textarea {
+.six-card textarea {
+    width: 350px;
+    height: 150px;
+    background: #FFFFFF;
+    border: 1px solid #153C59;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.seventh-card  textarea {
     width: 350px;
     height: 150px;
     background: #FFFFFF;

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/accessible-emoji */
 import React, { Component } from 'react';
 import Select from 'react-select';
 import Dropzone from 'react-dropzone'
@@ -101,7 +102,7 @@ class PersonalDetails1 extends Component {
       
     render() {
         return ( 
-            <div className="container">
+            <div className="container personal-details1" >
                 <div>
                     <h2>Now we've got the boring stuff out of the way, let's get to know more about your school studies</h2>
                     <div className="third-section">  
@@ -141,6 +142,7 @@ class PersonalDetails1 extends Component {
                             <textarea rows="5" cols="40" placeholder="Answer" name="futureJob" onChange={this.onChange}></textarea>
                             <p>What kinds of jobs do you think will interest you?</p>
                             <textarea rows="5" cols="40" placeholder="Answer" name="interestedJob" onChange={this.onChange}></textarea>
+                            <h1 className="shape">&#9925;</h1>
                         </div>
                     </div>
                     <NextBtn className="button" name="next" value="next" />
