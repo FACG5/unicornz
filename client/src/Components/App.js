@@ -4,7 +4,7 @@ import Dashboard from './Pages/Dashboard';
 import Hero from './Pages/LandingPage/HeroSection';
 import Header from './CommonComponents/Header';
 import Footer from './CommonComponents/Footer';
-import workExperienceDetails from './Pages/WorkExpList';
+import WorkExperienceDetails from './Pages/WorkExpList';
 import Signup from './Pages/SignUp';
 import Login from './Pages/Login';
 
@@ -24,9 +24,9 @@ class App extends Component {
             <Route path="/dash" component={Dashboard} />
             <Route path="/signup" component={Signup} />
             <Route path="/login" component={Login} />
-            <Route path="/workexperiencedetails" component={workExperienceDetails} />
+            <Route path="/workexperiencedetails" component={WorkExperienceDetails} />
             <Route path="/category" component={Category} />
-            <Route path="/workexperiencelist" component={workExperienceDetails} />
+            <Route path="/workexperiencelist" component={WorkExperienceDetails} />
           </div>
         </BrowserRouter>
         <Footer />

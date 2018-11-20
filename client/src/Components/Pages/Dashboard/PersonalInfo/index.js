@@ -34,6 +34,7 @@ Favourit subject:
       <span className="info">
 Your Profile Complete:
         {infoCompletion}
+%
       </span>
       <div className="progress-outer">
         <div className="progress-inner" style={{ width: `${infoCompletion}%` }} />
