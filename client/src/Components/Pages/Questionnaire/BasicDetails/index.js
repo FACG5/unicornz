@@ -43,7 +43,7 @@ class BasicDetails extends Component {
     render() {
 
         return (
-                <form onSubmit={this.handleSubmit} className='container'>
+                <form onSubmit={this.handleSubmit} className='container basic-Details'>
                     <div className="first-section">
                         <h2>Hello Azara,Please fill out these basic details and then we will move on to the interesting stuff</h2>
                         <div className="first-section-cards">
