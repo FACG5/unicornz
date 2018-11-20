@@ -4,6 +4,7 @@ import Dashboard from './Pages/Dashboard';
 import Hero from './Pages/LandingPage/HeroSection';
 import Header from './CommonComponents/Header';
 import Footer from './CommonComponents/Footer'
+<<<<<<< Updated upstream
 import workExperienceDetails from './Pages/WorkExpList';
 import Signup from '../Components/Pages/SignUp';
 import Login from '../Components/Pages/Login';
@@ -12,6 +13,16 @@ import workExperienceDetails from '../Components/Pages/WorkExpDetails';
 import Category from '../Components/Pages/Category';
 
 import './App.css';
+=======
+import workExperienceList from './Pages/WorkExpList';
+import workExperienceDetails from './Pages/WorkExpDetails';
+import Signup from '../Components/Pages/SignUp';
+import Login from '../Components/Pages/Login';
+import Category from '../Components/Pages/Category';
+
+import './App.css';
+
+>>>>>>> Stashed changes
 
 class App extends Component {
 
