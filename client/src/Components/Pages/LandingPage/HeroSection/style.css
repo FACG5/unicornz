@@ -13,7 +13,7 @@ flex-direction: column;
     align-self: flex-start;
     margin: 5% 1% 5% 7%;
     padding: 3% 8% 3% 8%;
-    background: rgba(77, 115, 165, 0.5);
+    background:#5db1bfa3;
     position: relative;
     border-radius: 10px;
 }

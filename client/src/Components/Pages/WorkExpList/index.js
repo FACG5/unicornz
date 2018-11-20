@@ -8,7 +8,10 @@ class workExperienceList extends Component {
   render() {
     return (
      <div>
-         <SearchBar />
+        <div className="welcomeworkexperience">
+              <h1> Find work experience </h1>
+        </div>
+         
         <Card subjectName={'Mathmatics'} 
            companyLogo={companyLogo}
            expWorkTitle={'Transactions Business Apprenticeship Programme'} 

@@ -12,7 +12,6 @@ import Category from '../Components/Pages/Category';
 
 import './App.css';
 
-
 class App extends Component {
 
   render() {
