@@ -1,10 +1,16 @@
 {
   "name": "unicornz",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Unicornz provides company technology work experiences to young schoogirls to empower and inspire them. The Unicor.nz App works by connecting them (and those that live too far away to take advantage of such work experiences) with female Mentors and role models.",
   "main": "index.js",
   "scripts": {
-    "start": "node ./server/index.js"
+    "client": "cd client && npm start",
+    "server": "NODE_ENV=development nodemon server/index.js",
+    "start": "NODE_ENV=production node server/index.js",
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "cd client && npm install && npm run build",
+    "postinstall": "cd client && npm install && npm run build"
   },
   "repository": {
     "type": "git",
