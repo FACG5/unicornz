@@ -43,7 +43,7 @@ const options = [
 
   ];
 
-  const fileMaxSize = 100000000  //byte
+  const fileMaxSize = 10485760  //byte
 
 class PersonalDetails1 extends Component {
 
@@ -75,15 +75,10 @@ class PersonalDetails1 extends Component {
     
     handleSubmit= (event) => {
         event.preventDefault();
-        console.log(this.state);
-        
- 
+    
       }
     
     handleOnDrop = (files, rejectedFiles) => {
-     console.log(files);
-     
-     
 
         if (rejectedFiles && rejectedFiles.length > 0) {
             const currentRejectFile = rejectedFiles[0];
@@ -91,13 +86,13 @@ class PersonalDetails1 extends Component {
             
             
             if ( currentRejectFileSize > fileMaxSize) {
-                alert('This file is too big..please choose another one')
+                alert('This file is too big..please choose another one with size less than 10 megabytes')
             }
         }
             const currentFile = files[0];
             const currentFileSize = currentFile.size;
             if ( currentFileSize > fileMaxSize) {
-                alert('This file is too big..please choose another one')
+                alert('This file is too big..please choose another one with size less than 10 megabytes')
             
             }else{
             this.setState({files:files,label:files[0].name})
@@ -116,7 +111,7 @@ class PersonalDetails1 extends Component {
                             <Select
                                 className="select-input"
                                 onChange={this.handleSubjectChange}
-                                value={this.subjects}
+                                value={this.state.subjects}
                                 isMulti={true}
                                 options={options}
                             />
@@ -124,7 +119,7 @@ class PersonalDetails1 extends Component {
                             <Select 
                                 className="select-input"
                                 onChange={this.handleFavChange}
-                                value={this.favSubjects}
+                                value={this.state.favSubjects}
                                 isMulti={true}
                                 options={options}
                             />
@@ -146,7 +141,6 @@ class PersonalDetails1 extends Component {
                             <textarea rows="5" cols="40" placeholder="Answer" name="futureJob" onChange={this.onChange}></textarea>
                             <p>What kinds of jobs do you think will interest you?</p>
                             <textarea rows="5" cols="40" placeholder="Answer" name="interestedJob" onChange={this.onChange}></textarea>
-                            {/* <h1 className="shape">Cool&#9813;</h1> */}
                         </div>
                     </div>
                     <NextBtn className="button" name="next" value="next" />
