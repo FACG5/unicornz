@@ -1,6 +1,7 @@
 const dbConfig = (env) => {
-    if (env === 'production') {
-      return {
+   console.log(env,' : env');
+    if (env === 'production') {  
+     return {
         database: process.env.DB_PRODUCTION_URL,
         password: process.env.PRODUCTION_DB_PASSWORD,
         username: process.env.PRODUCTION_DB_USERNAME,
@@ -9,12 +10,13 @@ const dbConfig = (env) => {
         dialect: process.env.PRODUCTION_DB_DIALECT,
       };
     }
-    if (env === 'development') {
+    console.log('ok : ');
+    if (env === 'development') {  
       return {
-        username: process.env.DATABASE_URL,
+        username: process.env.username,
         password: process.env.password,
         dbname: process.env.dbname,
-        host: 'localhost',
+        host: process.env.host,
         dialect: 'postgres',
       };
     }
