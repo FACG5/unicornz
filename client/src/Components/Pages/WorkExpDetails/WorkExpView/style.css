@@ -1,23 +1,20 @@
 .workExperienceView{
     display:flex; 
-    border: solid 1px #FFC6D9;
-  
+    width: 65%;
+   
  }
  
  .workExperienceView img {
      height: 150px;
      width: 150px;
+     margin: 1%;
  }
  
- .workExperienceView:hover img {
+ .workExperienceView img:hover {
      opacity: 0.6;
    }
  
-   img {
-     margin: 1%;
-   }
- 
-   p {
+   .workExperienceView p {
      text-align: justify;
      margin: 2%;
      font-size: 16pt;
