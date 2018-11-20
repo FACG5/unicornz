@@ -121,3 +121,10 @@ p {
 .special-txt {
     font-size: 14px; 
 }
+
+.button {
+    width:150px;
+    height: 50px;
+    margin-top: 80px;
+    margin-bottom: 50px; 
+}
