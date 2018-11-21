@@ -11,29 +11,7 @@ const FooterComp = ()=> {
 
      return (
         <div className = "footer"> 
-            <div className = "footer-left">
-                <img src={logo} alt="" />
-                <ul>
-                    <li>London.England</li>
-                    <li>unicornz.uk</li>
-                    <li>+44101010</li>
-                </ul>
-
-            </div>
-
-            <img src={unicorn} alt="unicorn" />
-
-            <div className = "footer-right">
-                Follow us
-                <div className = "ddd"> 
-                    
-                        <img src={fb} alt="" />
-                        <img src={twitter} alt="" />
-                        <img src={insta} alt="" />
-                    
-                </div>
-            </div>
-
+            <p>&copy;  Unicornz 2018 | Terms & Conditions | Privacy Centre</p>
         </div>
      );
 
