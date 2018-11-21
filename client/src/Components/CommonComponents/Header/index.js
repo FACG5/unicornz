@@ -11,9 +11,8 @@ const HeaderComp = (props) => {
             <img className="header-img" src={logo} alt="logo" />
             <ul className="header-nav">
                 <li>Login</li>
-                <li>About</li>
-                <li>Programs</li>
-                <li>Home</li>
+                <li>Sign up</li>
+
             </ul>
         </div>
     );
