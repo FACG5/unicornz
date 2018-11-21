@@ -40,13 +40,11 @@ class PersonalDetails2 extends Component {
     ImpInCareerSelector1 = (importantInCareer1) => {
 
         this.setState({importantInCareer1});
-   
     }
 
     ImpInCareerSelector2 = (importantInCareer2) => {
 
         this.setState({importantInCareer2});
-        console.log(this.state);
     }
 
     ImpInCareerSelector3 = (importantInCareer3) => {
@@ -55,14 +53,17 @@ class PersonalDetails2 extends Component {
     }
 
     Impfactorselector1 = (importantfactor1) => {
+        
         this.setState({importantfactor1});
     }
 
     Impfactorselector2 = (importantfactor2) => {
+
         this.setState({importantfactor2});
     }
 
     Impfactorselector3 = (importantfactor3) => {
+
         this.setState({importantfactor3});
     }
 
