@@ -10,19 +10,17 @@ import NextBtn from '../../CommonComponents/Button';
 
 
 class Questionnaier extends Component {
+
     state ={
         activePageIndex: 1,
+        btnvalue: 'Next'
     }
    
     onClickHandler = () => {
-        if (this.state.activePageIndex ===1){
-            this.setState ({activePageIndex: 2 })
-            } else if (this.state.activePageIndex ===2) {
-                this.setState ({activePageIndex: 3 })
-            } else if (this.state.activePageIndex ===3) {
-                this.setState ({activePageIndex: 4 })
+        if (this.state.activePageIndex ===4){
+            this.setState ({ btnvalue: 'Finish'})
             } else {
-                this.setState ({activePageIndex: 1 }) 
+                this.setState ({activePageIndex: this.state.activePageIndex + 1 }) 
             }  
     }
 
@@ -45,13 +43,10 @@ class Questionnaier extends Component {
     render() { 
         return (
              <div>
-               <HeaderComp />  
-
-                {this.SwitchFunction()}
-                <NextBtn className = "button" value ={this.handleBtnValue()} onClick={this.onClickHandler}/>
-                <FooterComp />
+                {this.SwitchFunction(this.state.activePageIndex)}
+                <NextBtn className = "button" value ={this.state.btnvalue} onClick={this.onClickHandler}/>
             </div>
-              
+
           );
     }
 }
