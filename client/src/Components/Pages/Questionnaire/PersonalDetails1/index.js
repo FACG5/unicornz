@@ -145,7 +145,6 @@ class PersonalDetails1 extends Component {
                             <h1 className="shape">&#9925;</h1>
                         </div>
                     </div>
-                    <NextBtn className="button" name="next" value="next" />
                 </div>
             </div>
          );

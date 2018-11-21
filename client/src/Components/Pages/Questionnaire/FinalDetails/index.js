@@ -146,7 +146,6 @@ class FinalDetails extends Component {
                         <input type="text" placeholder="Enter her/his name" name="personHaveCareer" onChange={this.onChange}/>
                     </div>
                 </div> 
-                <NextBtn className="button" name="next" value="next"/>  
             </form>
          );
     }

@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import HeaderComp from '../../CommonComponents/Header/index';
-import FooterComp from '../../CommonComponents/Footer/index';
-import './style.css'
 import BasicDetails from './BasicDetails';
 import PersonalDetails1 from './PersonalDetails1';
 import PersonalDetails2 from './PersonalDetails2';
 import FinalDetails from './FinalDetails';
 import NextBtn from '../../CommonComponents/Button';
+
+import './style.css'
 
 
 class Questionnaier extends Component {
