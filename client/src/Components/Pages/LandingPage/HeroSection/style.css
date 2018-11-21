@@ -1,26 +1,30 @@
 .hero{
 background-image: url('/images/hero.png');
 background-size: cover;
-width:100vw;
-height: 100vh;
+width:100%;
+height:80vh;
 display: flex;
 flex-direction: column;
 }
+
 .mato, .spelling{
     color:white;
-    font-size: 36pt;
+    font-size: 20pt;
     align-self: flex-start;
-    margin: 10% 1% 5% 7%;
-    font-weight: bold;  
-    padding: 5%;
-    background: rgba(77, 115, 165, 0.5);
+    margin: 5% 1% 5% 7%;
+    padding: 3% 8% 3% 8%;
+    background:#5db1bfa3;
     position: relative;
     border-radius: 10px;
+}
+.mato{
+    font-weight: bold;
+    font-size: 28pt;
 }
 .spelling{
     margin: 0 7% 0 0;
     text-align: start;
-    font-size: 22pt;
+    font-size: 18pt;
     padding: 2% 1% 2% 2%;
     align-self: flex-end;
 }
@@ -32,4 +36,6 @@ flex-direction: column;
 
 .spelling img{
     height:20px;
+    display: inline;
+    margin-left: 2%;
 }

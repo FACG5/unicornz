@@ -1,9 +1,20 @@
 .companyContact{
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
-    width: 30%;
+    border: 3px solid #C72D65;
+    border-radius: 20px;
+    width: 17%;
     margin: 1% 0%;
+    padding: 2%;
+ }
+
+ .companyContact h3  {
+    color: #153C59;
+    padding-bottom:3%;
+ }
+
+ .companyContact h4  {
+    color: #153C59;
  }
 
 .companyContact div {
@@ -12,7 +23,8 @@
 }
 
 span{
-    font-size: 16pt;
+    font-size: 14pt;
+    color: #153C59;
 }
 
 .contactItem{
