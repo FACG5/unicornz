@@ -9,12 +9,17 @@
 .card {
     display: flex;
     padding: 2% 2% 1% 2%;
-    justify-content: center;
+    justify-content: flex-start;
+}
+
+.card-left{
+    width: 25%;
     
 }
 
 .card-right {
-    padding: 0 3% 0 3%;
+    width: 70%;
+    padding: 0 0% 0 3%;
 }
 
 .imageCard {
@@ -27,7 +32,7 @@
 
 .cardDitails {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-direction: row;
 }
 
@@ -36,22 +41,24 @@
     text-align: start;
     font-size: 26pt;
     margin-top: 5px;
+    padding-left: 0%;
 }
 
 .cardLine span {
     font-weight: bold;
     line-height: 10pt;
-    font-size: 14pt;
+    font-size: 16pt;
 }
 
 .cardLine p {
-    margin-top: 3%;
+    margin-top: 2%;
+    font-size: 14pt;
 }
 
 
 .cardTitle {
     font-family: Roboto;
-    font-size: 14pt;
+    font-size: 16pt;
     font-weight: bold;
     text-align: start;
     margin: .5% 0 .5% 0;
@@ -64,5 +71,5 @@
     align-self: flex-end;
     padding: 2%;
     margin: 0;
-    font-size: 22pt;
+    font-size: 28pt;
 }

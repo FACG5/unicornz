@@ -8,7 +8,9 @@ const CompanyDescriptionComp = (props) => {
            <div className="companyLogo">
                 <img  src = {companyImage} alt="companyImage" />
            </div>
-           <p className="companyText">{description}</p>
+           <div className="companyText">
+                <p>{description}</p>
+           </div>
         </div>
     )
 }
