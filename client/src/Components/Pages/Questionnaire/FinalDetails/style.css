@@ -1,3 +1,10 @@
+.container {
+    grid-gap: 50px 50px;
+}
+.last-card {
+    margin-left: 180px;
+}
+
 .clicked {
     border: 4px groove rgb(27, 45, 149);
 }
@@ -22,14 +29,14 @@
     size: 100px;
 }
 
-h2 {
+.last-card h2 {
     font-family: 'lato' , 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: bold;
     font-size: 24px;
     color: #153C59;
-    text-align: left;
-    left:20px;
     height: 40px;
+    text-align:start;
+    margin-left: 20px;
     
     }
 
@@ -51,37 +58,7 @@ h2 {
     color: #153C59;
 }
 
-.shape {
-    font-family: 'Permanent Marker', cursive;
-    font-size: 50px;
-}
 
-.shape:hover {
-    -webkit-animation: rotate-vert-center 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-    animation: rotate-vert-center 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-}
-
-@-webkit-keyframes rotate-vert-center {
-    0% {
-        -webkit-transform: rotateY(0);
-                transform: rotateY(0);
-    }
-    100% {
-        -webkit-transform: rotateY(360deg);
-                transform: rotateY(360deg);
-    }
-    }
-    @keyframes rotate-vert-center {
-    0% {
-        -webkit-transform: rotateY(0);
-                transform: rotateY(0);
-    }
-    100% {
-        -webkit-transform: rotateY(360deg);
-                transform: rotateY(360deg);
-    }
-    }
-    
 input[type="text"] { 
     width: 350px;
     height: 42px;
@@ -98,7 +75,10 @@ p {
     font-size: 20px;
 }
 
-.special-txt {
-    font-size: 14px; 
+.button {
+    margin-left: 40%;
+    width:150px;
+    height: 50px;
+    margin-top: 80px;
+    margin-bottom: 50px; 
 }
-
