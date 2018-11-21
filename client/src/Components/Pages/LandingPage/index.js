@@ -1,6 +1,7 @@
 import React from 'react';
-import './style.css'
 import HeroComp from './HeroSection'
+import MissionSection from './MissionSection';
+import './style.css'
 
 
 class LandingPage extends React.Component  {
@@ -9,6 +10,7 @@ class LandingPage extends React.Component  {
     return (    
        <div > 
            <HeroComp history={this.props.history} />
+           <MissionSection />
        </div>
     );
    }
