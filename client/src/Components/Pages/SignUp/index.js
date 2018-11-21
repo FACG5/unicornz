@@ -45,35 +45,35 @@ export default class SignUpForm extends Component {
                                 <p id="fnamerr" class="errorValid"></p>
                             </div>
                             <div class="item">
-                                <label for="email">Last Name </label>
-                                <input type="email" name="email" id="email" required/>
+                                <label for="lname">Last Name </label>
+                                <input type="text" name="lname" id="email" required/>
                                 <p id="emailerr" class="errorValid"></p>
                             </div>
                             <div class="item">
                                 <label for="email">Email </label>
-                                <input type="email" name="email" id="email" required/>
+                                <input type="emai" name="email" id="email" required/>
                                 <p id="emailerr" class="errorValid"></p>
                             </div>
                             <div class="item">
                                 <label for="email">School </label>
-                                <input type="email" name="email" id="email" required/>
+                                <input type="text" name="email" id="email" required/>
                                 <p id="emailerr" class="errorValid"></p>
                             </div>
                             </div>
                             <div class="clm">
                             <div class="item">
                                 <label for="email">Birth Date</label>
-                                <input type="email" name="email" id="email" required/>
+                                <input type="date" name="email" id="email" required/>
                                 <p id="emailerr" class="errorValid"></p>
                             </div>
                             <div class="item">
                                 <label for="email">Password </label>
-                                <input type="email" name="email" id="email" required/>
+                                <input type="text" name="email" id="email" required/>
                                 <p id="emailerr" class="errorValid"></p>
                             </div>
                             <div class="item">
                                 <label for="email">Confirm Password</label>
-                                <input type="email" name="email" id="email" required/>
+                                <input type="text" name="email" id="email" required/>
                                 <p id="emailerr" class="errorValid"></p>
                             </div>
                             <div class="item">
