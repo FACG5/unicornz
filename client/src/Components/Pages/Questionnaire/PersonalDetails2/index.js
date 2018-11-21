@@ -4,27 +4,21 @@ import Select from 'react-select';
 import NextBtn from '../../../CommonComponents/Button'
 import './style.css'
 import '../style.css'
-
-const options1 = [
-
-    { value: 'Making money', label: 'Making money' },
+ const options1 = [
+     { value: 'Making money', label: 'Making money' },
     { value: 'Being able to do my favourite subjects and hobbies', label: 'Being able to do my favourite subjects and hobbies' },
     { value: 'Learning new things', label: 'Learning new things' },
     { value: 'Being able to have a career that works around children', label: 'Being able to have a career that works around children' },
  
 ];
-
-const options2 = [
-
-    { value: 'Gain more confidence ', label: 'Gain more confidence' },
+ const options2 = [
+     { value: 'Gain more confidence ', label: 'Gain more confidence' },
     { value: 'Gain experience of working', label: 'Gain experience of working' },
     { value: 'See how my favourite subjects work in a career', label: 'See how my favourite subjects work in a career' },
     
 ];
-
-class PersonalDetails2 extends Component {
-
-    state = {
+ class PersonalDetails2 extends Component {
+     state = {
         
         famousEntrepreneur: '',
         BeEntrepreneur: '',
@@ -46,14 +40,10 @@ class PersonalDetails2 extends Component {
 
         this.setState({importantInCareer2});
     }
-
-    ImpInCareerSelector3 = (importantInCareer3) => {
-
-        this.setState({importantInCareer3});
+     ImpInCareerSelector3 = (importantInCareer3) => {
+         this.setState({importantInCareer3});
     }
-
-    Impfactorselector1 = (importantfactor1) => {
-        
+     Impfactorselector1 = (importantfactor1) => {
         this.setState({importantfactor1});
     }
 
@@ -78,13 +68,14 @@ class PersonalDetails2 extends Component {
         });
     };
 
-    render() {
+     render() {
         return ( 
-            <div className="container">
+            <div className="container personal-details2">
                 <div>
                     <h2>Ok, so that's your school studies and hobbies done; now what's important in life to you ?</h2>
                     <div className="fourth-section">
                         <div className="eight-card">
+                            <span className="num" id="num8">8</span>
                             <p>What do you think is most important to you in a career? Tick your top 3</p>
                                 <div className="selector">
                                     <Select
@@ -148,11 +139,11 @@ class PersonalDetails2 extends Component {
                                     options={options2}
                                 />
                             </div>
-                            
                         </div>
                         <div className="ninth-card">
+                            <span className="num" id="num9">9</span>
                             <p>Can you name a famous entrepreneur?<span> (an entrepreneur creates and runs their own business)</span></p>
-                            <input type="text" name="famousEntrepreneur" onChange={this.onChange}/>
+                            <input type="text" name="famousEntrepreneur" onChange={this.onChange} placeholder="Enter the name ..."/>
                             <p>Do you think you could be an entrepreneur Answer YES Or NO && Why?</p>
                             <textarea rows="5" cols="40" placeholder="Answer" name="BeEntrepreneur" onChange={this.onChange}></textarea>
                             <p>Do you personally know any women that are entrepreneurs?</p>
@@ -169,6 +160,5 @@ class PersonalDetails2 extends Component {
          );
     }
 }
-
- 
+  
 export default PersonalDetails2;
