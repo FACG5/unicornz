@@ -5,3 +5,7 @@
 .App {
   text-align: center;
 }
+
+.view-section{
+  min-height: 90vh;
+}
