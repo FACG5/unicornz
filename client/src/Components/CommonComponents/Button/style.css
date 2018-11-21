@@ -14,7 +14,9 @@
   margin: 5px;
   opacity: 0.8;
   margin: auto;
-  font-weight: bold
+  font-weight: bold;
+  text-align: center;
+  align-self: center;
 }
 
 .buttonn span {

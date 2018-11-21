@@ -17,22 +17,24 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-       <Header />
       <BrowserRouter>
-       <div>
-         <Switch>
-            <Route exact path="/" component={LandingPage} />
-            <Route path="/dash" component={Dashboard}/>
-            <Route path="/signup" component={Signup}/>
-            <Route path="/login" component={Login}/>
-            <Route path="/workexperiencedetails" component={workExperienceDetails}/>
-            <Route path="/category" component={Category}/>
-            <Route path="/workexperiencelist" component={workExperienceList}/>
-            <Route path="*"  component={LandingPage} />
-          </Switch>
+       <div className='app-main'>
+       <Header className="app-header"/>
+        <div className = "app-content">
+          <Switch>
+              <Route exact path="/" component={LandingPage} />
+              <Route path="/dash" component={Dashboard}/>
+              <Route path="/signup" component={Signup}/>
+              <Route path="/login" component={Login}/>
+              <Route path="/workexperiencedetails" component={workExperienceDetails}/>
+              <Route path="/category" component={Category}/>
+              <Route path="/workexperiencelist" component={workExperienceList}/>
+              <Route path = "*" component={LandingPage} />
+            </Switch>
+        </div>
        </div>
       </BrowserRouter>
-      <Footer />
+      <Footer className="app-footer"/>
       </div>
     );
   }
