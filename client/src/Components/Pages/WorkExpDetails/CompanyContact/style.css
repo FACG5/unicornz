@@ -1,11 +1,11 @@
 .companyContact{
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column;*/
     border: 3px solid #C72D65;
     border-radius: 20px;
-    width: 17%;
+    /* width: 17%;
     margin: 1% 0%;
-    padding: 2%;
+    padding: 2%; */
  }
 
  .companyContact h3  {
@@ -27,8 +27,10 @@ span{
     color: #153C59;
 }
 
-.contactItem{
+.contactItem span{
+    width: 90%;
+    display: inline-block;
     display: flex;
-    margin-left: 20px;
+    justify-content: space-around;
 }
 
