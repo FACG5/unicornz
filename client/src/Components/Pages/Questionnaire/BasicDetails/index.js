@@ -174,9 +174,7 @@ class BasicDetails extends Component {
                                 </div>
                             </div>
                         </div>
-                        <div>
-                            <NextBtn className="button" name="next" value="next"/>
-                        </div>
+       
                     </div>
                     </form>
          );

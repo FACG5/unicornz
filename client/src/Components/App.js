@@ -9,8 +9,9 @@ import Signup from '../Components/Pages/SignUp';
 import Login from '../Components/Pages/Login';
 import workExperienceList from './Pages/WorkExpList';
 import Category from '../Components/Pages/Category';
-
+import Questionnaier from './Pages/Questionnaire';
 import './App.css';
+
 
 class App extends Component {
 
@@ -24,6 +25,7 @@ class App extends Component {
             <Route exact path="/" component={LandingPage} />
             <Route path="/dash" component={Dashboard}/>
             <Route path="/signup" component={Signup}/>
+            <Route path="/Questionnaier" component={Questionnaier}/>
             <Route path="/login" component={Login}/>
             <Route path="/workexperiencedetails" component={workExperienceDetails}/>
             <Route path="/category" component={Category}/>
@@ -37,6 +39,5 @@ class App extends Component {
     );
   }
 }
-
 
 export default App;

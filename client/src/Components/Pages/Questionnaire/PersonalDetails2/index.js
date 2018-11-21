@@ -152,9 +152,7 @@ import '../style.css'
                         </div>
                     </div>
                 </div>
-                <div>
-                    <NextBtn className="button"  value="NEXT" onClick={this.handleSubmit}/>
-                </div>
+
                 
             </div>
          );
