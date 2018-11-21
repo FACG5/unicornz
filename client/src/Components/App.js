@@ -9,6 +9,8 @@ import Signup from '../Components/Pages/SignUp';
 import Login from '../Components/Pages/Login';
 import workExperienceList from './Pages/WorkExpList';
 import Category from '../Components/Pages/Category';
+import Questionnaire from '../Components/Pages/Questionnaire';
+
 
 import './App.css';
 
@@ -29,6 +31,8 @@ class App extends Component {
               <Route path="/workexperiencedetails" component={workExperienceDetails}/>
               <Route path="/category" component={Category}/>
               <Route path="/workexperiencelist" component={workExperienceList}/>
+              <Route path="/Questionnaire" component={Questionnaire}/>
+
               <Route path = "*" component={LandingPage} />
             </Switch>
         </div>
