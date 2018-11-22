@@ -9,7 +9,7 @@ class LandingPage extends React.Component  {
    render(){
     return (    
        <div > 
-           <HeroComp history={this.props.history} />
+           <HeroComp />
            <MissionSection />
        </div>
     );

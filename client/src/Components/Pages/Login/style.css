@@ -68,8 +68,11 @@ input:-webkit-autofill:active{
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   text-align: center;
+  margin: 0 auto 10px;
 }
-
+.login-card input:last-of-type{
+  margin-bottom: 30px;
+}
 .login-card input[type='text']:hover, input[type='password']:hover {
   border: 1px solid #b9b9b9;
   border-top: 1px solid #a0a0a0;
@@ -112,4 +115,9 @@ input:-webkit-autofill:active{
 
 .login-card a:hover {
   opacity: 1;
+}
+
+
+.buttonn{
+  margin: 0 auto;
 }
