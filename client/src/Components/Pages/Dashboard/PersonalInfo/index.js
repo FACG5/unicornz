@@ -1,15 +1,29 @@
-import React from 'react';
-import propTypes from 'prop-types';
+import React, { Component } from 'react';
+import axios from 'axios';
+// import propTypes from 'prop-types';
 import emailImg from './images/email.svg';
 import phoneImg from './images/phone.svg';
 import docImg from './images/docs.png';
 import './style.css';
 
+class PersonalInfo extends Component {
+state={
+  name: '', city: '', age: '', favouritSubject: '', infoCompletion: '', email: '', mobile: '',
+}
 
-export default function index(props) {
+componentDidMount() {
+  axios.get('/dash').then((res) => {
+    const info = res.data;
+    this.setState({ ...info });
+  }).catch((error) => {
+    console.log('error:', error);
+  });
+}
+
+render() {
   const {
     name, city, age, favouritSubject, infoCompletion, email, mobile,
-  } = props;
+  } = this.state;
   return (
     <div className="PersonalInfo">
       <h2>Personal Info</h2>
@@ -24,16 +38,20 @@ Age
         {age}
       </span>
       <span className="info">
-City:
+City
+        {': '}
         {city}
       </span>
       <span className="info">
-Favourit subject:
+Favourit subject
+        {': '}
         {favouritSubject}
       </span>
       <span className="info">
-Your Profile Complete:
+Your Profile Complete
+        {': '}
         {infoCompletion}
+
 %
       </span>
       <div className="progress-outer">
@@ -54,11 +72,12 @@ Your Documents
     </div>
   );
 }
-
-index.propTypes = {
-  name: propTypes.string.isRequired,
-  city: propTypes.string.isRequired,
-  age: propTypes.string.isRequired,
-  favouritSubject: propTypes.string,
-  infoCompletion: propTypes.string,
-};
+}
+// index.propTypes = {
+//   name: propTypes.string.isRequired,
+//   city: propTypes.string.isRequired,
+//   age: propTypes.string.isRequired,
+//   favouritSubject: propTypes.string,
+//   infoCompletion: propTypes.string,
+// };
+export default PersonalInfo;

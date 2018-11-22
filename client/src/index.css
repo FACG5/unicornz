@@ -1,3 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+html,body,root,app{
+  width: 100%;
+}
+
 body{
   font-family:Lato;
 }

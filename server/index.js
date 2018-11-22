@@ -1,8 +1,9 @@
 const app = require('./app');
-const { sequelize } = require('./models')
-
-sequelize.sync().then(() => {
+const  {connection}  = require('./database/models')
+connection.sync().then(() => {
   app.listen(app.get('port'), () => {
     console.log('app runs on port', app.get('port'));
   });
+}).catch((err)=>{
+  console.log(err);
 });

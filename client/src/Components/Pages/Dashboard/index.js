@@ -13,6 +13,7 @@ class Dashboard extends Component {
     subject: '',
   };
 
+
 handleChange = (event) => {
   const { value, name } = event.target;
   this.setState({ [name]: value });
@@ -20,7 +21,7 @@ handleChange = (event) => {
 
 handleClick =() => {
   const { postcode, subject } = this.state;
-  console.log(postcode, ';', subject);
+  console.log(postcode, ';;', subject);
 }
 
 render() {
@@ -28,7 +29,7 @@ render() {
     <div className="grand-div">
       <div className="dash-board">
         <div className="sub-div">
-          <Girl name="Marie" city="london" age={18} favouritSubject="science" infoCompletion="75" email="gmail.something" mobile="059999999" />
+          <Girl />
           <Find onChange={this.handleChange} onClick={this.handleClick} />
         </div>
         <div className="sub-div">
