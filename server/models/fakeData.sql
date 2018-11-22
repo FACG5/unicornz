@@ -30,7 +30,7 @@ insert into registration (work_experience_id, girl_id, status, registration_date
  (3, 3, 'avilable', 15/12/2018, 'approve'),
  (4, 4, 'avilable', 15/12/2018, 'approve');
 
-insert into registration (user_name, first_name, last_name, email, school_id, other_school, birthdate, password) 
+insert into girl (user_name, first_name, last_name, email, school_id, other_school, birthdate, password) 
  values
  ('hadam', 'Helary', 'Adam', 'hadam@nameschool.uk', 1, '', 01/01/2005, '$2a$10$t3bm8JUU3dwAvUpE0Pr/e.S5XDnaX./JaGpIv5uDX7I51n4JVKH42'),
  ('sjohn', 'Suzan', 'John', 'sjohn@nameschool.uk', 2, '', 01/01/2005, '$2a$10$t3bm8JUU3dwAvUpE0Pr/e.S5XDnaX./JaGpIv5uDX7I51n4JVKH42'),
