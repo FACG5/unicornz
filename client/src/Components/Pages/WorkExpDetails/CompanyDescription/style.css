@@ -1,9 +1,9 @@
-.companyDescription{
+.companyDescription {
     display: grid;
-    width: 75%;
-    grid-template-columns: 40% 75%;
-    grid-column-gap: 50px;
-    justify-items: center;
+    width: 90%;
+    margin: 0 auto;
+    grid-template-columns: 20% 75%;
+    grid-column-gap: 5%;
     align-items: center;
     height: 250px;
     padding-right: 50px;
@@ -17,7 +17,8 @@
 
 .companyText p{
     font-family:  'lato' , 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 18pt;
+    font-size: 14pt;
     text-align: justify;
     color: #153C59;
+    margin-top: 25px;
 }
