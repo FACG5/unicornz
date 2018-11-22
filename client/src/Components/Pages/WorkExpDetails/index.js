@@ -19,7 +19,7 @@ class workExperienceDetails extends Component {
                            email = {'Paradesign@gmail.com'}
                            inistagram = {'Paradesign'}
                            website = {'www.paradesign.ps'}
-                           phone = {'+ 44 0000 111'} />
+                           phone = {'+440000111'} />
              <div className="workview">
               <WorkExpView className = "workExpView" image1 = {companyImage1}
                         text1 = {'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'} />

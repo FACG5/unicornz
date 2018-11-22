@@ -6,7 +6,7 @@ const WorkExperienceView = (props) => {
     return (
         <div className="workExperienceView">
             <img  src={image1} alt="companyImage" />
-            <p>{text1}</p>
+            <>{text1}</>
 
         </div>
 

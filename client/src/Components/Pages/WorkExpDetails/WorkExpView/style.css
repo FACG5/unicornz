@@ -1,26 +1,27 @@
 .workExperienceView{
     display:grid; 
-    grid-template-columns: 300px 600px;
-    grid-column-gap:30px;
-    border: 3px solid #C72D65;
+    grid-template-columns:50% 50%;
+    border: 1.5px solid #323232;
     border-radius: 20px;
-    justify-items: center;
     align-items:center;
     padding:2%;
-    width: 100%;
-    margin-bottom: 10px;
-   
+    height: 220px;
+    width: 85%;
+    margin-bottom: 10px;   
  }
  
  .workExperienceView img {
-     height: 300px;
-     width: 300px;
-     border-radius: 25px;
+     height: 100%;
+     width: 250px;
+     border-radius: 10px;
     
  }
- 
-
-   .workExperienceView p {
+    .workExperienceView p {
      text-align: justify;
-     font-size: 16pt;
+     font-size: 11px;
+     letter-spacing: 0.5px;
+     word-wrap: normal;
+     padding: 33px; 
+     text-align: center;
+     
    }
