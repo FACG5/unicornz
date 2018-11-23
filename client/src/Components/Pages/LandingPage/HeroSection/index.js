@@ -16,10 +16,10 @@ render(){
         <div className="left">
         <div className = "mato">
             Where Girls Become the Future
-            <i class="fas fa-star top-left"></i>
-            <i class="fas fa-star top-right"></i>
-            <i class="fas fa-star bottom-left"></i>
-            <i class="fas fa-star bottom-right"></i>
+            <i className="fas fa-star top-left"></i>
+            <i className="fas fa-star top-right"></i>
+            <i className="fas fa-star bottom-left"></i>
+            <i className="fas fa-star bottom-right"></i>
         </div>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         Ut enim ad minim veniam, quis nostrud exercitation.</p>

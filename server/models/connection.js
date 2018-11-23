@@ -1,10 +1,8 @@
 const Sequelize = require('sequelize');
 require('env2')('config.env');
-console.log("before");
 const {
   DB_CONFIG
 } = require('../../config.js');
-console.log("after");
 const {
   username,
   password,
@@ -12,7 +10,6 @@ const {
   host,
   dialect,
 } = DB_CONFIG;
-
 module.exports = new Sequelize(dbname, username, password, {
   host,
   dialect,
@@ -23,6 +20,7 @@ module.exports = new Sequelize(dbname, username, password, {
     timestamps: false,
   },
   native: true,
+  // sync: { force: true }, add this when you want to update the postgre db structure with respect to the models otherwise you will get an error
   pool: {
     max: 10,
     min: 0,

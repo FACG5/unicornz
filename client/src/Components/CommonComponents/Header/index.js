@@ -1,9 +1,7 @@
 import React from 'react';
-
 import logo from './logo.png'
 import { withRouter } from "react-router";
-
-import './style.css'
+import './style.css';
 
 class HeaderComp extends React.Component {
 
@@ -12,19 +10,25 @@ class HeaderComp extends React.Component {
         this.props.history.push('/signup');
      }
      
+    //  loginClickHandler = () => {
+    //     this.props.history.push('/login');
+    //  }
+
      loginClickHandler = () => {
-        this.props.history.push('/login');
+        this.props.refreshAppModalState('Login',true)
      }
 
-
+     userClickHandler = () =>{
+        this.props.history.push('/dash')
+     }
+     
     render(){
     return (
         <div className="header">
             <img className="header-img" src={logo} alt="logo" />
             <ul className="header-nav">
-                <li onClick={this.loginClickHandler}>Login</li>
-                <li onClick={this.signupClickHandler}>Sign up</li>
-
+                {(this.props.loggedIn==='loggedout')? <li onClick={this.loginClickHandler}>Login</li>:<li onClick={this.userClickHandler}>Hello {this.props.userInfo.first_name}</li>}
+                {(this.props.loggedIn==='loggedout')? <li onClick={this.signupClickHandler}>Sign up</li>:<li></li>}
             </ul>
         </div>
     );
