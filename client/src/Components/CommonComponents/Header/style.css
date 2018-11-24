@@ -1,7 +1,7 @@
 .header {
     display: flex;
     width:100%;
-    height: 100px;
+    height: 80px;
     background-color:#FFFFFF;
     justify-content: space-between;
     align-items: center;
@@ -17,9 +17,16 @@
     float: right;
     font-size: 15pt;
     margin-left: 40px;
-    color:#323232;
+    color:#094669;
     cursor: pointer;
-    font-weight: bold
+    font-weight: bold;
+}
+
+.header-nav li:hover {
+    color:#f16d6f;
+    -ms-transform: scale(1.2, 1.2); 
+    -webkit-transform: scale(1.2, 1.2); 
+    transform: scale(1.2, 1.2);
 }
     
 .header-img {
@@ -28,5 +35,6 @@
     width: 18%;
     height: 165%;
     margin-bottom: 11px;
+    cursor: pointer;
 }
     
