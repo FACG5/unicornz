@@ -1,20 +1,18 @@
 const express = require('express');
 
-const login = require('./login');
-const  { authCheck, promiseAuthCheck } = require ('../authentication/authentication');
+const signController = require('./sign');
+const schoolController = require('./school')
+const  { promiseAuthCheck } = require ('../authentication/authentication');
 const { authorize } = require('../middleware/authorize');
 const router = express.Router();
 
 
-router.post('/login', login.post);
-router.get('/checkauthentication', (req, res)=>{
-    promiseAuthCheck(req).then(token => {
-        res.json({status:'loggedin',token})
-    }).catch(err=>{
-        res.json({msg:err,status:'loggedout'})
-    })
-});
+router.post('/login', signController.login);
+router.get('/logout',signController.logOut)
+router.post('/signup', signController.signup);
+router.get('/checkauthentication', signController.checkAuthentication);
 
+router.get('/getschoolslist',schoolController.getSchoolsList)
 
 
 // router.post('/protectedRoute',authorize, protectedRoute.post);

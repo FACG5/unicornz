@@ -20,7 +20,7 @@ input:-webkit-autofill:active{
     text-align: center;
 }
 .login-container{
-  margin:8% auto;
+  margin:20% auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,6 +40,7 @@ input:-webkit-autofill:active{
 }
 
 .login-card h1 {
+  margin-bottom: 100px;
   font-weight: 100;
   text-align: center;
   font-size: 2.3em;
@@ -70,8 +71,10 @@ input:-webkit-autofill:active{
   margin: 0 auto 10px;
 }
 .login-card input:last-of-type{
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
+
+
 .login-card input[type='text']:hover, input[type='password']:hover {
   border: 1px solid #b9b9b9;
   border-top: 1px solid #a0a0a0;
@@ -119,4 +122,9 @@ input:-webkit-autofill:active{
 
 .buttonn{
   margin: 0 auto;
+}
+
+.login-title{
+  display: inline-block;
+  margin-bottom: 20px;
 }

@@ -1,9 +1,11 @@
 const app = require('./app');
 const { sequelize, girl, school } = require('./models')
+const Sequelize = require('sequelize')
 sequelize.sync().then(() => {
   app.listen(app.get('port'), () => {
     console.log('app runs on port', app.get('port'));
   });
+  school.destroy({where:{id:{[Sequelize.Op.gt]: 6}}}).then(()=>{
   girl.destroy({where:{}}).then(()=>{
   for(var i =1;i<=50;i++){
   girl.create({
@@ -17,6 +19,8 @@ sequelize.sync().then(() => {
     password: '$2a$10$b87/SM7GS1rjoFV2i8z5X.dGGQcZPW8l.fhVHxgg89GnOBAGLlf7a'
   })
 
+  school.create({name:'school' + i});
 }
-})
-})
+});
+});
+});

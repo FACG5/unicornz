@@ -13,8 +13,10 @@ import Questionnaire from '../Components/Pages/Questionnaire';
 // import Modal from 'react-responsive-modal';
 
 // import Modal from 'react-modal';
-import Modal from 'react-animated-modal';
+// import Modal from 'react-animated-modal';
 
+import Rodal from 'rodal';
+import '../../node_modules/rodal/lib/rodal.css';
 
 import './App.css';
 
@@ -26,15 +28,21 @@ class App extends Component {
     modalIsOpen: false,
     modal: '',
     loggedIn: 'loggedout',
-    userInfo:null
+    userInfo:null,
+    modalWidth:50,
+    modalHeight:50
   };
  
 
 
   
-  refreshAppModalState = (modal,modalIsOpen)=>{
-    this.setState({modal:modal,modalIsOpen:modalIsOpen})
-    this.forceUpdate();
+  refreshAppModalState = (modal,modalIsOpen,modalWidth,modalHeight)=>{
+    this.setState({
+      modal:modal,
+      modalIsOpen:modalIsOpen,
+      modalWidth:modalWidth,
+      modalHeight:modalHeight
+    })
 }
 
   updateLoggingInfo =() => {
@@ -56,7 +64,8 @@ getModal = Currentmodal => {
     return <Login refreshAppModalState={this.refreshAppModalState} 
                   updateLoggingInfo={this.updateLoggingInfo}/>
     case 'Signup':
-    return <Signup />
+    return <Signup refreshAppModalState={this.refreshAppModalState} 
+                    updateLoggingInfo={this.updateLoggingInfo}/>
     default:
   }
 }
@@ -66,7 +75,6 @@ componentWillMount(){
 }
 
   render() {
-    const { open } = this.state;
     const CurrentModal = this.state.modal;
     return (
       <div className="App">
@@ -76,15 +84,18 @@ componentWillMount(){
        className="app-header" 
        refreshAppModalState={this.refreshAppModalState} 
        loggedIn={this.state.loggedIn} 
-       userInfo={this.state.userInfo}/>
+       userInfo={this.state.userInfo}
+       updateLoggingInfo = {this.updateLoggingInfo}/>
        
-              <Modal
-                    visible={this.state.modalIsOpen}
-                    closemodal={() => this.setState({ modalIsOpen: false })}
-                    type="flipInX"
-                >
-                      {this.getModal(CurrentModal)}
-                </Modal>
+
+                <Rodal visible={this.state.modalIsOpen}
+                 onClose={() => this.setState({ modalIsOpen: false })}
+                 width={this.state.modalWidth}
+                 height={this.state.modalHeight}
+                 measure="%">
+                {this.getModal(CurrentModal)}
+                </Rodal>
+
 
         <div className = "app-content">
           <Switch>

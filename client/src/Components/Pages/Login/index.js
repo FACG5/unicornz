@@ -4,6 +4,7 @@ import Button from '../../CommonComponents/Button';
 import './style.css';
 import { withRouter } from "react-router";
 import alertify from 'alertifyjs'
+import 'alertifyjs/build/css/themes/bootstrap.min.css'
 
 export default withRouter (class LoginForm extends Component {
     state = {
@@ -26,18 +27,18 @@ export default withRouter (class LoginForm extends Component {
                     }),
                     headers: {
                         "Content-Type": "application/json; charset=utf-8"
-                        // "Content-Type": "application/x-www-form-urlencoded",
                     }
                 }).then(res => res.json())
                 .then(res => {
                     if(res.status){
-                        alertify.alert('Success', 'You have been logged in successfuly', ()=>alertify.success('OK'));
-                        console.log(res);
-                        console.log('success');
+                        alertify.set('notifier','position', 'top-center');
+                        alertify.success('logged in successfuly')
                         this.props.refreshAppModalState(null,false);
                         this.props.updateLoggingInfo();
                     } else {
-                        alertify.alert('Login failed', res.msg, ()=>alertify.error('OK'));
+                        alertify.set('notifier','position', 'top-center');
+                        alertify.error(res.msg)
+
                     }
                 })
         }
@@ -48,7 +49,6 @@ export default withRouter (class LoginForm extends Component {
             password: ReactDOM.findDOMNode(this.refs.passwordinput).value
            })
         }
-        // up no press to catch the last key pressed
         usernameOnKeyUp = (e)=>{
             this.setState({username:e.target.value})
         }
@@ -60,10 +60,10 @@ export default withRouter (class LoginForm extends Component {
         return (
             <div className="loginComponent">
                     <div className="login-card">
+                            <h1 className="login-title">Log In</h1>
                             <input id="username" type="text" name="username" placeholder="User Name" ref="usernameinput" onKeyUp={this.usernameOnKeyUp} required />
                             <input type="password" name="pass" id="password" placeholder="Password" ref="passwordinput" onKeyUp={this.passwordOnKeyUp}/>
                             <Button onClick={ this.onClickHandler } className="login login-submit" id="login" value="login"/>
-
                     </div>
             </div>
         )
