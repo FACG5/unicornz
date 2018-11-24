@@ -1,0 +1,120 @@
+.mato2 {
+    color: white;
+    font-size: 40px;
+    background: #2a86ff;
+    border-radius: 2px;
+    box-shadow: 5px 5px 5px #5d698a;
+    font-family: 'Kalam', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 17px;
+    height: 100px;
+    position: relative;
+    margin-bottom: 40px;
+    width: 280px;
+}
+
+.mato2 p{
+    font-size: 30px;
+    font-family: 'Kalam', cursive;
+    color: #FFFFFF;
+}
+
+.bottom-left {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin:0px 20px 20px 0px;
+    text-shadow: -3px -3px 5px rgba(0,0,0,3);
+}
+
+.bottom-right {
+    position: absolute;
+    bottom: 0;
+    left:0;
+    margin:0px 0px 20px 20px;
+    text-shadow: -3px -3px 5px rgba(0,0,0,3);
+}
+
+.top-right {
+    position: absolute;
+    top: 0;
+    left:0;
+    margin:20px 0px 0px 20px;
+    text-shadow: -3px -3px 5px rgba(0,0,0,3);
+}
+
+.top-left {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin:20px 20px 0px 0px;
+    text-shadow: -3px -3px 5px rgba(0,0,0,3);
+}
+
+.what-section{
+    background: #FFB2E0;
+    background: -moz-linear-gradient(-45deg, #FFB2E0 0%, #E3BEE1 34%, #FEF9FF 100%);
+    background: -webkit-linear-gradient(-45deg, #FFB2E0 0%, #E3BEE1 34%, #FEF9FF 100%);
+    background: linear-gradient(135deg, #FFB2E0 0%, #E3BEE1 34%, #FEF9FF 100%);
+    background-size: 1900px 1000px;
+    direction: rtl;
+}
+
+ .what-bacground {
+    height: 100vh;
+    width: 100%;
+    padding-top: 50px;
+    box-sizing: border-box;
+}
+
+.what-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.what-p{
+    text-align: center;
+    color:#094669;
+    font-size: 20px;
+    font-family: 'Kalam', cursive;
+    line-height: 1.3;
+    width: 50%;
+    margin: 0 auto;
+    letter-spacing: 0.5px;
+    word-wrap: normal;
+}
+
+.what-category {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.what-images {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+
+.what-img {
+    height: 130px;
+    width: 40%;
+    border-radius: 2px;
+    margin-bottom: 10px;
+}
+
+.what-images p {
+    font-size: 16px;
+    font-family: 'lato', sans-serif;
+    width: 50%;
+    flex-wrap: wrap;
+    text-align: center; 
+}
