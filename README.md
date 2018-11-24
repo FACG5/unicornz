@@ -4,11 +4,9 @@
 
  ---------------------------
  ### Problem Statement
-
-
-
+Girls have a lack of knowledge about STEM field and therefore lack of presence in them and also the difficult to find places they want to get work experince opportunities to increase their knowledge of areas they are interested in. 
 ### Our Solution 
-
+Web app enables girls to search for suitable work experinces that are compatible with their interests and to be able to apply to them after the girls register on the site and give us all the necessary information about them which will help us to find the best opportunities.
 
  ### user stories
 **As a girl**
