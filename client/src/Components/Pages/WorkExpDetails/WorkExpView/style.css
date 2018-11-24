@@ -1,21 +1,27 @@
 .workExperienceView{
-    display:flex; 
-    width: 65%;
-   
+    display:grid; 
+    grid-template-columns:50% 50%;
+    border: 1.5px solid #323232;
+    border-radius: 20px;
+    align-items:center;
+    padding:2%;
+    height: 220px;
+    width: 85%;
+    margin-bottom: 10px;   
  }
  
  .workExperienceView img {
-     height: 150px;
-     width: 150px;
-     margin: 1%;
+     height: 100%;
+     width: 250px;
+     border-radius: 10px;
+    
  }
- 
- .workExperienceView img:hover {
-     opacity: 0.6;
-   }
- 
-   .workExperienceView p {
+    .workExperienceView p {
      text-align: justify;
-     margin: 2%;
-     font-size: 16pt;
+     font-size: 11px;
+     letter-spacing: 0.5px;
+     word-wrap: normal;
+     padding: 33px; 
+     text-align: center;
+     
    }

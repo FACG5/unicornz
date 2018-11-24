@@ -1,41 +1,97 @@
-.hero{
-background-image: url('/images/hero.png');
-background-size: cover;
-width:100%;
-height:80vh;
-display: flex;
-flex-direction: column;
-}
-
-.mato, .spelling{
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;;
+    }
+    .hero{
+    background-color:#57c9c0;
+    width:100%;
+    height:80vh;
+    display: grid;
+    grid-template-columns: 50% 30%;
+    grid-column-gap: 20%;
+    padding: 20px 30px;
+    }
+    
+    .right{
+    display: flex;
+    align-items: center;
+    }
+    .star1 {
+    height: 100px;
+    }
+    
+    .left{
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+    .mato {
     color:white;
-    font-size: 20pt;
-    align-self: flex-start;
-    margin: 5% 1% 5% 7%;
-    padding: 3% 8% 3% 8%;
-    background: rgba(77, 115, 165, 0.5);
+    font-size: 20px;
+    background:#f16d6f;
+    border-radius: 2px;
+    box-shadow: 10px 10px 5px #5d698a;
+    font-family: 'Kalam', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    height: 150px;
     position: relative;
-    border-radius: 10px;
-}
-.mato{
-    font-weight: bold;
-    font-size: 28pt;
-}
-.spelling{
-    margin: 0 7% 0 0;
-    text-align: start;
-    font-size: 18pt;
-    padding: 2% 1% 2% 2%;
-    align-self: flex-end;
-}
+    margin-bottom: 20px;
+    width: 370px;
+    }
+    
+    .bottom-left {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin:0px 20px 20px 0px;
+    text-shadow: -3px -3px 5px rgba(0,0,0,3);
+    }
+    .bottom-right {
+    position: absolute;
+    bottom: 0;
+    left:0;
+    margin:0px 0px 20px 20px;
+    text-shadow: -3px -3px 5px rgba(0,0,0,3);
+    }
+    .top-right {
+    position: absolute;
+    top: 0;
+    left:0;
+    margin:20px 0px 0px 20px;
+    text-shadow: -3px -3px 5px rgba(0,0,0,3);
+    }
+    .top-left {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin:20px 20px 0px 0px;
+    text-shadow: -3px -3px 5px rgba(0,0,0,3);
 
-
-.spelling ul{
-    list-style: none;   
-}
-
-.spelling img{
-    height:20px;
-    display: inline;
-    margin-left: 2%;
-}
+    }
+    .left p {
+    text-align: center;
+    color:white;
+    font-size: 16px;
+    font-family: Lato;
+    line-height: 1.3;
+    width: 60%;
+    margin: 0 auto;
+    letter-spacing: 1px;
+    word-wrap: normal;
+    }
+    
+    .signup-button {
+    height: 41px;
+    width: 100px;
+    background-color: #F5AC44;
+    border: none;
+    margin-top: 20px;
+    font-family: 'Kalam', cursive;
+    font-size: 15px;
+    }

@@ -8,7 +8,7 @@ const CardComp = (props) => {
         <h3 className="subjectName">{subjectName}</h3>
 
         <div className="card">
-            <div>
+            <div className="card-left">
                  <img  className="imageCard" src={companyLogo} alt="company logo" />
             </div>
             <div className="card-right">

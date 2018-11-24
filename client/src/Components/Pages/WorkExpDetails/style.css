@@ -1,10 +1,21 @@
 .detailsPage {
     display: flex;
     flex-direction: column;
-    padding: 2%;
+    padding: 20px;
+    margin-right: 5%;
+
 }
 .twine {
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    width: 90%;
+    margin: 0 auto;
+    grid-template-columns: 25% 70%;
+    grid-column-gap: 5%;
+    height: 250px;
 }
 
+.workview {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}

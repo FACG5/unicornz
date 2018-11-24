@@ -20,7 +20,7 @@
 .clm{
     display: inline-block;
     width: 45%;
-    margin:0 20px 0 0;
+    
 }
 
 .clm>.item>input, .clm>.item>select{
@@ -37,6 +37,8 @@
 
 .clm>.item>input[type=checkbox]{
     height: 25px;
+    align-self: flex-start;
+ 
 }
 
 

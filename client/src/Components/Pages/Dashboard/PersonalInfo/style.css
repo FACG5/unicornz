@@ -34,9 +34,10 @@ img{
 .progress-outer{
   background-color: grey;
 position: relative;
-width: 300Px;
+width: 250Px;
 height: 15Px;
-
+margin-right: 10px;
+align-self: center;
 
 }
 .progress-inner{
