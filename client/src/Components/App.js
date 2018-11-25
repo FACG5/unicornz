@@ -9,35 +9,39 @@ import Signup from '../Components/Pages/SignUp';
 import Login from '../Components/Pages/Login';
 import workExperienceList from './Pages/WorkExpList';
 import Category from '../Components/Pages/Category';
-import Questionnaier from './Pages/Questionnaire';
-import './App.css';
+import Questionnaire from '../Components/Pages/Questionnaire';
 
+
+import './App.css';
 
 class App extends Component {
 
   render() {
     return (
       <div className="App">
-       <Header />
       <BrowserRouter>
-       <div>
-         <Switch>
-            <Route exact path="/" component={LandingPage} />
-            <Route path="/dash" component={Dashboard}/>
-            <Route path="/signup" component={Signup}/>
-            <Route path="/Questionnaier" component={Questionnaier}/>
-            <Route path="/login" component={Login}/>
-            <Route path="/workexperiencedetails/:id" component={workExperienceDetails}/>
-            <Route path="/category" component={Category}/>
-            <Route path="/workexperiencelist" component={workExperienceList}/>
-            <Route path="*"  component={LandingPage} />
-          </Switch>
+       <div className='app-main'>
+       <Header className="app-header"/>
+        <div className = "app-content">
+          <Switch>
+              <Route exact path="/" component={LandingPage} />
+              <Route path="/dash" component={Dashboard}/>
+              <Route path="/signup" component={Signup}/>
+              <Route path="/login" component={Login}/>
+              <Route path="/workexperiencedetails/:id" component={workExperienceDetails}/>
+              <Route path="/category" component={Category}/>
+              <Route path="/workexperiencelist" component={workExperienceList}/>
+              <Route path="/Questionnaire" component={Questionnaire}/>
+              <Route path = "*" component={LandingPage} />
+            </Switch>
+        </div>
        </div>
       </BrowserRouter>
-      <Footer />
+      <Footer className="app-footer"/>
       </div>
     );
   }
 }
+
 
 export default App;

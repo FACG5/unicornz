@@ -16,8 +16,11 @@ class Questionnaier extends Component {
     }
    
     onClickHandler = () => {
-        if (this.state.activePageIndex ===4){
-            this.setState ({ btnvalue: 'Finish'})
+      if(this.state.activePageIndex ===4){
+        this.props.history.push('/dash')
+      }
+        else if (this.state.activePageIndex ===3){
+            this.setState ({ btnvalue: 'Finish',activePageIndex: this.state.activePageIndex + 1})
             } else {
                 this.setState ({activePageIndex: this.state.activePageIndex + 1 }) 
             }  

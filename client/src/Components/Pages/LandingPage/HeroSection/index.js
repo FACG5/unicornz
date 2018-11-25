@@ -1,6 +1,7 @@
 import React from 'react';
 import './style.css'
 import start1 from './images/start1.svg';
+import { withRouter } from "react-router";
 
 class HeroComp extends React.Component {
 
@@ -20,9 +21,12 @@ render(){
             <i class="fas fa-star bottom-left"></i>
             <i class="fas fa-star bottom-right"></i>
         </div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation.</p>
-        <button className="signup-button" type="button">Sign up!</button>
+        <p>"To Engage, Excite, & Empower girls to create the world they want
+            to see, by connecting today’s business world to their innovation,
+            creativity and increasing confidence."
+            <br/>Marie-Clare, Unicornz
+        </p>
+        <button className="signup-button" type="button" onClick={this.onClickHandler}>Sign up!</button>
         </div>
           <div className="right">
             <img  className ="star1" src = {start1} alt = "" />
@@ -35,6 +39,4 @@ render(){
 }
 }
 
-export default HeroComp
-
-
+export default withRouter(HeroComp)
