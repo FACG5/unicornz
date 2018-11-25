@@ -8,10 +8,6 @@ import './style.css'
 
 class WhatWeDoComp extends React.Component {
 
- onClickHandler = () => {
-   this.props.history.push('/signup');
-}
-
 render(){
  return (
 

@@ -54,10 +54,7 @@
 }
 
 .what-section{
-    background: #FFB2E0;
-    background: -moz-linear-gradient(-45deg, #FFB2E0 0%, #E3BEE1 34%, #FEF9FF 100%);
-    background: -webkit-linear-gradient(-45deg, #FFB2E0 0%, #E3BEE1 34%, #FEF9FF 100%);
-    background: linear-gradient(135deg, #FFB2E0 0%, #E3BEE1 34%, #FEF9FF 100%);
+    background:#ffc10766;
     background-size: 1900px 1000px;
     direction: rtl;
 }
