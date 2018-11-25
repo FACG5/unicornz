@@ -27,7 +27,7 @@ class App extends Component {
             <Route path="/signup" component={Signup}/>
             <Route path="/Questionnaier" component={Questionnaier}/>
             <Route path="/login" component={Login}/>
-            <Route path="/workexperiencedetails" component={workExperienceDetails}/>
+            <Route path="/workexperiencedetails/:id" component={workExperienceDetails}/>
             <Route path="/category" component={Category}/>
             <Route path="/workexperiencelist" component={workExperienceList}/>
             <Route path="*"  component={LandingPage} />

@@ -1,30 +1,69 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import CopmpanyContact from './CompanyContact';
 import CompanyDescription from './CompanyDescription';
 import WorkExpView from './WorkExpView';
-import companyImage from './images/comlogo.png'
-import companyImage1 from './images/girlstem.png'
-
+import Button from '../../CommonComponents/Button'
 import './style.css';
 
 class workExperienceDetails extends Component {
+  state = {
+    id:'',
+    description:'',
+    video:'',
+    logo:'',
+    company_name:'',
+    mobile:'',
+    website:'',
+    email:'',
+    facebook:''
+  }
+  
+
+  componentDidMount() {
+    console.log(this.props.match.params.id);
+    
+    axios.get(`/workexperiencedetails/${this.props.match.params.id}`).then((res) => {  
+      const info = res.data
+      console.log("info : ",info);
+      this.setState({ ...info });
+    }).catch((error) => {
+      console.log('error:', error);
+    });
+  }
+
   render() {
+    const {
+    company = { logo },
+    id,
+    description,
+    video,
+    logo,
+    company_name,
+    mobile,
+    website,
+    email,
+    facebook
+  }= this.state;
     return (
       <div className="detailsPage">
-          <CompanyDescription companyImage = {companyImage} description = {"is a newly founded company in 2016 by a team of creative team that offers furniture and interior design in a very modern style .Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat"} />
+          <CompanyDescription 
+              companyImage={company.logo} 
+              description={company.description} />
           <div className="twine">
-          <CopmpanyContact className = "CopmpanyContact" companyName = {'Para Design'}
-                           companyVision = {'Passion to innovate'}
-                           facebook = {'/Paradesign.ps'}
-                           email = {'Paradesign@gmail.com'}
-                           inistagram = {'Paradesign'}
-                           website = {'www.paradesign.ps'}
-                           phone = {'+ 44 0000 111'} />
+          <CopmpanyContact className = "CopmpanyContact" 
+                          companyName = {company.company_name}
+                           facebook = {company.facebook}
+                           email = {company.email}
+                           website = {company.website}
+                           phone = {company.mobile} />
              <div className="workview">
-              <WorkExpView className = "workExpView" image1 = {companyImage1}
-                        text1 = {'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'} />
+              <WorkExpView className = "workExpView"
+              image1={company.logo}
+              text1={description} />
             </div>
          </div>
+          <Button value={"APPLY NOW"}  color={"#C72D65"}/>
       </div>
     );
   }
