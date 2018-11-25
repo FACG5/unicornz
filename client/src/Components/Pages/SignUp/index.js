@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import starPic1 from '../LandingPage/HeroSection/images/start1.svg'
 import starPic2 from '../LandingPage/HeroSection/images/start1.svg'
+import spark from './image/thunder.svg'
 
 import './style.css';
 
@@ -34,18 +35,12 @@ export default class SignUpForm extends Component {
 
 
     render (){
-        console.log(this.state);
+
         return (
             <div className="sign-up">
-                <img  className ="starPic2" src = {starPic2} alt = "" />
+                <img  className ="starPic2" src = {starPic2} alt = ""/>
                 <div class="signup-sec">
-                    <div className = "mato-signup">
-                        Where Girls Become the Future
-                        <i class="fas fa-star top-left"></i>
-                        <i class="fas fa-star top-right"></i>
-                        <i class="fas fa-star bottom-left"></i>
-                        <i class="fas fa-star bottom-right"></i>
-                    </div>
+                    <p id="sign-up-p">Sign up <img src={spark} alt="" id="spark"/></p>
                     <div className="signupComponent">
                         <form id="signupform" enctype='multipart/form-data' action="/signup" method="POST">
                             <section className="containerr">
@@ -63,22 +58,21 @@ export default class SignUpForm extends Component {
                                         <input type="text" placeholder="School name" required/>
                                         <p id="schoolerr" className="errorValid"></p>
 
-                                        <input type="date" placeholder="birth of date" equired/>
+                                        <input type="date" placeholder="birth of date" required/>
                                         <p id="birthDaterr" className="errorValid"></p>
 
-                                        <input type="text" name="email"  placeholder="Password" equired/>
+                                        <input type="text" name="email"  placeholder="Password" required/>
                                         <p id="passworderr" className="errorValid"></p>
 
                                         <input type="text" name="email"  placeholder="Confirm Password" required/>
                                         <p id="Confirmerr" className="errorValid"></p>
 
-                                        <label for="email">I am not a robot</label>
-                                        <input type="checkbox" name="robot" id="email" required/>
+                                        <label for="check"><span id="robot">I am not a robot </span><input type="checkbox" name="robot" id="check" required/></label>
                                         <p id="emailerr" className="errorValid"></p>
                                 </div>
                             </section>
                         
-                            <button className="signup-submit" value="Submit"> </button>
+                            <button className="signup-submit" value="Submit" > Sign Up </button>
                         </form>
                     </div>
                 </div>    

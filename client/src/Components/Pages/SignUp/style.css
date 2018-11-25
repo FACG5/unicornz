@@ -8,26 +8,20 @@
     justify-content: space-between;
 }
 
-.signup-sec {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-}
-
 .signupComponent {
     display: flex;
-    background-color: #F5AC44;
-    width: 360px;
-    height: 500px;
+    background-color: #ffd353;
+    width: 400px;
+    height: 475px;
     position: absolute;
     left: 50%;
     top: 50%;
+    -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     align-items: center;
     justify-content: center;
     border-radius: 3.5px;
-    margin-top: 30px;
+    margin-top: 62px;
 }
   
 .containerr .clm input[type=text], input[type=password],input[type=email], input[ type=date]{
@@ -50,7 +44,13 @@
     background: #153c59d4;
     color: white;
     border-radius: 3px;
+    font-family: lato , sans-serif;
+    font-size: 20px;
+    margin-top: 8px;
+}
 
+.signup-submit:hover {
+    background: #57c9c0;
 }
   
 .clm label {
@@ -85,7 +85,31 @@
     font-size: 22px;
     height: 150px;
     position: relative;
-    /* margin-bottom: 20px; */
     width: 370px;
-    }
+}
 
+#sign-up-p {
+    margin-top: -317px;
+    font-family: 'Kalam', cursive;
+    color: #FFFFFF;
+    font-size: 40px;
+    text-align: start;
+}
+
+#spark {
+    padding-left: 130px;
+    margin-top: -53px;
+    height: 43px;
+}
+
+#robot {
+    font-size: 16px;
+    color: #153c59d4;
+}
+
+#check {
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    background-color: #eee;
+}
