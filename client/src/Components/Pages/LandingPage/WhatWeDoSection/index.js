@@ -7,7 +7,7 @@ import './style.css'
 
 
 class WhatWeDoComp extends React.Component {
-
+    
 render(){
  return (
 
