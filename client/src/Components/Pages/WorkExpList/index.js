@@ -11,7 +11,6 @@ class workExperienceList extends Component {
   componentDidMount() {
     axios.get('/workexperiencelist').then((res) => {
       const info = res.data;   
-      
       this.setState({info})   
       this.setState({ results:info });
     }).catch((error) => {

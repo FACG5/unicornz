@@ -19,7 +19,6 @@ class workExperienceDetails extends Component {
     facebook:''
   }
   
-
   componentDidMount() {
     console.log(this.props.match.params.id);
     

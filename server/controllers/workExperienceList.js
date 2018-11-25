@@ -4,9 +4,7 @@ exports.get = async (request, response) => {
   
   try {
     
-    const result = await  work_experience.findAll({ include:[{ model: company }] });
-    await console.log(2222222);
-    
+    const result = await  work_experience.findAll({ include:[{ model: company }] });    
     
     if (result) {      
       
