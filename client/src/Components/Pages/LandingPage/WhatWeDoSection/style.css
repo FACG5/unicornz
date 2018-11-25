@@ -1,27 +1,22 @@
-.missionImage{
-    height: 800px;
-    width: 100%
-}
-
-.mato1 {
+.mato2 {
     color: white;
     font-size: 40px;
-    background: #f5ac44;
+    background: #2a86ff;
     border-radius: 2px;
-    box-shadow: 5px 5px 3px #ffffff;
+    box-shadow: 5px 5px 5px #5d698a;
     font-family: 'Kalam', cursive;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 20px;
-    height: 150px;
+    font-size: 17px;
+    height: 100px;
     position: relative;
     margin-bottom: 40px;
-    width: 335px;
+    width: 280px;
 }
 
-.mato1 p{
-    font-size: 45px;
+.mato2 p{
+    font-size: 30px;
     font-family: 'Kalam', cursive;
     color: #FFFFFF;
 }
@@ -58,33 +53,29 @@
     text-shadow: -3px -3px 5px rgba(0,0,0,3);
 }
 
-.missionsection{
-    background: url(./images/girl1.jpg) center center no-repeat;
-    background-size: 1900px 800px;
+.what-section{
+    background:#ffc10766;
+    background-size: 1900px 1000px;
     direction: rtl;
 }
 
-.missionsection .rgba{
+ .what-bacground {
     height: 100vh;
     width: 100%;
-    margin-right: 770px;
-    padding-top: 70px;
+    padding-top: 50px;
     box-sizing: border-box;
 }
 
-.content{
-    width: 50%;
-    padding-top: 10%;
+.what-content{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.rgba .mission-p{
-    padding-top: 10px;
+.what-p{
     text-align: center;
-    color: white;
+    color:#094669;
     font-size: 20px;
     font-family: 'Kalam', cursive;
     line-height: 1.3;
@@ -92,4 +83,35 @@
     margin: 0 auto;
     letter-spacing: 0.5px;
     word-wrap: normal;
+}
+
+.what-category {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.what-images {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+
+.what-img {
+    height: 130px;
+    width: 40%;
+    border-radius: 2px;
+    margin-bottom: 10px;
+}
+
+.what-images p {
+    font-size: 16px;
+    font-family: 'lato', sans-serif;
+    width: 50%;
+    flex-wrap: wrap;
+    text-align: center; 
 }

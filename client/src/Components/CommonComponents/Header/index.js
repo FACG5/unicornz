@@ -2,7 +2,6 @@ import React from 'react';
 
 import logo from './logo.png'
 import { withRouter } from "react-router";
-
 import './style.css'
 
 class HeaderComp extends React.Component {
@@ -16,11 +15,14 @@ class HeaderComp extends React.Component {
         this.props.history.push('/login');
      }
 
+     homehandler = () => {
+        this.props.history.push('/');
+     }
 
     render(){
     return (
         <div className="header">
-            <img className="header-img" src={logo} alt="logo" />
+            <img className="header-img" src={logo} alt="logo" onClick={this.homehandler}/>
             <ul className="header-nav">
                 <li onClick={this.loginClickHandler}>Login</li>
                 <li onClick={this.signupClickHandler}>Sign up</li>
