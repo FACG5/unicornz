@@ -8,8 +8,8 @@ class HeroComp extends React.Component {
 }
 
 render(){
+  
  return (
-
     <div className = "missionsection">
          <div className="rgba">
           <div className="content">
