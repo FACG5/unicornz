@@ -1,6 +1,5 @@
 import React from 'react';
 import './style.css'
-import girl from './images/girl.jpg';
 
 class HeroComp extends React.Component {
 
@@ -12,7 +11,6 @@ render(){
  return (
 
     <div className = "missionsection">
-         {/* <img className="missionImage" src={girl} alt= ''/> */}
          <div className="rgba">
           <div className="content">
           <div className = "mato1">
@@ -31,7 +29,6 @@ render(){
          </div>
     </div>
 
-    
  );
 }
 }
