@@ -39,4 +39,22 @@ const authCheck = (request, cb) => {
   return true;
 };
 
-module.exports = { createCookie, getTokenData, authCheck };
+
+const promiseAuthCheck = request => new Promise((res, rej)=>{
+
+  if (!request.cookies) {
+    rej('no  cookies found');
+  }
+  const { data } = request.cookies;
+  if (!data) {
+    rej("No authentication data found");
+  }
+  getTokenData(data, (err, decoded) => {
+    if (err) {
+      rej(err);
+    }
+    res(decoded);
+  });
+})
+
+module.exports = { createCookie, getTokenData, authCheck, promiseAuthCheck };

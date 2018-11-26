@@ -12,29 +12,16 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, '..', 'client','build')));
 app.use(cookieParser());
 
-app.use((req, res, next) => {
-  authCheck(req, (authErr, token) => {
-    if (authErr) {
-      req.token = null;
-      req.userauthed = false;
-      next();
-    } else {
-      req.token = token;
-      req.userauthed = true;
-      if (token.role === 'admin') {
-        req.admin = true;
-      } else {
-        req.admin = false;
-      }
-      next();
-    }
-  });
-});
-
 app.use(router);
-app.get('*' , (req,res)=>{
+
+
+app.use('*' , (req,res)=>{
   res.sendFile(path.join(__dirname, '..', 'client','build','index.html'))
 })
+
+
+
+
 
 app.disable('x-powered-by');
 module.exports = app;

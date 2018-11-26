@@ -1,5 +1,4 @@
 const dbConfig = (env) => {
-   console.log(env,' : env');
     if (env === 'production') {  
      return {
         // database: process.env.DB_PRODUCTION_URL,
@@ -10,7 +9,6 @@ const dbConfig = (env) => {
         dialect: 'postgres',
       };
     }
-    console.log('ok : ');
     if (env === 'development') {  
       return {
         username: process.env.username,

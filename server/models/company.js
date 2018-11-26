@@ -36,6 +36,10 @@ module.exports =
     facebook: {
       type: Sequelize.STRING,
       allowNull: true
+    },
+    password: {
+      type: Sequelize.TEXT,
+      allowNull: false
     }
   }, {
     tableName: 'company'
