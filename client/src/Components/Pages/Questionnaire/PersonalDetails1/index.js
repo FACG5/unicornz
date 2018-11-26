@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/accessible-emoji */
 import React, { Component } from 'react';
 import Select from 'react-select';
 import Dropzone from 'react-dropzone'
@@ -54,7 +55,7 @@ class PersonalDetails1 extends Component {
         futureJob: '',
         interestedJob: '',
         files:[],
-        label:"choose files"
+        label:"click to choose files"
     }
     
     handleSubjectChange = (subjects)=> {
@@ -124,9 +125,9 @@ class PersonalDetails1 extends Component {
                         <textarea rows="5" cols="40" placeholder="Answer" name="enjoySchool" onChange={this.onChange}></textarea>
                         <p>What are your interests and hobbies outside of school? Tell us everything you enjoy doing.</p>
                         <textarea rows="5" cols="40" placeholder="Answer" name="hobbies" onChange={this.onChange}></textarea>
-                        <p>If you have a￼ copy of your CV, please upload it to your dashboard</p>
                     </div>
                     <div className="personal1-content2">
+                        <p>If you have a￼ copy of your CV, please upload it to your dashboard</p>
                         <Dropzone
                             className="drop-zone"
                             onDrop={this.handleOnDrop}
@@ -137,6 +138,7 @@ class PersonalDetails1 extends Component {
                         <textarea rows="5" cols="40" placeholder="Answer" name="futureJob" onChange={this.onChange}></textarea>
                         <p>What kinds of jobs do you think will interest you?</p>
                         <textarea rows="5" cols="40" placeholder="Answer" name="interestedJob" onChange={this.onChange}></textarea>
+                        <h1 className="shape">&#9925;</h1>
                     </div>
                 </div>
             </div>
