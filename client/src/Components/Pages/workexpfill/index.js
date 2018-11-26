@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Select from 'react-select';
 import 'react-select/lib/'
 import alertify from 'alertifyjs'
+import { withRouter } from "react-router";
 
 import './style.css'
 
@@ -32,6 +33,10 @@ componentWillMount(){
 companyListChangeHandle = (selectedoption) => {
   this.setState({company_id:selectedoption},()=>{
   });
+}
+
+onBackToMenueClickHandler = () =>{
+    this.props.history.push('/');
 }
 
 onSubmitClickHandler =() =>{
@@ -157,9 +162,12 @@ onSubmitClickHandler =() =>{
                     </div>
 
                     <div className="formgroup submitbtn">
-                    <label></label>
-                    <input type="submit" className="btn btn-primary  form-control" onClick={this.onSubmitClickHandler}/>
-
+                        <div className="labeldiv">
+                        </div>
+                        <div className="inputdiv">
+                            <input type="submit" className="btn btn-primary  form-control" onClick={this.onSubmitClickHandler}/>
+                            <button type="submit" className="btn btn-primary  form-control" onClick={this.onBackToMenueClickHandler}>Back to menue</button>
+                        </div>
                     </div>
 
             </div>
@@ -168,5 +176,5 @@ onSubmitClickHandler =() =>{
 }
 
 
-export default WorkExpFill;
+export default withRouter(WorkExpFill);
 

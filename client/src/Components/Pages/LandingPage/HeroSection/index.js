@@ -32,7 +32,7 @@ render(){
             <br/>Marie-Clare, Unicornz
         </p>
         <button className="signup-button" type="button" onClick={this.onClickHandler}>Sign up!</button>
-        <Button onClick={this.addJobClickHandler} value='Add A Job'/>
+        <Button onClick={this.addJobClickHandler} value='Add a Job'/>
         </div>
           <div className="right">
             <img  className ="star1" src = {start1} alt = "" />
