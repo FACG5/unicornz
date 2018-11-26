@@ -1,16 +1,14 @@
+const { girl } = require('../models');
 
-exports.get= async(request,response)=>{
-  try{
-  
-    response.send({
-      name:'Marie Clare',
-      city:'london',
-      age:'32',
-      favouritSubject:'Math',
-      infoCompletion:'68',
-      email:'Marie@gmail.com',
-      mobile:'0599089478'});
+exports.get = async (request, response) => {
+  try {
+    const result = await girl.findAll({ raw: true , where: { id: 1}  });
+    if (result) {
+      response.status(200).send(result[0]);
+    } else {
+      response.status(404).send('No such data');
+    }
   }catch(error){
-    console.log(error);
+    response.status(500).send('server Erorr') ;
   }
 }

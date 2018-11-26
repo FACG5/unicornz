@@ -6,6 +6,7 @@ import request from './images/request.png';
 export default ({ activites }) => (
   <div className="my-activity">
     <h2>My activity</h2>
+    <h3>Done Jobs</h3>
     {
 activites.map((val, index) => {
   const { done, job } = val;
@@ -18,7 +19,7 @@ activites.map((val, index) => {
     );
   }
 })}
-
+    <h3>Requests</h3>
     {activites.map((val, index) => {
       const { done, job } = val;
       if (!done) {

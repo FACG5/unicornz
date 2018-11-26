@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize')
-const sequelize = require('../config');
+const sequelize = require('./connection');
 
 module.exports =  sequelize.define('work_experience', {
   id: {
@@ -21,10 +21,6 @@ module.exports =  sequelize.define('work_experience', {
     allowNull: true
   },
   subject: {
-    type: Sequelize.STRING,
-    allowNull: true
-  },
-  post_code: {
     type: Sequelize.STRING,
     allowNull: true
   },

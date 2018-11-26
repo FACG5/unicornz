@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize')
-const sequelize = require('../config/index.js');
+const sequelize = require('./connection');
 
 module.exports =  sequelize.define('girl', {
   id: {
@@ -23,6 +23,10 @@ module.exports =  sequelize.define('girl', {
   email: {
     type: Sequelize.STRING,
     allowNull: false
+  },
+  mobile: {
+    type: Sequelize.STRING,
+    allowNull: true
   },
   school_id: {
     type: Sequelize.INTEGER,
