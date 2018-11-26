@@ -23,16 +23,12 @@ insert into work_experience (company_id, location, subject, post_code, start_dat
 (4, 'London', 'Mathmatics', '044',' 01-01-2019', '01-15-2019', 10.5, 'Work Experience Opportunity', 3, 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.', 'https://www.youtube.com/watch?v=Q_11rwb4vEc','11:30:00', '19:30:00'),
 (1, 'Liverpool', 'Engineering', '040', '01-01-2019',' 01-15-2019', 10.5, 'Work Experience Opportunity', 3, 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.', 'https://www.youtube.com/watch?v=Q_11rwb4vEc', '10:30:00', '16:30:00');
 
-insert into girl (user_name, first_name, last_name, email, school_id, other_school, birthdate, password) 
+insert into girl (user_name, first_name, last_name, email, school_id, other_school, birthdate, password, grade, city, school_email, emergency_name, phone_num, emergency_num, emergency_email, relation, period, begin_date, end_date, subjects, fav_subjects, enjoy_school, hobbies, future_job, interested_job, files, famous_entrepreneur, be_entrepreneur, entrepreneurs_women, important_in_career1, important_in_career2, important_in_career3, important_factors1, important_factors2, important_factors3, person_have_career, clicked_pic1, clicked_pic2, clicked_pic3, clicked_pic4, pursue_in_tech) 
  values
- ('hadam', 'Helary', 'Adam', 'hadam@nameschool.uk', 1, '', '01-01-2005', '$2a$10$t3bm8JUU3dwAvUpE0Pr/e.S5XDnaX./JaGpIv5uDX7I51n4JVKH42'),
- ('sjohn', 'Suzan', 'John', 'sjohn@nameschool.uk', 2, '',' 01-01-2005', '$2a$10$t3bm8JUU3dwAvUpE0Pr/e.S5XDnaX./JaGpIv5uDX7I51n4JVKH42'),
- ('lmatt', 'lara', 'matt', 'lmatt@nameschool.uk', 4, '', '01-01-2005', '$2a$10$t3bm8JUU3dwAvUpE0Pr/e.S5XDnaX./JaGpIv5uDX7I51n4JVKH42'),
- ('jmax', 'Jem', 'Max', 'jmax@nameschool.uk', 3, '', '01-01-2005', '$2a$10$t3bm8JUU3dwAvUpE0Pr/e.S5XDnaX./JaGpIv5uDX7I51n4JVKH42');
+ ('hadam', 'Helary', 'Adam', 'hadam@nameschool.uk', 1, '', '01-01-2005', '$2a$10$t3bm8JUU3dwAvUpE0Pr/e.S5XDnaX./JaGpIv5uDX7I51n4JVKH42', '9th Grade', 'London', 'london@girlschool.uk', 'Smith Adam', '+4405556666', '+4405556666', 'smithadam@gmail.com', 'father', '1 year', '2/2/2019', '2/2/2020', '{Engineering, Science}', '{Engineering, Science}', 'Games', 'Cooking', 'Teacher', 'Engineer', 'halaryAdamCV.pdf', 'John Adam', 'John Adam', 'Madleen Adam',' {nice, wonderful, amazing}', '{nice, wonderful, amazing}', '{nice, wonderful, amazing}',  '{nice, wonderful, amazing}',  '{nice, wonderful, amazing}', '{nice, wonderful, amazing}', 'Epsum','Epsum','Epsum','Epsum', 'Epsum', 'Epsum');
 
-insert into girl (user_name, first_name, last_name, email, school_id, other_school, birthdate, password) 
+
+insert into registration ( work_experience_id, girl_id, status,registration_date, response) 
  values
- (1, 1, 'avilable', '12-12-2018', 'approve'),
- (2, 2, 'avilable', '12-12-2018', 'approve'),
- (3, 3, 'avilable', '12-12-2018', 'approve'),
- (4, 4, 'avilable', '12-12-2018', 'approve');
+ (1, 1, 'avilable', '12-12-2018', 'approve');
+ 
