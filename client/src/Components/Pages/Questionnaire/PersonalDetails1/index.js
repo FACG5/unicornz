@@ -102,7 +102,7 @@ class PersonalDetails1 extends Component {
     render() {
         return ( 
             <div className="personal-details1" >
-                <h2>Now we've got the boring stuff out of the way, let's get to know more about your school studies</h2>
+                <h2 personal-details1-h>Now we've got the boring stuff out of the way, let's get to know more about your school studies</h2>
                 <div className="personal-details1-content">
                     <div className="personal1-content1">  
                         <p>What subjects are you studying? Tick all that apply</p>

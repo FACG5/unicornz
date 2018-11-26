@@ -7,14 +7,13 @@
     align-items: center;
 }
 
-.personal-details1 h2 {
+.personal-details1-h {
     font-family: 'lato' , 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: bold;
     font-size: 20px;
     color: #153C59;
     text-align: center;
     margin-bottom: 25px;
-
 }
 
 .personal-details1 p{
