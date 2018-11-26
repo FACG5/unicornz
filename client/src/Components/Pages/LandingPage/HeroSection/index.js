@@ -26,8 +26,11 @@ render(){
             <i className="fas fa-star bottom-left"></i>
             <i className="fas fa-star bottom-right"></i>
         </div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation.</p>
+        <p>"To Engage, Excite, & Empower girls to create the world they want
+            to see, by connecting today’s business world to their innovation,
+            creativity and increasing confidence."
+            <br/>Marie-Clare, Unicornz
+        </p>
         <button className="signup-button" type="button" onClick={this.onClickHandler}>Sign up!</button>
         <Button onClick={this.addJobClickHandler} value='Add A Job'/>
         </div>
@@ -43,5 +46,3 @@ render(){
 }
 
 export default withRouter(HeroComp)
-
-

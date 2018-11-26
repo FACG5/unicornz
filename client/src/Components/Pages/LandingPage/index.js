@@ -1,7 +1,7 @@
 import React from 'react';
 import HeroComp from './HeroSection'
 import MissionSection from './MissionSection';
-import Button from '../../CommonComponents/Button' 
+import WhatWeDoComp from './WhatWeDoSection'
 import './style.css'
 
 
@@ -13,6 +13,7 @@ class LandingPage extends React.Component  {
            <HeroComp />
            <MissionSection />
 
+           <WhatWeDoComp />
        </div>
     );
    }

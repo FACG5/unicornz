@@ -5,6 +5,8 @@ const schoolController = require('./school');
 const companyController = require('./company');
 const workexpController = require('./workexp')
 const { authorize } = require('../middleware/authorize');
+const work = require('./workExperienceList');
+const workExperienceDetails = require('./workexperienceDetails');
 const router = express.Router();
 
 
@@ -20,5 +22,10 @@ router.get('/getcompanieslist',companyController.getCompaniesList)
 
 
 //Example to add a secured route: router.post('/protectedRoute',authorize, protectedRouteHandler);
+
+
+router.get('/workexperiencelist', work.get);
+router.get('/workexperiencedetails/:companyId', workExperienceDetails.get);
+
 
 module.exports = router;

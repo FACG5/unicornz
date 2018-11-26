@@ -1,56 +1,56 @@
 import React, { Component } from 'react';
-import companyLogo from './images/companyLogo.png';
+import axios from 'axios';
 import Card from './Cards';
-import SearchBar from '../../CommonComponents/SearchBar';
 import './style.css';
 
 class workExperienceList extends Component {
+  state ={
+           results:[],
+           info:[]
+  }
+  componentDidMount() {
+    axios.get('/workexperiencelist').then((res) => {
+      const info = res.data;   
+      this.setState({info})   
+      this.setState({ results:info });
+    }).catch((error) => {
+      console.log('error:', error);
+    });
+  }
+
   render() {
+  const data = this.state.results;
     return (
      <div>
         <div className="welcomeworkexperience">
               <h1> Find work experience </h1>
         </div>
+        <div className="cardLinks">
+        {
+           this.state.info.map((item) => {
+             
+             return(
+            <Card 
+            subjectName = {item.subject} 
+            key={item.id}
+            company_name = {item.company.company_name}
+            companyLogo={item.company.logo}
+            post_code={item.post_code}
+            expWorkTitle={item.title} 
+            max_number={item.max_number} 
+            country={item.location}
+            start_time={item.start_time} 
+            end_time={item.end_time} 
+            startingDate={item.start_date}
+            endingDate={item.end_date}
+            pocketMoney={item.pocket_money}
+            id = {item.id} />
+           )
+          })
+         }
+        
+        </div>
          
-        <Card subjectName={'Mathmatics'} 
-           companyLogo={companyLogo}
-           expWorkTitle={'Transactions Business Apprenticeship Programme'} 
-           country={'Lodon'}
-           postCode={'+ 440'} 
-           website={'www.unixornz.uk'} 
-           startingDate={'10/1/2019'}
-           endingDate={'20/1/2019'}
-           pocketMoney={'15'} />
-
-        <Card subjectName={'Mathmatics'} 
-           companyLogo={companyLogo}
-           expWorkTitle={'Transactions Business Apprenticeship Programme'} 
-           country={'Lodon'}
-           postCode={'+ 440'} 
-           website={'www.unixornz.uk'} 
-           startingDate={'10/1/2019'}
-           endingDate={'20/1/2019'}
-           pocketMoney={'15'} />
-
-           <Card subjectName={'Mathmatics'} 
-           companyLogo={companyLogo}
-           expWorkTitle={'Transactions Business Apprenticeship Programme'} 
-           country={'Lodon'}
-           postCode={'+ 440'} 
-           website={'www.unixornz.uk'} 
-           startingDate={'10/1/2019'}
-           endingDate={'20/1/2019'}
-           pocketMoney={'15'} />
-
-        <Card subjectName={'Mathmatics'} 
-           companyLogo={companyLogo}
-           expWorkTitle={'Transactions Business Apprenticeship Programme'} 
-           country={'Lodon'}
-           postCode={'+ 440'} 
-           website={'www.unixornz.uk'} 
-           startingDate={'10/1/2019'}
-           endingDate={'20/1/2019'}
-           pocketMoney={'15'} />
     </div>
     );
   }

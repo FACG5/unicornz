@@ -1,10 +1,11 @@
-.title{
-    text-align: center;
-    font-family: Roboto;
-
-}
-.signupComponent{
-    height: 50vh;
+.sign-up {
+    display: flex;
+    background-color:#57c9c078;
+    width:100%;
+    height:100vh;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .msg{
@@ -45,10 +46,12 @@
     
 }
 
-.clm>.item>input[type=checkbox]{
-    height: 25px;
-    align-self: flex-start;
- 
+.signup-submit:hover {
+    background: #57c9c0;
+}
+  
+.clm label {
+    font-size: 14px;
 }
 
 .clm>.item>label{
@@ -60,43 +63,48 @@
     text-align: start;
 }
 
-.description{
-    margin-top:20px
+.starPic2 {
+    height: 150px;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    margin-left: 25px;
+    margin-top: 400px;
+    transform: rotate(-178deg);
 }
 
-.description label{
-    display: block;
+.mato-signup {
+    color:white;
+    font-size: 20px;
+    background:#f16d6f;
+    border-radius: 2px;
+    box-shadow: 10px 10px 5px #5d698a;
+    font-family: 'Kalam', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    height: 150px;
+    position: relative;
+    width: 370px;
 }
 
-.description textarea{
-    width:91%;
-    height: 80px;;
-}
-.submitdiv{
-    text-align: center;
-}
-#signup{
-    background-color: #00BFFF;
-    border-radius: 20px;
-    width:170PX;
-    height: 30PX;
-    font-family: Roboto;
-    font-size: 14pt
+#sign-up-p {
+    margin-top: -317px;
+    font-family: 'Kalam', cursive;
+    color: #FFFFFF;
+    font-size: 40px;
+    text-align: start;
 }
 
-#signup:hover{
-    background-color: rgb(175, 186, 190);
+#spark {
+    padding-left: 130px;
+    margin-top: -53px;
+    height: 43px;
 }
-.signup-help {
-    width: 100%;
-    text-align: center;
-    font-size: 12px;
-  }
 
-  .popular .tape {
-    background-color: #00BFFF;
-    height: 60px;
-    margin: 5px 0;
+#robot {
+    font-size: 16px;
+    color: #153c59d4;
 }
 
 .popular>.tape>h2 {

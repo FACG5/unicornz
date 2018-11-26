@@ -155,6 +155,7 @@ export default class SignUpForm extends Component {
                     <Button value="Submit" onClick={this.onSubmitClickHandler}/>
                     </section>
 
+                                   
             </div>
         )
     }
