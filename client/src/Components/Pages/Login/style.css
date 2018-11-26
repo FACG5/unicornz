@@ -40,7 +40,7 @@ input:-webkit-autofill:active{
 }
 
 .login-card h1 {
-  margin-bottom: 100px;
+  margin-bottom: 30px;
   font-weight: 100;
   text-align: center;
   font-size: 2.3em;
@@ -71,7 +71,7 @@ input:-webkit-autofill:active{
   margin: 0 auto 10px;
 }
 .login-card input:last-of-type{
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 

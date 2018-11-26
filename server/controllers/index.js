@@ -1,8 +1,9 @@
 const express = require('express');
 
 const signController = require('./sign');
-const schoolController = require('./school')
-const  { promiseAuthCheck } = require ('../authentication/authentication');
+const schoolController = require('./school');
+const companyController = require('./company');
+const workexpController = require('./workexp')
 const { authorize } = require('../middleware/authorize');
 const router = express.Router();
 
@@ -12,7 +13,10 @@ router.get('/logout',signController.logOut)
 router.post('/signup', signController.signup);
 router.get('/checkauthentication', signController.checkAuthentication);
 
+router.post('/submitjob', workexpController.submitJob)
+
 router.get('/getschoolslist',schoolController.getSchoolsList)
+router.get('/getcompanieslist',companyController.getCompaniesList)
 
 
 // router.post('/protectedRoute',authorize, protectedRoute.post);

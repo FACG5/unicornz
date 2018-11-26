@@ -59,7 +59,7 @@
 }
 
 
-input[type="text"] { 
+.last-card input[type="text"] { 
     width: 350px;
     height: 42px;
     background: #FFFFFF;

@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import Input from '../../CommonComponents/Inputs';
 import Button from '../../CommonComponents/Button';
 import alertify from 'alertifyjs'
-import 'alertifyjs/build/css/themes/bootstrap.min.css'
 import Select from 'react-select';
 
 import './style.css';
@@ -30,11 +28,6 @@ export default class SignUpForm extends Component {
         school_options:[]
     }
 
-    handleChange = event => {
-        const { value, name } = event.target;
-        console.log(this.state);
-        this.setState({ [name]: value});
-    };
 
     componentWillMount(){
         this.setState({vx:Math.floor(Math.random()*100),vy:Math.floor(Math.random()*100)});
@@ -44,7 +37,7 @@ export default class SignUpForm extends Component {
     
     onSubmitClickHandler = () => {
          if(!this.state.user_name || this.state.user_name.trim() ===''){
-            alertify.dialog('alert').set({transition:'fade',message: 'Please enter a user name!'}).setHeader('<h3>check password</h3>').show(); 
+            alertify.dialog('alert').set({transition:'fade',message: 'Please enter a user name!'}).setHeader('<h3>No user name!</h3>').show(); 
         }else if (!this.state.first_name || this.state.first_name.trim() ===''){
             alertify.dialog('alert').set({transition:'fade',message: 'Please enter your first name'}).setHeader('<h3>No first name!</h3>').show(); 
         }else if (!this.state.last_name || this.state.last_name.trim() ===''){
@@ -92,7 +85,6 @@ export default class SignUpForm extends Component {
 
     schoolListChangeHandle = (selectedoption) => {
         this.setState({school_id:selectedoption});
-        console.log(this.state.school_id);
     }
    
     render (){
@@ -151,7 +143,7 @@ export default class SignUpForm extends Component {
                                 <p id="emailerr" className="errorValid"></p>
                             </div>
                             <div className="item">
-                                <label >Sum of {this.state.vx} and {this.state.vy} is:</label>
+                                <label >Sum of {this.state.vx} + {this.state.vy} is:</label>
                                 <input type="number" onKeyUp={(e)=>{this.setState({sum:Number(e.target.value)})}} required/>
                                 <p id="emailerr" className="errorValid"></p>
                                 </div>

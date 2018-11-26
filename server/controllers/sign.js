@@ -1,5 +1,6 @@
 const bcrypt = require('bcryptjs');
 const hashPassword = require("../authentication/hashpassword");
+const  { promiseAuthCheck } = require ('../authentication/authentication');
 const {
   girl
 } = require('../models');
@@ -15,7 +16,6 @@ exports.logOut = (request, response) => {
 };
 
 exports.signup = (request, response) => {
-  console.log(request.body);
     const {
       user_name,
       first_name,

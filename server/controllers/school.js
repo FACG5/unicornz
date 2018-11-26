@@ -8,6 +8,7 @@ const getSchoolsList = (request, response) =>{
         });
         response.json(options);
     })
+    .catch(err=>response.json(err))
 }
 
 module.exports = {getSchoolsList};

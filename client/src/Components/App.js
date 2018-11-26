@@ -10,10 +10,7 @@ import Login from '../Components/Pages/Login';
 import workExperienceList from './Pages/WorkExpList';
 import Category from '../Components/Pages/Category';
 import Questionnaire from '../Components/Pages/Questionnaire';
-// import Modal from 'react-responsive-modal';
-
-// import Modal from 'react-modal';
-// import Modal from 'react-animated-modal';
+import WorkExpFill from '../Components/Pages/workexpfill';
 
 import Rodal from 'rodal';
 import '../../node_modules/rodal/lib/rodal.css';
@@ -107,6 +104,7 @@ componentWillMount(){
               <Route path="/category" component={Category}/>
               <Route path="/workexperiencelist" component={workExperienceList}/>
               <Route path="/Questionnaire" component={Questionnaire}/>
+              <Route path="/WorkExpFill" component={WorkExpFill}/>
               <Route path = "*" component={LandingPage} />
             </Switch>
         </div>

@@ -11,7 +11,7 @@
   height: 60px;
   transition: all 0.5s;
   cursor: pointer;
-  margin: 5px;
+  margin: 10px auto !important;
   opacity: 0.8;
   margin: auto;
   font-weight: bold;

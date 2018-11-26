@@ -21,16 +21,17 @@
 .clm{
     display: inline-block;
     width: 45%;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+    
     
 }
 .react-select{
-    width: 66%;
-    padding: 12px 20px;
+    width: 60%;
     margin: 8px 0;
     display: inline-block;
     box-sizing: border-box; 
     height: 50px; 
+
 }
 .clm>.item>input, .clm>.item>select{
     width: 60%;
@@ -40,8 +41,8 @@
     border: 1px solid #868686;
     border-radius: 3px;
     box-sizing: border-box; 
-    height: 50px;
-
+    height: 40px;
+    
 }
 
 .clm>.item>input[type=checkbox]{
@@ -56,6 +57,7 @@
     color:#5DB1BF;
     font-weight: bold;
     margin-right: 20px;
+    text-align: start;
 }
 
 .description{
