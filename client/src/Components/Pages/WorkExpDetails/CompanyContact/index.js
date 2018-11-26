@@ -1,7 +1,6 @@
 import React from 'react';
 import face from './images/facebook.png';
 import emaill from './images/email.png';
-import instagram from './images/instagram.png';
 import site from './images/website.png';
 import telephone from './images/telephone.png';
 
@@ -19,11 +18,7 @@ const CompanyContactComp = (props) => {
             <div className="contactItem">
                  <span><img src={emaill} alt="email" />{email}</span>
             </div>
-
-            <div className="contactItem">
-                 <span><img src={instagram} alt="instagram" /> {inistagram}</span>
-            </div> 
-
+           
             <div className="contactItem">
                  <span><img src={site} alt="website" /> {website}</span>
             </div>
