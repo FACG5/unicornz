@@ -8,7 +8,7 @@ class BasicDetails1 extends Component {
         this.state = {
             schoolName: '',
             grade: '',
-            postcode: '',
+            city: '',
             birthDate: '',
             scoolEmail: '',
             personalEmail: '',
@@ -61,7 +61,7 @@ class BasicDetails1 extends Component {
                                     <input
                                         type="text"
                                         className ="sec1-input"
-                                        name = "postcode"
+                                        name = "city"
                                         onChange={this.onChange}
                                         placeholder="Enter your city name .."
                                     />
