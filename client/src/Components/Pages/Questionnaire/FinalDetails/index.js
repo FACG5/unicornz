@@ -1,6 +1,5 @@
 /* eslint-disable react/jsx-no-duplicate-props */
 import React, { Component } from 'react';
-import NextBtn from '../../../CommonComponents/Button'
 import pic1 from '../pic1.jpg'
 import pic2 from '../pic2.jpeg'
 import pic3 from '../pic3.jpeg'
@@ -81,10 +80,9 @@ class FinalDetails extends Component {
         const { clickedpic3 } = this.state;
         const { clickedpic4 } = this.state;
         return ( 
-            <form className="container last-card" onSubmit={this.handleFormSubmit} >
-
+            <form className="final-details" onSubmit={this.handleFormSubmit} >
                 <h2>Great! We're nearly there. Now a couple of questions about tech, and then your profile will be complete and you can press submit :)</h2>
-                <div className="tenth-card">
+                <div className="final-details-content">
                     <p>Which of these pictures do you think looks like a job in technology? Tick as many as you like</p>
                     <div className="pics">
                         <img src= {pic1} className = {clickedpic1} id="pic" alt ="girl" onClick={this.onclickhandlerpic1}/>
@@ -94,7 +92,7 @@ class FinalDetails extends Component {
                     </div>
 
                     <p>How likely are you to pursue a career in technology?</p>
-                    <div>
+                    <div className="Q-radio-btn">
                         <label>1
                             <input 
                                 type="radio"
