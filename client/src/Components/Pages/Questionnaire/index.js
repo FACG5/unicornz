@@ -25,15 +25,15 @@ class Questionnaier extends Component {
       <div>
         <Wizard step={this.state.step} onChange={this.handleStep}>
           <Step title="First step" description="Welcome page">
-            <div className="jumbotron mt-1 text-center">
+            
               <BasicDetails1 />
-            </div>
+            
           </Step>
 
           <Step title="Second step" description="About">
-            <div className="p-2">
+            
               <BasicDetails2 />
-            </div>
+            
           </Step>
           <Step title="third step" description="About">
             <PersonalDetails1 />

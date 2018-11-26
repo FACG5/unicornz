@@ -1,7 +1,6 @@
 import React from "react";
 import './style.css'
 
-
 export const Wizard = ({ step: currentIndex, ...props }) => {
   const steps = React.Children.toArray(props.children);
   const prevStep = currentIndex !== 0 && steps[currentIndex - 1].props;
