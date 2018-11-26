@@ -20,7 +20,6 @@ module.exports = new Sequelize(dbname, username, password, {
     timestamps: false,
   },
   native: true,
-  // sync: { force: true }, add this when you want to update the postgre db structure with respect to the models otherwise you will get an error
   pool: {
     max: 10,
     min: 0,

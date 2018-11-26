@@ -67,7 +67,6 @@ export default class SignUpForm extends Component {
             }
         }).then(res => res.json())
         .then(res => {
-            console.log(res);
             if(res.status==='success'){
                 alertify.dialog('alert').set({transition:'fade',message: 'You signed up in successfuly'}).setHeader('<h2>Success</h2>').show(); 
                 this.props.refreshAppModalState(null,false);

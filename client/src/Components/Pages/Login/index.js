@@ -13,12 +13,7 @@ export default withRouter (class LoginForm extends Component {
     }
 
         onClickHandler = () => {
-            console.log(
-                JSON.stringify({
-                    username: this.state.username,
-                    password: this.state.password
-                })
-            )
+
             fetch('/login', {
                     method: 'POST',
                     body: JSON.stringify({

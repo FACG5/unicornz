@@ -19,6 +19,6 @@ router.get('/getschoolslist',schoolController.getSchoolsList)
 router.get('/getcompanieslist',companyController.getCompaniesList)
 
 
-// router.post('/protectedRoute',authorize, protectedRoute.post);
+//Example to add a secured route: router.post('/protectedRoute',authorize, protectedRouteHandler);
 
 module.exports = router;

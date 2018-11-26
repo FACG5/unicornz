@@ -31,8 +31,6 @@ componentWillMount(){
 
 companyListChangeHandle = (selectedoption) => {
   this.setState({company_id:selectedoption},()=>{
-      console.log(this.state.company_id.value);
-
   });
 }
 

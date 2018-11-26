@@ -83,7 +83,6 @@ exports.signup = (request, response) => {
           }
           )
             .catch(err => {
-              console.log(err);
               response.json({msg: 'err', state: 'failed'})
             }
           )
@@ -152,7 +151,6 @@ exports.signup = (request, response) => {
             });
           }
         }).catch((err) => {
-          console.log(err);
           response.json({
             msg: "girl.findall error",
             status: false

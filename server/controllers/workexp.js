@@ -2,12 +2,10 @@ const {work_experience, company} = require('../models')
 const bcrypt = require('bcryptjs');
 
 exports.submitJob = (request, response) =>{
-
     const {
         password,
         ...rest
   } = request.body;
-  console.log(request.body.company_id);
   company.findAll({where:{id:request.body.company_id}})
   .then(res =>{
       if(res.length === 0){
@@ -23,7 +21,6 @@ exports.submitJob = (request, response) =>{
                        response.json({msg:'data inserted successfuly', status: 'success'});
                     })
                     .catch(err =>{
-                        console.log(err);   
                         response.json({msg:err.message,status:'failed'});
                     })
                   } else {
