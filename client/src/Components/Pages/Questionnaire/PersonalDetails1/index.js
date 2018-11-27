@@ -138,8 +138,8 @@ class PersonalDetails1 extends Component {
                     </div>
                 </div>
             </div>
-          </div>
-        </div>
+          
+        
       );
     }
 }
