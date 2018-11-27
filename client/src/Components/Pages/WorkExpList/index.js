@@ -10,8 +10,8 @@ class workExperienceList extends Component {
 
   componentDidMount() {
     const { action } = this.props.history;
-    const { jobs } = this.props.location.state;
     if (action == 'REPLACE') {
+      const { jobs } = this.props.location.state;
       this.setState({ results: jobs });
     } else {
       axios.get('/workexperiencelist').then((res) => {
