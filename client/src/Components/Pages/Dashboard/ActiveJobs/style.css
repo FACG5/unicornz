@@ -1,26 +1,62 @@
 .find{
   display: flex;
   flex-direction: column;
-  background-color: #E0E0E0;
- width: 300px;
- border: 1px solid #011936;
- border-radius: 10px;
- padding: 25px;
- margin: 25px;
- opacity:0.8;
+  background-color: #ffeaa9;
+  width: 300px;
+  border: 1px solid #fbfbfc;
+  border-radius: 10px;
+  padding: 25px;
+  margin: 25px;
+  opacity:0.8;
+  align-items: flex-start;
+}
+
+.find h2 {
+  font-family: 'lora' , lato ;
+  color:#f94274;
+  margin-bottom: 5px;
 }
 
 .button{
-margin-top: 10px;
+  margin-top: 10px;
   width:150px;
-   align-self: center!important;
-   width: 50%;
+  align-self: center!important;
+  height: 40px;
+  background-color: #ff9db7!important;
+  color: #FFF;
  }
 
 select{
   margin-top: 10px;
   color: white;
-  background-color: #5d698a;
-  width: 50%;
-  height: 25px;
+  background-color:#FFF;
+  width: 95%;
+  height: 30px;
+  border: none;
+  border-radius: 4px;
+  font-family: 'lato', sans-serif;
+  font-size: 20px;
+  outline: none;
+}
+
+select:focus {
+  background-color: #ff9db7;
+  color: #FFF;
+}
+
+#location-inp {
+  height: 30px;
+  width: 95%;
+  border-radius: 4px;
+  border:none;
+  outline: none;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-family: 'lato', sans-serif;
+  font-size: 20px;
+}
+
+#location-inp:focus {
+  background-color: #ff9db7;
+  color: #FFF;
 }

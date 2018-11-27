@@ -83,4 +83,5 @@ Pounds/Day
   );
 };
 
+
 export default CardComp;

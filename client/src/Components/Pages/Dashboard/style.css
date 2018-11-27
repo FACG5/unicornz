@@ -10,9 +10,9 @@
 .grand-div{
   display: flex;
   justify-content: center;
-  background-color: grey;
-  background-image: url("./images/inspiringgirls.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background-color: #57c9c078;
+}
+
+.starr{
+  margin-left: 128px;
 }

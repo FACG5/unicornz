@@ -1,9 +1,9 @@
+/* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
 import Girl from './PersonalInfo';
 import Find from './ActiveJobs';
-import Prevjobs from './PreviuosJobs';
-import News from './News';
 import Active from './MyActivety';
+import starr from './images/star.svg'
 
 import './style.css';
 
@@ -20,6 +20,7 @@ class Dashboard extends Component {
           </div>
           <div className="sub-div">
             <Active activites={[{ job: 'job1', done: true }, { job: 'job2', done: false }, { job: 'job3', done: true }, { job: 'job4', done: false }]} />
+            <img src={starr} alt="str" className="starr"/>
           </div>
         </div>
       </div>
