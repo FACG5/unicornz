@@ -83,7 +83,6 @@
     font-size: 18px;
 }
 
-<<<<<<< HEAD
 
 .last-card input[type="text"] { 
     width: 350px;
@@ -93,10 +92,10 @@
     box-sizing: border-box;
     border-radius: 10px;
     font-size: 16px;
-=======
+}
 .Q-radio-btn input[type=radio] {
     width: 20px;
->>>>>>> d05e3591cf4f297debad17dac7c93dbd08a1ede1
+    
 }
 .Q-radio-btn label {
     font-family: 'lato',sans-serif;
