@@ -31,8 +31,6 @@ class App extends Component {
   };
  
 
-
-  
   refreshAppModalState = (modal,modalIsOpen,modalWidth,modalHeight)=>{
     this.setState({
       modal:modal,
@@ -43,7 +41,7 @@ class App extends Component {
 }
 
   updateLoggingInfo =() => {
-    fetch('/checkauthentication', {
+    fetch('/api/v1/checkauthentication', {
       method: 'GET',
       headers: {
           "Content-Type": "application/json; charset=utf-8"

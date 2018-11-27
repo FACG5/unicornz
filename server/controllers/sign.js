@@ -9,7 +9,6 @@ const {
 } = require('../authentication/authentication');
 
 
-
 exports.logOut = (request, response) => {
   response.clearCookie('data');
   response.end();

@@ -12,8 +12,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, '..', 'client','build')));
 app.use(cookieParser());
 
-app.use(router);
-
+app.use('/api/v1',router);
 
 app.use('*' , (req,res)=>{
   res.sendFile(path.join(__dirname, '..', 'client','build','index.html'))

@@ -14,7 +14,6 @@ router.post('/login', signController.login);
 router.get('/logout',signController.logOut)
 router.post('/signup', signController.signup);
 router.get('/checkauthentication', signController.checkAuthentication);
-
 router.post('/submitjob', workexpController.submitJob)
 
 router.get('/getschoolslist',schoolController.getSchoolsList)

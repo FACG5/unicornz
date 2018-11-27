@@ -31,7 +31,7 @@ export default class SignUpForm extends Component {
 
     componentWillMount(){
         this.setState({vx:Math.floor(Math.random()*100),vy:Math.floor(Math.random()*100)});
-        fetch('/getschoolslist').then(res => res.json())
+        fetch('/api/v1/getschoolslist').then(res => res.json())
         .then(res => this.setState({school_options:res}))
     }
     
@@ -51,7 +51,7 @@ export default class SignUpForm extends Component {
         }else if (!this.state.password || this.state.password.trim() ===''){
             alertify.dialog('alert').set({transition:'fade',message: 'Please enter a password'}).setHeader('<h3>No password!</h3>').show(); 
         }else if ((this.state.sum === this.state.vx + this.state.vy) && this.state.checkUser) {
-        fetch('/signup', {
+        fetch('/api/v1/signup', {
             method: 'POST',
             body: JSON.stringify({
                 user_name:this.state.user_name,

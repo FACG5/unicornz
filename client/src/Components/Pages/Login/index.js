@@ -14,7 +14,7 @@ export default withRouter (class LoginForm extends Component {
 
         onClickHandler = () => {
 
-            fetch('/login', {
+            fetch('/api/v1/login', {
                     method: 'POST',
                     body: JSON.stringify({
                         username: this.state.username,

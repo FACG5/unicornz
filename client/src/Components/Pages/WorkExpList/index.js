@@ -9,7 +9,7 @@ class workExperienceList extends Component {
            info:[]
   }
   componentDidMount() {
-    axios.get('/workexperiencelist').then((res) => {
+    axios.get('/api/v1/workexperiencelist').then((res) => {
       const info = res.data;   
       console.log(info);
       this.setState({info})   
