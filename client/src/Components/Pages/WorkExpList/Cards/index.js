@@ -38,13 +38,13 @@ const CardComp = (props) => {
                     </div>
 
 
-                 </div>
+                 
             </div>
           </div>
         </div>
-        
-        
-</NavLink>
+       </div>
+        </NavLink>
+
     )
 }
 

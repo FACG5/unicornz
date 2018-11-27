@@ -22,7 +22,7 @@ class workExperienceDetails extends Component {
   componentDidMount() {
     console.log(this.props.match.params.id);
     
-    axios.get(`/workexperiencedetails/${this.props.match.params.id}`).then((res) => {  
+    axios.get(`/api/v1/workexperiencedetails/${this.props.match.params.id}`).then((res) => {  
       const info = res.data
       console.log("info : ",info);
       this.setState({ ...info });
@@ -62,7 +62,7 @@ class workExperienceDetails extends Component {
               text1={description} />
             </div>
          </div>
-          <Button value={"APPLY NOW"}  color={"#C72D65"}/>
+          <button className="apply-btn" value= "APPLY NOW" >APPLY NOW</button>
       </div>
     );
   }

@@ -9,7 +9,7 @@ import './style.css';
     return (
         <div className="signupCategory">
             <div className="categoryElement">
-                <NavLink to="/signup">
+                <NavLink to="/api/v1/signup">
                    <img src={girl} alt="girl" />
                 </NavLink>
                 <h3>Girl Student</h3>

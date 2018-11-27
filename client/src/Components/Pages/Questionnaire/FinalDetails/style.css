@@ -83,8 +83,19 @@
     font-size: 18px;
 }
 
+
+.last-card input[type="text"] { 
+    width: 350px;
+    height: 42px;
+    background: #FFFFFF;
+    border: 1px solid #153C59;
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-size: 16px;
+}
 .Q-radio-btn input[type=radio] {
     width: 20px;
+    
 }
 .Q-radio-btn label {
     font-family: 'lato',sans-serif;

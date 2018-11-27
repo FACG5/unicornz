@@ -12,6 +12,7 @@ class LandingPage extends React.Component  {
        <div > 
            <HeroComp />
            <MissionSection />
+
            <WhatWeDoComp />
        </div>
     );

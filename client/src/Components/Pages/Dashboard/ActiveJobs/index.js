@@ -23,7 +23,7 @@ class Search extends Component {
   handleClick =() => {
     axios({
       method: 'post',
-      url: '/dash/search',
+      url: '/api/v1/dash/search',
       data: this.state,
     }).then((res) => {
       this.setState({

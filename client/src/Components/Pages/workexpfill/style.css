@@ -1,0 +1,64 @@
+.workexpfill{
+    margin-top:100px;
+}
+
+.formgroup{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    width:90%;
+   
+}
+
+.workexpfill .formgroup input{
+    width: 75%;
+}
+
+.workexpfill .formgroup .react-select{
+    width: 75%;
+    height: 40px;
+}
+
+.workexpfill .formgroup input[type="checkbox"]{
+    width: 75%;
+    height: 30px;
+}
+
+.submitbtn{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.labeldiv{
+    width: 25%;
+}
+.inputdiv{
+    display: flex;
+    width:75%;
+    justify-content: space-around;
+}
+
+
+.inputdiv button{
+    width: 50%;
+    margin: 0;
+}
+.inputdiv input{
+    width: 50% !important;
+    margin-right: 5%;
+}
+
+
+.workexpfill .formgroup label{
+    display: inline-block;
+    margin-top: 15px;
+}
+
+
+.workexpfill .submitbtn{
+    margin-bottom: 50px;
+}
+
+.css-vj8t7z{
+    min-height: 50px !important;
+}

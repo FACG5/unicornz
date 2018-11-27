@@ -10,11 +10,11 @@ class workExperienceList extends Component {
 
   componentDidMount() {
     const { action } = this.props.history;
-    const { jobs } = this.props.location.state;
     if (action == 'REPLACE') {
+      const { jobs } = this.props.location.state;
       this.setState({ results: jobs });
     } else {
-      axios.get('/workexperiencelist').then((res) => {
+      axios.get('/api/v1/workexperiencelist').then((res) => {
         const info = res.data;
         this.setState({ results: info });
       }).catch((error) => {
@@ -35,6 +35,7 @@ class workExperienceList extends Component {
           {
            results.map(item => (
              <Card
+               id={item.id}
                key={item.id}
                company_name={item.company.company_name}
                companyLogo={item.company.logo}

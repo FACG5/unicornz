@@ -24,7 +24,7 @@ class PersonalInfo extends Component {
   }
 
   componentDidMount() {
-    axios.get('/dash').then((res) => {
+    axios.get('/api/v1/dash').then((res) => {
       const info = res.data;
       this.setState({ ...info });
     }).catch((error) => {
