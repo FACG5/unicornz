@@ -17,7 +17,7 @@ exports.post = async (request, response) => {
       if (result.length>0) {
         response.status(200).send(result);
       }else {
-        response.status(200).send('No Such Data');
+        response.status(200).send([]);
       }
     } else {
       response.status(404).send('404 error');

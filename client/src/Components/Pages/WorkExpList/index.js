@@ -26,7 +26,6 @@ class workExperienceList extends Component {
 
   render() {
     const { results } = this.state;
-    console.log(results);
     return (
       <div>
         <div className="welcomeworkexperience">

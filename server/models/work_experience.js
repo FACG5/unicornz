@@ -2,20 +2,7 @@ const Sequelize = require('sequelize')
 const sequelize = require('./connection');
 
 module.exports =  sequelize.define('work_experience', {
-  id: {
-    type: Sequelize.INTEGER,
-    allowNull: false,
-    primaryKey: true,
-    autoIncrement: true
-  },
-  company_id: {
-    type: Sequelize.INTEGER,
-    allowNull: true,
-    references: {
-      model: 'company',
-      key: 'id'
-    }
-  },
+
   location: {
     type: Sequelize.STRING,
     allowNull: true
@@ -60,6 +47,4 @@ module.exports =  sequelize.define('work_experience', {
     type: Sequelize.TIME,
     allowNull: true
   }
-}, {
-  tableName: 'work_experience'
 });

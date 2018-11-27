@@ -2,12 +2,7 @@ const Sequelize = require('sequelize')
 const sequelize = require('./connection');
 
 module.exports =  sequelize.define('girl', {
-  id: {
-    type: Sequelize.INTEGER,
-    allowNull: false,
-    primaryKey: true,
-    autoIncrement: true
-  },
+
   user_name: {
     type: Sequelize.STRING,
     allowNull: false
@@ -27,15 +22,8 @@ module.exports =  sequelize.define('girl', {
   mobile: {
     type: Sequelize.STRING,
     allowNull: true
-  },
-  school_id: {
-    type: Sequelize.INTEGER,
-    allowNull: true,
-    references: {
-      model: 'school',
-      key: 'id'
-    }
-  },
+  }
+  ,
   other_school: {
     type: Sequelize.STRING,
     allowNull: true
@@ -48,6 +36,4 @@ module.exports =  sequelize.define('girl', {
     type: Sequelize.TEXT,
     allowNull: false
   }
-}, {
-  tableName: 'girl'
 });

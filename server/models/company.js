@@ -3,12 +3,7 @@ const sequelize = require('./connection');
 
 module.exports =
    sequelize.define('company', {
-     id: {
-       type: Sequelize.INTEGER,
-       allowNull: false,
-       primaryKey: true,
-       autoIncrement: true
-     },
+
      logo: {
        type: Sequelize.TEXT,
        allowNull: true
@@ -36,7 +31,9 @@ module.exports =
      facebook: {
        type: Sequelize.STRING,
        allowNull: true
+     },
+     password:{
+       type: Sequelize.STRING,
+       allowNull: false
      }
-   }, {
-     tableName: 'company'
    });
