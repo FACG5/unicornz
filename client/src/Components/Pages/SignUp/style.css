@@ -4,33 +4,33 @@
 
 }
 .signupComponent{
-    height: 50vh;
+    height: 70vh;
 }
 
 .msg{
     text-align: center;
     font-family: Roboto;
     color: red;
-    
+
 }
 .containerr , .submitdiv{
     margin:4% auto 0%;
     width:100%;
-    height: 85%;
+    height: 90%;
 }
 .clm{
     display: inline-block;
     width: 45%;
     margin-bottom: 30px;
-    
-    
+
+
 }
 .react-select{
     width: 60%;
     margin: 8px 0;
     display: inline-block;
-    box-sizing: border-box; 
-    height: 50px; 
+    box-sizing: border-box;
+    height: 50px;
 
 }
 .clm>.item>input, .clm>.item>select{
@@ -40,15 +40,15 @@
     display: inline-block;
     border: 1px solid #868686;
     border-radius: 3px;
-    box-sizing: border-box; 
+    box-sizing: border-box;
     height: 40px;
-    
+
 }
 
 .clm>.item>input[type=checkbox]{
     height: 25px;
     align-self: flex-start;
- 
+
 }
 
 .clm>.item>label{

@@ -8,11 +8,11 @@ class HeaderComp extends React.Component {
 
 
     signupClickHandler = () => {
-        this.props.refreshAppModalState('Signup',true,70,65)
+        this.props.refreshAppModalState('Signup',true,70,85)
      }
 
      loginClickHandler = () => {
-        this.props.refreshAppModalState('Login',true,40,40)
+        this.props.refreshAppModalState('Login',true,40,60)
      }
 
      userClickHandler = () =>{
@@ -29,7 +29,7 @@ class HeaderComp extends React.Component {
              alertify.success('logged out successfuly')
          })
      }
-     
+
     render(){
     return (
         <div className="header">
