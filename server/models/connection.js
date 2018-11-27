@@ -11,8 +11,9 @@ const {
   dialect,
 } = DB_CONFIG;
 module.exports = new Sequelize(dbname, username, password, {
-  host,
-  dialect,
+  host:'localhost',
+  dialect:'postgres',
+  freezeTableName: true,
   operatorsAliases: false,
   logging: false,
   define: {

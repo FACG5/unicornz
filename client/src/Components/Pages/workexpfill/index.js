@@ -26,7 +26,7 @@ state = {
 }
 
 componentWillMount(){
-  fetch('/getcompanieslist').then(res => res.json())
+  fetch('/api/v1/getcompanieslist').then(res => res.json())
   .then(res => this.setState({company_options:res}))
 }
 

@@ -5,50 +5,49 @@ import Dropzone from 'react-dropzone'
 import './style.css'
 import '../style.css'
 
-const options = [                     
+const options = [
 
-    { value: 'Art', label: 'Art' },
-    { value: 'Maths', label: 'Maths' },
-    { value: 'Science', label: 'Science' },
-    { value: 'English Language', label: 'English Language' },
-    { value: 'English Literature', label: 'English Literature' },
-    { value: 'physics', label: 'physics' },
-    { value: 'Biology', label: 'Biology' },
-    { value: 'History', label: 'History' },
-    { value: 'Geography', label: 'Geography' },
-    { value: 'Design & technology', label: 'Design & technology' },
-    { value: 'Business Studies', label: 'Business Studies' },
-    { value: 'Chemistry', label: 'Chemistry' },
-    { value: 'Classics', label: 'Classics' },
-    { value: 'Computer Science', label: 'Computer Science' },
-    { value: 'Drama', label: 'Drama' },
-    { value: 'Economics', label: 'Economics' },
-    { value: 'Business Management', label: 'Business Management' },
-    { value: 'Health and Social Care', label: 'Health and Social Care' },
-    { value: 'ICT', label: 'ICT' },
-    { value: 'Latin', label: 'Latin' },
-    { value: 'Law', label: 'Law' },
-    { value: 'Media Studies', label: 'Media Studies' },
-    { value: 'Modern Foreign Languages', label: 'Modern Foreign Languages' },
-    { value: 'Music', label: 'Music' },
-    { value: 'Physical Education', label: 'Physical Education' },
-    { value: 'Politics', label: 'Politics' },
-    { value: 'Psychology', label: 'Psychology' },
-    { value: 'Religious Studies', label: 'Religious Studies' },
-    { value: 'Philosophy', label: 'Philosophy' },
-    { value: 'Social Sciences', label: 'Social Sciences' },
-    { value: 'Statistics', label: 'Statistics' },
-    { value: 'Welsh', label: 'Welsh' },
-    { value: 'Other', label: 'Other' },
+  { value: 'Art', label: 'Art' },
+  { value: 'Maths', label: 'Maths' },
+  { value: 'Science', label: 'Science' },
+  { value: 'English Language', label: 'English Language' },
+  { value: 'English Literature', label: 'English Literature' },
+  { value: 'physics', label: 'physics' },
+  { value: 'Biology', label: 'Biology' },
+  { value: 'History', label: 'History' },
+  { value: 'Geography', label: 'Geography' },
+  { value: 'Design & technology', label: 'Design & technology' },
+  { value: 'Business Studies', label: 'Business Studies' },
+  { value: 'Chemistry', label: 'Chemistry' },
+  { value: 'Classics', label: 'Classics' },
+  { value: 'Computer Science', label: 'Computer Science' },
+  { value: 'Drama', label: 'Drama' },
+  { value: 'Economics', label: 'Economics' },
+  { value: 'Business Management', label: 'Business Management' },
+  { value: 'Health and Social Care', label: 'Health and Social Care' },
+  { value: 'ICT', label: 'ICT' },
+  { value: 'Latin', label: 'Latin' },
+  { value: 'Law', label: 'Law' },
+  { value: 'Media Studies', label: 'Media Studies' },
+  { value: 'Modern Foreign Languages', label: 'Modern Foreign Languages' },
+  { value: 'Music', label: 'Music' },
+  { value: 'Physical Education', label: 'Physical Education' },
+  { value: 'Politics', label: 'Politics' },
+  { value: 'Psychology', label: 'Psychology' },
+  { value: 'Religious Studies', label: 'Religious Studies' },
+  { value: 'Philosophy', label: 'Philosophy' },
+  { value: 'Social Sciences', label: 'Social Sciences' },
+  { value: 'Statistics', label: 'Statistics' },
+  { value: 'Welsh', label: 'Welsh' },
+  { value: 'Other', label: 'Other' },
 
-  ];
+];
 
-  const fileMaxSize = 10485760  //byte
+const fileMaxSize = 10485760; // byte
 
 class PersonalDetails1 extends Component {
-
     state = {
-        subjects: null, 
+        subjects: null,
         favSubjects: null,
         enjoySchool: '',
         hobbies: '',
@@ -57,54 +56,51 @@ class PersonalDetails1 extends Component {
         files:[],
         label:"click to choose files"
     }
-    
-    handleSubjectChange = (subjects)=> {
-        this.setState({subjects}); 
-      }
 
-    handleFavChange = (favSubjects)=> {
-        this.setState({favSubjects});
-      }
+    handleSubjectChange = (subjects) => {
+      this.setState({ subjects });
+    }
+
+    handleFavChange = (favSubjects) => {
+      this.setState({ favSubjects });
+    }
 
     onChange = (e) => {
-        const { name, value } = e.target;
-        this.setState({ 
-            [name]: value
-        });
-      };
-    
-    handleSubmit= (event) => {
-        event.preventDefault();
-    
-      }
-    
-    handleOnDrop = (files, rejectedFiles) => {
+      const { name, value } = e.target;
+      this.setState({
+        [name]: value,
+      });
+    };
 
-        if (rejectedFiles && rejectedFiles.length > 0) {
-            const currentRejectFile = rejectedFiles[0];
-            const currentRejectFileSize = currentRejectFile.size;
-            
-            
-            if ( currentRejectFileSize > fileMaxSize) {
-                alert('This file is too big..please choose another one with size less than 10 megabytes')
-            }
-        }
-            const currentFile = files[0];
-            const currentFileSize = currentFile.size;
-            if ( currentFileSize > fileMaxSize) {
-                alert('This file is too big..please choose another one with size less than 10 megabytes')
-            
-            }else{
-            this.setState({files:files,label:files[0].name})
-        }
+    handleSubmit= (event) => {
+      event.preventDefault();
     }
-      
+
+    handleOnDrop = (files, rejectedFiles) => {
+      if (rejectedFiles && rejectedFiles.length > 0) {
+        const currentRejectFile = rejectedFiles[0];
+        const currentRejectFileSize = currentRejectFile.size;
+
+
+        if (currentRejectFileSize > fileMaxSize) {
+          alert('This file is too big..please choose another one with size less than 10 megabytes');
+        }
+      }
+      const currentFile = files[0];
+      const currentFileSize = currentFile.size;
+      if (currentFileSize > fileMaxSize) {
+        alert('This file is too big..please choose another one with size less than 10 megabytes');
+      } else {
+        this.setState({ files, label: files[0].name });
+      }
+    }
+
     render() {
-        return ( 
+        return (
             <div className="personal-details1" >
                 <h2 personal-details1-h>Now we've got the boring stuff out of the way, let's get to know more about your school studies</h2>
                 <div className="personal-details1-content">
-                    <div className="personal1-content1">  
+                    <div className="personal1-content1">
                         <p>What subjects are you studying? Tick all that apply</p>
                         <Select
                             className="select-input"
@@ -114,7 +110,7 @@ class PersonalDetails1 extends Component {
                             options={options}
                         />
                         <p>What are your favourite subjects Azara ? Tick up to 3</p>
-                        <Select 
+                        <Select
                             className="select-input"
                             onChange={this.handleFavChange}
                             value={this.state.favSubjects}
@@ -142,8 +138,10 @@ class PersonalDetails1 extends Component {
                     </div>
                 </div>
             </div>
-         );
+          
+        
+      );
     }
 }
- 
+
 export default PersonalDetails1;

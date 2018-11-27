@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize')
 const sequelize = require('./connection');
 
-module.exports = 
+module.exports =
    sequelize.define('company', {
     id: {
       type: Sequelize.INTEGER,
@@ -44,4 +44,3 @@ module.exports =
   }, {
     tableName: 'company'
   });
-
