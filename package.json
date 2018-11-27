@@ -23,10 +23,13 @@
   },
   "homepage": "https://github.com/FACG5/unicornz#readme",
   "devDependencies": {
+    "babel-eslint": "^9.0.0",
+    "eslint": "^5.6.0",
     "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-babel": "^5.3.0",
     "eslint-plugin-jsx": "0.0.2",
     "eslint-plugin-react": "^7.11.1",
-    "babel-eslint": "9.0.0"
+    "nodemon": "^1.18.6"
   },
   "dependencies": {
     "bootstrap-css-only": "^4.1.1",
@@ -36,7 +39,8 @@
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "express": "^4.16.4",
     "jsonwebtoken": "^8.4.0",
-    "pg": "^6.0.0",
+    "pg": "^7.6.1",
+    "react-scripts": "2.1.1",
     "pg-native": "^3.0.0",
     "sequelize": "^4.41.2"
   }

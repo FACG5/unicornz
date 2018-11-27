@@ -13,7 +13,7 @@
 .button{
 margin-top: 10px;
   width:150px;
-   align-self: center;
+   align-self: center!important;
    width: 50%;
  }
 

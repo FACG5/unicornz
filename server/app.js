@@ -9,8 +9,11 @@ const app = express();
 app.set('port', process.env.PORT || 4000);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, '..', 'client','build')));
 app.use(cookieParser());
+app.disable('x-powered-by');
+
+
+app.use(express.static(path.join(__dirname, '..', 'client','build')));
 
 app.use((req, res, next) => {
   authCheck(req, (authErr, token) => {

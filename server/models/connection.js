@@ -1,10 +1,8 @@
 const Sequelize = require('sequelize');
 require('env2')('config.env');
-console.log("before");
 const {
   DB_CONFIG
 } = require('../../config.js');
-console.log("after");
 const {
   username,
   password,
@@ -14,8 +12,9 @@ const {
 } = DB_CONFIG;
 
 module.exports = new Sequelize(dbname, username, password, {
-  host,
-  dialect,
+  host:'localhost',
+  dialect:'postgres',
+  freezeTableName: true,
   operatorsAliases: false,
   logging: false,
   define: {

@@ -3,10 +3,10 @@ const girl = require('./girl');
 const registration = require('./registration');
 const school = require('./school');
 const work_experience = require('./work_experience');
+const jobs = require('./jobs');
 
-console.log('before connnection');
-const sequelize = require('./connection');
-console.log('after connnection');
+const connection = require('./connection');
+
 work_experience.belongsTo(company, {
   onDelete: 'CASCADE', foreignKey: 'company_id', targetKey: 'id',
 });
@@ -34,5 +34,5 @@ module.exports = {
   registration,
   school,
   work_experience,
-  sequelize,
+  connection,
 };

@@ -7,8 +7,8 @@
   text-align: center;
   font-size: 18px;
   padding: 5px;
-  width: 300px;
-  height: 60px;
+  width: 50%;
+  height: 30px;
   transition: all 0.5s;
   cursor: pointer;
   margin: 5px;
@@ -17,6 +17,7 @@
   font-weight: bold;
   text-align: center;
   align-self: center;
+  margin-top: 50px;
 }
 
 .buttonn span {

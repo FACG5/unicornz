@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { Wizard, Step } from "./Wizard";
+import { Wizard, Step } from './Wizard';
 import BasicDetails1 from './BasicDetails1';
 import BasicDetails2 from './BasicDetails2';
 import PersonalDetails1 from './PersonalDetails1';
 import PersonalDetails2 from './PersonalDetails2';
 import FinalDetails from './FinalDetails';
 
-import './style.css'
+import './style.css';
 
 
 const MyStep = ({ children }) => (
@@ -16,7 +16,7 @@ const MyStep = ({ children }) => (
 class Questionnaier extends Component {
   state = { step: 0 };
 
-  handleStep = step => {
+  handleStep = (step) => {
     this.setState({ step });
   };
 
@@ -25,15 +25,15 @@ class Questionnaier extends Component {
       <div>
         <Wizard step={this.state.step} onChange={this.handleStep}>
           <Step title="First step" description="Welcome page">
-            
-              <BasicDetails1 />
-            
+
+            <BasicDetails1 />
+
           </Step>
 
           <Step title="Second step" description="About">
-            
-              <BasicDetails2 />
-            
+
+            <BasicDetails2 />
+
           </Step>
           <Step title="third step" description="About">
             <PersonalDetails1 />
@@ -42,7 +42,7 @@ class Questionnaier extends Component {
             <PersonalDetails2 />
           </Step>
           <MyStep title="Last step" description="Build your own!">
-            <FinalDetails />  
+            <FinalDetails />
           </MyStep>
         </Wizard>
       </div>
@@ -50,5 +50,5 @@ class Questionnaier extends Component {
   }
 }
 
- 
+
 export default Questionnaier;
