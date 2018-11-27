@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/accessible-emoji */
 import React, { Component } from 'react';
 import Select from 'react-select';
-import NextBtn from '../../../CommonComponents/Button'
 import './style.css'
 import '../style.css'
  const options1 = [
@@ -70,12 +69,10 @@ import '../style.css'
 
      render() {
         return ( 
-            <div className="container personal-details2">
-                <div>
+            <div className="personal-details2">
                     <h2>Ok, so that's your school studies and hobbies done; now what's important in life to you ?</h2>
-                    <div className="fourth-section">
-                        <div className="eight-card">
-                            <span className="num" id="num8">8</span>
+                    <div className="personal-details2-content">
+                        <div className="personal2-content1">
                             <p>What do you think is most important to you in a career? Tick your top 3</p>
                                 <div className="selector">
                                     <Select
@@ -140,8 +137,7 @@ import '../style.css'
                                 />
                             </div>
                         </div>
-                        <div className="ninth-card">
-                            <span className="num" id="num9">9</span>
+                        <div className="personal2-content2">
                             <p>Can you name a famous entrepreneur?<span> (an entrepreneur creates and runs their own business)</span></p>
                             <input type="text" name="famousEntrepreneur" onChange={this.onChange} placeholder="Enter the name ..."/>
                             <p>Do you think you could be an entrepreneur Answer YES Or NO && Why?</p>
@@ -151,9 +147,6 @@ import '../style.css'
                             <h1 className="shape">&#9925;</h1>
                         </div>
                     </div>
-                </div>
-
-                
             </div>
          );
     }
