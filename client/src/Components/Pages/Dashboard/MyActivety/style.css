@@ -1,5 +1,5 @@
 .done{
-  color:green;
+  color:rgb(4, 173, 251);
 }
 .not-done{
 color: red;
@@ -7,9 +7,9 @@ color: red;
 .my-activity{
   display: flex;
   flex-direction: column;
-  background-color: #E0E0E0;
+  background-color: #ffeaa9;
  width: 300px;
- border: 1px solid #011936;
+ border: 1px solid #fbfbfc;
  border-radius: 10px;
  padding: 25px;
  margin: 25px;
@@ -23,7 +23,16 @@ color: red;
 }
 h2{
   display: flex;
+  font-family: 'lora' , lato ;
+  color:#f94274;
 }
+
+h3{
+  display: flex;
+  font-family: 'lora' , lato ;
+  color:#be2c53;
+}
+
 img{
   margin-right: 10px;
 }
