@@ -1,16 +1,13 @@
 const app = require('./app');
-const {
-  connection,
-  girl,
-  school,
-  company
-} = require('./models')
+const connection= require('./models/connection')
 const Sequelize = require('sequelize')
 
-connection.sync().then(() => {
+connection.sync({}).then(() => {
+  
   app.listen(app.get('port'), () => {
     console.log('app runs on port', app.get('port'));
   });
+  // console.log(school.findAll());
 
   //Fake data generation code: Delete this section later
   // school.destroy({

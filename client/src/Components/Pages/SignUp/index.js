@@ -115,7 +115,8 @@ export default class SignUpForm extends Component {
                             </div>
                             <div className="item">
                                 <label >School </label>
-
+{console.log(this.state.school_options)
+}
                                       <Select
                                         className="react-select"
                                         value={this.state.school_id}

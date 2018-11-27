@@ -41,6 +41,4 @@ module.exports =
       type: Sequelize.TEXT,
       allowNull: false
     }
-  }, {
-    tableName: 'company'
   });
