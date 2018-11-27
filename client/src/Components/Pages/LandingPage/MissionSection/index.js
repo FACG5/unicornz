@@ -15,10 +15,10 @@ render(){
           <div className="content">
           <div className = "mato1">
             <p>Our Mission</p>
-            <i class="fas fa-star top-left"></i>
-            <i class="fas fa-star top-right"></i>
-            <i class="fas fa-star bottom-left"></i>
-            <i class="fas fa-star bottom-right"></i>
+            <i className="fas fa-star top-left"></i>
+            <i className="fas fa-star top-right"></i>
+            <i className="fas fa-star bottom-left"></i>
+            <i className="fas fa-star bottom-right"></i>
         </div>
         <p className="mission-p">
           Unicornz helps girls achieve the creative confidence to be

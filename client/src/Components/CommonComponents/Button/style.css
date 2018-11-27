@@ -1,7 +1,7 @@
 .buttonn {
   display: inline-block;
   border-radius: 4px;
-  background-color: #5d698a;
+  background-color: #d0e2ee;
   border: none;
   color: #FFFFFF;
   text-align: center;
@@ -11,7 +11,7 @@
   height: 30px;
   transition: all 0.5s;
   cursor: pointer;
-  margin: 5px;
+  margin: 10px auto !important;
   opacity: 0.8;
   margin: auto;
   font-weight: bold;

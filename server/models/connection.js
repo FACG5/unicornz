@@ -10,9 +10,8 @@ const {
   host,
   dialect,
 } = DB_CONFIG;
-
 module.exports = new Sequelize(dbname, username, password, {
-  host:'localhost',
+  host,
   dialect:'postgres',
   freezeTableName: true,
   operatorsAliases: false,

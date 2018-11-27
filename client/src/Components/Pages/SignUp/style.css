@@ -1,117 +1,114 @@
-.sign-up {
-    display: flex;
-    background-color:#57c9c078;
-    width:100%;
-    height:100vh;
-    align-items: center;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.signupComponent {
-    display: flex;
-    background-color: #ffd353;
-    width: 400px;
-    height: 475px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    align-items: center;
-    justify-content: center;
-    border-radius: 3.5px;
-    margin-top: 62px;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-  
-.containerr .clm input[type=text], input[type=password],input[type=email], input[ type=date]{
-    height: 40px;
-    font-size: 13px;
-    padding: 0 8px;
-    border: none;
-    width: 260px;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
+.title{
     text-align: center;
-    margin: 0 auto 10px;
+    font-family: Roboto;
+
+}
+.signupComponent{
+    height: 50vh;
+}
+
+.msg{
+    text-align: center;
+    font-family: Roboto;
+    color: red;
+    
+}
+.containerr , .submitdiv{
+    margin:4% auto 0%;
+    width:100%;
+    height: 85%;
+}
+.clm{
+    display: inline-block;
+    width: 45%;
+    margin-bottom: 30px;
+    
+    
+}
+.react-select{
+    width: 60%;
+    margin: 8px 0;
+    display: inline-block;
+    box-sizing: border-box; 
+    height: 50px; 
+
+}
+.clm>.item>input, .clm>.item>select{
+    width: 60%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #868686;
     border-radius: 3px;
-}
-  
-.signup-submit {
-    width: 260px;
-    height: 50px;
-    border: none;
-    background: #153c59d4;
-    color: white;
-    border-radius: 3px;
-    font-family: lato , sans-serif;
-    font-size: 20px;
-    margin-top: 8px;
+    box-sizing: border-box; 
+    height: 40px;
+    
 }
 
-.signup-submit:hover {
-    background: #57c9c0;
-}
-  
-.clm label {
-    font-size: 14px;
+.clm>.item>input[type=checkbox]{
+    height: 25px;
+    align-self: flex-start;
+ 
 }
 
-.starPic1 {
-    height: 150px;
-    margin-right: 30px;
-    margin-top: -415px;
-}
-
-.starPic2 {
-    height: 150px;
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
-    margin-left: 25px;
-    margin-top: 400px;
-    transform: rotate(-178deg);
-}
-
-.mato-signup {
-    color:white;
-    font-size: 20px;
-    background:#f16d6f;
-    border-radius: 2px;
-    box-shadow: 10px 10px 5px #5d698a;
-    font-family: 'Kalam', cursive;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 22px;
-    height: 150px;
-    position: relative;
-    width: 370px;
-}
-
-#sign-up-p {
-    margin-top: -317px;
-    font-family: 'Kalam', cursive;
-    color: #FFFFFF;
-    font-size: 40px;
+.clm>.item>label{
+    display: inline-block;
+    width: 25%;
+    color:#5DB1BF;
+    font-weight: bold;
+    margin-right: 20px;
     text-align: start;
 }
 
-#spark {
-    padding-left: 130px;
-    margin-top: -53px;
-    height: 43px;
+.description{
+    margin-top:20px
 }
 
-#robot {
-    font-size: 16px;
-    color: #153c59d4;
+.description label{
+    display: block;
 }
 
-#check {
-    position: absolute;
-    height: 18px;
-    width: 18px;
-    background-color: #eee;
+.description textarea{
+    width:91%;
+    height: 80px;;
+}
+.submitdiv{
+    text-align: center;
+}
+#signup{
+    background-color: #00BFFF;
+    border-radius: 20px;
+    width:170PX;
+    height: 30PX;
+    font-family: Roboto;
+    font-size: 14pt
+}
+
+#signup:hover{
+    background-color: rgb(175, 186, 190);
+}
+.signup-help {
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+  }
+
+  .popular .tape {
+    background-color: #00BFFF;
+    height: 60px;
+    margin: 5px 0;
+}
+
+.popular>.tape>h2 {
+    color: #FFF;
+    font-weight: bold;
+    font-size: 22px;
+    margin-left: 21px;
+    padding: 20px 0 0 0;
+}
+
+.signup-title{
+    display: inline-block;
+margin: 30px auto 0;
+
 }
