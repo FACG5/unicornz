@@ -23,7 +23,7 @@ class Questionnaier extends Component {
   render() {
     return (
       <div>
-        <Wizard step={this.state.step} onChange={this.handleStep}>
+        <Wizard history={this.props.history} step={this.state.step} onChange={this.handleStep}>
           <Step title="First step" description="Welcome page">
 
             <BasicDetails1 />

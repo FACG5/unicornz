@@ -7,6 +7,10 @@ export const Wizard = ({ step: currentIndex, ...props }) => {
   const nextStep =
     currentIndex !== steps.length - 1 && steps[currentIndex + 1].props;
 
+    const SubmitQhandler = () => {
+      props.history.push('/dash/1');
+    }
+
   return (
     <div className="Qcontainer">
       <nav className="Q-nav">
@@ -40,7 +44,7 @@ export const Wizard = ({ step: currentIndex, ...props }) => {
         </Button>
       </div>
       <span id="or">or</span>
-      <button className="Q-submit" type="submit">Submit & Let's start</button>
+      <button className="Q-submit" type="submit" onClick={SubmitQhandler}>Submit & Let's start</button>
     </div>
   );
 };

@@ -71,6 +71,7 @@ export default class SignUpForm extends Component {
               alertify.dialog('alert').set({ transition: 'fade', message: 'You signed up in successfuly' }).setHeader('<h2>Success</h2>').show();
               this.props.refreshAppModalState(null, false);
               this.props.updateLoggingInfo();
+              window.location="/Questionnaire";
             } else {
               alertify.set('notifier', 'position', 'top-center');
               alertify.error('Signup failed');

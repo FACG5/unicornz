@@ -95,7 +95,7 @@ componentWillMount(){
         <div className = "app-content">
           <Switch>
               <Route exact path="/" component={LandingPage} />
-              <Route path="/dash" component={Dashboard}/>
+              <Route path="/dash/:id" component={Dashboard}/>
               <Route path="/signup" component={Signup}/>
               <Route path="/login" component={Login}/>
               <Route path="/workexperiencedetails/:id" component={workExperienceDetails}/>
