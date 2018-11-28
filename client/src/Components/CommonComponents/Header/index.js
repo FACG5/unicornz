@@ -16,7 +16,7 @@ class HeaderComp extends React.Component {
      }
 
      userClickHandler = () =>{
-        this.props.history.push('/dash')
+        this.props.history.push('/dash/1')
      }
      homehandler = () => {
         this.props.history.push('/');

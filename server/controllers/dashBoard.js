@@ -1,8 +1,11 @@
 const { girl } = require('../models');
 
 exports.get = async (request, response) => {
+
   try {
-    const result = await girl.findAll({ raw: true , where: { id: 1}  });
+    const result = await girl.findAll({ raw: true , where: { id : 1}  });
+    console.log(',,,,,,,,,,,,,,,,,AAA',result);
+    
     if (result) {
       response.status(200).send(result[0]);
     } else {
