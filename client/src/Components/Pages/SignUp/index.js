@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import alertify from 'alertifyjs';
 import Select from 'react-select';
-import Button from '../../CommonComponents/Button';
 
 import './style.css';
 
@@ -159,10 +158,9 @@ is:
                 <p id="emailerr" className="errorValid"></p>
               </div>
             </div>
-            <Button value="Submit" onClick={this.onSubmitClickHandler} />
           </section>
 
-
+          <button value="Submit" onClick={this.onSubmitClickHandler} className='signup-btn'>Submit</button>
         </div>
       );
     }

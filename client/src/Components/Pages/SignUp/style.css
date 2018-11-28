@@ -4,7 +4,11 @@
 
 }
 .signupComponent{
-    height: 70vh;
+    height: 70%;
+    width: 80%;
+    margin: 0 auto;
+    background-color: #fff;
+    z-index: 2;
 }
 
 .msg{
@@ -17,14 +21,16 @@
     margin:4% auto 0%;
     width:100%;
     height: 90%;
+    display: inline-flex;
+    margin-bottom: 20px;
 }
 .clm{
     display: inline-block;
     width: 45%;
     margin-bottom: 30px;
-
-
 }
+
+
 .react-select{
     width: 60%;
     margin: 8px 0;
@@ -109,6 +115,14 @@
 
 .signup-title{
     display: inline-block;
-margin: 30px auto 0;
+    margin: 30px auto 0;
+}
 
+.signup-btn {
+    width: 250px;
+    height: 40px;
+    background-color: #00BFFF;
+    color: #FFF;
+    font-family: 'kalam',sans-serif;
+    font-size: 20px;
 }
