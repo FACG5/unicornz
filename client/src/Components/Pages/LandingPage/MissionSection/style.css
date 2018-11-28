@@ -60,7 +60,7 @@
 
 .missionsection{
     background: url(./images/girl1.jpg) center center no-repeat;
-    background-size: 1900px 800px;
+    background-size: cover;
     direction: rtl;
 }
 
