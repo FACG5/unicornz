@@ -108,7 +108,7 @@ export default class SignUpForm extends Component {
                 <p id="emailerr" className="errorValid"></p>
               </div>
               <div className="item">
-                <label>Email </label>
+                <label>Personal Email </label>
                 <input type="emai" onKeyUp={(e) => { this.setState({ email: e.target.value }); }} required />
                 <p id="emailerr" className="errorValid"></p>
               </div>

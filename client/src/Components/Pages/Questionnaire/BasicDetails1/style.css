@@ -40,21 +40,6 @@
     margin-bottom: 10px;
 }
 
-.basic1-content1 {
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    width: 555px;
-    padding-right: 130px;
-}
-
-.basic1-content2 {
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    width: 555px;
-}
-
 .invisible {
     display: none;
 }
