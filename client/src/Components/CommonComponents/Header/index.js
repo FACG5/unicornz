@@ -8,7 +8,8 @@ class HeaderComp extends React.Component {
 
 
     signupClickHandler = () => {
-        this.props.refreshAppModalState('Signup',true,70,85)
+        this.props.refreshAppModalState('Signup',true,70,95)
+
      }
 
      loginClickHandler = () => {
