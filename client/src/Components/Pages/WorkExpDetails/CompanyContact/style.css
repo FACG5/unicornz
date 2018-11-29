@@ -1,13 +1,13 @@
 .companyContact{
     display: flex;
     flex-direction: column;
-    border: 1.5px solid #323232;
+    border: 1.5px solid #ffffff;
     border-radius: 20px;
-    width: 25%%;
+    width: 85%;
     margin: 1% 2%;
     padding: 6%;
     align-items: flex-start;
-
+    background-color: #ffeaa9;
  }
 
  .companyContact h3  {
