@@ -10,6 +10,7 @@ class workExperienceList extends Component {
 
   componentDidMount() {
     const { action } = this.props.history;
+    console.log('jjjjjj',action)
     if (action == 'REPLACE') {
       const { jobs } = this.props.location.state;
       this.setState({ results: jobs });

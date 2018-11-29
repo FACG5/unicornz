@@ -25,9 +25,9 @@ router.get('/getcompanieslist',companyController.getCompaniesList)
 //Example to add a secured route: router.post('/protectedRoute',authorize, protectedRouteHandler);
 
 
-router.get('/workexperiencelist', work.get);
+router.get('/workexperiencelist', authorize, work.get);
 router.get('/workexperiencedetails/:companyId', workExperienceDetails.get);
+router.get('/dash/:girlId',dashBoard.get);
 router.post('/dash/search',search.post);
-router.get('/dash',dashBoard.get);
 
 module.exports = router;
