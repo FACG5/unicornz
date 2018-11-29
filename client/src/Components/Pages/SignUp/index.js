@@ -160,7 +160,7 @@ is:
             </div>
           </section>
 
-          <button value="Submit" onClick={this.onSubmitClickHandler} className='signup-btn'>Submit</button>
+          <button value="Submit" onClick={this.onSubmitClickHandler} type="submit" className="signup-btn">Submit</button>
         </div>
       );
     }

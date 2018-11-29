@@ -1,7 +1,7 @@
 .title{
     text-align: center;
     font-family: 'lora', sans-serif;
-
+    font-weight: bold;
 }
 .signupComponent{
     height: 70%;
@@ -17,6 +17,7 @@
     color: red;
 
 }
+
 .containerr , .submitdiv{
     margin:4% auto 0%;
     width:100%;
@@ -24,6 +25,7 @@
     display: inline-flex;
     margin-bottom: 20px;
 }
+
 .clm{
     display: inline-block;
     width: 45%;
@@ -39,6 +41,7 @@
     height: 50px;
 
 }
+
 .clm>.item>input, .clm>.item>select{
     width: 60%;
     padding: 12px 20px;
@@ -78,28 +81,18 @@
     width:91%;
     height: 80px;;
 }
+
 .submitdiv{
     text-align: center;
 }
-#signup{
-    background-color: #00BFFF;
-    border-radius: 20px;
-    width:170PX;
-    height: 30PX;
-    font-family: 'lato', sans-serif;
-    font-size: 14pt
-}
 
-#signup:hover{
-    background-color: rgb(175, 186, 190);
-}
 .signup-help {
     width: 100%;
     text-align: center;
     font-size: 12px;
   }
 
-  .popular .tape {
+.popular .tape {
     background-color: #00BFFF;
     height: 60px;
     margin: 5px 0;
@@ -131,5 +124,5 @@
 }
 
 .signup-btn:hover {
-    background-color: #f55a89; 
+    background-color: #f55a89;
 }
