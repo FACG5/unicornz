@@ -8,14 +8,10 @@ class BasicDetails1 extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            schoolName: '',
             grade: '',
             city: '',
-            birthDate: '',
-            scoolEmail: '',
             personalEmail: '',
             phoneNum: '',
-
     };
   }
 
@@ -65,11 +61,11 @@ class BasicDetails1 extends Component {
             p > School email address < /p> <
             input type = "email"
             className = "sec1-input"
-            name = "schoolEmail"
+            name = "personalEmail"
             onChange = {
                 this.onChange
             }
-            placeholder = "***@**.edu" /
+            placeholder = "***@**.***" /
             >
             <
             p > Mobile phone number < /p> <
