@@ -14,7 +14,7 @@ export default class SignUpForm extends Component {
       user_name: null,
       first_name: null,
       last_name: null,
-      email: null,
+      school_email: null,
       school_id: null,
       other_school: null,
       birthdate: '2005-01-01',
@@ -108,8 +108,8 @@ export default class SignUpForm extends Component {
                 <p id="emailerr" className="errorValid"></p>
               </div>
               <div className="item">
-                <label>Personal Email </label>
-                <input type="emai" onKeyUp={(e) => { this.setState({ email: e.target.value }); }} required />
+                <label>School Email </label>
+                <input type="email" onKeyUp={(e) => { this.setState({ school_email: e.target.value }); }} required />
                 <p id="emailerr" className="errorValid"></p>
               </div>
               <div className="item">
