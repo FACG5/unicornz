@@ -38,7 +38,7 @@ class BasicDetails1 extends Component {
         return (
                 <form onSubmit={this.handleSubmit}>
                     <div className='basic-details1'>
-                        <h2>Hello,Please fill out these basic details and then we will move on to the interesting stuff</h2>
+                        <h2>Hello, Please fill out these basic details and then we will move on to the interesting stuff</h2>
                             <div className="basic-details1-content">
                                 <div className="basic1-content1">
                                     <p>What school or college do you attend?</p>
