@@ -17,7 +17,8 @@ class FinalDetails extends Component {
         clickedpic2: "unclicked",
         clickedpic3: "unclicked",
         clickedpic4: "unclicked",
-        pursueInTech: ""
+        pursueInTech: "",
+        
 
     }
 
