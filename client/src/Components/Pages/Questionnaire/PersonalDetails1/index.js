@@ -49,7 +49,6 @@ class PersonalDetails1 extends Component {
     state = {
         subjects: null,
         favSubjects: null,
-        enjoySchool: '',
         hobbies: '',
         futureJob: '',
         interestedJob: '',
@@ -117,13 +116,11 @@ class PersonalDetails1 extends Component {
                             isMulti={true}
                             options={options}
                         />
-                        <p>What else do you enjoy at school? Tell us as much as you can.</p>
-                        <textarea rows="5" cols="40" placeholder="Answer" name="enjoySchool" onChange={this.onChange}></textarea>
                         <p>What are your interests and hobbies outside of school? Tell us everything you enjoy doing.</p>
                         <textarea rows="5" cols="40" placeholder="Answer" name="hobbies" onChange={this.onChange}></textarea>
                     </div>
                     <div className="personal1-content2">
-                        <p>If you have a￼ copy of your CV, please upload it to your dashboard</p>
+                        <p>If you have a CV, or any other documents your school needs signed, please upload them to your dashboard</p>
                         <Dropzone
                             className="drop-zone"
                             onDrop={this.handleOnDrop}
@@ -134,7 +131,6 @@ class PersonalDetails1 extends Component {
                         <textarea rows="5" cols="40" placeholder="Answer" name="futureJob" onChange={this.onChange}></textarea>
                         <p>What kinds of jobs do you think will interest you?</p>
                         <textarea rows="5" cols="40" placeholder="Answer" name="interestedJob" onChange={this.onChange}></textarea>
-                        <h1 className="shape">&#9925;</h1>
                     </div>
                 </div>
             </div>

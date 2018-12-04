@@ -40,7 +40,7 @@ class BasicDetails2 extends Component {
                     <div className="basic-details2">
                         <div className="basic-details2-content">
                             <div className="basic2-content1">
-                                <h2>If you are signing up to do a work experience,please let us know  more about this</h2>
+                                <h2>If you are signing up to do a work experience, please let us know  more about this</h2>
                                 <p>What month you expect your work experience to take place?</p>
                                 <input
                                     type="month"
@@ -81,7 +81,7 @@ class BasicDetails2 extends Component {
                                     className ="sec2-input"
                                     name = "relation"
                                     onChange={this.onChange}
-                                    placeholder="Enter the relation"
+                                    placeholder="Enter the relationship"
                                 />
                                 <p>Their emergency contact number</p>
                                 <input
