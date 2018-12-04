@@ -83,7 +83,7 @@ class FinalDetails extends Component {
             <form className="final-details" onSubmit={this.handleFormSubmit} >
                 <h2>Great! We're nearly there. Now a couple of questions about tech, and then your profile will be complete and you can press submit :)</h2>
                 <div className="final-details-content">
-                    <p>Which of these pictures do you think looks like a job in technology? Tick as many as you like</p>
+                    <p>Technology increasingly being used in careers, which of these pictures do you think looks like a job in technology? Tick as many as you like</p>
                     <div className="pics">
                         <img src= {pic1} className = {clickedpic1} id="pic" alt ="girl" onClick={this.onclickhandlerpic1}/>
                         <img src = {pic2} className = {clickedpic2} id="pic" alt ="girl" onClick={this.onclickhandlerpic2}/>
@@ -141,7 +141,10 @@ class FinalDetails extends Component {
                     </div>
                     <div>
                         <p>Who do you know personally that has a career in technology?</p>
-                        <input type="text" placeholder="Enter her/his name" name="personHaveCareer" onChange={this.onChange}/>
+                        <label><input type="checkbox"/>My parents</label>
+                        <label><input type="checkbox"/>Family</label>
+                        <label><input type="checkbox"/>friends</label>
+                        <label><input type="checkbox"/>no one</label>
                     </div>
                 </div> 
             </form>
