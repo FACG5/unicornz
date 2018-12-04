@@ -3,7 +3,6 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const router = require('./controllers');
-const { authCheck } = require('./authentication/authentication');
 
 const app = express();
 app.set('port', process.env.PORT || 4000);

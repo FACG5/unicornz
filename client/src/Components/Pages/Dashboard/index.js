@@ -7,9 +7,9 @@ import starr from './images/star.svg';
 import './style.css';
 
 class Dashboard extends Component {
+
   render() {
     const id = this.props.location.state.id;
-
     return (
       <div className="grand-div">
         <div className="dash-board">
@@ -35,5 +35,6 @@ class Dashboard extends Component {
     );
   }
 }
+
 
 export default Dashboard;

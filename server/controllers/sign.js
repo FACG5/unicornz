@@ -1,20 +1,10 @@
-const bcrypt = require('bcryptjs');
-const hashPassword = require("../authentication/hashpassword");
-const  { promiseAuthCheck } = require ('../authentication/authentication');
-const {
-  girl
-} = require('../models');
-const {
-  createCookie
-} = require('../authentication/authentication');
+const bcryptjs = require('bcryptjs');
+const snakeCase = require('snakecase-keys');
+const { girl } = require('../models');
 
 
-exports.logOut = (request, response) => {
-  response.clearCookie('data');
-  response.end();
-};
-
-exports.signup = (request, response) => {
+exports.signup = async (request, response) => {
+  try {
     const {
       user_name,
       first_name,
@@ -22,146 +12,45 @@ exports.signup = (request, response) => {
       email,
       school_id,
       birthdate,
-      password
+      password,
     } = request.body;
 
-    if (!user_name || user_name.trim() === '') {
-      response.json({
-        msg: 'user name is empty',
-        status: 'failed'
-      })
-    } else if (!password || password.trim() === '') {
-      response.json({
-        msg: 'Password is empty',
-        status: 'failed'
-      })
-    } else {
-      hashPassword(password, (err, hash) => {
+    if (
+      user_name &&
+      first_name &&
+      last_name &&
+      email &&
+      school_id &&
+      birthdate &&
+      password
+    ) {
+      bcryptjs.hash(password, 10, async (err, hash) => {
         if (err) {
-          response.json({
-            msg: 'could not hash the password',
-            status: 'failed'
-          })
+          response.status(500).send('Server Error !');
         } else {
-          girl.create({
-            user_name,
-            first_name,
-            last_name,
-            email,
-            school_id,
-            birthdate,
-            password:hash
-          })
-            .then(createdaccount => {
-              createCookie({
-                id: createdaccount.dataValues.id,
-                first_name: createdaccount.dataValues.first_name,
-                last_name: createdaccount.dataValues.last_name,
-                email: createdaccount.dataValues.email,
-                school_id: createdaccount.dataValues.school_id,
-                other_school: createdaccount.dataValues.other_school,
-                birthdate: createdaccount.dataValues.birthdate
-              },
-              (createtokenerror, token) => {
-                if (createtokenerror) {
-                  response.json({
-                    msg: 'something went wrong!',
-                    status: true
-                  })
-                } else {
-                  response.cookie('data', token, {
-                    expires: new Date(Date.now() + 900000),
-                    httpOnly: true
-                  });
-                  response.json({
-                    id: createdaccount.dataValues.id,
-                    msg: 'Account created successfuly ^_^',
-                    status: 'success'
-                  });
-                }
-              });
+          try {
+            let userData = {
+              user_name,
+              first_name,
+              last_name,
+              email,
+              password: hash,
+              email,
+              school_id,
+              birthdate,
+            };
+            userData = snakeCase(userData);
+            const userResult = await girl.create(userData);
+            response.status(200).send('Successful Signup, You Can Login Now !');
+          } catch (error) {
+            response.status(500).send('Internal Server Error !');
           }
-          )
-            .catch(err => {
-              response.json({msg: 'err', state: 'failed'})
-            }
-          )
         }
-      })
+      });
+    } else {
+      response.status(401).send('Fill all the fileds, please !');
     }
+  } catch (error) {
+    response.status(500).send('Internal Server Error !');
   }
-
-
-    exports.login = (request, response) => {
-      const {
-        password,
-        username
-      } = request.body;
-      girl.findAll({
-          where: {
-            user_name: username
-          }
-        })
-        .then((result) => {
-          if (result.length === 0) {
-            response.status(200).json({
-              msg: 'no such user name',
-              status: false
-            });
-          } else {
-            bcrypt.compare(password, result[0].dataValues.password, (compareerror, compareresult) => {
-              if (compareerror) {
-                response.json({
-                  msg: 'somethin went wrong!',
-                  status: false
-                })
-              } else if (compareresult === false) {
-                response.json({
-                  msg: 'Password is Wrong',
-                  status: false
-                });
-              } else {
-                createCookie({
-                    id: result[0].dataValues.id,
-                    first_name: result[0].dataValues.first_name,
-                    last_name: result[0].dataValues.last_name,
-                    email: result[0].dataValues.email,
-                    school_id: result[0].dataValues.school_id,
-                    other_school: result[0].dataValues.other_school,
-                    birthdate: result[0].dataValues.birthdate
-                  },
-                  (createtokenerror, token) => {
-                    if (createtokenerror) {
-                      response.json({
-                        msg: 'something went wrong!',
-                        status: true
-                      })
-                    } else {
-                      response.cookie('data', token, {
-                        expires: new Date(Date.now() + 900000),
-                        httpOnly: true
-                      });
-                      response.json({
-                        msg: 'logged in successfuly ^_^',
-                        status: true
-                      });
-                    }
-                  });
-              }
-            });
-          }
-        }).catch((err) => {
-          response.json({
-            msg: "girl.findall error",
-            status: false
-          })
-        });
-    };
-
-    exports.checkAuthentication = (req, res)=>{
-      promiseAuthCheck(req).then(token => {
-          res.json({status:'loggedin',token})
-      }).catch(err=>{
-          res.json({msg:err,status:'loggedout'})
-      })
-  }
+};

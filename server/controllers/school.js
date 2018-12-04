@@ -2,6 +2,7 @@ const { school } = require('../models')
 const sequelize = require('../models/connection');
 
 const getSchoolsList = async (request, response) =>{
+    console.log('reqqqqqqqqqqqqqqq',request);
     school.findAll().then(res =>{
         console.log(res);
         
@@ -11,7 +12,8 @@ const getSchoolsList = async (request, response) =>{
         });
         response.json(options);
     })
-    .catch(err=>response.json(err))
+    .catch(err=>{response.json(err)
+    consolre.log('errrrror', err)})
 }
 
 module.exports = {getSchoolsList};
