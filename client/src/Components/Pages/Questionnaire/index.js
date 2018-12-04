@@ -30,18 +30,18 @@ class Questionnaier extends Component {
 
           </Step>
 
-          <Step title="Second step" description="About">
+          <Step title="Second step" description="BasicInfo">
 
             <BasicDetails2 />
 
           </Step>
-          <Step title="third step" description="About">
+          <Step title="Third step" description="PersonalInfo">
             <PersonalDetails1 />
           </Step>
-          <Step title="fourth step" description="About">
+          <Step title="Fourth step" description="PersonalInfo">
             <PersonalDetails2 />
           </Step>
-          <MyStep title="Last step" description="Build your own!">
+          <MyStep title="Last step" description="Last Step">
             <FinalDetails />
           </MyStep>
         </Wizard>
