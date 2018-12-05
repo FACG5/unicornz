@@ -35,7 +35,6 @@ class HeaderComp extends React.Component {
   signoutClickHandler = () => {
     fetch('/api/v1/logout', {
       credentials: 'same-origin',
-
     }).then(() => {
       this.props.updateLoggingInfo();
       alertify.set('notifier', 'position', 'top-center');

@@ -20,34 +20,51 @@ class Questionnaier extends Component {
     this.setState({ step });
   };
 
-  render() {
-    return (
-      <div>
-        <Wizard history={this.props.history} step={this.state.step} onChange={this.handleStep}>
-          <Step title="First step" description="Welcome page">
-
-            <BasicDetails1 />
-
-          </Step>
-
-          <Step title="Second step" description="BasicInfo">
-
-            <BasicDetails2 />
-
-          </Step>
-          <Step title="Third step" description="PersonalInfo">
-            <PersonalDetails1 />
-          </Step>
-          <Step title="Fourth step" description="PersonalInfo">
-            <PersonalDetails2 />
-          </Step>
-          <MyStep title="Last step" description="Last Step">
-            <FinalDetails />
-          </MyStep>
-        </Wizard>
-      </div>
-    );
+  saveState = () => {
+    const { state } = this;
+    const info = localStorage.setItem('state', JSON.stringify(state));
   }
+
+handleChange=(e) => {
+  const { value, name } = e.target;
+  this.setState({
+    ...this.state,
+    [name]: value,
+  });
+  this.saveState();
+}
+
+render() {
+  console.log('dddddd', this.state);
+  const aValue = localStorage.getItem('state');
+  console.log('ddddd123', aValue);
+  return (
+    <div>
+      <Wizard history={this.props.history} step={this.state.step} onChange={this.handleStep}>
+        <Step title="First step" description="Welcome page">
+
+          <BasicDetails1 handleChange={this.handleChange} />
+
+        </Step>
+
+        <Step title="Second step" description="BasicInfo">
+
+          <BasicDetails2 handleChange={this.handleChange} />
+
+        </Step>
+        <Step title="Third step" description="PersonalInfo">
+          <PersonalDetails1 handleChange={this.handleChange} />
+        </Step>
+        <Step title="Fourth step" description="PersonalInfo">
+          <PersonalDetails2 handleChange={this.handleChange} />
+        </Step>
+        <MyStep title="Last step" description="Last Step">
+          <FinalDetails handleChange={this.handleChange} />
+        </MyStep>
+      </Wizard>
+    </div>
+  );
+}
 }
 
 
