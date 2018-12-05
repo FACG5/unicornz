@@ -1,46 +1,46 @@
 {
-  "name": "unicornz",
-  "version": "0.1.0",
-  "description": "Unicornz provides company technology work experiences to young schoogirls to empower and inspire them. The Unicor.nz App works by connecting them (and those that live too far away to take advantage of such work experiences) with female Mentors and role models.",
-  "main": "index.js",
-  "scripts": {
-    "client": "cd client && npm start",
-    "server": "NODE_ENV=development nodemon server/index.js",
-    "start": "NODE_ENV=production node server/index.js",
-    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
-    "build": "cd client && npm run build",
-    "heroku-postbuild": "cd client && npm install && npm run build",
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/FACG5/unicornz.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/FACG5/unicornz/issues"
-  },
-  "homepage": "https://github.com/FACG5/unicornz#readme",
-  "devDependencies": {
-    "babel-eslint": "9.0.0",
-    "concurrently": "^4.1.0",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-babel": "^5.3.0",
-    "eslint-plugin-jsx": "0.0.2",
-    "eslint-plugin-react": "^7.11.1"
-  },
-  "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "cookie-parser": "^1.4.3",
-    "env2": "^2.2.2",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.2",
-    "express": "^4.16.4",
-    "jsonwebtoken": "^8.4.0",
-    "pg": "^6.4.2",
-    "pg-hstore": "^2.3.2",
-    "pg-native": "^3.0.0",
-    "react-scripts": "2.1.1",
-    "sequelize": "^4.41.2"
-  }
+	"name": "unicornz",
+	"version": "0.1.0",
+	"description": "Unicornz provides company technology work experiences to young schoogirls to empower and inspire them. The Unicor.nz App works by connecting them (and those that live too far away to take advantage of such work experiences) with female Mentors and role models.",
+	"main": "index.js",
+	"scripts": {
+		"client": "cd client && npm start",
+		"server": "NODE_ENV=development nodemon server/index.js",
+		"start": "NODE_ENV=production node server/index.js",
+		"dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+		"build": "cd client && npm run build",
+		"heroku-postbuild": "cd client && npm install && npm run build"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/FACG5/unicornz.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/FACG5/unicornz/issues"
+	},
+	"homepage": "https://github.com/FACG5/unicornz#readme",
+	"devDependencies": {
+		"babel-eslint": "9.0.0",
+		"concurrently": "^4.1.0",
+		"eslint-config-airbnb": "^17.1.0",
+		"eslint-plugin-babel": "^5.3.0",
+		"eslint-plugin-jsx": "0.0.2",
+		"eslint-plugin-react": "^7.11.1"
+	},
+	"dependencies": {
+		"bcryptjs": "^2.4.3",
+		"cookie-parser": "^1.4.3",
+		"env2": "^2.2.2",
+		"eslint-plugin-import": "^2.14.0",
+		"eslint-plugin-jsx-a11y": "^6.1.2",
+		"express": "^4.16.4",
+		"jsonwebtoken": "^8.4.0",
+		"pg": "^6.4.2",
+		"pg-hstore": "^2.3.2",
+		"pg-native": "^3.0.0",
+		"react-scripts": "2.1.1",
+		"sequelize": "^4.41.2"
+	}
 }
