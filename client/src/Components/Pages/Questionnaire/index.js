@@ -37,7 +37,7 @@ handleChange=(e) => {
 render() {
   console.log('dddddd', this.state);
   const aValue = localStorage.getItem('state');
-  console.log('ddddd123', aValue);
+  console.log('ddddd123', JSON.parse(aValue));
   return (
     <div>
       <Wizard history={this.props.history} step={this.state.step} onChange={this.handleStep}>

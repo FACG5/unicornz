@@ -17,8 +17,7 @@ class FinalDetails extends Component {
       clickedpic3: 'unclicked',
       clickedpic4: 'unclicked',
       pursueInTech: '',
-
-
+      techs: [],
     }
 
     onclickhandlerpic1 = () => {
@@ -61,6 +60,7 @@ class FinalDetails extends Component {
         this.setState({
           pursueInTech: changeEvent.target.value,
         });
+        this.props.handleChange({ target: { name: 'pursueInTech', value: this.state.pursueInTech } });
       }
 
 
@@ -68,11 +68,42 @@ class FinalDetails extends Component {
       formSubmitEvent.preventDefault();
     }
 
+    handleCheckChange=(e) => {
+      let temp = [];
+      const { name, checked } = e.target;
+      if (checked) {
+        temp = this.state.techs;
+        temp.push(name);
+      } else {
+        temp = this.state.techs;
+        for (let i = 0; i < temp.length; ++i) {
+          if (temp[i] === name) {
+            if (temp.indexOf(temp[i]) === temp.length - 1) {
+              temp.pop();
+            } else {
+              for (let j = temp.indexOf(temp[i]); j < temp.length - 1; ++j) {
+                temp[j] = temp[j + 1];
+              }
+              temp.pop();
+            }
+          } else {
+            continue;
+          }
+        }
+      }
+      this.setState({
+        techs: temp,
+      });
+      this.props.handleChange({ target: { name: 'techs', value: this.state.techs } });
+    }
+
+
     render() {
       const { clickedpic1 } = this.state;
       const { clickedpic2 } = this.state;
       const { clickedpic3 } = this.state;
       const { clickedpic4 } = this.state;
+      const { pursueInTech } = this.state;
       return (
         <form className="final-details" onSubmit={this.handleFormSubmit}>
           <h2>Great! We are nearly there. Now a couple of questions about tech, and then your profile will be complete and you can press submit :)</h2>
@@ -91,69 +122,69 @@ class FinalDetails extends Component {
 1
                 <input
                   type="radio"
-                  name="1"
-                  value="option1"
-                  checked={this.state.pursueInTech === 'option1'}
-                  onChange={this.props.handleChange}
+                  name="option1"
+                  value="1"
+                  checked={pursueInTech === '1'}
+                  onChange={this.handleOptionChange}
                 />
               </label>
               <label>
 2
                 <input
                   type="radio"
-                  name="2"
-                  value="option2"
-                  checked={this.state.pursueInTech === 'option2'}
-                  onChange={this.props.handleChange}
+                  name="option2"
+                  value="2"
+                  checked={pursueInTech === '2'}
+                  onChange={this.handleOptionChange}
                 />
               </label>
               <label>
 3
                 <input
                   type="radio"
-                  name="3"
-                  value="option3"
-                  checked={this.state.pursueInTech === 'option3'}
-                  onChange={this.props.handleChange}
+                  name="option3"
+                  value="3"
+                  checked={this.state.pursueInTech === '3'}
+                  onChange={this.handleOptionChange}
                 />
               </label>
               <label>
 4
                 <input
                   type="radio"
-                  name="4"
-                  value="option4"
-                  checked={this.state.pursueInTech === 'option4'}
-                  onChange={this.props.handleChange}
+                  name="option4"
+                  value="4"
+                  checked={pursueInTech === '4'}
+                  onChange={this.handleOptionChange}
                 />
               </label>
               <label>
 5
                 <input
                   type="radio"
-                  name="5"
-                  value="option5"
-                  checked={this.state.pursueInTech === 'option5'}
-                  onChange={this.props.handleChange}
+                  name="option5"
+                  value="5"
+                  checked={pursueInTech === '5'}
+                  onChange={this.handleOptionChange}
                 />
               </label>
             </div>
             <div>
               <p>Who do you know personally that has a career in technology?</p>
               <label>
-                <input type="checkbox" />
+                <input type="checkbox" name="parents" onChange={this.handleCheckChange} />
 My parents
               </label>
               <label>
-                <input type="checkbox" />
+                <input type="checkbox" name="family" onChange={this.handleCheckChange} />
 Family
               </label>
               <label>
-                <input type="checkbox" />
+                <input type="checkbox" name="friends" onChange={this.handleCheckChange} />
 friends
               </label>
               <label>
-                <input type="checkbox" />
+                <input type="checkbox" name="neither" onChange={this.handleCheckChange} />
 no one
               </label>
             </div>
