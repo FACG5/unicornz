@@ -20,6 +20,7 @@ class workExperienceDetails extends Component {
   }
   
   componentDidMount() {
+    if (document.cookie) {
     console.log(this.props.match.params.id);
     
     axios.get(`/api/v1/workexperiencedetails/${this.props.match.params.id}`).then((res) => {  
@@ -29,7 +30,10 @@ class workExperienceDetails extends Component {
     }).catch((error) => {
       console.log('error:', error);
     });
+  } else {
+    this.props.history.push('/');
   }
+}
 
   render() {
     const {

@@ -30,7 +30,8 @@ export default class SignUpForm extends Component {
 
     componentWillMount() {
       this.setState({ vx: Math.floor(Math.random() * 100), vy: Math.floor(Math.random() * 100) });
-      fetch('/api/v1/getschoolslist').then(res => res.json())
+        fetch('/api/v1/getschoolslist')
+        .then(res => res.json())
         .then(res => this.setState({ school_options: res }));
     }
 
