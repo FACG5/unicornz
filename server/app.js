@@ -3,7 +3,6 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const router = require('./controllers');
-const { authCheck } = require('./authentication/authentication');
 
 const app = express();
 app.set('port', process.env.PORT || 4000);
@@ -15,7 +14,7 @@ app.disable('x-powered-by');
 
 app.use(express.static(path.join(__dirname, '..', 'client','build')));
 
-app.use('/api/v1',router);
+app.use('/api/v1', router);
 
 app.use('*' , (req,res)=>{
   res.sendFile(path.join(__dirname, '..', 'client','build','index.html'))
