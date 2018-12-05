@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Rodal from 'rodal';
+import axios from 'axios';
 import Dashboard from './Pages/Dashboard';
 import LandingPage from './Pages/LandingPage';
 import Header from './CommonComponents/Header';
@@ -37,17 +38,14 @@ class App extends Component {
   };
 
   updateLoggingInfo = () => {
-    console.log('151515151', document.cookie);
-    fetch('/api/v1/updatehero', {
+    axios('/api/v1/updatehero', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json; charset=utf-8',
       },
-    })
-      .then(res => res.json())
-      .then((res) => {
-        this.setState({ loggedIn: res.status, userInfo: res.token });
-      });
+    }).then((res) => {
+      this.setState({ loggedIn: res.data.status, userInfo: res.data.token });
+    });
   };
 
   getModal = (Currentmodal) => {
