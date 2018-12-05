@@ -14,13 +14,12 @@ class HeaderComp extends React.Component {
 
   signupClickHandler = () => {
     this.props.refreshAppModalState('Signup', true, 70, 85);
-  };
-
+  }
   loginClickHandler = () => {
     console.log('prposssss', this.props);
     this.props.refreshAppModalState('Login', true, 40, 60);
   };
-
+ 
   userClickHandler = () => {
     const { id } = this.props.userInfo[0];
     this.setState(prevState => ({

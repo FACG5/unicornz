@@ -44,7 +44,7 @@ export const Wizard = ({ step: currentIndex, ...props }) => {
         </Button>
       </div>
       <span id="or">or</span>
-      <button className="Q-submit" type="submit" onClick={SubmitQhandler}>Submit & Let's start</button>
+      <button className="Q-submit" type="submit" onClick={SubmitQhandler}>Skip to next part.</button>
     </div>
   );
 };
