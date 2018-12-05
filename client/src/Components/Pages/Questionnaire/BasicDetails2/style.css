@@ -58,15 +58,17 @@
     text-align: left;
     display: flex;
     flex-direction: column;
-    width: 555px;
-    padding-right: 130px;
+    width: 465px;
+    padding-right: 20px;
+    margin-right: 80px;
+    margin-left: -140px;
 }
 
-.basic2-content2 {
+.basic2-content2{
     text-align: left;
     display: flex;
     flex-direction: column;
-    width: 555px;
+    width: 500px;
 }
 
 .shape {

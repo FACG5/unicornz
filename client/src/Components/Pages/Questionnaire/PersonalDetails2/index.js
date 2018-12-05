@@ -73,38 +73,6 @@ import '../style.css'
                     <h2>Ok, so that's your school studies and hobbies done; now what's important in life to you ?</h2>
                     <div className="personal-details2-content">
                         <div className="personal2-content1">
-                            <p>What do you think is most important to you in a career? Tick your top 3</p>
-                                <div className="selector">
-                                    <Select
-                                        className="select-input"
-                                        placeholder="priority one"
-                                        name="importantInCareer1"
-                                        onChange={this.ImpInCareerSelector1}
-                                        value={this.state.importantInCareer1}
-                                        options={options1}
-                                    />
-                                </div>
-                                <div className="selector">
-                                    <Select
-                                        className="select-input" 
-                                        placeholder="priority two" 
-                                        name="importantInCareer2"
-                                        onChange={this.ImpInCareerSelector2}
-                                        value={this.state.importantInCareer2}
-                                        options={options1}
-                                    /> 
-                                </div>
-                                <div className="selector">
-                                    <Select 
-                                        className="select-input"
-                                        placeholder="priority three" 
-                                        name="importantInCareer3"
-                                        onChange={this.ImpInCareerSelector3}
-                                        value={this.state.importantInCareer3}
-                                        options={options1}
-                                    />
-                                </div>
-                                
                             <p>What are the most important factors to you in taking a work experience or insight day with a company</p>
                             <div className="selector">
                                 <Select
@@ -136,6 +104,7 @@ import '../style.css'
                                     options={options2}
                                 />
                             </div>
+                            <h1 className="shape">&#9925;</h1>
                         </div>
                         <div className="personal2-content2">
                             <p>Can you name a famous entrepreneur?<span> (an entrepreneur creates and runs their own business)</span></p>
@@ -144,7 +113,6 @@ import '../style.css'
                             <textarea rows="5" cols="40" placeholder="Answer" name="BeEntrepreneur" onChange={this.onChange}></textarea>
                             <p>Do you personally know any women that are entrepreneurs?</p>
                             <textarea rows="5" cols="40" placeholder="Answer" name="entrepreneursWomen" onChange={this.onChange} ></textarea>
-                            <h1 className="shape">&#9925;</h1>
                         </div>
                     </div>
             </div>
