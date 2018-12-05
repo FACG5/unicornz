@@ -20,9 +20,7 @@ class BasicDetails2 extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        const data = this.state
-        console.log('data', data);
-        
+        const data = this.state       
     }
 
 

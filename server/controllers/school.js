@@ -2,7 +2,6 @@ const { school } = require('../models')
 const sequelize = require('../models/connection');
 
 const getSchoolsList = async (request, response) =>{
-    console.log('reqqqqqqqqqqqqqqq',request);
     school.findAll().then(res =>{
         console.log(res);
         

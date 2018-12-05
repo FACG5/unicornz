@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import axios from 'axios';
-// import propTypes from 'prop-types';
 import emailImg from './images/email.svg';
 import phoneImg from './images/phone.svg';
 import docImg from './images/docs.png';

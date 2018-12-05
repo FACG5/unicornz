@@ -101,7 +101,6 @@ class App extends Component {
               <Switch>
                 <Route exact path="/" component={LandingPage} />
                 <Route path="/dash" component={Dashboard} />
-                {/* <Route path="/signup" component={Signup}/> */}
                 <Route path="/login" component={Login} />
                 <Route
                   path="/workexperiencedetails/:id"
