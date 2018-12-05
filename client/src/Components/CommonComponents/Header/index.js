@@ -8,15 +8,16 @@ class HeaderComp extends React.Component {
 
 
     signupClickHandler = () => {
-        this.props.refreshAppModalState('Signup',true,70,65)
+        this.props.refreshAppModalState('Signup',true,70,95)
+
      }
 
      loginClickHandler = () => {
-        this.props.refreshAppModalState('Login',true,40,40)
+        this.props.refreshAppModalState('Login',true,40,60)
      }
 
      userClickHandler = () =>{
-        this.props.history.push('/dash')
+        this.props.history.push('/dash/1')
      }
      homehandler = () => {
         this.props.history.push('/');
@@ -29,7 +30,7 @@ class HeaderComp extends React.Component {
              alertify.success('logged out successfuly')
          })
      }
-     
+
     render(){
     return (
         <div className="header">

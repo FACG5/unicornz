@@ -74,6 +74,7 @@ exports.signup = (request, response) => {
                     httpOnly: true
                   });
                   response.json({
+                    id: createdaccount.dataValues.id,
                     msg: 'Account created successfuly ^_^',
                     status: 'success'
                   });

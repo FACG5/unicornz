@@ -1,38 +1,47 @@
 .title{
     text-align: center;
-    font-family: Roboto;
-
+    font-family: 'lora', sans-serif;
+    font-weight: bold;
 }
 .signupComponent{
-    height: 50vh;
+    height: 70%;
+    width: 80%;
+    margin: 0 auto;
+    background-color: #fff;
+    z-index: 2;
 }
 
 .msg{
     text-align: center;
-    font-family: Roboto;
+    font-family: 'lato',sans-serif;
     color: red;
-    
+
 }
+
 .containerr , .submitdiv{
     margin:4% auto 0%;
     width:100%;
-    height: 85%;
+    height: 90%;
+    display: inline-flex;
+    margin-bottom: 20px;
 }
+
 .clm{
     display: inline-block;
     width: 45%;
     margin-bottom: 30px;
-    
-    
 }
+
+
 .react-select{
     width: 60%;
     margin: 8px 0;
     display: inline-block;
-    box-sizing: border-box; 
-    height: 50px; 
+    box-sizing: border-box;
+    height: 50px;
 
 }
+
 .clm>.item>input, .clm>.item>select{
     width: 60%;
     padding: 12px 20px;
@@ -40,15 +49,15 @@
     display: inline-block;
     border: 1px solid #868686;
     border-radius: 3px;
-    box-sizing: border-box; 
+    box-sizing: border-box;
     height: 40px;
-    
+
 }
 
 .clm>.item>input[type=checkbox]{
     height: 25px;
     align-self: flex-start;
- 
+
 }
 
 .clm>.item>label{
@@ -72,28 +81,18 @@
     width:91%;
     height: 80px;;
 }
+
 .submitdiv{
     text-align: center;
 }
-#signup{
-    background-color: #00BFFF;
-    border-radius: 20px;
-    width:170PX;
-    height: 30PX;
-    font-family: Roboto;
-    font-size: 14pt
-}
 
-#signup:hover{
-    background-color: rgb(175, 186, 190);
-}
 .signup-help {
     width: 100%;
     text-align: center;
     font-size: 12px;
   }
 
-  .popular .tape {
+.popular .tape {
     background-color: #00BFFF;
     height: 60px;
     margin: 5px 0;
@@ -109,6 +108,21 @@
 
 .signup-title{
     display: inline-block;
-margin: 30px auto 0;
+    margin: 30px auto 0;
+}
 
+.signup-btn {
+    width: 250px;
+    height: 40px;
+    background-color: #00BFFF;
+    color: #FFF;
+    font-family: 'kalam',sans-serif;
+    font-size: 20px;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+}
+
+.signup-btn:hover {
+    background-color: #f55a89;
 }

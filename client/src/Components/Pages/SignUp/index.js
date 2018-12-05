@@ -71,6 +71,7 @@ export default class SignUpForm extends Component {
               alertify.dialog('alert').set({ transition: 'fade', message: 'You signed up in successfuly' }).setHeader('<h2>Success</h2>').show();
               this.props.refreshAppModalState(null, false);
               this.props.updateLoggingInfo();
+              window.location = '/Questionnaire';
             } else {
               alertify.set('notifier', 'position', 'top-center');
               alertify.error('Signup failed');
@@ -127,7 +128,7 @@ export default class SignUpForm extends Component {
             <div className="clm">
               <div className="item">
                 <label>Birth Date</label>
-                <input type="date" value="2005-01-01" onKeyUp={(e) => { this.setState({ birthdate: e.target.value }); }} required />
+                <input type="date" value={this.state.birthdate} onChange={(e) => { this.setState({ birthdate: e.target.value }); }} required />
                 <p id="emailerr" className="errorValid"></p>
               </div>
               <div className="item">
@@ -159,10 +160,9 @@ is:
                 <p id="emailerr" className="errorValid"></p>
               </div>
             </div>
-            <Button value="Submit" onClick={this.onSubmitClickHandler} />
           </section>
 
-
+          <button value="Submit" onClick={this.onSubmitClickHandler} type="submit" className="signup-btn">Submit</button>
         </div>
       );
     }

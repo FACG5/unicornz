@@ -35,6 +35,7 @@ class workExperienceList extends Component {
           {
            results.map(item => (
              <Card
+               id={item.id}
                key={item.id}
                company_name={item.company.company_name}
                companyLogo={item.company.logo}

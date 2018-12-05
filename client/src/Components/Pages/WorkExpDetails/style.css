@@ -1,9 +1,9 @@
 .detailsPage {
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    margin-right: 5%;
-
+    align-items: center;
+    background-color: #57c9c078;
+    height: 100vh;
 }
 .twine {
     display: grid;
@@ -18,4 +18,21 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
+}
+
+.apply-btn {
+    width: 250px;
+    height: 50px;
+    border: none;
+    outline:none;
+    border-radius: 4px;
+    font-family: 'kalam',cursive;
+    font-size: 20px;
+    background-color: rgb(55, 95, 104);
+    color: #fff;
+}
+
+.apply-btn:hover {
+    background-color: #ffeaa9;
+    color: rgb(24, 24, 90);
 }

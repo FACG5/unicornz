@@ -19,14 +19,6 @@ module.exports =  sequelize.define('girl', {
     type: Sequelize.STRING,
     allowNull: false
   },
-  school_id: {
-    type: Sequelize.INTEGER,
-    allowNull: true,
-    references: {
-      model: 'school',
-      key: 'id'
-    }
-  },
   other_school: {
     type: Sequelize.STRING,
     allowNull: true

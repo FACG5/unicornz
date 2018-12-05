@@ -10,22 +10,12 @@ import './style.css';
 
 class PersonalInfo extends Component {
   state = {
-
-    birthdate: '',
-    email: '',
-    first_name: '',
-    id: 1,
-    last_name: '',
-    mobile: '',
-    other_school: '',
-    password: '',
-    school_id: 1,
-    user_name: '',
   }
 
   componentDidMount() {
     axios.get('/api/v1/dash').then((res) => {
       const info = res.data;
+      console.log('sddSSSSS',info)
       this.setState({ ...info });
     }).catch((error) => {
       console.log('error:', error);
@@ -34,11 +24,12 @@ class PersonalInfo extends Component {
 
   render() {
     const {
+      city,
       user_name,
       first_name,
       last_name,
       email,
-      mobile,
+      phone_num,
       school_id,
       other_school,
       birthdate,
@@ -48,26 +39,26 @@ class PersonalInfo extends Component {
 Personal Info
       </h2>
       <span className="info">
-      Name
+      Name:
         {' '}
         {first_name}
         {' '}
         {last_name}
       </span>
       <span className="info">
-      Age
+      Date of birth: {' '}{ birthdate }
+
       </span>
 
       <span className="info">
-      City
-
+      City: {' '} {city}
       </span>
       <span className="info">
-      Favourit subject
+      Favourit subject:{' '}
       </span>
       <span className="info">
-      Your Profile Complete
-      %
+      Your Profile Complete:
+      92%
       </span>
       {' '}
       <div className="progress-outer">
@@ -75,7 +66,7 @@ Personal Info
           className="progress-inner"
           style={
         {
-          width: `${birthdate}%`,
+          width: `${92}%`,
         }
       }
         />
@@ -92,7 +83,7 @@ Personal Info
       }
           alt="mobile"
         />
-        {mobile}
+        {phone_num}
 
       </div>
       <div className="img">

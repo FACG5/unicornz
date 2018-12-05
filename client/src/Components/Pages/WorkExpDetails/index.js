@@ -62,7 +62,7 @@ class workExperienceDetails extends Component {
               text1={description} />
             </div>
          </div>
-          <Button value={"APPLY NOW"}  color={"#C72D65"}/>
+          <button className="apply-btn" value= "APPLY NOW" >APPLY NOW</button>
       </div>
     );
   }

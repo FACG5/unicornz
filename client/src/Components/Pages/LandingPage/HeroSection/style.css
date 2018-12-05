@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-    
+
 .hero{
     background-color:#57c9c0;
     width:100%;
@@ -13,7 +13,7 @@
     grid-column-gap: 20%;
     padding: 20px 30px;
 }
-    
+
 .right{
     display: flex;
     align-items: center;
@@ -22,7 +22,7 @@
 .star1 {
     height: 200px;
 }
-   
+
 .left{
     padding: 15px;
     display: flex;
@@ -46,7 +46,7 @@
     margin-bottom: 20px;
     width: 400px;
 }
-    
+
 .bottom-left {
     position: absolute;
     bottom: 0;
@@ -91,10 +91,10 @@
     letter-spacing: 1px;
     word-wrap: normal;
 }
-    
+
 .signup-button {
     height: 60px;
-    width: 180px;
+    width: 232px;
     background-color: #F5AC44;
     border: none;
     color: #fff;

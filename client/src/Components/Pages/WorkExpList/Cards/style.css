@@ -10,7 +10,8 @@
 .card {
     display: flex;
     padding: 2% 2% 1% 2%;
-    justify-content: flex-start;
+    justify-content: center;
+    flex-direction: row;
 }
 
 .card-left{
