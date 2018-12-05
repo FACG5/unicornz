@@ -41,6 +41,7 @@
 		"pg-hstore": "^2.3.2",
 		"pg-native": "^3.0.0",
 		"react-scripts": "2.1.1",
-		"sequelize": "^4.41.2"
+		"sequelize": "^4.41.2",
+		"snakecase-keys": "^2.1.0"
 	}
 }
