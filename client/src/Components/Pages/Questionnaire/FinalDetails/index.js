@@ -12,7 +12,7 @@ class FinalDetails extends Component {
     state = {
 
       personHaveCareer: '',
-      clickedpic1: 'unlicked',
+      clickedpic1: 'unclicked',
       clickedpic2: 'unclicked',
       clickedpic3: 'unclicked',
       clickedpic4: 'unclicked',
@@ -27,6 +27,7 @@ class FinalDetails extends Component {
       } else {
         this.setState({ clickedpic1: 'clicked' });
       }
+      this.props.handleChange({ target: { name: 'clickedpic1', value: this.state.clickedpic1 } });
     }
 
     onclickhandlerpic2 = () => {
@@ -35,6 +36,7 @@ class FinalDetails extends Component {
       } else {
         this.setState({ clickedpic2: 'clicked' });
       }
+      this.props.handleChange({ target: { name: 'clickedpic2', value: this.state.clickedpic2 } });
     }
 
     onclickhandlerpic3 = () => {
@@ -43,6 +45,7 @@ class FinalDetails extends Component {
       } else {
         this.setState({ clickedpic3: 'clicked' });
       }
+      this.props.handleChange({ target: { name: 'clickedpic3', value: this.state.clickedpic3 } });
     }
 
     onclickhandlerpic4 = () => {
@@ -51,15 +54,8 @@ class FinalDetails extends Component {
       } else {
         this.setState({ clickedpic4: 'clicked' });
       }
+      this.props.handleChange({ target: { name: 'clickedpic4', value: this.state.clickedpic4 } });
     }
-
-    onChange = (e) => {
-      const { name, value } = e.target;
-      this.setState({
-        [name]: value,
-      });
-    };
-
 
       handleOptionChange = (changeEvent) => {
         this.setState({
@@ -98,7 +94,7 @@ class FinalDetails extends Component {
                   name="1"
                   value="option1"
                   checked={this.state.pursueInTech === 'option1'}
-                  onChange={this.handleOptionChange}
+                  onChange={this.props.handleChange}
                 />
               </label>
               <label>
@@ -108,7 +104,7 @@ class FinalDetails extends Component {
                   name="2"
                   value="option2"
                   checked={this.state.pursueInTech === 'option2'}
-                  onChange={this.handleOptionChange}
+                  onChange={this.props.handleChange}
                 />
               </label>
               <label>
@@ -118,7 +114,7 @@ class FinalDetails extends Component {
                   name="3"
                   value="option3"
                   checked={this.state.pursueInTech === 'option3'}
-                  onChange={this.handleOptionChange}
+                  onChange={this.props.handleChange}
                 />
               </label>
               <label>
@@ -128,7 +124,7 @@ class FinalDetails extends Component {
                   name="4"
                   value="option4"
                   checked={this.state.pursueInTech === 'option4'}
-                  onChange={this.handleOptionChange}
+                  onChange={this.props.handleChange}
                 />
               </label>
               <label>
@@ -138,7 +134,7 @@ class FinalDetails extends Component {
                   name="5"
                   value="option5"
                   checked={this.state.pursueInTech === 'option5'}
-                  onChange={this.handleOptionChange}
+                  onChange={this.props.handleChange}
                 />
               </label>
             </div>
