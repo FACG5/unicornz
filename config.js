@@ -1,7 +1,7 @@
 const dbConfig = (env) => {
     if (env === 'production') {  
      return {
-        // database: process.env.DB_PRODUCTION_URL,
+        database:  process.env.DB_PRODUCTION_URL,
         password:  process.env.PRODUCTION_DB_PASSWORD,
         username:  process.env.PRODUCTION_DB_USERNAME,
         host:      process.env.PRODUCTION_DB_HOST,
