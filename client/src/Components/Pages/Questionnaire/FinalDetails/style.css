@@ -94,7 +94,8 @@
     font-size: 16px;
 }
 .Q-radio-btn input[type=radio] {
-    width: 20px;
+    width: 40px;
+    height: 20px;
     
 }
 .Q-radio-btn label {
@@ -102,4 +103,16 @@
     color: rgb(15, 42, 63);
     font-size: 18px;
     display: grid;
+}
+.Q-checkbox-btn input[type=checkbox]{
+    box-sizing: border-box;
+    border: none;
+    width: 55px;
+    margin-top: 4px;
+    height: 20px;
+}
+
+.Q-checkbox-btn label{
+    display: inline-flex;
+    margin-bottom: .5rem;
 }
