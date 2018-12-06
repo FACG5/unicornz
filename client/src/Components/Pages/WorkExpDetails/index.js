@@ -21,11 +21,9 @@ class workExperienceDetails extends Component {
   
   componentDidMount() {
     if (document.cookie) {
-    console.log(this.props.match.params.id);
     
     axios.get(`/api/v1/workexperiencedetails/${this.props.match.params.id}`).then((res) => {  
       const info = res.data
-      console.log("info : ",info);
       this.setState({ ...info });
     }).catch((error) => {
       console.log('error:', error);

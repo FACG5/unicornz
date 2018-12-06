@@ -7,20 +7,24 @@ import docImg from './images/docs.png';
 import './style.css';
 
 class PersonalInfo extends Component {
-  state = {};
+  state = {
+  };
 
-  componentDidMount() {
+  componentDidUpdate() {
     const { id } = this.props;
-    this.setState({ id });
-    axios
-      .get(`/api/v1/dash/${id}`)
-      .then(res => {
-        const info = res.data;
-        this.setState({ ...info });
-      })
-      .catch(error => {
-        console.log('error:', error);
+    if (this.props.id !== this.state.id) {
+      this.setState(() => ({ id }), () => {
+        axios
+          .get(`/api/v1/dash/${id}`)
+          .then((res) => {
+            const info = res.data;
+            this.setState({ ...info });
+          })
+          .catch((error) => {
+            console.log('error:', error);
+          });
       });
+    }
   }
 
   render() {
@@ -39,12 +43,25 @@ class PersonalInfo extends Component {
       <div className="PersonalInfo">
         <h2>Personal Info</h2>
         <span className="info">
-          Name: {first_name} {last_name}
+          Name:
+          {' '}
+          {first_name}
+          {' '}
+          {last_name}
         </span>
-        <span className="info">Date of birth: {birthdate}</span>
-        <span className="info">City: {city}</span>
+        <span className="info">
+Date of birth:
+          {' '}
+          {birthdate}
+        </span>
+        <span className="info">
+City:
+          {' '}
+          {city}
+        </span>
         <span className="info">Favourit subject: </span>
-        <span className="info">Your Profile Complete: 92%</span>{' '}
+        <span className="info">Your Profile Complete: 92%</span>
+        {' '}
         <div className="progress-outer">
           <div
             className="progress-inner"
@@ -69,11 +86,5 @@ class PersonalInfo extends Component {
     );
   }
 }
-// index.propTypes = {
-//   name: propTypes.string.isRequired,
-//   city: propTypes.string.isRequired,
-//   age: propTypes.string.isRequired,
-//   favouritSubject: propTypes.string,
-//   infoCompletion: propTypes.string,
-// };
+
 export default PersonalInfo;
