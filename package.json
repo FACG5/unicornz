@@ -36,6 +36,7 @@
 		"eslint-plugin-import": "^2.14.0",
 		"eslint-plugin-jsx-a11y": "^6.1.2",
 		"express": "^4.16.4",
+		"har-validator": "^5.1.3",
 		"jsonwebtoken": "^8.4.0",
 		"pg": "^6.4.2",
 		"pg-hstore": "^2.3.2",
