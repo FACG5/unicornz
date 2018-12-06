@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/accessible-emoji */
 import React, { Component } from 'react';
 import Select from 'react-select';
-import Dropzone from 'react-dropzone'
-import './style.css'
-import '../style.css'
+import Dropzone from 'react-dropzone';
+import './style.css';
+import '../style.css';
 
 const options = [
 
@@ -47,13 +47,13 @@ const fileMaxSize = 10485760; // byte
 
 class PersonalDetails1 extends Component {
     state = {
-        subjects: null,
-        favSubjects: null,
-        hobbies: '',
-        futureJob: '',
-        interestedJob: '',
-        files:[],
-        label:"click to choose files"
+      subjects: null,
+      favSubjects: null,
+      hobbies: '',
+      futureJob: '',
+      interestedJob: '',
+      files: [],
+      label: 'click to choose files',
     }
 
     handleSubjectChange = (subjects) => {
@@ -95,47 +95,50 @@ class PersonalDetails1 extends Component {
     }
 
     render() {
-        return (
-            <div className="personal-details1" >
-                <h2 personal-details1-h>Now we've got the boring stuff out of the way, let's get to know more about your school studies</h2>
-                <div className="personal-details1-content">
-                    <div className="personal1-content1">
-                        <p>What subjects are you studying? Tick all that apply</p>
-                        <Select
-                            className="select-input"
-                            onChange={this.handleSubjectChange}
-                            value={this.state.subjects}
-                            isMulti={true}
-                            options={options}
-                        />
-                        <p>What are your favourite subjects Azara ? Tick up to 3</p>
-                        <Select
-                            className="select-input"
-                            onChange={this.handleFavChange}
-                            value={this.state.favSubjects}
-                            isMulti={true}
-                            options={options}
-                        />
-                        <p>What are your interests and hobbies outside of school? Tell us everything you enjoy doing.</p>
-                        <textarea rows="5" cols="40" placeholder="Answer" name="hobbies" onChange={this.onChange}></textarea>
-                    </div>
-                    <div className="personal1-content2">
-                        <p>If you have a CV, or any other documents your school needs signed, please upload them to your dashboard</p>
-                        <Dropzone
-                            className="drop-zone"
-                            onDrop={this.handleOnDrop}
-                            maxSize= {fileMaxSize}
-                            multiple= {false}
-                        >{this.state.label}</Dropzone>
-                        <p>Can you imagine your future career? What does it look like?</p>
-                        <textarea rows="5" cols="40" placeholder="Answer" name="futureJob" onChange={this.onChange}></textarea>
-                        <p>What kinds of jobs do you think will interest you?</p>
-                        <textarea rows="5" cols="40" placeholder="Answer" name="interestedJob" onChange={this.onChange}></textarea>
-                    </div>
-                </div>
+      return (
+        <div className="personal-details1">
+          <h2 personal-details1-h>Now we've got the boring stuff out of the way, let's get to know more about your school studies</h2>
+          <div className="personal-details1-content">
+            <div className="personal1-content1">
+              <p>What subjects are you studying? Tick all that apply</p>
+              <Select
+                className="select-input"
+                onChange={this.handleSubjectChange}
+                value={this.state.subjects}
+                isMulti
+                options={options}
+              />
+              <p>What are your favourite subjects Azara ? Tick up to 3</p>
+              <Select
+                className="select-input"
+                onChange={this.handleFavChange}
+                value={this.state.favSubjects}
+                isMulti
+                options={options}
+              />
+              <p>What are your interests and hobbies outside of school? Tell us everything you enjoy doing.</p>
+              <textarea rows="5" cols="40" placeholder="Answer" name="hobbies" onChange={this.onChange}></textarea>
             </div>
-          
-        
+            <div className="personal1-content2">
+              <p>If you have a CV, or any other documents your school needs signed, please upload them to your dashboard</p>
+              <Dropzone
+                className="drop-zone"
+                onDrop={this.handleOnDrop}
+                maxSize={fileMaxSize}
+                multiple={false}
+              >
+                {this.state.label}
+
+              </Dropzone>
+              <p>Can you imagine your future career? What does it look like?</p>
+              <textarea rows="5" cols="40" placeholder="Answer" name="futureJob" onChange={this.onChange}></textarea>
+              <p>What kinds of jobs do you think will interest you?</p>
+              <textarea rows="5" cols="40" placeholder="Answer" name="interestedJob" onChange={this.onChange}></textarea>
+            </div>
+          </div>
+        </div>
+
+
       );
     }
 }
