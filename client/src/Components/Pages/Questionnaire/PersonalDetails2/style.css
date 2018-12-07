@@ -73,7 +73,7 @@
 
 .select-input {
     display: inline-grid;
-    height: 42px;
+    min-height: 42px;
     width: 350px;
     cursor: pointer;
 }
