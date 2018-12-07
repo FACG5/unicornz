@@ -1,17 +1,17 @@
-import React from "react";
-import './style.css'
+import React from 'react';
+import './style.css';
 
 export const Wizard = ({ step: currentIndex, ...props }) => {
   const steps = React.Children.toArray(props.children);
   const prevStep = currentIndex !== 0 && steps[currentIndex - 1].props;
-  const nextStep =
-    currentIndex !== steps.length - 1 && steps[currentIndex + 1].props;
+  const nextStep = currentIndex !== steps.length - 1 && steps[currentIndex + 1].props;
 
-    const SubmitQhandler = () => {
-      props.history.push('/dash/1');
-    }
+  const SubmitQhandler = () => {
+     window.location=('/dash');
+  };
 
   return (
+
     <div className="Qcontainer">
       <nav className="Q-nav">
         {steps.map((step, index) => (
@@ -52,11 +52,11 @@ export const Wizard = ({ step: currentIndex, ...props }) => {
 export const Step = ({ children }) => children;
 
 function getClsNavBtn(active) {
-  return "Q-nav-btn" + (active ? "-active" : "");
+  return `Q-nav-btn${active ? '-active' : ''}`;
 }
 
 function Button({ visible, ...props }) {
   return (
-    <button className={visible ? "back-btn" : "invisible"} {...props} />
+    <button className={visible ? 'back-btn' : 'invisible'} {...props} />
   );
 }

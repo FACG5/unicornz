@@ -1,9 +1,10 @@
 const bcryptjs = require('bcryptjs');
 const snakeCase = require('snakecase-keys');
+const { sign } = require('jsonwebtoken');
 const { girl } = require('../models');
 
-
 exports.signup = async (request, response) => {
+  let id;
   try {
     const {
       user_name,
@@ -39,18 +40,52 @@ exports.signup = async (request, response) => {
               school_id,
               birthdate,
             };
+
             userData = snakeCase(userData);
-            const userResult = await girl.create(userData);
-            response.status(200).send('Successful Signup, You Can Login Now !');
+
+            girl.create(userData)
+
+              .then(john => {
+
+                id = john.get().id
+
+                const tokenData = { id };
+
+                sign(tokenData, process.env.SECRET, (errSign, resultCookie) => {
+
+                  if (errSign) {
+
+                    response.status(401).send('Wrong in signin !');
+
+                  } else {
+
+                    response.cookie('jwt', resultCookie, { maxAge: 6048000000 });
+
+                    response.status(200).send({ msg: 'hi', status: true });
+                  }
+
+                });
+
+              })
+                       
           } catch (error) {
+
             response.status(500).send('Internal Server Error !');
+
           }
+
         }
+
       });
+
     } else {
+
       response.status(401).send('Fill all the fileds, please !');
     }
   } catch (error) {
+
     response.status(500).send('Internal Server Error !');
+
   }
+
 };

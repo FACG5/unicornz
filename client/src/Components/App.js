@@ -25,6 +25,7 @@ class App extends Component {
     userInfo: null,
     modalWidth: 50,
     modalHeight: 50,
+    userId: null,
   };
 
   refreshAppModalState = (modal, modalIsOpen, modalWidth, modalHeight) => {
@@ -44,12 +45,12 @@ class App extends Component {
       },
     })
       .then(res => res.json())
-      .then(res => {
+      .then((res) => {
         this.setState({ loggedIn: res.status, userInfo: res.token });
       });
   };
 
-  getModal = Currentmodal => {
+  getModal = (Currentmodal) => {
     switch (Currentmodal) {
       case 'Login':
         return (
@@ -74,6 +75,7 @@ class App extends Component {
   }
 
   render() {
+    const { id } = this.state.userInfo && this.state.userInfo[0] || {};
     const CurrentModal = this.state.modal;
     return (
       <div className="App">
@@ -99,8 +101,8 @@ class App extends Component {
 
             <div className="app-content">
               <Switch>
-                <Route exact path="/" component={LandingPage} />
-                <Route path="/dash" component={Dashboard} />
+                <Route exact path="/" render={() => <LandingPage id={id} />} />
+                <Route exact path="/dash" render={props => <Dashboard history={props.history} id={id} />} />
                 <Route path="/login" component={Login} />
                 <Route
                   path="/workexperiencedetails/:id"
@@ -111,7 +113,7 @@ class App extends Component {
                   path="/workexperiencelist"
                   component={workExperienceList}
                 />
-                <Route path="/Questionnaire" component={Questionnaire} />
+                <Route exact path="/Questionnaire" render={props => <Questionnaire history={props.history} id={id} />} />
                 <Route path="/WorkExpFill" component={WorkExpFill} />
                 <Route path="*" component={LandingPage} />
               </Switch>

@@ -1,23 +1,21 @@
 import React from 'react';
-import HeroComp from './HeroSection'
+import HeroComp from './HeroSection';
 import MissionSection from './MissionSection';
-import WhatWeDoComp from './WhatWeDoSection'
-import './style.css'
+import WhatWeDoComp from './WhatWeDoSection';
+import './style.css';
 
 
-class LandingPage extends React.Component  {
+class LandingPage extends React.Component {
+  render() {
+    return (
+      <div>
+        <HeroComp />
+        <MissionSection />
 
-   render(){
-    return (    
-       <div > 
-           <HeroComp />
-           <MissionSection />
-
-           <WhatWeDoComp />
-       </div>
+        <WhatWeDoComp />
+      </div>
     );
-   }
-
+  }
 }
 
-export default LandingPage
+export default LandingPage;
