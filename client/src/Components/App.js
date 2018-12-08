@@ -48,6 +48,8 @@ class App extends Component {
       .then(res => res.json())
       .then((res) => {
         this.setState({ loggedIn: res.status, userInfo: res.token });
+      }).catch((err) => {
+        console.log('err', err);
       });
   };
 

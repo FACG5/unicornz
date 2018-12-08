@@ -48,12 +48,12 @@ class HeaderComp extends React.Component {
     return (
       <div>
         {redirect && (
-          <Redirect
-            to={{
-              pathname: '/dash',
-              state: { id },
-            }}
-          />
+        <Redirect
+          to={{
+            pathname: '/dash',
+            state: { id },
+          }}
+        />
         )}
 
         <div className="header">
@@ -65,7 +65,7 @@ class HeaderComp extends React.Component {
           />
           <ul className="header-nav">
             {this.props.loggedIn === 'loggedout' ? (
-              <li onClick={this.loginClickHandler}> Login </li>
+              <li onClick={this.loginClickHandler}> jjjjj </li>
             ) : (
               <li onClick={this.userClickHandler}>
                 Hello

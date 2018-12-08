@@ -19,6 +19,6 @@ exports.get = async (request, response) => {
       response.json(err);
     });
   } else {
-    response.json({ status: 'loggedout', token: null });
+    response.send({ status: 'loggedout', token: null });
   }
 };

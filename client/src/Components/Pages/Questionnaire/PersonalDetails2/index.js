@@ -57,7 +57,7 @@ class PersonalDetails2 extends Component {
           <h2>Ok, so that's your school studies and hobbies done; now what's important in life to you ?</h2>
           <div className="personal-details2-content">
             <div className="personal2-content1">
-              <p>What are the most important factors to you in taking a work experience or insight day with a company</p>
+              <p>Whatss are the most important factors to you in taking a work experience or insight day with a company</p>
               <div className="selector">
                 <Select
                   className="select-input"
