@@ -1,160 +1,91 @@
 const bcryptjs = require('bcryptjs');
 const snakeCase = require('snakecase-keys');
+const { sign } = require('jsonwebtoken');
 const { girl } = require('../models');
 
+exports.signup = async (request, response) => {
+  let id;
+  try {
+    const {
+      user_name,
+      first_name,
+      last_name,
+      email,
+      school_id,
+      birthdate,
+      password,
+    } = request.body;
 
-exports.logOut = (request, response) => {
-  response.clearCookie('data');
-  response.end();
-};
+    if (
+      user_name &&
+      first_name &&
+      last_name &&
+      email &&
+      school_id &&
+      birthdate &&
+      password
+    ) {
+      bcryptjs.hash(password, 10, async (err, hash) => {
+        if (err) {
+          response.status(500).send('Server Error !');
+        } else {
+          try {
+            let userData = {
+              user_name,
+              first_name,
+              last_name,
+              email,
+              password: hash,
+              email,
+              school_id,
+              birthdate,
+            };
 
-exports.signup = (request, response) => {
-  const {
-    user_name,
-    first_name,
-    last_name,
-    email,
-    school_id,
-    birthdate,
-    password
-  } = request.body;
+            userData = snakeCase(userData);
 
-  if (!user_name || user_name.trim() === '') {
-    response.json({
-      msg: 'user name is empty',
-      status: 'failed'
-    })
-  } else if (!password || password.trim() === '') {
-    response.json({
-      msg: 'Password is empty',
-      status: 'failed'
-    })
-  } else {
-    hashPassword(password, (err, hash) => {
-      if (err) {
-        response.json({
-          msg: 'could not hash the password',
-          status: 'failed'
-        })
-      } else {
-        girl.create({
-          user_name,
-          first_name,
-          last_name,
-          email,
-          school_id,
-          birthdate,
-          password:hash
-        })
-          .then(createdaccount => {
-            createCookie({
-              id: createdaccount.dataValues.id,
-              first_name: createdaccount.dataValues.first_name,
-              last_name: createdaccount.dataValues.last_name,
-              email: createdaccount.dataValues.email,
-              school_id: createdaccount.dataValues.school_id,
-              other_school: createdaccount.dataValues.other_school,
-              birthdate: createdaccount.dataValues.birthdate
-            },
-            (createtokenerror, token) => {
-              if (createtokenerror) {
-                response.json({
-                  msg: 'something went wrong!',
-                  status: true
-                })
-              } else {
-                response.cookie('data', token, {
-                  expires: new Date(Date.now() + 900000),
-                  httpOnly: true
+            girl.create(userData)
+
+              .then(john => {
+
+                id = john.get().id
+
+                const tokenData = { id };
+
+                sign(tokenData, process.env.SECRET, (errSign, resultCookie) => {
+
+                  if (errSign) {
+
+                    response.status(401).send('Wrong in signin !');
+
+                  } else {
+
+                    response.cookie('jwt', resultCookie, { maxAge: 6048000000 });
+
+                    response.status(200).send({ msg: 'hi', status: true });
+                  }
+
                 });
-                response.json({
-                  msg: 'Account created successfuly ^_^',
-                  status: 'success'
-                });
-              }
-            });
-          }
-          )
-          .catch(err => {
-            response.json({msg: 'err', state: 'failed'})
-          }
-          )
-      }
-    })
-  }
-}
 
+              })
 
-exports.login = (request, response) => {
-  const {
-    password,
-    username
-  } = request.body;
-  girl.findAll({
-    where: {
-      user_name: username
+          } catch (error) {
+
+            response.status(500).send('Internal Server Error !');
+
+          }
+
+        }
+
+      });
+
+    } else {
+
+      response.status(401).send('Fill all the fileds, please !');
     }
-  })
-    .then((result) => {
-      if (result.length === 0) {
-        response.status(200).json({
-          msg: 'no such user name',
-          status: false
-        });
-      } else {
-        bcrypt.compare(password, result[0].dataValues.password, (compareerror, compareresult) => {
-          if (compareerror) {
-            response.json({
-              msg: 'somethin went wrong!',
-              status: false
-            })
-          } else if (compareresult === false) {
-            response.json({
-              msg: 'Password is Wrong',
-              status: false
-            });
-          } else {
-            createCookie({
-              id: result[0].dataValues.id,
-              first_name: result[0].dataValues.first_name,
-              last_name: result[0].dataValues.last_name,
-              email: result[0].dataValues.email,
-              school_id: result[0].dataValues.school_id,
-              other_school: result[0].dataValues.other_school,
-              birthdate: result[0].dataValues.birthdate
-            },
-            (createtokenerror, token) => {
-              if (createtokenerror) {
-                response.json({
-                  msg: 'something went wrong!',
-                  status: true
-                })
-              } else {
-                response.cookie('data', token, {
-                  expires: new Date(Date.now() + 900000),
-                  httpOnly: true
-                });
-                response.json({
-                  msg: 'logged in successfuly ^_^',
-                  status: true
-                });
-              }
-            });
-          }
-        });
-      }
-    }).catch((err) => {
-      response.json({
-        msg: "girl.findall error",
-        status: false
-      })
-    });
-};
+  } catch (error) {
 
-exports.checkAuthentication = (req, res)=>{
-  promiseAuthCheck(req).then(token => {
-    res.json({status:'loggedin',token})
-  }).catch(err=>{
-    res.json({msg:err,status:'loggedout'})
-  })
-}
+    response.status(500).send('Internal Server Error !');
+
+  }
+
+};

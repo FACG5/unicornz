@@ -31,8 +31,7 @@ export default class SignUpForm extends Component {
 
     componentWillMount() {
       this.setState({ vx: Math.floor(Math.random() * 100), vy: Math.floor(Math.random() * 100) });
-        fetch('/api/v1/getschoolslist')
-        .then(res => res.json())
+      fetch('/api/v1/getschoolslist').then(res => res.json())
         .then(res => this.setState({ school_options: res }));
     }
 
@@ -68,7 +67,7 @@ export default class SignUpForm extends Component {
           },
         }).then(res => res.json())
           .then((res) => {
-            if (res.status === 'success') {
+            if (res.status === true) {
               alertify.dialog('alert').set({ transition: 'fade', message: 'You signed up in successfuly' }).setHeader('<h2>Success</h2>').show();
               this.props.refreshAppModalState(null, false);
               this.props.updateLoggingInfo();
@@ -88,6 +87,7 @@ export default class SignUpForm extends Component {
     }
 
     render() {
+
       return (
         <div className="signupComponent">
 

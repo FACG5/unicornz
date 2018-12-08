@@ -1,6 +1,6 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
-import Girl from './PersonalInfo';
+import PersonalInfo from './PersonalInfo';
 import Find from './ActiveJobs';
 import Uploader from './UploadFile';
 import Active from './MyActivety';
@@ -11,12 +11,12 @@ import './style.css';
 
 class Dashboard extends Component {
   render() {
-    const { id } = this.props.location.state;
+    const { id } = this.props;
     return (
       <div className="grand-div">
         <div className="dash-board">
           <div className="sub-div">
-            <Girl id={id} />
+            <PersonalInfo history={this.props.history} id={id} />
             <Find />
           </div>
           <div>

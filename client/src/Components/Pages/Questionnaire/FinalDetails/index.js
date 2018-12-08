@@ -1,3 +1,4 @@
+/* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/jsx-no-duplicate-props */
 import React, { Component } from 'react';
 import pic1 from '../pic1.jpg';
