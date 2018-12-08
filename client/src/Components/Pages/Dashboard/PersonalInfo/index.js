@@ -10,13 +10,21 @@ class PersonalInfo extends Component {
   state = {
   };
 
+  componentWillMount() {
+    const { updateLoggingInfo } = this.props;
+    updateLoggingInfo();
+  }
+
+
   componentDidUpdate() {
     const { id } = this.props;
+    console.log('in the girl info ', id);
     if (this.props.id !== this.state.id) {
       this.setState(() => ({ id }), () => {
         axios
           .get(`/api/v1/dash/${id}`)
           .then((res) => {
+            console.log('axios response', res);
             const info = res.data;
             this.setState({ ...info });
           })
@@ -28,6 +36,7 @@ class PersonalInfo extends Component {
   }
 
   render() {
+    console.log('in the personal info render', this.props.id);
     const {
       city,
       user_name,

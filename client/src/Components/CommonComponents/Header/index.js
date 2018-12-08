@@ -9,7 +9,6 @@ import logo from './logo.png';
 class HeaderComp extends React.Component {
   state = {
     redirect: false,
-    id: 1,
   };
 
   signupClickHandler = () => {
@@ -21,10 +20,10 @@ class HeaderComp extends React.Component {
   };
 
   userClickHandler = () => {
-    const { id } = this.props.userInfo[0];
+    const { id } = this.props.userInfo;
+    console.log('in thw header', id);
     this.setState(prevState => ({
       redirect: !prevState.redirect,
-      id,
     }));
   };
 
@@ -44,14 +43,13 @@ class HeaderComp extends React.Component {
   };
 
   render() {
-    const { redirect, id } = this.state;
+    const { redirect } = this.state;
     return (
       <div>
         {redirect && (
         <Redirect
           to={{
             pathname: '/dash',
-            state: { id },
           }}
         />
         )}
@@ -65,7 +63,7 @@ class HeaderComp extends React.Component {
           />
           <ul className="header-nav">
             {this.props.loggedIn === 'loggedout' ? (
-              <li onClick={this.loginClickHandler}> jjjjj </li>
+              <li onClick={this.loginClickHandler}> Login </li>
             ) : (
               <li onClick={this.userClickHandler}>
                 Hello
