@@ -14,8 +14,12 @@ class BasicDetails1 extends Component {
     };
   }
 
-
   render() {
+    const storage = localStorage.getItem('state') || '{}';
+    const parsedStorage = JSON.parse(storage);
+    const {
+      grade, city, schoolEmail, phoneNum,
+    } = parsedStorage;
     return (
       <form onSubmit={this.handleSubmit}>
         <div className="basic-details1">
@@ -24,6 +28,7 @@ class BasicDetails1 extends Component {
             <div className="basic1-content1">
               <p>What is your current Year Group at UK School?</p>
               <input
+                value={grade}
                 type="text"
                 className="sec1-input"
                 name="grade"
@@ -35,6 +40,7 @@ In which city exactly do you live?
                 <span className="special-txt">(we need this to work out how far you have to travel to your workexperience if needed)</span>
               </p>
               <input
+                value={city}
                 type="text"
                 className="sec1-input"
                 name="city"
@@ -45,6 +51,7 @@ In which city exactly do you live?
             <div className="basic1-content2">
               <p>School email address</p>
               <input
+                value={schoolEmail}
                 type="email"
                 className="sec1-input"
                 name="schoolEmail"
@@ -53,6 +60,7 @@ In which city exactly do you live?
               />
               <p>Enter your phone number</p>
               <input
+                value={phoneNum}
                 type="text"
                 className="sec1-input"
                 name="phoneNum"

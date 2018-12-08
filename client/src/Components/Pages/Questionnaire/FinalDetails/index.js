@@ -57,8 +57,8 @@ class FinalDetails extends Component {
       this.props.handleChange({ target: { name: 'clickedpic4', value: this.state.clickedpic4 } });
     }
 
-      handleOptionChange = (changeEvent) => {
-        this.setState({
+      handleOptionChange = async (changeEvent) => {
+        await this.setState({
           pursueInTech: changeEvent.target.value,
         });
         this.props.handleChange({ target: { name: 'pursueInTech', value: this.state.pursueInTech } });

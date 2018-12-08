@@ -76,7 +76,6 @@ class App extends Component {
 
   render() {
     const { id } = this.state.userInfo && this.state.userInfo[0] || {};
-    console.log('in the app js 11111', id);
     const CurrentModal = this.state.modal;
     return (
       <div className="App">

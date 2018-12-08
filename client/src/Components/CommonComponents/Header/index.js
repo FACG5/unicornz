@@ -20,8 +20,6 @@ class HeaderComp extends React.Component {
   };
 
   userClickHandler = () => {
-    const { id } = this.props.userInfo;
-    console.log('in thw header', id);
     this.setState(prevState => ({
       redirect: !prevState.redirect,
     }));

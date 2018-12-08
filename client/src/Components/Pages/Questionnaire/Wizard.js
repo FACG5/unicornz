@@ -7,7 +7,8 @@ export const Wizard = ({ step: currentIndex, ...props }) => {
   const nextStep = currentIndex !== steps.length - 1 && steps[currentIndex + 1].props;
 
   const SubmitQhandler = () => {
-     window.location=('/dash');
+    props.hanleUpdate();
+    window.location = ('/dash');
   };
 
   return (
@@ -17,7 +18,7 @@ export const Wizard = ({ step: currentIndex, ...props }) => {
         {steps.map((step, index) => (
           <button
             key={step.props.title}
-            onClick={() => props.onChange(index)}
+            onClick={() => { props.onChange(index); props.hanleUpdate(); }}
             className={getClsNavBtn(index === currentIndex)}
             title={step.props.description}
           >
@@ -30,14 +31,14 @@ export const Wizard = ({ step: currentIndex, ...props }) => {
       <div className="next-back-btns">
         <Button
           visible={prevStep}
-          onClick={() => props.onChange(currentIndex - 1)}
+          onClick={() => { props.onChange(currentIndex - 1); props.hanleUpdate(); }}
           title={prevStep.description}
         >
           Back
         </Button>
         <Button
           visible={nextStep}
-          onClick={() => props.onChange(currentIndex + 1)}
+          onClick={() => { props.onChange(currentIndex + 1); props.hanleUpdate(); }}
           title={nextStep.description}
         >
           Next

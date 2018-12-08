@@ -8,6 +8,8 @@ const search = require('./search');
 const upload = require('./upload');
 const uploads3 = require('../middleware/upload');
 const work = require('./workExperienceList');
+const questionnaire = require('./questionnaire');
+
 const workExperienceDetails = require('./workexperienceDetails');
 
 const login = require('./login');
@@ -34,5 +36,6 @@ router.get('/workexperiencelist', work.get);
 router.get('/workexperiencedetails/:companyId', workExperienceDetails.get);
 router.get('/dash/:girlId', dashBoard.get);
 router.post('/dash/search', search.post);
+router.post('/questionnaire', questionnaire.post);
 
 module.exports = router;
