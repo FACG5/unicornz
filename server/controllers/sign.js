@@ -1,5 +1,5 @@
 const bcryptjs = require('bcryptjs');
-const snakeCase = require('snakecase-keys');
+// const snakeCase = require('snakecase-keys');
 const { sign } = require('jsonwebtoken');
 const { girl } = require('../models');
 
@@ -41,7 +41,7 @@ exports.signup = async (request, response) => {
               birthdate,
             };
 
-            userData = snakeCase(userData);
+            // userData = snakeCase(userData);
 
             girl.create(userData)
 
