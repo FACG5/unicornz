@@ -1,5 +1,11 @@
 const app = require('./app');
-const connection= require('./models/connection')
+// const {
+//   connection,
+//   girl,
+//   school,
+//   company
+// } = require('./models')
+const {connection} = require('./models');
 const Sequelize = require('sequelize')
 
 connection.sync({}).then(() => {

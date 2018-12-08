@@ -50,7 +50,7 @@ class Search extends Component {
       <div className="find">
         <h2>Find Job</h2>
         <span>Location</span>
-        <input type="text" name="location" onChange={this.handleChange} id="location-inp"/>
+        <input type="text" name="location" onChange={this.handleChange} id="location-inp" />
         <span>Subject</span>
         <select name="subject" onChange={this.handleChange}>
           <option selected>All</option>
@@ -59,7 +59,6 @@ class Search extends Component {
           <option>Technology</option>
           <option>Mathmatics</option>
         </select>
-
         <Button className="button" value="Search" color="#FFF" onClick={this.handleClick} />
       </div>
     );

@@ -6,7 +6,7 @@ insert into schools (name)
  ('Queen Elizabeths School for Girls'),
  ('Langley Park School for Girls');
 
-insert into girls (user_name, first_name, last_name, email, mobile, school_id, other_school, birthdate, password)
+insert into girls (user_name, first_name, last_name, email, phone_num, school_id, other_school, birthdate, password)
  values
  ('hadam', 'Helary', 'Adam', 'hadam@nameschool.uk','0599999999', 1, '', '01-01-2005', '$2a$10$t3bm8JUU3dwAvUpE0Pr/e.S5XDnaX./JaGpIv5uDX7I51n4JVKH42'),
  ('sjohn', 'Suzan', 'John', 'sjohn@nameschool.uk','0599999999', 2, '',' 01-01-2005', '$2a$10$t3bm8JUU3dwAvUpE0Pr/e.S5XDnaX./JaGpIv5uDX7I51n4JVKH42'),
@@ -21,7 +21,7 @@ insert into girls (user_name, first_name, last_name, email, mobile, school_id, o
   ('avilable', '12-12-2018', 'approve');
 
 
- insert into companies (logo, company_name, description, mobile, website, email, facebook,password)
+ insert into company (logo, company_name, description, mobile, website, email, facebook,password)
   values
   ('https://www.sylvanlearning.com/images/default-source/default-album/newsylvan_4c.png', 'Sylvan Learning', 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.', '+448999555', 'www.sylvanlearning.uk', 'sylvanlearning@gmail.com', '/sylvanlearning','123'),
   ('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmNPkNSg9IRbZigjv8n2GSKEPLyuEMveg61WpoRUyn6_0uyO4q7A', 'STEM Company', 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.', '+448999555', 'www.stemcompnay.uk', 'stemcompany@gmail.com', '/stemcompany','123'),
