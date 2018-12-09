@@ -75,7 +75,7 @@ class BasicDetails2 extends Component {
                 />
                 <p>Their emergency contact number</p>
                 <input
-                  type="text"
+                  type="tel"
                   className="sec2-input"
                   name="emergencyNum"
                   onChange={this.props.handleChange}

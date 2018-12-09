@@ -24,7 +24,6 @@ class Questionnaier extends Component {
       this.setState({
         girlId: id,
       });
-      return console.log('id:====>', id);
     }
   }
 
@@ -56,7 +55,6 @@ hanleUpdate() {
     url: '/api/v1/questionnaire',
     data: parsedStorage,
   }).then((res) => {
-    console.log('back from back');
   }).catch((error) => {
     console.log('error:', error);
   });

@@ -57,7 +57,7 @@ In which city exactly do you live?
               />
               <p>Enter your phone number</p>
               <input
-                type="text"
+                type="tel"
                 className="sec1-input"
                 name="phoneNum"
                 onChange={this.props.handleChange}

@@ -65,6 +65,7 @@ export default class SignUpForm extends Component {
           headers: {
             'Content-Type': 'application/json; charset=utf-8',
           },
+          credentials: 'same-origin',
         }).then(res => res.json())
           .then((res) => {
             if (res.status === true) {
@@ -76,6 +77,8 @@ export default class SignUpForm extends Component {
               alertify.set('notifier', 'position', 'top-center');
               alertify.error('Signup failed');
             }
+          }).catch((err) => {
+            console.log('error', err);
           });
       } else {
         alertify.dialog('alert').set({ transition: 'fade', message: 'Please answer the question and check the "I am not a robot" check box' }).setHeader(`<h3>Hi, ${(this.state.first_name) ? this.state.first_name : ''}</h3>`).show();
@@ -87,7 +90,6 @@ export default class SignUpForm extends Component {
     }
 
     render() {
-
       return (
         <div className="signupComponent">
 
