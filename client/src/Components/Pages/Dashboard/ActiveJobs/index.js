@@ -53,7 +53,6 @@ class Search extends Component {
         <input type="text" name="location" list="options" onChange={this.handleChange} id="location-inp"/>
         <datalist id="options">
            <select>
-              <option value="london"></option>
               <option value="Bath"></option>
               <option value="Birmingham"></option>
               <option value="Bradford"></option>
