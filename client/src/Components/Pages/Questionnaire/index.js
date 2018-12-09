@@ -16,8 +16,17 @@ const MyStep = ({ children }) => (
 );
 
 class Questionnaier extends Component {
-  state = { step: 0 };
+  state = { step: 0, girlId: 0 };
 
+  componentDidUpdate() {
+    const { id } = this.props;
+    if (this.state.girlId !== id) {
+      this.setState({
+        girlId: id,
+      });
+      return console.log('id:====>', id);
+    }
+  }
 
   handleStep = (step) => {
     this.setState({ step });
@@ -54,6 +63,7 @@ hanleUpdate() {
 }
 
 render() {
+  const { id, updateLoggingInfo } = this.props;
   console.log('this.state..', this.state);
   const aValue = localStorage.getItem('state');
   console.log('localStorage..', JSON.parse(aValue));

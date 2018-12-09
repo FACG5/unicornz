@@ -113,7 +113,7 @@ class App extends Component {
                   path="/workexperiencelist"
                   component={workExperienceList}
                 />
-                <Route exact path="/Questionnaire" render={() => <Questionnaire id={id} />} />
+                <Route exact path="/Questionnaire" render={() => <Questionnaire id={id} updateLoggingInfo={this.updateLoggingInfo} />} />
                 <Route path="/WorkExpFill" component={WorkExpFill} />
                 <Route path="*" component={LandingPage} />
               </Switch>

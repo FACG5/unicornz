@@ -37,6 +37,8 @@ export default withRouter(
             alertify.set('notifier', 'position', 'top-center');
             alertify.error(res.msg);
           }
+        }).catch((err) => {
+          console.log('error', err);
         });
     };
 
