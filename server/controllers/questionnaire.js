@@ -13,7 +13,6 @@ exports.post= async (request,response)=>{
     const newArr = arr.filter(elm => elm != null);
     const percent = ((newArr.length / arr.length ) * 100 );
     girl.update( { percentage: percent }, {where: {id:girlId}} )
-    console.log('iiiiiiiiiiiiiiiiiiiiiiiiiiid');
   }catch(error){
     console.log('error:::...',error);
   }
