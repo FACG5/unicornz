@@ -10,6 +10,12 @@ class PersonalInfo extends Component {
   state = {
   };
 
+  componentWillMount() {
+    const { updateLoggingInfo } = this.props;
+    updateLoggingInfo();
+  }
+
+
   componentDidUpdate() {
     const { id } = this.props;
     if (this.props.id !== this.state.id) {

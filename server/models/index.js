@@ -1,12 +1,13 @@
+const school = require('./school');
 const company = require('./company');
 const girl = require('./girl');
 const registration = require('./registration');
-const school = require('./school');
 const work_experience = require('./work_experience');
 const jobs = require('./jobs');
 
 const connection = require('./connection');
 
+school.hasMany(girl, { foreignKey: 'school_id' });
 work_experience.belongsTo(company, {
   onDelete: 'CASCADE', foreignKey: 'company_id', targetKey: 'id',
 });
@@ -25,7 +26,6 @@ girl.hasMany(registration, { foreignKey: 'girl_id' });
 girl.belongsTo(school, {
   onDelete: 'CASCADE', foreignKey: 'school_id', targetKey: 'id',
 });
-school.hasMany(girl, { foreignKey: 'school_id' });
 
 
 module.exports = {
