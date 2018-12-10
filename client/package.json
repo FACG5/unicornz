@@ -5,6 +5,7 @@
   "dependencies": {
     "alertifyjs": "^1.11.2",
     "axios": "^0.18.0",
+    "formsy-react": "^1.1.5",
     "install": "^0.12.2",
     "npm": "^6.4.1",
     "react": "^16.6.1",
