@@ -24,9 +24,10 @@ export default withRouter(
         headers: {
           'Content-Type': 'application/json; charset=utf-8',
         },
+        credentials: 'same-origin',
       })
         .then(res => res.json())
-        .then(res => {
+        .then((res) => {
           if (res.status) {
             alertify.set('notifier', 'position', 'top-center');
             alertify.success('logged in successfuly');
@@ -36,6 +37,8 @@ export default withRouter(
             alertify.set('notifier', 'position', 'top-center');
             alertify.error(res.msg);
           }
+        }).catch((err) => {
+          console.log('error', err);
         });
     };
 
@@ -46,11 +49,11 @@ export default withRouter(
       });
     }
 
-    emailOnKeyUp = e => {
+    emailOnKeyUp = (e) => {
       this.setState({ loginEmail: e.target.value });
     };
 
-    passwordOnKeyUp = e => {
+    passwordOnKeyUp = (e) => {
       this.setState({ loginPassword: e.target.value });
     };
 
@@ -86,5 +89,5 @@ export default withRouter(
         </div>
       );
     }
-  }
+  },
 );

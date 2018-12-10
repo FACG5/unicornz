@@ -9,21 +9,19 @@ import logo from './logo.png';
 class HeaderComp extends React.Component {
   state = {
     redirect: false,
-    id: 1,
   };
 
   signupClickHandler = () => {
     this.props.refreshAppModalState('Signup', true, 70, 85);
   }
+
   loginClickHandler = () => {
     this.props.refreshAppModalState('Login', true, 40, 60);
   };
- 
+
   userClickHandler = () => {
-    const { id } = this.props.userInfo[0];
     this.setState(prevState => ({
       redirect: !prevState.redirect,
-      id,
     }));
   };
 
@@ -32,7 +30,9 @@ class HeaderComp extends React.Component {
   };
 
   signoutClickHandler = () => {
-    fetch('/api/v1/logout').then(() => {
+    fetch('/api/v1/logout', {
+      credentials: 'same-origin',
+    }).then(() => {
       this.props.updateLoggingInfo();
       alertify.set('notifier', 'position', 'top-center');
       alertify.success('logged out successfuly');
@@ -41,16 +41,15 @@ class HeaderComp extends React.Component {
   };
 
   render() {
-    const { redirect, id } = this.state;
+    const { redirect } = this.state;
     return (
       <div>
         {redirect && (
-          <Redirect
-            to={{
-              pathname: '/dash',
-              state: { id },
-            }}
-          />
+        <Redirect
+          to={{
+            pathname: '/dash',
+          }}
+        />
         )}
 
         <div className="header">
@@ -64,8 +63,10 @@ class HeaderComp extends React.Component {
             {this.props.loggedIn === 'loggedout' ? (
               <li onClick={this.loginClickHandler}> Login </li>
             ) : (
-              <li onClick={this.userClickHandler} >
-                Hello {this.props.userInfo[0].first_name}
+              <li onClick={this.userClickHandler}>
+                Hello
+                {' '}
+                {this.props.userInfo[0].first_name}
               </li>
             )}
             {this.props.loggedIn === 'loggedout' ? (

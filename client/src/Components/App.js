@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Rodal from 'rodal';
+import axios from 'axios';
 import Dashboard from './Pages/Dashboard';
 import LandingPage from './Pages/LandingPage';
 import Header from './CommonComponents/Header';
@@ -25,7 +26,6 @@ class App extends Component {
     userInfo: null,
     modalWidth: 50,
     modalHeight: 50,
-    userId: null,
   };
 
   refreshAppModalState = (modal, modalIsOpen, modalWidth, modalHeight) => {
@@ -38,16 +38,16 @@ class App extends Component {
   };
 
   updateLoggingInfo = () => {
-    fetch('/api/v1/updatehero', {
+    axios('/api/v1/updatehero', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json; charset=utf-8',
       },
-    })
-      .then(res => res.json())
-      .then((res) => {
-        this.setState({ loggedIn: res.status, userInfo: res.token });
-      });
+    }).then((res) => {
+      this.setState({ loggedIn: res.data.status, userInfo: res.data.token });
+    }).catch((err) => {
+      console.log('err', err);
+    });
   };
 
   getModal = (Currentmodal) => {
@@ -102,7 +102,7 @@ class App extends Component {
             <div className="app-content">
               <Switch>
                 <Route exact path="/" render={() => <LandingPage id={id} />} />
-                <Route exact path="/dash" render={props => <Dashboard history={props.history} id={id} />} />
+                <Route exact path="/dash" render={() => <Dashboard id={id} updateLoggingInfo={this.updateLoggingInfo} />} />
                 <Route path="/login" component={Login} />
                 <Route
                   path="/workexperiencedetails/:id"
@@ -113,7 +113,7 @@ class App extends Component {
                   path="/workexperiencelist"
                   component={workExperienceList}
                 />
-                <Route exact path="/Questionnaire" render={props => <Questionnaire history={props.history} id={id} />} />
+                <Route exact path="/Questionnaire" render={() => <Questionnaire id={id} updateLoggingInfo={this.updateLoggingInfo} />} />
                 <Route path="/WorkExpFill" component={WorkExpFill} />
                 <Route path="*" component={LandingPage} />
               </Switch>
