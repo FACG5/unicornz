@@ -87,8 +87,6 @@ class PersonalDetails1 extends Component {
       } else {
         this.setState({ files, label: files[0].name });
       }
-      // const formData = new FormData();
-      // formData.append('files', files);
       this.props.handleChange({ target: { name: 'files', value: files } });
     }
 
