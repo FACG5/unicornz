@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import alertify from 'alertifyjs';
 import Select from 'react-select';
+import Button from '../../CommonComponents/Button';
 
 import './style.css';
 
@@ -17,7 +18,7 @@ export default class SignUpForm extends Component {
       email: null,
       school_id: null,
       other_school: null,
-      birthdate: '2005-01-01',
+      birthdate: null,
       password: null,
       cpassword: null,
       checkUser: false,
@@ -64,6 +65,7 @@ export default class SignUpForm extends Component {
           headers: {
             'Content-Type': 'application/json; charset=utf-8',
           },
+          credentials: 'same-origin',
         }).then(res => res.json())
           .then((res) => {
             if (res.status === true) {
@@ -75,6 +77,8 @@ export default class SignUpForm extends Component {
               alertify.set('notifier', 'position', 'top-center');
               alertify.error('Signup failed');
             }
+          }).catch((err) => {
+            console.log('error', err);
           });
       } else {
         alertify.dialog('alert').set({ transition: 'fade', message: 'Please answer the question and check the "I am not a robot" check box' }).setHeader(`<h3>Hi, ${(this.state.first_name) ? this.state.first_name : ''}</h3>`).show();

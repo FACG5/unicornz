@@ -67,7 +67,7 @@ exports.signup = async (request, response) => {
                 });
 
               })
-                       
+
           } catch (error) {
 
             response.status(500).send('Internal Server Error !');

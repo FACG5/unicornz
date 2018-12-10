@@ -15,11 +15,10 @@ exports.get = async (request, response) => {
     });
     girl.findAll({ where: { id: girlId } }).then((res) => {
       response.json({ status: 'loggedin', token: res });
-    })
-      .catch((err) => {
-        response.json(err);
-      });
+    }).catch((err) => {
+      response.json(err);
+    });
   } else {
-    response.json({ status: 'loggedout', token: null });
+    response.send({ status: 'loggedout', token: null });
   }
 };

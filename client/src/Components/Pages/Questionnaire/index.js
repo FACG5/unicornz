@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+<<<<<<< HEAD
 import alertify from 'alertifyjs';
 
+=======
+>>>>>>> 7260d397215ba2cd155050912b225ba66b3e5a79
 import { Wizard, Step } from './Wizard';
 import BasicDetails1 from './BasicDetails1';
 import BasicDetails2 from './BasicDetails2';
@@ -94,15 +97,9 @@ render() {
     <div>
       <Wizard history={this.props.history} step={this.state.step} onChange={this.handleStep} hanleUpdate={this.hanleUpdate}>
         <Step title="First step" description="Welcome page">
-
           <BasicDetails1 handleChange={this.handleChange} />
-
         </Step>
-
         <Step title="Second step" description="BasicInfo">
-
-          <BasicDetails2 handleChange={this.handleChange} />
-
         </Step>
         <Step title="Third step" description="PersonalInfo">
           <PersonalDetails1 handleChange={this.handleChange} />
