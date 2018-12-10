@@ -14,6 +14,7 @@ export const Wizard = ({ step: currentIndex, ...props }) => {
 
   const SubmitQhandler = () => {
     props.hanleUpdate();
+    window.location = ('/dash');
   };
 
   return (

@@ -58,18 +58,14 @@ class PersonalDetails1 extends Component {
 
     handleSubjectChange = (subjects) => {
       this.setState({ subjects });
+      this.props.handleChange({ target: { name: 'subjects', value: subjects } });
     }
 
     handleFavChange = (favSubjects) => {
       this.setState({ favSubjects });
+      this.props.handleChange({ target: { name: 'favSubjects:', value: favSubjects } });
     }
 
-    onChange = (e) => {
-      const { name, value } = e.target;
-      this.setState({
-        [name]: value,
-      });
-    };
 
     handleSubmit= (event) => {
       event.preventDefault();
@@ -79,7 +75,6 @@ class PersonalDetails1 extends Component {
       if (rejectedFiles && rejectedFiles.length > 0) {
         const currentRejectFile = rejectedFiles[0];
         const currentRejectFileSize = currentRejectFile.size;
-
 
         if (currentRejectFileSize > fileMaxSize) {
           alert('This file is too big..please choose another one with size less than 10 megabytes');
@@ -92,6 +87,9 @@ class PersonalDetails1 extends Component {
       } else {
         this.setState({ files, label: files[0].name });
       }
+      // const formData = new FormData();
+      // formData.append('files', files);
+      this.props.handleChange({ target: { name: 'files', value: files } });
     }
 
     render() {
@@ -117,7 +115,7 @@ class PersonalDetails1 extends Component {
                 options={options}
               />
               <p>What are your interests and hobbies outside of school? Tell us everything you enjoy doing.</p>
-              <textarea rows="5" cols="40" placeholder="Answer" name="hobbies" onChange={this.onChange}></textarea>
+              <textarea rows="5" cols="40" placeholder="Answer" name="hobbies" onChange={this.props.handleChange}></textarea>
             </div>
             <div className="personal1-content2">
               <p>If you have a CV, or any other documents your school needs signed, please upload them to your dashboard</p>
@@ -128,13 +126,28 @@ class PersonalDetails1 extends Component {
                 multiple={false}
               >
                 {this.state.label}
-
               </Dropzone>
               <p>Can you imagine your future career? What does it look like?</p>
-              <textarea rows="5" cols="40" placeholder="Answer" name="futureJob" onChange={this.onChange}></textarea>
+              <textarea rows="5" cols="40" placeholder="Answer" name="futureJob" onChange={this.props.handleChange}></textarea>
               <p>What kinds of jobs do you think will interest you?</p>
-              <textarea rows="5" cols="40" placeholder="Answer" name="interestedJob" onChange={this.onChange}></textarea>
+              <textarea rows="5" cols="40" placeholder="Answer" name="interestedJob" onChange={this.props.handleChange}></textarea>
             </div>
+          </div>
+          <div className="personal1-content2">
+            <p>If you have a￼ copy of your CV, please upload it to your dashboard</p>
+            <Dropzone
+              className="drop-zone"
+              onDrop={this.handleOnDrop}
+              maxSize={fileMaxSize}
+              multiple={false}
+            >
+              {this.state.label}
+            </Dropzone>
+            <p>Can you imagine your future career? What does it look like?</p>
+            <textarea rows="5" cols="40" placeholder="Answer" name="futureJob" onChange={this.props.handleChange}></textarea>
+            <p>What kinds of jobs do you think will interest you?</p>
+            <textarea rows="5" cols="40" placeholder="Answer" name="interestedJob" onChange={this.props.handleChange}></textarea>
+            <h1 className="shape">&#9925;</h1>
           </div>
         </div>
 

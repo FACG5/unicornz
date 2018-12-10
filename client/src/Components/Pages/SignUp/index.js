@@ -86,7 +86,6 @@ export default class SignUpForm extends Component {
     }
 
     render() {
-
       return (
         <div className="signupComponent">
 
