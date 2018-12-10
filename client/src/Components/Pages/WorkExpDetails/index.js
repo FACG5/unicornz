@@ -19,6 +19,10 @@ class workExperienceDetails extends Component {
     facebook: '',
   }
 
+  alertMessage = () => {
+     alert("Under Construction");
+  };
+
   componentDidMount() {
     if (document.cookie) {
       axios.get(`/api/v1/workexperiencedetails/${this.props.match.params.id}`).then((res) => {
@@ -68,7 +72,7 @@ class workExperienceDetails extends Component {
             />
           </div>
         </div>
-        <button value="APPLY NOW" className="apply-btn">APPLY NOW</button>
+        <button value="APPLY NOW" className="apply-btn" onClick={this.alertMessage}>APPLY NOW</button>
       </div>
     );
   }
