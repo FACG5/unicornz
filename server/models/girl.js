@@ -162,6 +162,9 @@ module.exports =  sequelize.define('girl', {
   pursue_in_tech: {
     type: Sequelize.STRING(100),
     allowNull: true
+  },percentage: {
+    type: Sequelize.INTEGER,
+    allowNull: true
   },
 
 });
