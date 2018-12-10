@@ -33,9 +33,9 @@ class workExperienceList extends Component {
   render() {
     const { results } = this.state;
     return (
-      <div>
+      <div className="workexp-list">
         <div className="welcomeworkexperience">
-          <h1> Find work experience </h1>
+          <h1> Our Companies </h1>
         </div>
         <div className="cardLinks">
           {
