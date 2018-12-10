@@ -1,10 +1,4 @@
 const app = require('./app');
-// const {
-//   connection,
-//   girl,
-//   school,
-//   company
-// } = require('./models')
 const {connection} = require('./models');
 const Sequelize = require('sequelize')
 
