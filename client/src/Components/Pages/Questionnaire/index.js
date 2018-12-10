@@ -1,10 +1,8 @@
+/* eslint-disable class-methods-use-this */
 import React, { Component } from 'react';
 import axios from 'axios';
-<<<<<<< HEAD
 import alertify from 'alertifyjs';
 
-=======
->>>>>>> 7260d397215ba2cd155050912b225ba66b3e5a79
 import { Wizard, Step } from './Wizard';
 import BasicDetails1 from './BasicDetails1';
 import BasicDetails2 from './BasicDetails2';
@@ -21,7 +19,7 @@ const MyStep = ({ children }) => (
 );
 
 class Questionnaier extends Component {
-  state = { step: 0, girlId: 0 };
+  state = { step: 0, girlId: 0, nextStepp: false };
 
   componentDidUpdate() {
     const { id } = this.props;
@@ -81,6 +79,8 @@ hanleUpdate() {
   //   if (!validateEmail(parsedStorage.emergencyEmail)) {
   //     alertify.dialog('alert').set({ transition: 'fade', message: 'Please enter a valid emergency E-mail on the second step' }).setHeader('<h3>No school email !</h3>').show();
   //   }
+  } else {
+    this.setState({ nextStep: true });
   }
   // } else {
   //   window.location = ('/dash');
@@ -100,6 +100,7 @@ render() {
           <BasicDetails1 handleChange={this.handleChange} />
         </Step>
         <Step title="Second step" description="BasicInfo">
+          <BasicDetails2 handleChange={this.handleChange} />
         </Step>
         <Step title="Third step" description="PersonalInfo">
           <PersonalDetails1 handleChange={this.handleChange} />

@@ -6,10 +6,10 @@ import React from 'react';
 import './style.css';
 
 
-export const Wizard = ({ step: currentIndex, ...props }) => {
+export const Wizard = ({ step: currentIndex, nextstepp, ...props }) => {
   const steps = React.Children.toArray(props.children);
   const prevStep = currentIndex !== 0 && steps[currentIndex - 1].props;
-  const nextStep = currentIndex !== steps.length - 1 && steps[currentIndex + 1].props;
+  const nextStep = currentIndex !== steps.length - 1 && steps[currentIndex + 1].props && nextstepp === true;
 
 
   const SubmitQhandler = () => {
