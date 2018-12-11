@@ -34,7 +34,7 @@ class workExperienceList extends Component {
     const { results } = this.state;
     if (results.length !== 0) {
     return (
-      <div>
+      <div className="workexp-list">
         <div className="welcomeworkexperience">
           <h1> Our Companies </h1>
         </div>
