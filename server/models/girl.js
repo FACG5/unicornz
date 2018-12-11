@@ -5,7 +5,7 @@ module.exports =  sequelize.define('girl', {
 
   user_name: {
     type: Sequelize.STRING,
-    allowNull: false
+    allowNull: true,
   },
   first_name: {
     type: Sequelize.STRING,
@@ -17,7 +17,8 @@ module.exports =  sequelize.define('girl', {
   },
   email: {
     type: Sequelize.STRING,
-    allowNull: false
+    allowNull: false,
+    unique:true,
   },
   other_school: {
     type: Sequelize.STRING,
@@ -161,6 +162,9 @@ module.exports =  sequelize.define('girl', {
   },
   pursue_in_tech: {
     type: Sequelize.STRING(100),
+    allowNull: true
+  },percentage: {
+    type: Sequelize.INTEGER,
     allowNull: true
   },
 

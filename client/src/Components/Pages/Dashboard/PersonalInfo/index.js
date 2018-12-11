@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import axios from 'axios';
+import { Link } from 'react-router-dom'
 import emailImg from './images/email.svg';
 import phoneImg from './images/phone.svg';
 import docImg from './images/docs.png';
@@ -9,6 +10,12 @@ import './style.css';
 class PersonalInfo extends Component {
   state = {
   };
+
+  componentWillMount() {
+    const { updateLoggingInfo } = this.props;
+    updateLoggingInfo();
+  }
+
 
   componentDidUpdate() {
     const { id } = this.props;
@@ -38,6 +45,7 @@ class PersonalInfo extends Component {
       school_id,
       other_school,
       birthdate,
+      percentage,
     } = this.state;
     return (
       <div className="PersonalInfo">
@@ -60,16 +68,18 @@ City:
           {city}
         </span>
         <span className="info">Favourit subject: </span>
-        <span className="info">Your Profile Complete: 92%</span>
+        <span className="info">Your Profile Complete: {percentage}%</span>
         {' '}
+        <Link to="/questionnaire">
         <div className="progress-outer">
           <div
             className="progress-inner"
             style={{
-              width: `${92}%`,
+              width: `${percentage}%`,
             }}
           />
         </div>
+        </Link>
         <div className="img">
           <img src={emailImg} alt="email" />
           {email}

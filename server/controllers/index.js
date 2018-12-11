@@ -5,8 +5,13 @@ const companyController = require('./company');
 const workexpController = require('./workexp');
 const dashBoard = require('./dashBoard');
 const search = require('./search');
+const upload = require('./upload');
+const uploads3 = require('../middleware/upload');
 const work = require('./workExperienceList');
+const questionnaire = require('./questionnaire');
+
 const workExperienceDetails = require('./workexperienceDetails');
+
 const login = require('./login');
 const checkToken = require('./authentication/index');
 const logOut = require('./logout');
@@ -24,12 +29,13 @@ router.get('/getschoolslist', schoolController.getSchoolsList);
 router.get('/getcompanieslist', companyController.getCompaniesList);
 
 
-// Example to add a secured route: router.post('/protectedRoute',authorize, protectedRouteHandler);
+router.post('/upload',uploads3.array('dox',1),upload.post);
 router.get('/updatehero', update.get);
 router.use(checkToken);
 router.get('/workexperiencelist', work.get);
 router.get('/workexperiencedetails/:companyId', workExperienceDetails.get);
 router.get('/dash/:girlId', dashBoard.get);
 router.post('/dash/search', search.post);
+router.post('/questionnaire', questionnaire.post);
 
 module.exports = router;
