@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import axios from 'axios';
+import { Link } from 'react-router-dom'
 import emailImg from './images/email.svg';
 import phoneImg from './images/phone.svg';
 import docImg from './images/docs.png';
@@ -69,6 +70,7 @@ City:
         <span className="info">Favourit subject: </span>
         <span className="info">Your Profile Complete: {percentage}%</span>
         {' '}
+        <Link to="/questionnaire">
         <div className="progress-outer">
           <div
             className="progress-inner"
@@ -77,6 +79,7 @@ City:
             }}
           />
         </div>
+        </Link>
         <div className="img">
           <img src={emailImg} alt="email" />
           {email}
