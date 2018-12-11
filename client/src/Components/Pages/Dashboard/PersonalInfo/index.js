@@ -44,6 +44,7 @@ class PersonalInfo extends Component {
       school_id,
       other_school,
       birthdate,
+      percentage,
     } = this.state;
     return (
       <div className="PersonalInfo">
@@ -66,13 +67,13 @@ City:
           {city}
         </span>
         <span className="info">Favourit subject: </span>
-        <span className="info">Your Profile Complete: 92%</span>
+        <span className="info">Your Profile Complete: {percentage}%</span>
         {' '}
         <div className="progress-outer">
           <div
             className="progress-inner"
             style={{
-              width: `${92}%`,
+              width: `${percentage}%`,
             }}
           />
         </div>

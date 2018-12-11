@@ -1,18 +1,28 @@
+
 import React, { Component } from 'react';
-import './style.css';
-import '../style.css';
+import './style.css'
+import '../style.css'
 
 class BasicDetails1 extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      grade: '',
-      city: '',
-      scoolEmail: '',
-      phoneNum: '',
+    constructor(props){
+        super(props)
+        this.state = {
+            grade: '',
+            city: '',
+            scoolEmail: '',
+            phoneNum: '',
 
-    };
-  }
+        }
+    }
+
+  onChange = (e) => {
+    const { name, value } = e.target;
+    this.setState({ 
+        [name]: value
+    });
+  };
+    
+    render() {
 
   render() {
     const storage = localStorage.getItem('state') || '{}';
