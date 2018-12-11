@@ -127,8 +127,15 @@
     background-color: #f55a89;
 }
 
-.pass-validat {
+.hide-check {
+    display: none;
+}
+
+.show-check {
     margin-left: 90px;
     font-family: 'lato', cursive;
     color : red;
+    display: inline-block;
+    font-size: 12px;
+    text-indent: 30px;
 }

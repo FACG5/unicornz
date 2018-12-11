@@ -29,6 +29,7 @@ export default class SignUpForm extends Component {
       school_options: [],
       errorMessage: '',
       passwordStrength: '',
+      passValidate: 'hide-check',
     }
 
 
@@ -55,19 +56,20 @@ export default class SignUpForm extends Component {
       switch (score) {
         case 0:
         case 1:
-          passwordStrength = 'weak';
+          passwordStrength = 'weak: ';
           break;
         case 2:
         case 3:
-          passwordStrength = 'good';
+          passwordStrength = 'good: ';
           break;
         case 4:
         case 5:
-          passwordStrength = 'strong';
+          passwordStrength = 'strong: ';
           break;
       }
       this.setState({
         passwordStrength,
+        passValidate: 'show-check',
       });
     }
 
@@ -79,6 +81,7 @@ export default class SignUpForm extends Component {
       if (password.length < 8) {
         this.setState({
           errorMessage: 'password must be min 8 char',
+          passValidate: 'show-check',
         });
       } else {
         capsCount = (password.match(/[A-Z]/g) || []).length;
@@ -96,6 +99,7 @@ export default class SignUpForm extends Component {
         }
         this.setState({
           errorMessage,
+          passValidate: 'show-check',
         });
         this.measureStrength(password);
       }
@@ -108,9 +112,7 @@ export default class SignUpForm extends Component {
     }
 
     onSubmitClickHandler = () => {
-      if (!this.state.user_name || this.state.user_name.trim() === '') {
-        alertify.dialog('alert').set({ transition: 'fade', message: 'Please enter a user name!' }).setHeader('<h3>No user name!</h3>').show();
-      } else if (!this.state.first_name || this.state.first_name.trim() === '') {
+      if (!this.state.first_name || this.state.first_name.trim() === '') {
         alertify.dialog('alert').set({ transition: 'fade', message: 'Please enter your first name' }).setHeader('<h3>No first name!</h3>').show();
       } else if (!this.state.last_name || this.state.last_name.trim() === '') {
         alertify.dialog('alert').set({ transition: 'fade', message: 'Please enter your last name' }).setHeader('<h3>No last name!</h3>').show();
@@ -166,17 +168,13 @@ export default class SignUpForm extends Component {
     }
 
     render() {
+      const { passValidate } = this.state;
       return (
         <div className="signupComponent">
 
           <h2 className="signup-title">Sign up </h2>
           <section className="containerr">
             <div className="clm">
-              {/* <div className="item">
-                <label> User Name</label>
-                <input type="text" onKeyUp={(e) => { this.setState({ user_name: e.target.value }); }} required />
-                <p id="fnamerr" className="errorValid"></p>
-              </div> */}
               <div className="item">
                 <label> First Name</label>
                 <input type="text" onKeyUp={(e) => { this.setState({ first_name: e.target.value }); }} required />
@@ -213,10 +211,13 @@ export default class SignUpForm extends Component {
               <div className="item">
                 <label>Password </label>
                 <input type="password" value={this.state.password} onChange={this.handlePassChange} required />
-                <br />
-                <span className="pass-validat">{this.state.errorMessage}</span>
-                <br />
-                <span className="pass-validat">{this.state.passwordStrength}</span>
+                <p className={passValidate}>
+                  {this.state.passwordStrength}
+                  {'   '}
+                  {this.state.errorMessage}
+
+                </p>
+
                 <p id="emailerr" className="errorValid"></p>
               </div>
               <div className="item">
