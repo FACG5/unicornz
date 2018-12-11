@@ -8,6 +8,6 @@ exports.post= async (request,response)=>{
     const data =snakeCase(request.body);
     result= await girl.update({...data},{where: {id:girlId}});
   }catch(error){
-    console.log('error:::...',error);
+    console.log('error:',error);
   }
 }

@@ -77,11 +77,11 @@ module.exports =  sequelize.define('girl', {
     allowNull: true
   },
   subjects: {
-    type: Sequelize.ARRAY(Sequelize.TEXT),
+    type: Sequelize.ARRAY(Sequelize.JSON),
     allowNull: true
   },
   fav_subjects: {
-    type: Sequelize.ARRAY(Sequelize.TEXT),
+    type: Sequelize.ARRAY(Sequelize.JSON),
     allowNull: true
   },
   enjoy_school: {
@@ -101,7 +101,7 @@ module.exports =  sequelize.define('girl', {
     allowNull: true
   },
   files: {
-    type: Sequelize.TEXT,
+    type: Sequelize.ARRAY(Sequelize.STRING),
     allowNull: true
   },
   famous_entrepreneur: {
@@ -117,27 +117,27 @@ module.exports =  sequelize.define('girl', {
     allowNull: true
   },
   important_in_career1: {
-    type: Sequelize.ARRAY(Sequelize.TEXT),
+    type: Sequelize.ARRAY(Sequelize.JSON),
     allowNull: true
   },
   important_in_career2: {
-    type: Sequelize.ARRAY(Sequelize.TEXT),
+    type: Sequelize.ARRAY(Sequelize.JSON),
     allowNull: true
   },
   important_in_career3: {
-    type: Sequelize.ARRAY(Sequelize.TEXT),
+    type: Sequelize.ARRAY(Sequelize.JSON),
     allowNull: true
   },
   important_factors1: {
-    type: Sequelize.ARRAY(Sequelize.TEXT),
+    type: Sequelize.ARRAY(Sequelize.JSON),
     allowNull: true
   },
   important_factors2: {
-    type: Sequelize.ARRAY(Sequelize.TEXT),
+    type: Sequelize.ARRAY(Sequelize.JSON),
     allowNull: true
   },
   important_factors3: {
-    type: Sequelize.ARRAY(Sequelize.TEXT),
+    type: Sequelize.ARRAY(Sequelize.JSON),
     allowNull: true
   },
   person_have_career: {

@@ -24,6 +24,7 @@ class PersonalInfo extends Component {
           .get(`/api/v1/dash/${id}`)
           .then((res) => {
             const info = res.data;
+            console.log('iformation.......', info);
             this.setState({ ...info });
           })
           .catch((error) => {
@@ -45,6 +46,8 @@ class PersonalInfo extends Component {
       other_school,
       birthdate,
     } = this.state;
+    const fav_subjects = this.state.fav_subjects || [];
+
     return (
       <div className="PersonalInfo">
         <h2>Personal Info</h2>
@@ -65,7 +68,16 @@ City:
           {' '}
           {city}
         </span>
-        <span className="info">Favourit subject: </span>
+        <span className="info">
+Favourit subject:
+          {
+            fav_subjects && fav_subjects.map((val, key) => (
+              <span>{val.value}</span>
+            ))
+        }
+          {' '}
+
+        </span>
         <span className="info">Your Profile Complete: 92%</span>
         {' '}
         <div className="progress-outer">

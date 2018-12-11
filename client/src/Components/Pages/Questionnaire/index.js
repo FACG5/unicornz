@@ -37,7 +37,6 @@ class Questionnaier extends Component {
   }
 
 handleChange= async (e) => {
-  // should clear the local storage
   const { value, name } = e.target;
   await this.setState({
     ...this.state,
@@ -61,10 +60,10 @@ hanleUpdate() {
 }
 
 render() {
+  if (!document.cookie) {
+    return window.location = '/';
+  }
   const { id, updateLoggingInfo } = this.props;
-  console.log('this.state..', this.state);
-  const aValue = localStorage.getItem('state');
-  console.log('localStorage..', JSON.parse(aValue));
   return (
     <div>
       <Wizard history={this.props.history} step={this.state.step} onChange={this.handleStep} hanleUpdate={this.hanleUpdate}>

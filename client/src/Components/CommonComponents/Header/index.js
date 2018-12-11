@@ -41,6 +41,7 @@ class HeaderComp extends React.Component {
   };
 
   render() {
+    const { first_name } = this.props.userInfo && this.props.userInfo[0] || { first_name: '' };
     const { redirect } = this.state;
     return (
       <div>
@@ -66,7 +67,7 @@ class HeaderComp extends React.Component {
               <li onClick={this.userClickHandler}>
                 Hello
                 {' '}
-                {this.props.userInfo[0].first_name}
+                {first_name}
               </li>
             )}
             {this.props.loggedIn === 'loggedout' ? (
