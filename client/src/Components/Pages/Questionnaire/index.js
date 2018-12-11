@@ -2,10 +2,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import alertify from 'alertifyjs';
-<<<<<<< HEAD
-
-=======
->>>>>>> adf2d39c3206a1ae9b8ec55de4f14a9fa6b520a4
 import { Wizard, Step } from './Wizard';
 import BasicDetails1 from './BasicDetails1';
 import BasicDetails2 from './BasicDetails2';
@@ -23,6 +19,12 @@ const MyStep = ({ children }) => (
 
 class Questionnaier extends Component {
   state = { step: 0, girlId: 0, nextStepp: false };
+
+  componentWillMount = () => {
+    const storage = localStorage.getItem('state') || '{}';
+    const parsedStorage = JSON.parse(storage);
+    this.setState({ ...parsedStorage });
+  }
 
   componentDidUpdate() {
     const { id } = this.props;
@@ -42,20 +44,20 @@ class Questionnaier extends Component {
     const info = localStorage.setItem('state', JSON.stringify(state));
   }
 
-handleChange= async (e) => {
+handleChange = (e) => {
   // should clear the local storage
   const { value, name } = e.target;
-  await this.setState({
+  this.setState({
     ...this.state,
     [name]: value,
+  }, () => {
+    this.saveState();
   });
-  this.saveState();
 }
 
 hanleUpdate() {
   const storage = localStorage.getItem('state') || '{}';
   const parsedStorage = JSON.parse(storage);
-  console.log('data to send with axios...>', parsedStorage);
   axios({
     method: 'post',
     url: '/api/v1/questionnaire',
@@ -78,19 +80,13 @@ hanleUpdate() {
     alertify.dialog('alert').set({ transition: 'fade', message: 'Please enter a valid school E-mail on the first step' }).setHeader('<h3>No school email !</h3>').show();
   } else if (!parsedStorage.phoneNum) {
     alertify.dialog('alert').set({ transition: 'fade', message: 'Please enter your phone number on the first step' }).setHeader('<h3>No phone num !</h3>').show();
-<<<<<<< HEAD
-  // } else if (!(parsedStorage.emergencyEmail.trim() === '')) {
-  //   if (!validateEmail(parsedStorage.emergencyEmail)) {
-  //     alertify.dialog('alert').set({ transition: 'fade', message: 'Please enter a valid emergency E-mail on the second step' }).setHeader('<h3>No school email !</h3>').show();
-  //   }
   } else {
-    this.setState({ nextStep: true });
-=======
->>>>>>> adf2d39c3206a1ae9b8ec55de4f14a9fa6b520a4
+    // this.setState({ nextStep: true });
+    return true;
   }
-  } else {
-    window.location = ('/dash');
-  }
+  // } else {
+  //   window.location = ('/dash');
+  // }
 }
 
 

@@ -15,6 +15,12 @@ class BasicDetails1 extends Component {
     };
   }
 
+  componentWillMount = () => {
+    const storage = localStorage.getItem('state');
+    const parsedStorage = JSON.parse(storage);
+    this.setState({ ...parsedStorage });
+  }
+
   onChange = (e) => {
     const { name, value } = e.target;
     this.setState({
@@ -23,6 +29,7 @@ class BasicDetails1 extends Component {
   };
 
   render() {
+    console.log('this.state', this.state);
     const storage = localStorage.getItem('state') || '{}';
     const parsedStorage = JSON.parse(storage);
     const {
@@ -39,6 +46,7 @@ class BasicDetails1 extends Component {
                 type="text"
                 className="sec1-input"
                 name="grade"
+                defaultValue={grade}
                 onChange={this.props.handleChange}
                 placeholder="Enter your grade .."
               />
@@ -50,6 +58,7 @@ In which city exactly do you live?
                 type="text"
                 className="sec1-input"
                 name="city"
+                defaultValue={city}
                 onChange={this.props.handleChange}
                 placeholder="Enter your city name .."
               />
@@ -60,6 +69,7 @@ In which city exactly do you live?
                 type="email"
                 className="sec1-input"
                 name="schoolEmail"
+                defaultValue={schoolEmail}
                 onChange={this.props.handleChange}
                 placeholder="***@**.edu"
               />
@@ -68,6 +78,7 @@ In which city exactly do you live?
                 type="number"
                 className="sec1-input"
                 name="phoneNum"
+                defaultValue={phoneNum}
                 onChange={this.props.handleChange}
                 placeholder="Enter your phone number"
               />
