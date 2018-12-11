@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-<<<<<<< HEAD
 import alertify from 'alertifyjs';
-
-=======
->>>>>>> 7260d397215ba2cd155050912b225ba66b3e5a79
 import { Wizard, Step } from './Wizard';
 import BasicDetails1 from './BasicDetails1';
 import BasicDetails2 from './BasicDetails2';
