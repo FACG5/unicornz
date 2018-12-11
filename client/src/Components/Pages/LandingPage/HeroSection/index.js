@@ -28,7 +28,6 @@ render() {
           <br />
 Marie-Clare, Unicornz
         </p>
-        <button onClick={this.addJobClickHandler} value="Add a Job" className="signup-button">Add Work Experince</button>
       </div>
       <div className="right">
         <img className="star1" src={start1} alt="" />
