@@ -1,3 +1,4 @@
+/* eslint-disable default-case */
 import React, { Component } from 'react';
 import alertify from 'alertifyjs';
 import Select from 'react-select';
@@ -26,6 +27,8 @@ export default class SignUpForm extends Component {
       vy: 1,
       sum: 0,
       school_options: [],
+      errorMessage: '',
+      passwordStrength: '',
     }
 
 
@@ -33,6 +36,75 @@ export default class SignUpForm extends Component {
       this.setState({ vx: Math.floor(Math.random() * 100), vy: Math.floor(Math.random() * 100) });
       fetch('/api/v1/getschoolslist').then(res => res.json())
         .then(res => this.setState({ school_options: res }));
+    }
+
+    measureStrength = (password) => {
+      let score = 0;
+      let passwordStrength;
+      const regexPositive = [
+        '[A-Z]',
+        '[a-z]',
+        '[0-9]',
+        '\\W',
+      ];
+      regexPositive.forEach((regex, index) => {
+        if (new RegExp(regex).test(password)) {
+          score += 1;
+        }
+      });
+      switch (score) {
+        case 0:
+        case 1:
+          passwordStrength = 'weak';
+          break;
+        case 2:
+        case 3:
+          passwordStrength = 'good';
+          break;
+        case 4:
+        case 5:
+          passwordStrength = 'strong';
+          break;
+      }
+      this.setState({
+        passwordStrength,
+      });
+    }
+
+    validate = (e) => {
+      const password = e.target.value;
+      let errorMessage;
+      let capsCount; let smallCount; let numberCount; let
+        symbolCount;
+      if (password.length < 8) {
+        this.setState({
+          errorMessage: 'password must be min 8 char',
+        });
+      } else {
+        capsCount = (password.match(/[A-Z]/g) || []).length;
+        smallCount = (password.match(/[a-z]/g) || []).length;
+        numberCount = (password.match(/[0-9]/g) || []).length;
+        symbolCount = (password.match(/\W/g) || []).length;
+        if (capsCount < 1) {
+          errorMessage = 'must contain caps';
+        } else if (smallCount < 1) {
+          errorMessage = 'must contain small';
+        } else if (numberCount < 1) {
+          errorMessage = 'must contain number';
+        } else if (symbolCount < 1) {
+          errorMessage = 'must contain symbol';
+        }
+        this.setState({
+          errorMessage,
+        });
+        this.measureStrength(password);
+      }
+    }
+
+
+    handlePassChange = (e) => {
+      this.validate(e);
+      this.setState({ password: e.target.value });
     }
 
     onSubmitClickHandler = () => {
@@ -69,7 +141,6 @@ export default class SignUpForm extends Component {
         }).then(res => res.json())
           .then((res) => {
             if (res.status === true) {
-              // alertify.dialog('alert').set({ transition: 'fade', message: 'Hello ,Welcome to Unicornz.Our mission here is to help you achieve the creative confidence to be the very best you can, in whatever field you choose, and to take your place amongst the future creators, leaders and business founders of the world you want to see.Unicornz will connect you to people and companies who, combined with our programmes and work experience initiatives, will help you explore your skills and hobbies in the future of work.My advice to you, Azara? Take every opportunity you can. Even those you think may not be of interest. Note down your likes and your dislikes and gradually you will start creating your unique path to your unique working future.Enjoy your journey,Marie-Clare' }, () => console.log('[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]')).setHeader('<h2>Success</h2>').show();
               alertify.alert()
                 .setting({
                   label: 'Ok',
@@ -141,7 +212,11 @@ export default class SignUpForm extends Component {
               </div>
               <div className="item">
                 <label>Password </label>
-                <input type="password" onKeyUp={(e) => { this.setState({ password: e.target.value }); }} required />
+                <input type="password" value={this.state.password} onChange={this.handlePassChange} required />
+                <br />
+                <span className="pass-validat">{this.state.errorMessage}</span>
+                <br />
+                <span className="pass-validat">{this.state.passwordStrength}</span>
                 <p id="emailerr" className="errorValid"></p>
               </div>
               <div className="item">

@@ -126,3 +126,9 @@
 .signup-btn:hover {
     background-color: #f55a89;
 }
+
+.pass-validat {
+    margin-left: 90px;
+    font-family: 'lato', cursive;
+    color : red;
+}
