@@ -51,6 +51,8 @@ class BasicDetails1 extends Component {
                                     <p>School email address</p>
                                     <input
                                         type="email"
+                                        oninput="newUpdate(this)" 
+                                        pattern = ".+@.+.com"
                                         className ="sec1-input"
                                         name = "schoolEmail"
                                         onChange={this.onChange}
