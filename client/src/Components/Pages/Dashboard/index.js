@@ -22,10 +22,7 @@ class Dashboard extends Component {
           <div>
             <Uploader />
           </div>
-          <div className="sub-div">
-            <Active activites={[{ job: 'job1', done: true }, { job: 'job2', done: false }, { job: 'job3', done: true }, { job: 'job4', done: false }]} />
-            <img src={starr} alt="str" className="starr" />
-          </div>
+          
         </div>
       </div>
     );
