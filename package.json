@@ -9,8 +9,7 @@
     "start": "NODE_ENV=production node server/index.js",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
     "build": "cd client && npm run build",
-    "heroku-postbuild": "cd client && npm install && npm run build",
-    "postinstall": "cd client && npm install && npm run build"
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "repository": {
     "type": "git",
@@ -47,8 +46,10 @@
     "pg": "^6.4.2",
     "pg-hstore": "^2.3.2",
     "pg-native": "^3.0.0",
+    "react-final-form-html5-validation": "^1.0.2",
     "react-scripts": "2.1.1",
     "sequelize": "^4.41.2",
-    "snakecase-keys": "^2.1.0"
+    "snakecase-keys": "^2.1.0",
+    "validator": "^10.9.0"
   }
 }
