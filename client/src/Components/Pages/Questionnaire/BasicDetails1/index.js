@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import './style.css';
 import '../style.css';
@@ -6,8 +7,20 @@ class BasicDetails1 extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      grade: '',
+      city: '',
+      scoolEmail: '',
+      phoneNum: '',
+
     };
   }
+
+  onChange = (e) => {
+    const { name, value } = e.target;
+    this.setState({
+      [name]: value,
+    });
+  };
 
   render() {
     return (
@@ -16,12 +29,12 @@ class BasicDetails1 extends Component {
           <h2>Hello, Please fill out these basic details and then we will move on to the interesting stuff</h2>
           <div className="basic-details1-content">
             <div className="basic1-content1">
-              <p>What is your current Year Group at your School?</p>
+              <p>What is your current year group at school?</p>
               <input
                 type="text"
                 className="sec1-input"
                 name="grade"
-                onChange={this.props.handleChange}
+                onChange={this.onChange}
                 placeholder="Enter your grade .."
               />
               <p>
@@ -32,7 +45,7 @@ In which city exactly do you live?
                 type="text"
                 className="sec1-input"
                 name="city"
-                onChange={this.props.handleChange}
+                onChange={this.onChange}
                 placeholder="Enter your city name .."
               />
             </div>
@@ -40,17 +53,19 @@ In which city exactly do you live?
               <p>School email address</p>
               <input
                 type="email"
+                onInput="newUpdate(this)"
+                pattern=".+@.+.com"
                 className="sec1-input"
                 name="schoolEmail"
-                onChange={this.props.handleChange}
+                onChange={this.onChange}
                 placeholder="***@**.edu"
               />
               <p>Enter your phone number</p>
               <input
-                type="tel"
+                type="text"
                 className="sec1-input"
                 name="phoneNum"
-                onChange={this.props.handleChange}
+                onChange={this.onChange}
                 placeholder="Enter your phone number"
               />
             </div>

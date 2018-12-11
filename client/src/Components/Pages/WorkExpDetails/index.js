@@ -3,7 +3,7 @@ import axios from 'axios';
 import CopmpanyContact from './CompanyContact';
 import CompanyDescription from './CompanyDescription';
 import WorkExpView from './WorkExpView';
-import Button from '../../CommonComponents/Button';
+
 import './style.css';
 
 class workExperienceDetails extends Component {
@@ -18,6 +18,10 @@ class workExperienceDetails extends Component {
     email: '',
     facebook: '',
   }
+
+  alertMessage = () => {
+     alert("Under Construction");
+  };
 
   componentDidMount() {
     if (document.cookie) {
@@ -68,7 +72,7 @@ class workExperienceDetails extends Component {
             />
           </div>
         </div>
-        <Button value="APPLY NOW" color="#C72D65" />
+        <button value="APPLY NOW" className="apply-btn" onClick={this.alertMessage}>APPLY NOW</button>
       </div>
     );
   }

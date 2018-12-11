@@ -48,7 +48,6 @@ handleChange= async (e) => {
 hanleUpdate() {
   const storage = localStorage.getItem('state') || '{}';
   const parsedStorage = JSON.parse(storage);
-  console.log('data to send with axios...>', parsedStorage);
   axios({
     method: 'post',
     url: '/api/v1/questionnaire',

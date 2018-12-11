@@ -24,7 +24,6 @@ class PersonalInfo extends Component {
           .get(`/api/v1/dash/${id}`)
           .then((res) => {
             const info = res.data;
-            console.log('iformation.......', info);
             this.setState({ ...info });
           })
           .catch((error) => {

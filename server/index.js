@@ -7,3 +7,4 @@ connection.sync({}).then(() => {
     console.log('app runs on port', app.get('port'));
   });
 }).catch(err=>console.log(err));
+

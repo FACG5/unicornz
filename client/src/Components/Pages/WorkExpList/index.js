@@ -32,10 +32,11 @@ class workExperienceList extends Component {
 
   render() {
     const { results } = this.state;
+    if (results.length !== 0) {
     return (
-      <div>
+      <div className="workexp-list">
         <div className="welcomeworkexperience">
-          <h1> Find work experience </h1>
+          <h1> Our Companies </h1>
         </div>
         <div className="cardLinks">
           {
@@ -61,7 +62,16 @@ class workExperienceList extends Component {
         </div>
       </div>
     );
+  } else {
+    return (
+      <div>
+        <div className="welcomeworkexperience">
+          <h1> No Companies found </h1>
+        </div>
+     </div>
+    )
   }
+}
 }
 
 export default workExperienceList;
