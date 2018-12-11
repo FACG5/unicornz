@@ -73,14 +73,10 @@ hanleUpdate() {
     alertify.dialog('alert').set({ transition: 'fade', message: 'Please enter a valid school E-mail on the first step' }).setHeader('<h3>No school email !</h3>').show();
   } else if (!parsedStorage.phoneNum) {
     alertify.dialog('alert').set({ transition: 'fade', message: 'Please enter your phone number on the first step' }).setHeader('<h3>No phone num !</h3>').show();
-  // } else if (!(parsedStorage.emergencyEmail.trim() === '')) {
-  //   if (!validateEmail(parsedStorage.emergencyEmail)) {
-  //     alertify.dialog('alert').set({ transition: 'fade', message: 'Please enter a valid emergency E-mail on the second step' }).setHeader('<h3>No school email !</h3>').show();
-  //   }
   }
-  // } else {
-  //   window.location = ('/dash');
-  // }
+  } else {
+    window.location = ('/dash');
+  }
 }
 
 
