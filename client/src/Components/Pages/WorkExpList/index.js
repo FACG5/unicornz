@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 import axios from 'axios';
 import Card from './Cards';
 import './style.css';
@@ -67,6 +68,7 @@ class workExperienceList extends Component {
       <div>
         <div className="welcomeworkexperience">
           <h1> No Companies found </h1>
+          <Link to="dash">Return to Your Dashboard</Link>
         </div>
      </div>
     )

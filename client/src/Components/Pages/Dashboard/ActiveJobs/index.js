@@ -111,7 +111,7 @@ class Search extends Component {
         <select name="subject" onChange={this.handleChange}>
           <option selected>All</option>
           <option>Science</option>
-          <option>Engineerign</option>
+          <option>Engineering</option>
           <option>Technology</option>
           <option>Mathmatics</option>
         </select>
