@@ -172,11 +172,11 @@ export default class SignUpForm extends Component {
           <h2 className="signup-title">Sign up </h2>
           <section className="containerr">
             <div className="clm">
-              <div className="item">
+              {/* <div className="item">
                 <label> User Name</label>
                 <input type="text" onKeyUp={(e) => { this.setState({ user_name: e.target.value }); }} required />
                 <p id="fnamerr" className="errorValid"></p>
-              </div>
+              </div> */}
               <div className="item">
                 <label> First Name</label>
                 <input type="text" onKeyUp={(e) => { this.setState({ first_name: e.target.value }); }} required />
