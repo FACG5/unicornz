@@ -2,7 +2,6 @@
 import React, { Component } from 'react';
 import alertify from 'alertifyjs';
 import Select from 'react-select';
-import Button from '../../CommonComponents/Button';
 
 import './style.css';
 
@@ -238,14 +237,13 @@ is:
                 <input type="number" onKeyUp={(e) => { this.setState({ sum: Number(e.target.value) }); }} required />
                 <p id="emailerr" className="errorValid"></p>
               </div>
-              <div className="item">
-                <label>I am not a robot</label>
-                <input type="checkbox" onClick={(e) => { this.setState({ checkUser: e.target.checked }); }} required />
-                <p id="emailerr" className="errorValid"></p>
-              </div>
             </div>
           </section>
-
+          <div className="check-robot">
+            <label>I am not a robot</label>
+            <input type="checkbox" onClick={(e) => { this.setState({ checkUser: e.target.checked }); }} required />
+            <p id="emailerr" className="errorValid"></p>
+          </div>
           <button value="Submit" onClick={this.onSubmitClickHandler} type="submit" className="signup-btn">Submit</button>
         </div>
       );
