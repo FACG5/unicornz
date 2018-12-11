@@ -39,6 +39,7 @@ exports.signup = async (request, response) => {
               email,
               school_id,
               birthdate,
+              percentage:15
             };
 
             // userData = snakeCase(userData);
@@ -62,6 +63,8 @@ exports.signup = async (request, response) => {
                     response.cookie('jwt', resultCookie, { maxAge: 6048000000 });
 
                     response.status(200).send({ msg: 'hi', status: true });
+
+                    
                   }
 
                 });
