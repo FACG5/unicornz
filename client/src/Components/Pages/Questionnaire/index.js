@@ -89,11 +89,11 @@ hanleUpdate() {
 render() {
   const storage = localStorage.getItem('state') || '{}';
   const parsedStorage = JSON.parse(storage);
+
   if (!document.cookie) {
     return window.location = '/';
   }
   const { id, updateLoggingInfo } = this.props;
-  const a = localStorage.getItem('state');
   return (
     <div>
       <Wizard history={this.props.history} step={this.state.step} onChange={this.handleStep} hanleUpdate={this.hanleUpdate}>

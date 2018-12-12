@@ -48,7 +48,7 @@ const fileMaxSize = 10485760; // byte
 class PersonalDetails1 extends Component {
     state = {
       subjects: [],
-      favSubjects: [],
+      favsubjects: [],
       hobbies: '',
       futureJob: '',
       interestedJob: '',
@@ -68,9 +68,9 @@ class PersonalDetails1 extends Component {
       this.props.handleChange({ target: { name: 'subjects', value: subjects } });
     }
 
-    handleFavChange = (favSubjects) => {
-      this.setState({ favSubjects }, () => {
-        this.props.handleChange({ target: { name: 'favSubjects', value: favSubjects } });
+    handleFavChange = (favsubjects) => {
+      this.setState({ favsubjects }, () => {
+        this.props.handleChange({ target: { name: 'favsubjects', value: favsubjects } });
       });
     }
 
@@ -103,7 +103,7 @@ class PersonalDetails1 extends Component {
       const parsedStorage = JSON.parse(storage);
       const {
         subjects,
-        favSubjects,
+        favsubjects,
         futureJob,
         interestedJob,
         files,
@@ -127,8 +127,8 @@ class PersonalDetails1 extends Component {
               <Select
                 className="select-input"
                 onChange={this.handleFavChange}
-                value={this.state.favSubjects}
-                defaultValue={favSubjects}
+                value={this.state.favsubjects}
+                defaultValue={favsubjects}
                 isMulti
                 options={options}
               />
