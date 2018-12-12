@@ -5,8 +5,6 @@ import React, { Component } from 'react';
 import PersonalInfo from './PersonalInfo';
 import Find from './ActiveJobs';
 import Uploader from './UploadFile';
-// import Active from './MyActivety';
-// import starr from './images/star.svg';
 
 
 import './style.css';
@@ -23,11 +21,13 @@ class Dashboard extends Component {
         <div className="dash-board">
           <div className="sub-div">
             <PersonalInfo id={id} updateLoggingInfo={updateLoggingInfo} />
-            <Find />
+            <div>
+              <Find />
+              <Uploader userInfo={userInfo} />
+            </div>
+
           </div>
-          <div>
-            <Uploader userInfo={userInfo} />
-          </div>
+
 
         </div>
       </div>

@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router';
 import axios from 'axios';
-// import Input from '../../../CommonComponents/Inputs';
-import Button from '../../../CommonComponents/Button';
 
 import './style.css';
 
@@ -115,7 +113,7 @@ class Search extends Component {
           <option>Technology</option>
           <option>Mathmatics</option>
         </select>
-        <Button className="button" value="Search" color="#FFF" onClick={this.handleClick} />
+        <button className="search-button" value="Search" onClick={this.handleClick}>Search</button>
       </div>
     );
   }

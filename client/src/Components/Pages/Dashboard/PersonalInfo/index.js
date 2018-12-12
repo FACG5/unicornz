@@ -88,22 +88,18 @@ class PersonalInfo extends Component {
             <img src={phoneImg} alt="mobile" />
             {phone_num}
           </div>
-          <div className="img">
-            <img src={docImg} alt="Docs" />
+        </div>
+        <div className="PersonalInfo">
+          <span className="info progress-info">Your Profile Complete: 92%</span>
+          {' '}
+          <div className="progress-outer">
+            <div
+              className="progress-inner"
+              style={{
+                width: `${92}%`,
+              }}
+            />
           </div>
-          <div className="PersonalInfo">
-            <span className="info progress-info">Your Profile Complete: 92%</span>
-            {' '}
-            <div className="progress-outer">
-              <div
-                className="progress-inner"
-                style={{
-                  width: `${92}%`,
-                }}
-              />
-            </div>
-          </div>
-
         </div>
       </div>
     );

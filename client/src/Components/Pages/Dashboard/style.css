@@ -2,11 +2,11 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 100vh;
+  height: 200vh;
 }
 .sub-div{
   display: grid;
-  grid-template-columns: 34% 95%;
+  grid-template-columns: 30% 70%;
   column-gap: 170px;
 }
 .grand-div{
