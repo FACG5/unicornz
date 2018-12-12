@@ -48,7 +48,6 @@ class PersonalInfo extends Component {
       percentage,
     } = this.state;
     const fav_subjects = this.state.fav_subjects || [];
-    console.log('lllllllll', fav_subjects);
 
     return (
       <div className="PersonalInfo">

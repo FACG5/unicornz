@@ -64,7 +64,6 @@ render() {
   }
   const { id, updateLoggingInfo } = this.props;
   const a =localStorage.getItem('state');
-  console.log('aaaaaaa', a)
   return (
     <div>
       <Wizard history={this.props.history} step={this.state.step} onChange={this.handleStep} hanleUpdate={this.hanleUpdate}>
