@@ -31,46 +31,44 @@ const CardComp = (props) => {
                   {company_name}
                 </p>
                 <p>
-                  <span>Country: </span>
-                  {' '}
-                  {country}
-                </p>
-                <p>
-                  <span>Start Time: </span>
-                  {' '}
-                  {start_time}
-                </p>
-                <p>
-                  <span>End Time: </span>
-                  {' '}
-                  {end_time}
-                </p>
-
-              </div>
-
-              <div className="cardLine">
-                <p>
                   <span>Starting Date:</span>
                   {' '}
                   {startingDate}
                 </p>
                 <p>
-                  <span>Ending Date:</span>
+                  <span>Start Time: </span>
                   {' '}
-                  {endingDate}
-                </p>
-                <p>
+                  {start_time}
+                </p>                <p>
                   <span>Salary:</span>
                   {' '}
                   {pocketMoney}
                   {' '}
 Pounds/Day
                 </p>
-                <p>
-                  <span>Number: </span>
+
+                
+              </div>
+
+              <div className="cardLine">
+              <p>
+                  <span>Country: </span>
                   {' '}
-                  {max_number}
+                  {country}
                 </p>
+            
+                <p>
+                  <span>Ending Date:</span>
+                  {' '}
+                  {endingDate}
+                </p>
+
+                <p>
+                  <span>End Time: </span>
+                  {' '}
+                  {end_time}
+                </p>
+
               </div>
 
 
