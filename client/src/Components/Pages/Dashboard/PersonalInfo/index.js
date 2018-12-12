@@ -36,16 +36,14 @@ class PersonalInfo extends Component {
   render() {
     const {
       city,
-      user_name,
       first_name,
       last_name,
       email,
       phone_num,
-      school_id,
-      other_school,
       birthdate,
-      percentage,
     } = this.state;
+    const fav_subjects = this.state.fav_subjects || [];
+
     return (
       <div className="PersonalInfo">
         <h2>Personal Info</h2>
@@ -66,14 +64,23 @@ City:
           {' '}
           {city}
         </span>
-        <span className="info">Favourit subject: </span>
-        <span className="info">Your Profile Complete: {percentage}%</span>
+        <span className="info">
+Favourit subject:
+          {
+            fav_subjects && fav_subjects.map((val, key) => (
+              <span>{val.value}</span>
+            ))
+        }
+          {' '}
+
+        </span>
+        <span className="info">Your Profile Complete: 92%</span>
         {' '}
         <div className="progress-outer">
           <div
             className="progress-inner"
             style={{
-              width: `${percentage}%`,
+              width: `${92}%`,
             }}
           />
         </div>

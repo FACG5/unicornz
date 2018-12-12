@@ -47,8 +47,8 @@ const fileMaxSize = 10485760; // byte
 
 class PersonalDetails1 extends Component {
     state = {
-      subjects: null,
-      favSubjects: null,
+      subjects: [],
+      favSubjects: [],
       hobbies: '',
       futureJob: '',
       interestedJob: '',
