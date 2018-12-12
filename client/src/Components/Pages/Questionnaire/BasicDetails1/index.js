@@ -15,18 +15,18 @@ class BasicDetails1 extends Component {
     };
   }
 
-  // componentWillMount = () => {
-  //   const storage = localStorage.getItem('state');
-  //   const parsedStorage = JSON.parse(storage);
-  //   this.setState({ ...parsedStorage });
-  // }
+  componentWillMount = () => {
+    const storage = localStorage.getItem('state');
+    const parsedStorage = JSON.parse(storage);
+    this.setState({ ...parsedStorage });
+  }
 
-  // onChange = (e) => {
-  //   const { name, value } = e.target;
-  //   this.setState({
-  //     [name]: value,
-  //   });
-  // };
+  onChange = (e) => {
+    const { name, value } = e.target;
+    this.setState({
+      [name]: value,
+    });
+  };
 
   render() {
     console.log('this.state', this.state);
