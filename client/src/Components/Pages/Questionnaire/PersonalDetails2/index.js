@@ -52,6 +52,17 @@ class PersonalDetails2 extends Component {
 
 
     render() {
+      const storage = localStorage.getItem('state');
+      const parsedStorage = JSON.parse(storage);
+      const {
+        importantfactor1,
+        importantfactor2,
+        importantfactor3,
+        famousEntrepreneur,
+        beEntrepreneur,
+        pFamousEntrepreneur,
+      } = parsedStorage;
+      console.log('sssssssss', parsedStorage);
       return (
         <div className="personal-details2">
           <h2>Ok, so that's your school studies and hobbies done; now what's important in life to you ?</h2>
@@ -62,6 +73,7 @@ class PersonalDetails2 extends Component {
                 <Select
                   className="select-input"
                   placeholder="priority one"
+                  defaultValue={importantfactor1}
                   name="importantInCareer1"
                   onChange={this.Impfactorselector1}
                   value={this.state.importantfactor1}
@@ -72,6 +84,7 @@ class PersonalDetails2 extends Component {
                 <Select
                   className="select-input"
                   placeholder="priority two"
+                  defaultValue={importantfactor2}
                   name="importantInCareer2"
                   onChange={this.Impfactorselector2}
                   value={this.state.importantfactor2}
@@ -82,6 +95,7 @@ class PersonalDetails2 extends Component {
                 <Select
                   className="select-input"
                   placeholder="priority three"
+                  defaultValue={importantfactor3}
                   name="importantInCareer3"
                   onChange={this.Impfactorselector3}
                   value={this.state.importantfactor3}
@@ -95,11 +109,11 @@ class PersonalDetails2 extends Component {
 Can you name a famous entrepreneur?
                 <span> (an entrepreneur creates and runs their own business)</span>
               </p>
-              <input type="text" name="famousEntrepreneur" onChange={this.props.handleChange} placeholder="Enter the name ..." />
+              <input type="text" name="famousEntrepreneur" defaultValue={famousEntrepreneur} onChange={this.props.handleChange} placeholder="Enter the name ..." />
               <p>Do you think you could be an entrepreneur Answer YES Or NO && Why?</p>
-              <textarea rows="5" cols="40" placeholder="Answer" name="BeEntrepreneur" onChange={this.props.handleChange}></textarea>
+              <textarea rows="5" cols="40" placeholder="Answer" name="beEntrepreneur" defaultValue={beEntrepreneur} onChange={this.props.handleChange}></textarea>
               <p>Do you personally know any women that are entrepreneurs?</p>
-              <textarea rows="5" cols="40" placeholder="Answer" name="entrepreneursWomen" onChange={this.props.handleChange}></textarea>
+              <textarea rows="5" cols="40" placeholder="Answer" name="pFamousEntrepreneur" defaultValue={famousEntrepreneur} onChange={this.props.handleChange}></textarea>
             </div>
           </div>
         </div>

@@ -70,7 +70,7 @@ class PersonalDetails1 extends Component {
 
     handleFavChange = (favSubjects) => {
       this.setState({ favSubjects }, () => {
-        this.props.handleChange({ target: { name: 'favSubjects:', value: favSubjects } });
+        this.props.handleChange({ target: { name: 'favSubjects', value: favSubjects } });
       });
     }
 
@@ -107,7 +107,9 @@ class PersonalDetails1 extends Component {
         futureJob,
         interestedJob,
         files,
+        hobbies,
       } = parsedStorage;
+      console.log('personal details 1', parsedStorage);
       return (
         <div className="personal-details1">
           <h2 personal-details1-h>Now we've got the boring stuff out of the way, let's get to know more about your school studies</h2>
@@ -132,7 +134,7 @@ class PersonalDetails1 extends Component {
                 options={options}
               />
               <p>What are your interests and hobbies outside of school? Tell us everything you enjoy doing.</p>
-              <textarea rows="5" cols="40" placeholder="Answer" name="hobbies" onChange={this.props.handleChange}></textarea>
+              <textarea rows="5" cols="40" placeholder="Answer" name="hobbies" defaultValue={hobbies} onChange={this.props.handleChange}></textarea>
             </div>
             <div className="personal1-content2">
               <p>If you have a CV, or any other documents your school needs signed, please upload them to your dashboard</p>

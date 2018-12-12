@@ -15,19 +15,6 @@ class BasicDetails1 extends Component {
     };
   }
 
-  componentWillMount = () => {
-    const storage = localStorage.getItem('state');
-    const parsedStorage = JSON.parse(storage);
-    this.setState({ ...parsedStorage });
-  }
-
-  onChange = (e) => {
-    const { name, value } = e.target;
-    this.setState({
-      [name]: value,
-    });
-  };
-
   render() {
     const storage = localStorage.getItem('state') || '{}';
     const parsedStorage = JSON.parse(storage);
