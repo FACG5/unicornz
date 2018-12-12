@@ -56,14 +56,22 @@ class PersonalDetails1 extends Component {
       label: 'click to choose files',
     }
 
+
+    componentWillMount = () => {
+      const storage = localStorage.getItem('state') || '{}';
+      const parsedStorage = JSON.parse(storage);
+      this.setState({ ...parsedStorage });
+    }
+
     handleSubjectChange = (subjects) => {
       this.setState({ subjects });
       this.props.handleChange({ target: { name: 'subjects', value: subjects } });
     }
 
     handleFavChange = (favSubjects) => {
-      this.setState({ favSubjects });
-      this.props.handleChange({ target: { name: 'favSubjects', value: favSubjects } });
+      this.setState({ favSubjects }, () => {
+        this.props.handleChange({ target: { name: 'favSubjects:', value: favSubjects } });
+      });
     }
 
 
@@ -91,6 +99,15 @@ class PersonalDetails1 extends Component {
     }
 
     render() {
+      const storage = localStorage.getItem('state');
+      const parsedStorage = JSON.parse(storage);
+      const {
+        subjects,
+        favSubjects,
+        futureJob,
+        interestedJob,
+        files,
+      } = parsedStorage;
       return (
         <div className="personal-details1">
           <h2 personal-details1-h>Now we've got the boring stuff out of the way, let's get to know more about your school studies</h2>
@@ -101,6 +118,7 @@ class PersonalDetails1 extends Component {
                 className="select-input"
                 onChange={this.handleSubjectChange}
                 value={this.state.subjects}
+                defaultValue={subjects}
                 isMulti
                 options={options}
               />
@@ -109,6 +127,7 @@ class PersonalDetails1 extends Component {
                 className="select-input"
                 onChange={this.handleFavChange}
                 value={this.state.favSubjects}
+                defaultValue={favSubjects}
                 isMulti
                 options={options}
               />
@@ -121,31 +140,16 @@ class PersonalDetails1 extends Component {
                 className="drop-zone"
                 onDrop={this.handleOnDrop}
                 maxSize={fileMaxSize}
+                defaultValue={files}
                 multiple={false}
               >
                 {this.state.label}
               </Dropzone>
               <p>Can you imagine your future career? What does it look like?</p>
-              <textarea rows="5" cols="40" placeholder="Answer" name="futureJob" onChange={this.props.handleChange}></textarea>
+              <textarea rows="5" cols="40" placeholder="Answer" name="futureJob" onChange={this.props.handleChange} defaultValue={futureJob}></textarea>
               <p>What kinds of jobs do you think will interest you?</p>
-              <textarea rows="5" cols="40" placeholder="Answer" name="interestedJob" onChange={this.props.handleChange}></textarea>
+              <textarea rows="5" cols="40" placeholder="Answer" name="interestedJob" onChange={this.props.handleChange} defaultValue={interestedJob}></textarea>
             </div>
-          </div>
-          <div className="personal1-content2">
-            <p>If you have a￼ copy of your CV, please upload it to your dashboard</p>
-            <Dropzone
-              className="drop-zone"
-              onDrop={this.handleOnDrop}
-              maxSize={fileMaxSize}
-              multiple={false}
-            >
-              {this.state.label}
-            </Dropzone>
-            <p>Can you imagine your future career? What does it look like?</p>
-            <textarea rows="5" cols="40" placeholder="Answer" name="futureJob" onChange={this.props.handleChange}></textarea>
-            <p>What kinds of jobs do you think will interest you?</p>
-            <textarea rows="5" cols="40" placeholder="Answer" name="interestedJob" onChange={this.props.handleChange}></textarea>
-            <h1 className="shape">&#9925;</h1>
           </div>
         </div>
 

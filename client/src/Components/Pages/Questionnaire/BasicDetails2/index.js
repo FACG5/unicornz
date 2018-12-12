@@ -23,8 +23,25 @@ class BasicDetails2 extends Component {
       const data = this.state;
     }
 
+    componentWillMount = () => {
+      const storage = localStorage.getItem('state') || '{}';
+      const parsedStorage = JSON.parse(storage);
+      this.setState({ ...parsedStorage });
+    }
+
 
     render() {
+      const storage = localStorage.getItem('state') || '{}';
+      const parsedStorage = JSON.parse(storage);
+      const {
+        emergencyName,
+        relation,
+        emergencyNum,
+        emergencyEmail,
+        period,
+        beginDate,
+        endDate,
+      } = parsedStorage;
       return (
         <form onSubmit={this.handleSubmit} className="container basic-Details">
           <div className="basic-details2">
@@ -36,6 +53,7 @@ class BasicDetails2 extends Component {
                   type="month"
                   className="sec2-input"
                   name="period"
+                  defaultValue={period}
                   onChange={this.props.handleChange}
                   placeholder="Enter the month"
                 />
@@ -44,6 +62,7 @@ class BasicDetails2 extends Component {
                   type="date"
                   className="sec2-input"
                   name="beginDate"
+                  defaultValue={beginDate}
                   onChange={this.props.handleChange}
                 />
                 <p>Please tell us the date your work experience should end</p>
@@ -51,6 +70,7 @@ class BasicDetails2 extends Component {
                   type="date"
                   className="sec2-input"
                   name="endDate"
+                  defaultValue={endDate}
                   onChange={this.props.handleChange}
                 />
                 <h1 className="shape">&#9925;</h1>
@@ -62,6 +82,7 @@ class BasicDetails2 extends Component {
                   type="text"
                   className="sec2-input"
                   name="emergencyName"
+                  defaultValue={emergencyName}
                   onChange={this.props.handleChange}
                   placeholder="Enter the name"
                 />
@@ -70,27 +91,29 @@ class BasicDetails2 extends Component {
                   type="text"
                   className="sec2-input"
                   name="relation"
+                  defaultValue={relation}
                   onChange={this.props.handleChange}
                   placeholder="Enter the relationship"
                 />
                 <p>Their emergency contact number</p>
                 <input
-                  type="tel"
+                  type="number"
                   className="sec2-input"
                   name="emergencyNum"
+                  defaultValue={emergencyNum}
                   onChange={this.props.handleChange}
-                  placeholder="Enter the contact no."
+                  placeholder="Enter the contact number"
                 />
                 <p>Their email address</p>
                 <input
                   type="email"
                   className="sec2-input"
                   name="emergencyEmail"
+                  defaultValue={emergencyEmail}
                   onChange={this.props.handleChange}
                   placeholder="****@***.***"
                 />
               </div>
-
             </div>
           </div>
         </form>
