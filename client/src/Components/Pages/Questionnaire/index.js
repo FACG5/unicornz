@@ -81,12 +81,8 @@ hanleUpdate() {
   } else if (!parsedStorage.phoneNum) {
     alertify.dialog('alert').set({ transition: 'fade', message: 'Please enter your phone number on the first step' }).setHeader('<h3>No phone num !</h3>').show();
   } else {
-    // this.setState({ nextStep: true });
     return true;
   }
-  // } else {
-  //   window.location = ('/dash');
-  // }
 }
 
 
