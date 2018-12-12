@@ -4,6 +4,7 @@ const sequelize = require('../models/connection');
 
 exports.post = async (request, response) => {
   const fileLinlk=request.files[0].location;
+  console.log('rrrrrrrrrrrr', fileLinlk)
   try {
     if (fileLinlk) {
       if (request.cookies.jwt) {
@@ -14,8 +15,10 @@ exports.post = async (request, response) => {
           } else {
             const { id } = result;
             girlId = id;
+            console.log('gggggggggggg', girlId)
           }
         });
+        console.log('ssssssssqq', sequelize.fn('array_append', sequelize.col('files'), fileLinlk))
         const result=  await girl.update({files: sequelize.fn('array_append', sequelize.col('files'), fileLinlk)},{where: {id:girlId}});
       }else {
         response.status(200).send('not authorized');

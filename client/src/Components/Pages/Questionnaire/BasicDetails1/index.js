@@ -15,12 +15,6 @@ class BasicDetails1 extends Component {
     };
   }
 
-  onChange = (e) => {
-    const { name, value } = e.target;
-    this.setState({
-      [name]: value,
-    });
-  };
 
   render() {
     return (
@@ -34,7 +28,7 @@ class BasicDetails1 extends Component {
                 type="text"
                 className="sec1-input"
                 name="grade"
-                onChange={this.onChange}
+                onChange={this.props.handleChange}
                 placeholder="Enter your grade .."
               />
               <p>
@@ -45,7 +39,7 @@ In which city exactly do you live?
                 type="text"
                 className="sec1-input"
                 name="city"
-                onChange={this.onChange}
+                onChange={this.props.handleChange}
                 placeholder="Enter your city name .."
               />
             </div>
@@ -57,7 +51,7 @@ In which city exactly do you live?
                 pattern=".+@.+.com"
                 className="sec1-input"
                 name="schoolEmail"
-                onChange={this.onChange}
+                onChange={this.props.handleChange}
                 placeholder="***@**.edu"
               />
               <p>Enter your phone number</p>
@@ -65,7 +59,7 @@ In which city exactly do you live?
                 type="text"
                 className="sec1-input"
                 name="phoneNum"
-                onChange={this.onChange}
+                onChange={this.props.handleChange}
                 placeholder="Enter your phone number"
               />
             </div>
