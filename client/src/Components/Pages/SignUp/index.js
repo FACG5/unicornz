@@ -12,15 +12,14 @@ function validateEmail(email) {
 
 export default class SignUpForm extends Component {
     state = {
-      user_name: null,
-      first_name: null,
-      last_name: null,
-      email: null,
-      school_id: null,
-      other_school: null,
-      birthdate: null,
-      password: null,
-      cpassword: null,
+      first_name: '',
+      last_name: '',
+      email: '',
+      school_id: '',
+      other_school: '',
+      birthdate: '',
+      password: '',
+      cpassword: '',
       checkUser: false,
       vx: 7,
       vy: 1,
@@ -36,9 +35,7 @@ export default class SignUpForm extends Component {
     }
 
     onSubmitClickHandler = () => {
-      if (!this.state.first_name || this.state.first_name.trim() === '') {
-        alertify.dialog('alert').set({ transition: 'fade', message: 'Please enter your first name' }).setHeader('<h3>No first name!</h3>').show();
-      } else if (!this.state.last_name || this.state.last_name.trim() === '') {
+      if (!this.state.last_name || this.state.last_name.trim() === '') {
         alertify.dialog('alert').set({ transition: 'fade', message: 'Please enter your last name' }).setHeader('<h3>No last name!</h3>').show();
       } else if (!this.state.email || this.state.email.trim() === '' || !validateEmail(this.state.email)) {
         alertify.dialog('alert').set({ transition: 'fade', message: 'Please enter a valid E-mail' }).setHeader('<h3>No email!</h3>').show();
@@ -52,7 +49,6 @@ export default class SignUpForm extends Component {
         fetch('/api/v1/signup', {
           method: 'POST',
           body: JSON.stringify({
-            user_name: this.state.user_name,
             first_name: this.state.first_name,
             last_name: this.state.last_name,
             email: this.state.email,

@@ -9,9 +9,13 @@ import starr from './images/star.svg';
 
 import './style.css';
 
+
 class Dashboard extends Component {
   render() {
-    const { id, updateLoggingInfo } = this.props;
+    if (!document.cookie) {
+      return window.location = '/';
+    }
+    const { id, updateLoggingInfo, userInfo } = this.props;
     return (
       <div className="grand-div">
         <div className="dash-board">
@@ -20,12 +24,9 @@ class Dashboard extends Component {
             <Find />
           </div>
           <div>
-            <Uploader />
+            <Uploader userInfo={userInfo} />
           </div>
-          <div className="sub-div">
-            <Active activites={[{ job: 'job1', done: true }, { job: 'job2', done: false }, { job: 'job3', done: true }, { job: 'job4', done: false }]} />
-            <img src={starr} alt="str" className="starr" />
-          </div>
+          
         </div>
       </div>
     );
