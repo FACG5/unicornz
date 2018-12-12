@@ -3,10 +3,6 @@ const sequelize = require('./connection');
 
 module.exports =  sequelize.define('girl', {
 
-  user_name: {
-    type: Sequelize.STRING,
-    allowNull: true,
-  },
   first_name: {
     type: Sequelize.STRING,
     allowNull: false

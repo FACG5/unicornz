@@ -96,9 +96,9 @@ insert into schools (name)
 ('Ark John Keats Academy'),
 ('Ark Victoria Academy');
 
-insert into girls (user_name, first_name, last_name, email, phone_num, school_id, other_school, birthdate, password)
+insert into girls (first_name, last_name, email, phone_num, school_id, other_school, birthdate, password)
  values
- ('hadam', 'Helary', 'Adam', 'zizi@zizii.com','0599999999', 1, '', '01-01-2005', '$2a$10$t3bm8JUU3dwAvUpE0Pr/e.S5XDnaX./JaGpIv5uDX7I51n4JVKH42');
+ ( 'Helary', 'Adam', 'zizi@zizii.com','0599999999', 1, '', '01-01-2005', '$2a$10$t3bm8JUU3dwAvUpE0Pr/e.S5XDnaX./JaGpIv5uDX7I51n4JVKH42');
 
  insert into registrations (status, registration_date, response)
   values
