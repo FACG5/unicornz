@@ -1,5 +1,7 @@
+/* eslint-disable class-methods-use-this */
 import React, { Component } from 'react';
 import axios from 'axios';
+import alertify from 'alertifyjs';
 import { Wizard, Step } from './Wizard';
 import BasicDetails1 from './BasicDetails1';
 import BasicDetails2 from './BasicDetails2';
@@ -16,7 +18,13 @@ const MyStep = ({ children }) => (
 );
 
 class Questionnaier extends Component {
-  state = { step: 0, girlId: 0 };
+  state = { step: 0, girlId: 0, nextStepp: false };
+
+  componentWillMount = () => {
+    const storage = localStorage.getItem('state') || '{}';
+    const parsedStorage = JSON.parse(storage);
+    this.setState({ ...parsedStorage });
+  }
 
   componentDidUpdate() {
     const { id } = this.props;
@@ -34,15 +42,17 @@ class Questionnaier extends Component {
   saveState = () => {
     const { state } = this;
     const info = localStorage.setItem('state', JSON.stringify(state));
-  }
+    }
 
-handleChange= async (e) => {
+handleChange = (e) => {
+  // should clear the local storage
   const { value, name } = e.target;
-  await this.setState({
+  this.setState({
     ...this.state,
     [name]: value,
+  }, () => {
+    this.saveState();
   });
-  this.saveState();
 }
 
 hanleUpdate() {
@@ -56,26 +66,40 @@ hanleUpdate() {
   }).catch((error) => {
     console.log('error:', error);
   });
+
+  function validateEmail(email) {
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  }
+
+  if (!parsedStorage.grade || parsedStorage.grade.trim() === '') {
+    alertify.dialog('alert').set({ transition: 'fade', message: 'Please enter your grade on the first step' }).setHeader('<h3>No grade !</h3>').show();
+  } else if (!parsedStorage.city || parsedStorage.city.trim() === '') {
+    alertify.dialog('alert').set({ transition: 'fade', message: 'Please enter your city on the first step' }).setHeader('<h3>No city !</h3>').show();
+  } else if (!parsedStorage.schoolEmail || parsedStorage.schoolEmail.trim() === '' || !validateEmail(parsedStorage.schoolEmail)) {
+    alertify.dialog('alert').set({ transition: 'fade', message: 'Please enter a valid school E-mail on the first step' }).setHeader('<h3>No school email !</h3>').show();
+  } else if (!parsedStorage.phoneNum) {
+    alertify.dialog('alert').set({ transition: 'fade', message: 'Please enter your phone number on the first step' }).setHeader('<h3>No phone num !</h3>').show();
+  } else {
+    return true;
+  }
 }
+
 
 render() {
   if (!document.cookie) {
     return window.location = '/';
   }
   const { id, updateLoggingInfo } = this.props;
+  const a =localStorage.getItem('state');
   return (
     <div>
       <Wizard history={this.props.history} step={this.state.step} onChange={this.handleStep} hanleUpdate={this.hanleUpdate}>
         <Step title="First step" description="Welcome page">
-
           <BasicDetails1 handleChange={this.handleChange} />
-
         </Step>
-
         <Step title="Second step" description="BasicInfo">
-
           <BasicDetails2 handleChange={this.handleChange} />
-
         </Step>
         <Step title="Third step" description="PersonalInfo">
           <PersonalDetails1 handleChange={this.handleChange} />

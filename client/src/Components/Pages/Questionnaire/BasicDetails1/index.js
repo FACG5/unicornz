@@ -15,6 +15,12 @@ class BasicDetails1 extends Component {
     };
   }
 
+  componentWillMount = () => {
+    const storage = localStorage.getItem('state');
+    const parsedStorage = JSON.parse(storage);
+    this.setState({ ...parsedStorage });
+  }
+
   onChange = (e) => {
     const { name, value } = e.target;
     this.setState({
@@ -23,18 +29,25 @@ class BasicDetails1 extends Component {
   };
 
   render() {
+    console.log('this.state', this.state);
+    const storage = localStorage.getItem('state') || '{}';
+    const parsedStorage = JSON.parse(storage);
+    const {
+      grade, city, schoolEmail, phoneNum,
+    } = parsedStorage;
     return (
       <form onSubmit={this.handleSubmit}>
         <div className="basic-details1">
           <h2>Hello, Please fill out these basic details and then we will move on to the interesting stuff</h2>
           <div className="basic-details1-content">
             <div className="basic1-content1">
-              <p>What is your current year group at school?</p>
+              <p>What is your current Year Group at UK School?</p>
               <input
                 type="text"
                 className="sec1-input"
                 name="grade"
-                onChange={this.onChange}
+                defaultValue={grade}
+                onChange={this.props.handleChange}
                 placeholder="Enter your grade .."
               />
               <p>
@@ -45,7 +58,8 @@ In which city exactly do you live?
                 type="text"
                 className="sec1-input"
                 name="city"
-                onChange={this.onChange}
+                defaultValue={city}
+                onChange={this.props.handleChange}
                 placeholder="Enter your city name .."
               />
             </div>
@@ -53,19 +67,19 @@ In which city exactly do you live?
               <p>School email address</p>
               <input
                 type="email"
-                onInput="newUpdate(this)"
-                pattern=".+@.+.com"
                 className="sec1-input"
                 name="schoolEmail"
-                onChange={this.onChange}
+                defaultValue={schoolEmail}
+                onChange={this.props.handleChange}
                 placeholder="***@**.edu"
               />
               <p>Enter your phone number</p>
               <input
-                type="text"
+                type="number"
                 className="sec1-input"
                 name="phoneNum"
-                onChange={this.onChange}
+                defaultValue={phoneNum}
+                onChange={this.props.handleChange}
                 placeholder="Enter your phone number"
               />
             </div>

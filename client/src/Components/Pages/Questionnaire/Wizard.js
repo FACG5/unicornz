@@ -1,10 +1,16 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/no-this-in-sfc */
+/* eslint-disable react/destructuring-assignment */
 import React from 'react';
+
 import './style.css';
+
 
 export const Wizard = ({ step: currentIndex, ...props }) => {
   const steps = React.Children.toArray(props.children);
   const prevStep = currentIndex !== 0 && steps[currentIndex - 1].props;
   const nextStep = currentIndex !== steps.length - 1 && steps[currentIndex + 1].props;
+
 
   const SubmitQhandler = () => {
     props.hanleUpdate();
@@ -18,7 +24,7 @@ export const Wizard = ({ step: currentIndex, ...props }) => {
         {steps.map((step, index) => (
           <button
             key={step.props.title}
-            onClick={() => { props.onChange(index); props.hanleUpdate(); }}
+            onClick={() => { props.hanleUpdate() && props.onChange(index); }}
             className={getClsNavBtn(index === currentIndex)}
             title={step.props.description}
           >
@@ -31,14 +37,14 @@ export const Wizard = ({ step: currentIndex, ...props }) => {
       <div className="next-back-btns">
         <Button
           visible={prevStep}
-          onClick={() => { props.onChange(currentIndex - 1); props.hanleUpdate(); }}
+          onClick={() => { props.hanleUpdate() && props.onChange(currentIndex - 1); }}
           title={prevStep.description}
         >
           Back
         </Button>
         <Button
           visible={nextStep}
-          onClick={() => { props.onChange(currentIndex + 1); props.hanleUpdate(); }}
+          onClick={() => { props.hanleUpdate() && props.onChange(currentIndex + 1); }}
           title={nextStep.description}
         >
           Next

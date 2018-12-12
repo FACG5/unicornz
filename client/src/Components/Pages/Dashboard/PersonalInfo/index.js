@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import emailImg from './images/email.svg';
 import phoneImg from './images/phone.svg';
@@ -41,6 +42,7 @@ class PersonalInfo extends Component {
       email,
       phone_num,
       birthdate,
+      percentage,
     } = this.state;
     const fav_subjects = this.state.fav_subjects || [];
 
@@ -86,16 +88,24 @@ class PersonalInfo extends Component {
           </div>
         </div>
         <div className="PersonalInfo">
-          <span className="info progress-info">Your Profile Complete: 92%</span>
+          <span className="info">
+Your Profile Complete:
+            {' '}
+            {percentage}
+            {' '}
+%
+          </span>
           {' '}
-          <div className="progress-outer">
-            <div
-              className="progress-inner"
-              style={{
-                width: `${92}%`,
-              }}
-            />
-          </div>
+          <Link to="/questionnaire">
+            <div className="progress-outer">
+              <div
+                className="progress-inner"
+                style={{
+                  width: `${percentage}%`,
+                }}
+              />
+            </div>
+          </Link>
         </div>
       </div>
     );
