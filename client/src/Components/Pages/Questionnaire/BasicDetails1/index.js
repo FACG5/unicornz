@@ -29,7 +29,6 @@ class BasicDetails1 extends Component {
   };
 
   render() {
-    console.log('this.state', this.state);
     const storage = localStorage.getItem('state') || '{}';
     const parsedStorage = JSON.parse(storage);
     const {

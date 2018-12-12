@@ -44,8 +44,7 @@ class PersonalInfo extends Component {
       birthdate,
       percentage,
     } = this.state;
-    const fav_subjects = this.state.fav_subjects || [];
-
+    const favsubjects = this.state.favsubjects || [];
     return (
       <div>
         <div className="personal1 PersonalInfo">
@@ -62,21 +61,22 @@ class PersonalInfo extends Component {
             {' '}
             {city}
           </span>
-          <span className="info">Date of birth:</span>
           <span className="info">
+            Date of birth:
             {' '}
             {birthdate}
           </span>
           <span className="info">Favourit subject: </span>
           {
-            fav_subjects && fav_subjects.map((val, key) => (
+            favsubjects && favsubjects.map((val, key) => (
               <ul>
-                <li>{val.value}</li>
-                <li>{val.value}</li>
                 <li>{val.value}</li>
               </ul>
             ))
-        }
+          }
+          {' '}
+          <span className="info">
+          </span>
           {' '}
           <div className="img">
             <img src={emailImg} alt="email" />
