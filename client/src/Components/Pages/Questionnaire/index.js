@@ -34,7 +34,7 @@ class Questionnaier extends Component {
   saveState = () => {
     const { state } = this;
     const info = localStorage.setItem('state', JSON.stringify(state));
-  }
+    }
 
 handleChange= async (e) => {
   const { value, name } = e.target;
@@ -63,6 +63,7 @@ render() {
     return window.location = '/';
   }
   const { id, updateLoggingInfo } = this.props;
+  const a =localStorage.getItem('state');
   return (
     <div>
       <Wizard history={this.props.history} step={this.state.step} onChange={this.handleStep} hanleUpdate={this.hanleUpdate}>
