@@ -5,7 +5,7 @@ li{
 .file-upload{
   display: flex;
   flex-direction: column;
-  background-color: #ffeaa9;
+  background-color: #fcf3b1 !important;
   width: 100%;
   border: 1px solid #fbfbfc;
   border-radius: 10px;
