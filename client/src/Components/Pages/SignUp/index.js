@@ -1,7 +1,7 @@
+/* eslint-disable default-case */
 import React, { Component } from 'react';
 import alertify from 'alertifyjs';
 import Select from 'react-select';
-import Button from '../../CommonComponents/Button';
 
 import './style.css';
 
@@ -12,20 +12,22 @@ function validateEmail(email) {
 
 export default class SignUpForm extends Component {
     state = {
-      user_name: '',
-      first_name: '',
-      last_name: '',
-      email: '',
-      school_id: '',
-      other_school: '',
-      birthdate: '',
-      password: '',
-      cpassword: '',
+      first_name: null,
+      last_name: null,
+      email: null,
+      school_id: null,
+      other_school: null,
+      birthdate: null,
+      password: null,
+      cpassword: null,
       checkUser: false,
       vx: 7,
       vy: 1,
       sum: 0,
       school_options: [],
+      errorMessage: '',
+      passwordStrength: '',
+      passValidate: 'hide-check',
     }
 
 
@@ -35,10 +37,80 @@ export default class SignUpForm extends Component {
         .then(res => this.setState({ school_options: res }));
     }
 
+    measureStrength = (password) => {
+      let score = 0;
+      let passwordStrength;
+      const regexPositive = [
+        '[A-Z]',
+        '[a-z]',
+        '[0-9]',
+        '\\W',
+      ];
+      regexPositive.forEach((regex, index) => {
+        if (new RegExp(regex).test(password)) {
+          score += 1;
+        }
+      });
+      switch (score) {
+        case 0:
+        case 1:
+          passwordStrength = 'weak: ';
+          break;
+        case 2:
+        case 3:
+          passwordStrength = 'good: ';
+          break;
+        case 4:
+        case 5:
+          passwordStrength = 'strong: ';
+          break;
+      }
+      this.setState({
+        passwordStrength,
+        passValidate: 'show-check',
+      });
+    }
+
+    validate = (e) => {
+      const password = e.target.value;
+      let errorMessage;
+      let capsCount; let smallCount; let numberCount; let
+        symbolCount;
+      if (password.length < 8) {
+        this.setState({
+          errorMessage: 'password must be min 8 char',
+          passValidate: 'show-check',
+        });
+      } else {
+        capsCount = (password.match(/[A-Z]/g) || []).length;
+        smallCount = (password.match(/[a-z]/g) || []).length;
+        numberCount = (password.match(/[0-9]/g) || []).length;
+        symbolCount = (password.match(/\W/g) || []).length;
+        if (capsCount < 1) {
+          errorMessage = 'must contain caps';
+        } else if (smallCount < 1) {
+          errorMessage = 'must contain small';
+        } else if (numberCount < 1) {
+          errorMessage = 'must contain number';
+        } else if (symbolCount < 1) {
+          errorMessage = 'must contain symbol';
+        }
+        this.setState({
+          errorMessage,
+          passValidate: 'show-check',
+        });
+        this.measureStrength(password);
+      }
+    }
+
+
+    handlePassChange = (e) => {
+      this.validate(e);
+      this.setState({ password: e.target.value });
+    }
+
     onSubmitClickHandler = () => {
-      if (!this.state.user_name || this.state.user_name.trim() === '') {
-        alertify.dialog('alert').set({ transition: 'fade', message: 'Please enter a user name!' }).setHeader('<h3>No user name!</h3>').show();
-      } else if (!this.state.first_name || this.state.first_name.trim() === '') {
+      if (!this.state.first_name || this.state.first_name.trim() === '') {
         alertify.dialog('alert').set({ transition: 'fade', message: 'Please enter your first name' }).setHeader('<h3>No first name!</h3>').show();
       } else if (!this.state.last_name || this.state.last_name.trim() === '') {
         alertify.dialog('alert').set({ transition: 'fade', message: 'Please enter your last name' }).setHeader('<h3>No last name!</h3>').show();
@@ -54,7 +126,6 @@ export default class SignUpForm extends Component {
         fetch('/api/v1/signup', {
           method: 'POST',
           body: JSON.stringify({
-            user_name: this.state.user_name,
             first_name: this.state.first_name,
             last_name: this.state.last_name,
             email: this.state.email,
@@ -69,10 +140,14 @@ export default class SignUpForm extends Component {
         }).then(res => res.json())
           .then((res) => {
             if (res.status === true) {
-              alertify.dialog('alert').set({ transition: 'fade', message: 'You signed up in successfuly' }).setHeader('<h2>Success</h2>').show();
+              alertify.alert()
+                .set({
+                  label: 'Ok',
+                  message: 'Hello ,Welcome to Unicornz.Our mission here is to help you achieve the creative confidence to be the very best you can, in whatever field you choose, and to take your place amongst the future creators, leaders and business founders of the world you want to see.Unicornz will connect you to people and companies who, combined with our programmes and work experience initiatives, will help you explore your skills and hobbies in the future of work.My advice to you? Take every opportunity you can. Even those you think may not be of interest. Note down your likes and your dislikes and gradually you will start creating your unique path to your unique working future.Enjoy your journey,Marie-Clare',
+                  onok() { window.location = '/Questionnaire'; },
+                }).show();
               this.props.refreshAppModalState(null, false);
               this.props.updateLoggingInfo();
-              window.location = '/Questionnaire';
             } else {
               alertify.set('notifier', 'position', 'top-center');
               alertify.error('Signup failed');
@@ -90,17 +165,13 @@ export default class SignUpForm extends Component {
     }
 
     render() {
+      const { passValidate } = this.state;
       return (
         <div className="signupComponent">
 
           <h2 className="signup-title">Sign up </h2>
           <section className="containerr">
             <div className="clm">
-              <div className="item">
-                <label> User Name</label>
-                <input type="text" onKeyUp={(e) => { this.setState({ user_name: e.target.value }); }} required />
-                <p id="fnamerr" className="errorValid"></p>
-              </div>
               <div className="item">
                 <label> First Name</label>
                 <input type="text" onKeyUp={(e) => { this.setState({ first_name: e.target.value }); }} required />
@@ -136,7 +207,14 @@ export default class SignUpForm extends Component {
               </div>
               <div className="item">
                 <label>Password </label>
-                <input type="password" onKeyUp={(e) => { this.setState({ password: e.target.value }); }} required />
+                <input type="password" value={this.state.password} onChange={this.handlePassChange} required />
+                <p className={passValidate}>
+                  {this.state.passwordStrength}
+                  {'   '}
+                  {this.state.errorMessage}
+
+                </p>
+
                 <p id="emailerr" className="errorValid"></p>
               </div>
               <div className="item">
@@ -157,14 +235,13 @@ is:
                 <input type="number" onKeyUp={(e) => { this.setState({ sum: Number(e.target.value) }); }} required />
                 <p id="emailerr" className="errorValid"></p>
               </div>
-              <div className="item">
-                <label>I am not a robot</label>
-                <input type="checkbox" onClick={(e) => { this.setState({ checkUser: e.target.checked }); }} required />
-                <p id="emailerr" className="errorValid"></p>
-              </div>
             </div>
           </section>
-
+          <div className="check-robot">
+            <label>I am not a robot</label>
+            <input type="checkbox" onClick={(e) => { this.setState({ checkUser: e.target.checked }); }} required />
+            <p id="emailerr" className="errorValid"></p>
+          </div>
           <button value="Submit" onClick={this.onSubmitClickHandler} type="submit" className="signup-btn">Submit</button>
         </div>
       );

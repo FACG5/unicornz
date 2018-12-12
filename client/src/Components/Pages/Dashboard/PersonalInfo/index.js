@@ -36,13 +36,10 @@ class PersonalInfo extends Component {
   render() {
     const {
       city,
-      user_name,
       first_name,
       last_name,
       email,
       phone_num,
-      school_id,
-      other_school,
       birthdate,
     } = this.state;
     const fav_subjects = this.state.fav_subjects || [];

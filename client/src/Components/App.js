@@ -12,7 +12,6 @@ import Login from './Pages/Login';
 import workExperienceList from './Pages/WorkExpList';
 import Category from './Pages/Category';
 import Questionnaire from './Pages/Questionnaire';
-import WorkExpFill from './Pages/workexpfill';
 
 import '../../node_modules/rodal/lib/rodal.css';
 
@@ -114,7 +113,6 @@ class App extends Component {
                   component={workExperienceList}
                 />
                 <Route exact path="/Questionnaire" render={() => <Questionnaire id={id} updateLoggingInfo={this.updateLoggingInfo} />} />
-                <Route path="/WorkExpFill" component={WorkExpFill} />
                 <Route path="*" component={LandingPage} />
               </Switch>
             </div>
