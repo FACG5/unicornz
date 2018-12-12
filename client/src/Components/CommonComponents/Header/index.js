@@ -33,6 +33,7 @@ class HeaderComp extends React.Component {
     fetch('/api/v1/logout', {
       credentials: 'same-origin',
     }).then(() => {
+      localStorage.clear();
       this.props.updateLoggingInfo();
       alertify.set('notifier', 'position', 'top-center');
       alertify.success('logged out successfuly');
