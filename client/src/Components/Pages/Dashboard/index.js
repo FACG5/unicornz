@@ -5,8 +5,8 @@ import React, { Component } from 'react';
 import PersonalInfo from './PersonalInfo';
 import Find from './ActiveJobs';
 import Uploader from './UploadFile';
-import Active from './MyActivety';
-import starr from './images/star.svg';
+// import Active from './MyActivety';
+// import starr from './images/star.svg';
 
 
 import './style.css';
@@ -24,7 +24,7 @@ class Dashboard extends Component {
           <div>
             <Uploader />
           </div>
-          
+
         </div>
       </div>
     );

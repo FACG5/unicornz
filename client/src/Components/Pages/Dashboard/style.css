@@ -5,8 +5,9 @@
   height: 100vh;
 }
 .sub-div{
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 34% 95%;
+  column-gap: 170px;
 }
 .grand-div{
   display: flex;
