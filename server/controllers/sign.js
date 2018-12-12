@@ -7,7 +7,6 @@ exports.signup = async (request, response) => {
   let id;
   try {
     const {
-      user_name,
       first_name,
       last_name,
       email,
@@ -17,7 +16,6 @@ exports.signup = async (request, response) => {
     } = request.body;
 
     if (
-      user_name &&
       first_name &&
       last_name &&
       email &&
@@ -31,7 +29,6 @@ exports.signup = async (request, response) => {
         } else {
           try {
             let userData = {
-              user_name,
               first_name,
               last_name,
               email,
@@ -47,7 +44,7 @@ exports.signup = async (request, response) => {
             girl.create(userData)
 
               .then(john => {
-
+                console.log('ddddddddd',john);
                 id = john.get().id
 
                 const tokenData = { id };

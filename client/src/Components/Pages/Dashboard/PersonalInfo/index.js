@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 import emailImg from './images/email.svg';
 import phoneImg from './images/phone.svg';
 import docImg from './images/docs.png';
@@ -37,16 +36,14 @@ class PersonalInfo extends Component {
   render() {
     const {
       city,
-      user_name,
       first_name,
       last_name,
       email,
       phone_num,
-      school_id,
-      other_school,
       birthdate,
-      percentage,
     } = this.state;
+    const fav_subjects = this.state.fav_subjects || [];
+
     return (
       <div>
         <div className="personal1 PersonalInfo">
@@ -72,6 +69,12 @@ class PersonalInfo extends Component {
             21/8/1998
           </span>
           <span className="info">Favourit subject: </span>
+          {
+            fav_subjects && fav_subjects.map((val, key) => (
+              <span>{val.value}</span>
+            ))
+        }
+          {' '}
           <ul>
             <li>Math</li>
             <li>Sinece</li>
@@ -87,30 +90,21 @@ class PersonalInfo extends Component {
           </div>
           <div className="img">
             <img src={docImg} alt="Docs" />
-          Your Documents
           </div>
-        </div>
-        <div className="PersonalInfo">
-          <span className="info progress-info">
-Your Profile Complete:
+          <div className="PersonalInfo">
+            <span className="info progress-info">Your Profile Complete: 92%</span>
             {' '}
-            {percentage}
-%
-          </span>
-          {' '}
-          <Link to="/questionnaire" className="profile-link">
             <div className="progress-outer">
               <div
                 className="progress-inner"
                 style={{
-                  width: `${percentage}%`,
+                  width: `${92}%`,
                 }}
               />
             </div>
-          </Link>
+          </div>
 
         </div>
-
       </div>
     );
   }

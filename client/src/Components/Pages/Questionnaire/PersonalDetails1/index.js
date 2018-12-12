@@ -47,8 +47,8 @@ const fileMaxSize = 10485760; // byte
 
 class PersonalDetails1 extends Component {
     state = {
-      subjects: null,
-      favSubjects: null,
+      subjects: [],
+      favSubjects: [],
       hobbies: '',
       futureJob: '',
       interestedJob: '',
@@ -63,7 +63,7 @@ class PersonalDetails1 extends Component {
 
     handleFavChange = (favSubjects) => {
       this.setState({ favSubjects });
-      this.props.handleChange({ target: { name: 'favSubjects:', value: favSubjects } });
+      this.props.handleChange({ target: { name: 'favSubjects', value: favSubjects } });
     }
 
 

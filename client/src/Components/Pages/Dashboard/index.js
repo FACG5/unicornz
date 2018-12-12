@@ -11,9 +11,13 @@ import Uploader from './UploadFile';
 
 import './style.css';
 
+
 class Dashboard extends Component {
   render() {
-    const { id, updateLoggingInfo } = this.props;
+    if (!document.cookie) {
+      return window.location = '/';
+    }
+    const { id, updateLoggingInfo, userInfo } = this.props;
     return (
       <div className="grand-div">
         <div className="dash-board">
@@ -22,7 +26,7 @@ class Dashboard extends Component {
             <Find />
           </div>
           <div>
-            <Uploader />
+            <Uploader userInfo={userInfo} />
           </div>
 
         </div>
