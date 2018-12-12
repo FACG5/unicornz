@@ -7,11 +7,9 @@ exports.post= async (request,response)=>{
     let result;
     const { girlId } = request.body;
     const data =snakeCase(request.body);
-    console.log('snakeCase data',data);
     result= await girl.update({...data},{where: {id:girlId}});
     const girlData = await girl.findOne(  {where: {id:girlId }} );
     arr =  Object.values(girlData.dataValues); // convert object to array
-    console.log('dataValues>>>>>>',arr);
     const newArr = arr.filter(elm => elm != null);
     const percent = ((newArr.length / arr.length ) * 100 );
     girl.update( { percentage: percent }, {where: {id:girlId}} )
