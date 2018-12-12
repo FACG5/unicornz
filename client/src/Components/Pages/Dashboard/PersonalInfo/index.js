@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import axios from 'axios';
-import { Link } from 'react-router-dom'
 import emailImg from './images/email.svg';
 import phoneImg from './images/phone.svg';
 import docImg from './images/docs.png';
@@ -45,8 +44,9 @@ class PersonalInfo extends Component {
       school_id,
       other_school,
       birthdate,
-      percentage,
     } = this.state;
+    const fav_subjects = this.state.fav_subjects || [];
+
     return (
       <div className="PersonalInfo">
         <h2>Personal Info</h2>
@@ -67,19 +67,26 @@ City:
           {' '}
           {city}
         </span>
-        <span className="info">Favourit subject: </span>
-        <span className="info">Your Profile Complete: {percentage}%</span>
+        <span className="info">
+Favourit subject:
+          {
+            fav_subjects && fav_subjects.map((val, key) => (
+              <span>{val.value}</span>
+            ))
+        }
+          {' '}
+
+        </span>
+        <span className="info">Your Profile Complete: 92%</span>
         {' '}
-        <Link to="/questionnaire">
         <div className="progress-outer">
           <div
             className="progress-inner"
             style={{
-              width: `${percentage}%`,
+              width: `${92}%`,
             }}
           />
         </div>
-        </Link>
         <div className="img">
           <img src={emailImg} alt="email" />
           {email}
