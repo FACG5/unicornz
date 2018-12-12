@@ -49,7 +49,6 @@ class PersonalInfo extends Component {
         <div className="personal1 PersonalInfo">
           <h2>Personal Info</h2>
           <span className="info">
-            Donia Hassona
             {' '}
             {first_name}
             {' '}
@@ -60,26 +59,23 @@ class PersonalInfo extends Component {
             From:
             {' '}
             {city}
-            London
           </span>
           <span className="info">Date of birth:</span>
           <span className="info">
             {' '}
             {birthdate}
-            21/8/1998
           </span>
           <span className="info">Favourit subject: </span>
           {
             fav_subjects && fav_subjects.map((val, key) => (
-              <span>{val.value}</span>
+              <ul>
+                <li>{val.value}</li>
+                <li>{val.value}</li>
+                <li>{val.value}</li>
+              </ul>
             ))
         }
           {' '}
-          <ul>
-            <li>Math</li>
-            <li>Sinece</li>
-            <li>sds</li>
-          </ul>
           <div className="img">
             <img src={emailImg} alt="email" />
             {email}
