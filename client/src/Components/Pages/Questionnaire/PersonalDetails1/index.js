@@ -109,7 +109,6 @@ class PersonalDetails1 extends Component {
         files,
         hobbies,
       } = parsedStorage;
-      console.log('personal details 1', parsedStorage);
       return (
         <div className="personal-details1">
           <h2 personal-details1-h>Now we've got the boring stuff out of the way, let's get to know more about your school studies</h2>

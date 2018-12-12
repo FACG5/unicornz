@@ -89,8 +89,6 @@ hanleUpdate() {
 render() {
   const storage = localStorage.getItem('state') || '{}';
   const parsedStorage = JSON.parse(storage);
-  console.log('parsedStorage...', parsedStorage);
-  console.log('this.state...', this.state);
   if (!document.cookie) {
     return window.location = '/';
   }
