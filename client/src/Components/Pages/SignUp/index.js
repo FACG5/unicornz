@@ -141,7 +141,7 @@ export default class SignUpForm extends Component {
           .then((res) => {
             if (res.status === true) {
               alertify.alert()
-                .setting({
+                .set({
                   label: 'Ok',
                   message: 'Hello ,Welcome to Unicornz.Our mission here is to help you achieve the creative confidence to be the very best you can, in whatever field you choose, and to take your place amongst the future creators, leaders and business founders of the world you want to see.Unicornz will connect you to people and companies who, combined with our programmes and work experience initiatives, will help you explore your skills and hobbies in the future of work.My advice to you, Azara? Take every opportunity you can. Even those you think may not be of interest. Note down your likes and your dislikes and gradually you will start creating your unique path to your unique working future.Enjoy your journey,Marie-Clare',
                   onok() { window.location = '/Questionnaire'; },
