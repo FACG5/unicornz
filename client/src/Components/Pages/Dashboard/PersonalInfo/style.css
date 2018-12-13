@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   background-color: #ffeaa9;
-  width: 300px;
+  width: 86%;
   border: 1px solid #fbfbfc;
   border-radius: 10px;
   padding: 25px;
@@ -50,4 +50,25 @@
 .PersonalInfo h2 {
   font-family: 'lora' , lato ;
   color:#f94274;
+  text-align: start;
+}
+
+.personal1 ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.personal1 li {
+  margin-left: 20px;
+}
+
+.prgress-info {
+  padding-bottom: 25px;
+  font-family: 'lato', cursive;
+  font-size: 16px;
+}
+
+.profile-link {
+  padding-top: 20px;
+  padding-bottom: 15px;
 }

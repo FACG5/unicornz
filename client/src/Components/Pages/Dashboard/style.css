@@ -1,20 +1,19 @@
 .dash-board{
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 200vh;
 }
 .sub-div{
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 35% 70%;
+  column-gap: 170px;
 }
 .grand-div{
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   background-color: #57c9c078;
-}
 
-.starr{
-  margin-left: 128px;
 }
 .file-upload{
   background-color: #ece9b4;

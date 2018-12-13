@@ -12,14 +12,14 @@ function validateEmail(email) {
 
 export default class SignUpForm extends Component {
     state = {
-      first_name: null,
-      last_name: null,
-      email: null,
-      school_id: null,
-      other_school: null,
-      birthdate: null,
-      password: null,
-      cpassword: null,
+      first_name: '',
+      last_name: '',
+      email: '',
+      school_id: '',
+      other_school: '',
+      birthdate: '',
+      password: '',
+      cpassword: '',
       checkUser: false,
       vx: 7,
       vy: 1,

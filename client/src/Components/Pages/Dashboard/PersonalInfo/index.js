@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import emailImg from './images/email.svg';
 import phoneImg from './images/phone.svg';
@@ -44,67 +44,68 @@ class PersonalInfo extends Component {
       birthdate,
       percentage,
     } = this.state;
-    const fav_subjects = this.state.fav_subjects || [];
-
+    const favsubjects = this.state.favsubjects || [];
     return (
-      <div className="PersonalInfo">
-        <h2>Personal Info</h2>
-        <span className="info">
-          Name:
-          {' '}
-          {first_name}
-          {' '}
-          {last_name}
-        </span>
-        <span className="info">
-Date of birth:
-          {' '}
-          {birthdate}
-        </span>
-        <span className="info">
-City:
-          {' '}
-          {city}
-        </span>
-        <span className="info">
-Favourit subject:
-          {
-            fav_subjects && fav_subjects.map((val, key) => (
-              <span>{val.value}</span>
-            ))
-        }
-          {' '}
+      <div>
+        <div className="personal1 PersonalInfo">
+          <h2>Personal Info</h2>
+          <span className="info">
+            {' '}
+            {first_name}
+            {' '}
+            {last_name}
+          </span>
 
-        </span>
-        <span className="info">
+          <span className="info">
+            From:
+            {' '}
+            {city}
+          </span>
+          <span className="info">
+            Date of birth:
+            {' '}
+            {birthdate}
+          </span>
+          <span className="info">Favourit subject: </span>
+          {
+            favsubjects && favsubjects.map((val, key) => (
+              <ul>
+                <li>{val.value}</li>
+              </ul>
+            ))
+          }
+          {' '}
+          <span className="info">
+          </span>
+          {' '}
+          <div className="img">
+            <img src={emailImg} alt="email" />
+            {email}
+          </div>
+          <div className="img">
+            <img src={phoneImg} alt="mobile" />
+            {phone_num}
+          </div>
+        </div>
+        <div className="PersonalInfo">
+          <span className="info">
 Your Profile Complete:
-          {' '}
-          {percentage}
-          {' '}
+            {' '}
+            {percentage}
+            {' '}
 %
-        </span>
-        {' '}
-        <Link to="/questionnaire">
-        <div className="progress-outer">
-          <div
-            className="progress-inner"
-            style={{
-              width: `${percentage}%`,
-            }}
-          />
-        </div>
-        </Link>
-        <div className="img">
-          <img src={emailImg} alt="email" />
-          {email}
-        </div>
-        <div className="img">
-          <img src={phoneImg} alt="mobile" />
-          {phone_num}
-        </div>
-        <div className="img">
-          <img src={docImg} alt="Docs" />
-          Your Documents
+          </span>
+          {' '}
+          <Link to="/questionnaire">
+            <div className="progress-outer">
+              <div
+                className="progress-inner"
+                style={{
+                  width: `${percentage}%`,
+                }}
+              />
+            </div>
+          </Link>
         </div>
       </div>
     );

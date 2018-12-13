@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/accessible-emoji */
 import React, { Component } from 'react';
 import Select from 'react-select';
-import Dropzone from 'react-dropzone';
+import axios from 'axios';
 import './style.css';
 import '../style.css';
 
@@ -48,7 +48,7 @@ const fileMaxSize = 10485760; // byte
 class PersonalDetails1 extends Component {
     state = {
       subjects: [],
-      favSubjects: [],
+      favsubjects: [],
       hobbies: '',
       futureJob: '',
       interestedJob: '',
@@ -68,9 +68,9 @@ class PersonalDetails1 extends Component {
       this.props.handleChange({ target: { name: 'subjects', value: subjects } });
     }
 
-    handleFavChange = (favSubjects) => {
-      this.setState({ favSubjects }, () => {
-        this.props.handleChange({ target: { name: 'favSubjects:', value: favSubjects } });
+    handleFavChange = (favsubjects) => {
+      this.setState({ favsubjects }, () => {
+        this.props.handleChange({ target: { name: 'favsubjects', value: favsubjects } });
       });
     }
 
@@ -79,83 +79,79 @@ class PersonalDetails1 extends Component {
       event.preventDefault();
     }
 
-    handleOnDrop = (files, rejectedFiles) => {
-      if (rejectedFiles && rejectedFiles.length > 0) {
-        const currentRejectFile = rejectedFiles[0];
-        const currentRejectFileSize = currentRejectFile.size;
-
-        if (currentRejectFileSize > fileMaxSize) {
-          alert('This file is too big..please choose another one with size less than 10 megabytes');
-        }
-      }
-      const currentFile = files[0];
-      const currentFileSize = currentFile.size;
-      if (currentFileSize > fileMaxSize) {
-        alert('This file is too big..please choose another one with size less than 10 megabytes');
-      } else {
-        this.setState({ files, label: files[0].name });
-      }
-      this.props.handleChange({ target: { name: 'files', value: files } });
+    handleFile = (e) => {
+      this.setState({
+        docs: e.target.files[0],
+      });
     }
 
-    render() {
-      const storage = localStorage.getItem('state');
-      const parsedStorage = JSON.parse(storage);
-      const {
-        subjects,
-        favSubjects,
-        futureJob,
-        interestedJob,
-        files,
-      } = parsedStorage;
-      return (
-        <div className="personal-details1">
-          <h2 personal-details1-h>Now we've got the boring stuff out of the way, let's get to know more about your school studies</h2>
-          <div className="personal-details1-content">
-            <div className="personal1-content1">
-              <p>What subjects are you studying? Tick all that apply</p>
-              <Select
-                className="select-input"
-                onChange={this.handleSubjectChange}
-                value={this.state.subjects}
-                defaultValue={subjects}
-                isMulti
-                options={options}
-              />
-              <p>What are your favourite subjects Azara ? Tick up to 3</p>
-              <Select
-                className="select-input"
-                onChange={this.handleFavChange}
-                value={this.state.favSubjects}
-                defaultValue={favSubjects}
-                isMulti
-                options={options}
-              />
-              <p>What are your interests and hobbies outside of school? Tell us everything you enjoy doing.</p>
-              <textarea rows="5" cols="40" placeholder="Answer" name="hobbies" onChange={this.props.handleChange}></textarea>
-            </div>
-            <div className="personal1-content2">
-              <p>If you have a CV, or any other documents your school needs signed, please upload them to your dashboard</p>
-              <Dropzone
-                className="drop-zone"
-                onDrop={this.handleOnDrop}
-                maxSize={fileMaxSize}
-                defaultValue={files}
-                multiple={false}
-              >
-                {this.state.label}
-              </Dropzone>
-              <p>Can you imagine your future career? What does it look like?</p>
-              <textarea rows="5" cols="40" placeholder="Answer" name="futureJob" onChange={this.props.handleChange} defaultValue={futureJob}></textarea>
-              <p>What kinds of jobs do you think will interest you?</p>
-              <textarea rows="5" cols="40" placeholder="Answer" name="interestedJob" onChange={this.props.handleChange} defaultValue={interestedJob}></textarea>
-            </div>
-          </div>
+handleClick=() => {
+  const { docs } = this.state;
+  const formData = new FormData();
+  formData.append('dox', this.state.docs);
+  axios({
+    method: 'post',
+    url: '/api/v1/upload',
+    data: formData,
+  }).then((res) => {
+    alert(res.data);
+  }).catch((error) => {
+    console.log('error:', error);
+  });
+  this.props.handleChange({ target: { name: 'dox', value: docs } });
+}
+
+render() {
+  const storage = localStorage.getItem('state');
+  const parsedStorage = JSON.parse(storage);
+  const {
+    subjects,
+    favsubjects,
+    futureJob,
+    interestedJob,
+    hobbies,
+  } = parsedStorage;
+  return (
+    <div className="personal-details1">
+      <h2 personal-details1-h>Now we've got the boring stuff out of the way, let's get to know more about your school studies</h2>
+      <div className="personal-details1-content">
+        <div className="personal1-content1">
+          <p>What subjects are you studying? Tick all that apply</p>
+          <Select
+            className="select-input"
+            onChange={this.handleSubjectChange}
+            value={this.state.subjects}
+            defaultValue={subjects}
+            isMulti
+            options={options}
+          />
+          <p>What are your favourite subjects Azara ? Tick up to 3</p>
+          <Select
+            className="select-input"
+            onChange={this.handleFavChange}
+            value={this.state.favsubjects}
+            defaultValue={favsubjects}
+            isMulti
+            options={options}
+          />
+          <p>What are your interests and hobbies outside of school? Tell us everything you enjoy doing.</p>
+          <textarea rows="5" cols="40" placeholder="Answer" name="hobbies" defaultValue={hobbies} onChange={this.props.handleChange}></textarea>
         </div>
+        <div className="personal1-content2">
+          <p>If you have a CV, or any other documents your school needs signed, please upload them to your dashboard</p>
+          <input type="file" name="dox" onChange={this.handleFile} required />
+          <button onClick={this.handleClick} className="upload-btn">Upload Documents</button>
+          <p>Can you imagine your future career? What does it look like?</p>
+          <textarea rows="5" cols="40" placeholder="Answer" name="futureJob" onChange={this.props.handleChange} defaultValue={futureJob}></textarea>
+          <p>What kinds of jobs do you think will interest you?</p>
+          <textarea rows="5" cols="40" placeholder="Answer" name="interestedJob" onChange={this.props.handleChange} defaultValue={interestedJob}></textarea>
+        </div>
+      </div>
+    </div>
 
 
-      );
-    }
+  );
+}
 }
 
 export default PersonalDetails1;

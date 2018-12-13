@@ -76,7 +76,7 @@ module.exports =  sequelize.define('girl', {
     type: Sequelize.ARRAY(Sequelize.JSON),
     allowNull: true
   },
-  fav_subjects: {
+  favsubjects: {
     type: Sequelize.ARRAY(Sequelize.JSON),
     allowNull: true
   },
@@ -124,15 +124,15 @@ module.exports =  sequelize.define('girl', {
     type: Sequelize.ARRAY(Sequelize.JSON),
     allowNull: true
   },
-  important_factors1: {
+  importantfactors1: {
     type: Sequelize.ARRAY(Sequelize.JSON),
     allowNull: true
   },
-  important_factors2: {
+  importantfactors2: {
     type: Sequelize.ARRAY(Sequelize.JSON),
     allowNull: true
   },
-  important_factors3: {
+  importantfactors3: {
     type: Sequelize.ARRAY(Sequelize.JSON),
     allowNull: true
   },
@@ -140,19 +140,19 @@ module.exports =  sequelize.define('girl', {
     type: Sequelize.STRING(100),
     allowNull: true
   },
-  clicked_pic1: {
+  clickedpic1: {
     type: Sequelize.STRING(100),
     allowNull: true
   },
-  clicked_pic2: {
+  clickedpic2: {
     type: Sequelize.STRING(100),
     allowNull: true
   },
-  clicked_pic3: {
+  clickedpic3: {
     type: Sequelize.STRING(100),
     allowNull: true
   },
-  clicked_pic4: {
+  clickedpic4: {
     type: Sequelize.STRING(100),
     allowNull: true
   },

@@ -3,7 +3,7 @@ const snakeCase = require('snakecase-keys');
 
 exports.post= async (request,response)=>{
   let arr =[];
-   try{
+  try{
     let result;
     const { girlId } = request.body;
     const data =snakeCase(request.body);

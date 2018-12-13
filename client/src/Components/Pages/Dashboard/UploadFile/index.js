@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+import './style.css';
+
 class Upload extends Component {
   state={
   }
@@ -39,6 +41,17 @@ class Upload extends Component {
 
       return (
         <div className="file-upload">
+          <div className="upload-zone">
+            <input type="file" name="dox" onChange={this.handleFile} required />
+            <button onClick={this.handleClick} className="upload-btn">Upload Documents</button>
+          </div>
+          { message && (
+          <p>
+            {' '}
+            {message}
+            {' '}
+          </p>
+          ) }
           <ul>
             <span>Your files</span>
             {
@@ -47,17 +60,6 @@ class Upload extends Component {
           ))
       }
           </ul>
-          <div className="upload-zone">
-            <input type="file" name="dox" onChange={this.handleFile} required />
-            <button onClick={this.handleClick}>Upload Documents</button>
-          </div>
-          { message && (
-          <h1>
-            {' '}
-            {message}
-            {' '}
-          </h1>
-          ) }
         </div>
       );
     }

@@ -42,9 +42,7 @@ exports.signup = async (request, response) => {
             // userData = snakeCase(userData);
 
             girl.create(userData)
-
               .then(john => {
-
                 id = john.get().id
 
                 const tokenData = { id };
@@ -61,7 +59,7 @@ exports.signup = async (request, response) => {
 
                     response.status(200).send({ msg: 'hi', status: true });
 
-                    
+
                   }
 
                 });
