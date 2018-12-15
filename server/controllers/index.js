@@ -9,9 +9,8 @@ const upload = require('./upload');
 const uploads3 = require('../middleware/upload');
 const work = require('./workExperienceList');
 const questionnaire = require('./questionnaire');
-
+const profile = require('./profile');
 const workExperienceDetails = require('./workexperienceDetails');
-
 const login = require('./login');
 const checkToken = require('./authentication/index');
 const logOut = require('./logout');
@@ -27,6 +26,8 @@ router.post('/submitjob', workexpController.submitJob);
 
 router.get('/getschoolslist', schoolController.getSchoolsList);
 router.get('/getcompanieslist', companyController.getCompaniesList);
+
+router.get('/profile/:girlId', profile.get);
 
 
 router.post('/upload',uploads3.array('dox',1),upload.post);

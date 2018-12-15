@@ -3,34 +3,67 @@ import axios from 'axios';
 import PrpfComp from './ProfComp';
 import './style.css';
 
-class workExperienceList extends Component {
-  state = {
-    results: [],
-  };
+class ProfilePage extends Component {
+  state = { girlId:0, results: {} };
 
-  componentDidMount() {
-
-        axios
-          .get('/api/v1/workexperiencelist')
+  componentDidUpdate() {
+    console.log('mnmn', this.props)
+    const { id } = this.props;
+    if (this.state.girlId !== id) {
+      this.setState({
+        girlId: id,
+      });
+      axios
+          .get(`/api/v1/profile/${id}`)
           .then((res) => {
             const info = res.data;
-            this.setState({ results: info });
+            console.log('iiiiiiiii', info)
+            this.setState({results : info});
           })
           .catch((error) => {
             console.log('error:', error);
           });
-   }
+    }
+  }
+
+
+  
 
   render() {
     const { results } = this.state;
+    console.log('ccccccccccccc',results.first_name)
     return (
       <div className="profileData">
           {
-        //    results.map(item => (
+          
              <PrpfComp
+             firstName = { results.first_name }
+             lastName = { results.last_name}
+             email = {results.email }
+             school = {results.school_id }
+             birthDate = { results.birthdate }
+             grade = { results.grade}
+             city = { results.city}
+             schoolEmail = { results.phone_num }
+             emergency_name = {results.emergency_name }
+             phone_num ={ results.phone_num}
+             emergency_num = { results.phone_num}
+             relation = { results.relation }
+             emergency_email = { results.emergency_email }
+             period = { results.period}
+             begin_date = { results.begin_date}
+             end_date = { results.end_date}
+            //  subjects = { results.subjects}
+            //  favsubjects = { results.avsubjects }
+            //  hobbies = { results.hobbies}
+            //  future_job = { results.future_job}
+            //  interested_job = { results.interested_job}
+            //  famous_entrepreneur= { results.famous_entrepreneur}
+            //  percentage = { results.percentage}
+
             
              />
-        //    ))
+           
          }
       </div>
     );
@@ -38,4 +71,4 @@ class workExperienceList extends Component {
 }
 }
 
-export default workExperienceList;
+export default ProfilePage;

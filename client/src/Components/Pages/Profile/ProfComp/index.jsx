@@ -34,7 +34,7 @@ const ProfCard = (props) => {
               <p><span>School:</span>{' '}{school}</p>
               <p><span>School Email:</span>{' '}{schoolEmail}</p>
               <p><span>My Subjects:</span>{' '}{subjects}</p>
-              <p><span>City:</span>{' '}{hobbies}</p>
+              <p><span>Hobbies:</span>{' '}{hobbies}</p>
               <p><span>Grade:</span>{' '}{grade}</p>
           </div>
 
