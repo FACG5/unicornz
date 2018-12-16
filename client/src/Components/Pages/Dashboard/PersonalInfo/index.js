@@ -86,6 +86,8 @@ class PersonalInfo extends Component {
             <img src={phoneImg} alt="mobile" />
             {phone_num}
           </div>
+          <Link to="/profile">Your Profile</Link>
+
         </div>
         <div className="PersonalInfo">
           <span className="info">

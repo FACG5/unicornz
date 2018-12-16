@@ -104,6 +104,7 @@ class App extends Component {
               <Switch>
                 <Route exact path="/" render={() => <LandingPage id={id} />} />
                 <Route exact path="/dash" render={() => <Dashboard id={id} updateLoggingInfo={this.updateLoggingInfo} userInfo={this.state.userInfo} />} />
+                
                 <Route exact path="/profile" render={() => <Profile id={id} updateLoggingInfo={this.updateLoggingInfo} userInfo={this.state.userInfo} />} />
 
                 <Route path="/login" component={Login} />

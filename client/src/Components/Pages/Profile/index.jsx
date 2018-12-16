@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import CircularProgressbar from 'react-circular-progressbar';
 import PrpfComp from './ProfComp';
 import 'react-circular-progressbar/dist/styles.css';
 
@@ -34,16 +33,9 @@ class ProfilePage extends Component {
     console.log('ahmad', results);
     const { subjects } = results;
     return (
-      <div className="profileData">
-        <CircularProgressbar
-          className="circlepar"
-          percentage={results.percentage}
-          text={`${results.percentage}%`}
-          styles={{
-            path: { stroke: `rgba(62, 152, 199, ${results.percentage / 100})` },
-            text: { fill: '#f88', fontSize: '20px' },
-          }}
-        />
+      <div className="profilePage">
+      <h1>Profile Page</h1>
+
         <PrpfComp
           firstName={results.first_name}
           lastName={results.last_name}
@@ -67,7 +59,8 @@ class ProfilePage extends Component {
           future_job={results.future_job}
           interested_job={results.interested_job}
           //  famous_entrepreneur= { results.famous_entrepreneur}
-          //  percentage = { results.percentage}
+          files = {results.files}
+          percentage = { results.percentage}
         />
       </div>
     );

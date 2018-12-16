@@ -1,5 +1,7 @@
 import React from "react";
 import getAge from "get-age";
+import CircularProgressbar from 'react-circular-progressbar';
+
 
 import { NavLink } from "react-router-dom";
 
@@ -35,8 +37,23 @@ const ProfCard = props => {
   } = props;
 
   return (
-    <div>
-      <div className="personalProfile">
+    <div className="profileContainer">
+      
+      <div className="profileItem">
+      <h3>Profile Complete</h3>
+        <CircularProgressbar
+          className="circlepar"
+          percentage={percentage}
+          text={`${percentage}%`}
+          styles={{
+            path: { stroke: `rgba(62, 152, 199, ${percentage / 100})` },
+            text: { fill: '#000', fontSize: '20px' },
+          }}
+        />
+        <NavLink className="link1" to="/questionnaire">Edit Or Complete...</NavLink>
+      </div>
+    
+      <div className="profileItem">
         <h3>Personal Information</h3>
         <p>
           <span>Name:</span> {firstName} {lastName}
@@ -58,7 +75,7 @@ const ProfCard = props => {
         </p>
       </div>
 
-      <div className="emergencyProfile">
+      <div className="profileItem">
         <h3>Emergency Information</h3>
         <p>
           <span>Emergency Name:</span> {emergency_name}
@@ -74,7 +91,7 @@ const ProfCard = props => {
         </p>
       </div>
 
-      <div className="schoolProfile">
+      <div className="profileItem">
         <h3>School Information</h3>
         <p>
           <span>School:</span> {school}
@@ -99,7 +116,7 @@ const ProfCard = props => {
         </p>
       </div>
 
-      <div className="workProfile">
+      <div className="profileItem">
         <h3>Work Information</h3>
         <p>
           <span>Favourit Period:</span> {" "}
@@ -123,6 +140,18 @@ const ProfCard = props => {
         <p>
           <span>Interested Job:</span> {interested_job}
         </p>
+      </div>
+      <div className="profileItem">
+      <h3>My Docoumentaion</h3>
+      <ul>
+      
+      {
+          files && files.map((val, key) => (
+            <li><a href={val} target="_blank">{val.split('/')[3]}</a></li>
+          ))
+      }
+          
+       </ul>
       </div>
     </div>
   );
