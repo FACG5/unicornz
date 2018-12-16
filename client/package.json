@@ -5,10 +5,12 @@
   "dependencies": {
     "alertifyjs": "^1.11.2",
     "axios": "^0.18.0",
+    "get-age": "^1.0.1",
     "install": "^0.12.2",
     "npm": "^6.4.1",
     "react": "^16.6.1",
     "react-animated-modal": "^1.1.1",
+    "react-circular-progressbar": "^1.0.0",
     "react-datalist": "^4.0.0",
     "react-dom": "^16.6.1",
     "react-dropzone": "^7.0.1",
