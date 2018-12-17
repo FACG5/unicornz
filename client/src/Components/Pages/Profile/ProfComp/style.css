@@ -45,11 +45,16 @@
     font-size: 14pt;
 }
 
-.profileContainer:first-child {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.profileItem:first-of-type   {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     
+}
 
+.profileItem:first-of-type  p  {
+     text-align: center;
+    line-height: 70px;
 }
 
 .link1 {

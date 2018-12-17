@@ -48,9 +48,10 @@ const ProfCard = props => {
             text: { fill: "#000", fontSize: "20px" }
           }}
         />
+        <p>
         <NavLink className="link1" to="/questionnaire">
           Edit Or Complete...
-        </NavLink>
+        </NavLink></p>
       </div>
 
       <div className="profileItem persent1">
