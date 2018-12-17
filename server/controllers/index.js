@@ -9,9 +9,8 @@ const upload = require('./upload');
 const uploads3 = require('../middleware/upload');
 const work = require('./workExperienceList');
 const questionnaire = require('./questionnaire');
-
+const profile = require('./profile');
 const workExperienceDetails = require('./workexperienceDetails');
-
 const login = require('./login');
 const checkToken = require('./authentication/index');
 const logOut = require('./logout');
@@ -37,5 +36,7 @@ router.get('/workexperiencedetails/:companyId', workExperienceDetails.get);
 router.get('/dash/:girlId', dashBoard.get);
 router.post('/dash/search', search.post);
 router.post('/questionnaire', questionnaire.post);
+router.get('/profile/:girlId', profile.get);
+
 
 module.exports = router;

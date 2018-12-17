@@ -12,10 +12,12 @@ import Login from './Pages/Login';
 import workExperienceList from './Pages/WorkExpList';
 import Category from './Pages/Category';
 import Questionnaire from './Pages/Questionnaire';
+import Profile from './Pages/Profile';
 
 import '../../node_modules/rodal/lib/rodal.css';
 
 import './App.css';
+import { ImportExport } from 'aws-sdk';
 
 class App extends Component {
   state = {
@@ -102,6 +104,9 @@ class App extends Component {
               <Switch>
                 <Route exact path="/" render={() => <LandingPage id={id} />} />
                 <Route exact path="/dash" render={() => <Dashboard id={id} updateLoggingInfo={this.updateLoggingInfo} userInfo={this.state.userInfo} />} />
+                
+                <Route exact path="/profile" render={() => <Profile id={id} updateLoggingInfo={this.updateLoggingInfo} userInfo={this.state.userInfo} />} />
+
                 <Route path="/login" component={Login} />
                 <Route
                   path="/workexperiencedetails/:id"

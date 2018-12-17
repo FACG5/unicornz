@@ -80,10 +80,6 @@ module.exports =  sequelize.define('girl', {
     type: Sequelize.ARRAY(Sequelize.JSON),
     allowNull: true
   },
-  enjoy_school: {
-    type: Sequelize.TEXT,
-    allowNull: true
-  },
   hobbies: {
     type: Sequelize.TEXT,
     allowNull: true
@@ -108,58 +104,11 @@ module.exports =  sequelize.define('girl', {
     type: Sequelize.TEXT,
     allowNull: true
   },
-  entrepreneurs_women: {
-    type: Sequelize.TEXT,
-    allowNull: true
-  },
-  important_in_career1: {
-    type: Sequelize.ARRAY(Sequelize.JSON),
-    allowNull: true
-  },
-  important_in_career2: {
-    type: Sequelize.ARRAY(Sequelize.JSON),
-    allowNull: true
-  },
-  important_in_career3: {
-    type: Sequelize.ARRAY(Sequelize.JSON),
-    allowNull: true
-  },
-  importantfactors1: {
-    type: Sequelize.ARRAY(Sequelize.JSON),
-    allowNull: true
-  },
-  importantfactors2: {
-    type: Sequelize.ARRAY(Sequelize.JSON),
-    allowNull: true
-  },
-  importantfactors3: {
-    type: Sequelize.ARRAY(Sequelize.JSON),
-    allowNull: true
-  },
-  person_have_career: {
-    type: Sequelize.STRING(100),
-    allowNull: true
-  },
-  clickedpic1: {
-    type: Sequelize.STRING(100),
-    allowNull: true
-  },
-  clickedpic2: {
-    type: Sequelize.STRING(100),
-    allowNull: true
-  },
-  clickedpic3: {
-    type: Sequelize.STRING(100),
-    allowNull: true
-  },
-  clickedpic4: {
-    type: Sequelize.STRING(100),
-    allowNull: true
-  },
   pursue_in_tech: {
     type: Sequelize.STRING(100),
     allowNull: true
-  },percentage: {
+  },
+  percentage: {
     type: Sequelize.INTEGER,
     allowNull: true
   },
