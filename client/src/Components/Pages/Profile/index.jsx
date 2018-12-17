@@ -1,26 +1,26 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import PrpfComp from './ProfComp';
-import 'react-circular-progressbar/dist/styles.css';
+import React, { Component } from "react";
+import axios from "axios";
+import PrpfComp from "./ProfComp";
+import "react-circular-progressbar/dist/styles.css";
 
-import './style.css';
+import "./style.css";
 
 class ProfilePage extends Component {
   state = { girlId: 0, results: {} };
 
   updateCurrentProps(id) {
     this.setState({
-      girlId: id,
+      girlId: id
     });
     console.log(id);
     axios
       .get(`/api/v1/profile/${id}`)
-      .then((res) => {
+      .then(res => {
         const info = res.data;
         this.setState({ results: info });
       })
-      .catch((error) => {
-        console.log('error:', error);
+      .catch(error => {
+        console.log("error:", error);
       });
   }
 
@@ -36,8 +36,11 @@ class ProfilePage extends Component {
   }
 
   render() {
+    if (!document.cookie) {
+      return (window.location = "/");
+    }
     const { results } = this.state;
-    console.log('marwan', results.hobbies)
+    const { school } = results;
     return (
       <div className="profilePage">
         <h1>Profile Page</h1>
@@ -46,11 +49,11 @@ class ProfilePage extends Component {
           firstName={results.first_name}
           lastName={results.last_name}
           email={results.email}
-          school={results.school_id}
+          school={school && school.name}
           birthDate={results.birthdate}
           grade={results.grade}
           city={results.city}
-          schoolEmail={results.phone_num}
+          schoolEmail={results.school_email}
           emergency_name={results.emergency_name}
           phone_num={results.phone_num}
           emergency_num={results.phone_num}
@@ -61,7 +64,7 @@ class ProfilePage extends Component {
           end_date={results.end_date}
           subjects={results.subjects}
           favsubjects={results.favsubjects}
-          hobbies = { results.hobbies}
+          hobbies={results.hobbies}
           future_job={results.future_job}
           interested_job={results.interested_job}
           //  famous_entrepreneur= { results.famous_entrepreneur}

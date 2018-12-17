@@ -27,8 +27,6 @@ router.post('/submitjob', workexpController.submitJob);
 router.get('/getschoolslist', schoolController.getSchoolsList);
 router.get('/getcompanieslist', companyController.getCompaniesList);
 
-router.get('/profile/:girlId', profile.get);
-
 
 router.post('/upload',uploads3.array('dox',1),upload.post);
 router.get('/updatehero', update.get);
@@ -38,5 +36,7 @@ router.get('/workexperiencedetails/:companyId', workExperienceDetails.get);
 router.get('/dash/:girlId', dashBoard.get);
 router.post('/dash/search', search.post);
 router.post('/questionnaire', questionnaire.post);
+router.get('/profile/:girlId', profile.get);
+
 
 module.exports = router;

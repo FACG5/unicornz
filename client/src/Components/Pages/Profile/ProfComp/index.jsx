@@ -1,7 +1,6 @@
 import React from "react";
 import getAge from "get-age";
-import CircularProgressbar from 'react-circular-progressbar';
-
+import CircularProgressbar from "react-circular-progressbar";
 
 import { NavLink } from "react-router-dom";
 
@@ -38,22 +37,23 @@ const ProfCard = props => {
 
   return (
     <div className="profileContainer">
-      
       <div className="profileItem">
-      <h3>Profile Complete</h3>
+        <h3>Profile Complete</h3>
         <CircularProgressbar
           className="circlepar"
           percentage={percentage}
           text={`${percentage}%`}
           styles={{
             path: { stroke: `rgba(62, 152, 199, ${percentage / 100})` },
-            text: { fill: '#000', fontSize: '20px' },
+            text: { fill: "#000", fontSize: "20px" }
           }}
         />
-        <NavLink className="link1" to="/questionnaire">Edit Or Complete...</NavLink>
+        <NavLink className="link1" to="/questionnaire">
+          Edit Or Complete...
+        </NavLink>
       </div>
-    
-      <div className="profileItem">
+
+      <div className="profileItem persent1">
         <h3>Personal Information</h3>
         <p>
           <span>Name:</span> {firstName} {lastName}
@@ -106,8 +106,7 @@ const ProfCard = props => {
           </ul>
         </p>
         <p>
-          <span>Hobbies:</span> {" "}
-          {hobbies}
+          <span>Hobbies:</span> {hobbies}
         </p>
         <p>
           <span>Grade:</span> {grade}
@@ -117,8 +116,7 @@ const ProfCard = props => {
       <div className="profileItem">
         <h3>Work Information</h3>
         <p>
-          <span>Favourit Period:</span> {" "}
-          {period}
+          <span>Favourit Period:</span> {period}
         </p>
         <p>
           <span>Begin Date:</span> {begin_date}
@@ -127,9 +125,10 @@ const ProfCard = props => {
           <span>End Date:</span> {end_date}
         </p>
         <p>
-          <span>Favourit Subjects:</span> {" "}
+          <span>Favourit Subjects:</span>{" "}
           <ul>
-            {favsubjects && favsubjects.map(favsubjects => <li> {favsubjects.value}</li>) }
+            {favsubjects &&
+              favsubjects.map(favsubjects => <li> {favsubjects.value}</li>)}
           </ul>
         </p>
         <p>
@@ -140,16 +139,17 @@ const ProfCard = props => {
         </p>
       </div>
       <div className="profileItem">
-      <h3>My Docoumentaion</h3>
-      <ul>
-      
-      {
-          files && files.map((val, key) => (
-            <li><a href={val} target="_blank">{val.split('/')[3]}</a></li>
-          ))
-      }
-          
-       </ul>
+        <h3>My Docoumentaion</h3>
+        <ul>
+          {files &&
+            files.map((val, key) => (
+              <li>
+                <a href={val} target="_blank">
+                  {val.split("/")[3]}
+                </a>
+              </li>
+            ))}
+        </ul>
       </div>
     </div>
   );
