@@ -107,9 +107,7 @@ const ProfCard = props => {
         </p>
         <p>
           <span>Hobbies:</span> {" "}
-          <ul>
-            {hobbies && hobbies.map(hobbies => <li>{hobbies.value}</li>)}
-          </ul>
+          {hobbies}
         </p>
         <p>
           <span>Grade:</span> {grade}
