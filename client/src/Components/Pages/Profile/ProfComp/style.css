@@ -54,7 +54,11 @@
 
 .profileItem:first-of-type  p  {
      text-align: center;
-    line-height: 70px;
+     line-height: 70px;
+}
+
+.profileItem:first-of-type CircularProgressbar{
+    text-align: center;
 }
 
 .link1 {
